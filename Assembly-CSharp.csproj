@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\HeroUnit.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>M:/Unity/FinalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -10,8 +10,8 @@ enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack };
 public class HeroUnit : MonoBehaviour
 {
     const float FRAME_RATE = 0.0167f;
-    const float DESIRED_POS_MARGIN_OF_ERROR = 0.1f;  // needs to finel.
-    const float RESPAWN_TIME = 10f;                // needs to final.
+    const float DESIRED_POS_MARGIN_OF_ERROR = 0.1f;
+    const float RESPAWN_TIME = 10f;
 
     Action <HeroUnit> OnMove;        //
     Action <HeroUnit> OnHit;        // handles hero hit ( health > 0)
@@ -21,7 +21,7 @@ public class HeroUnit : MonoBehaviour
     int id;
     float currentHeatlh;
     float maxHealth; 
-    // skill SKILL;
+    Skill skill;
     float moveSpeed;
     List <HeroUnit> herosToAttackBank; 
     HeroUnit heroToAttack;      // this is the target to be attacked by the hero.
@@ -37,22 +37,36 @@ public class HeroUnit : MonoBehaviour
 
     void Start()
     {
-        //SetHeroDesirePos(Vector3.zero);
-        //StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
-        /*
-        List<Vector3> testPoses = new List<Vector3>();
-        testPoses.Add(new Vector3(5f, 0f, 5f));
-        testPoses.Add(new Vector3(-5f, 0f, 5f));
-        testPoses.Add(new Vector3(-10f, 0f, -10f));
-        testPoses.Add(new Vector3(2f, 0f, -10f));
-        StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, 3f, true));
-        */
+        //testMovement();
     }
 
    
     void Update()
     {
 
+    }
+
+    private void attack()
+    {
+        skill.isTargetAttackAble(this.transform.position, heroToAttack.transform.position);
+    }
+    /*
+    private IEnumerator autoAttack()
+    {
+
+    }
+    */
+
+    private void testMovement()
+    {
+        //SetHeroDesirePos(Vector3.zero);
+        //StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
+        List<Vector3> testPoses = new List<Vector3>();
+        testPoses.Add(new Vector3(5f, 0f, 5f));
+        testPoses.Add(new Vector3(-5f, 0f, 5f));
+        testPoses.Add(new Vector3(-10f, 0f, -10f));
+        testPoses.Add(new Vector3(2f, 0f, -10f));
+        StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, 3f, true));
     }
 
     /// <summary>
