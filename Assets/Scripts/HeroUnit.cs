@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack };
+enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, moveAndRotate, moveAndAttackAndRotate, rotateAndAttack};
 
 
 public class HeroUnit : MonoBehaviour
@@ -17,39 +17,59 @@ public class HeroUnit : MonoBehaviour
     Action <HeroUnit> OnHit;        // handles hero hit ( health > 0)
     Action <HeroUnit> OnRespawn;   //
     Action <HeroUnit> OnDeath;    // handles hero death (0 >= health)
+    //private Action<HeroUnit> OnReachPos; // function that would been preform when the hero reach the desired pos
 
     int id;
     float currentHeatlh;
-    float maxHealth; 
+    float maxHealth;
     Skill skill;
     float moveSpeed;
-    List <HeroUnit> herosToAttackBank; 
-    HeroUnit heroToAttack;      // this is the target to be attacked by the hero.
+    List <GameObject> targetsToAttackBank;
+    GameObject targetToAttack;      // this is the target to be attacked by the hero.
     Vector3 desiredPos;        // the location desired to move to.
-    HeroUnit targetHero;      // the selected enemy to be attacked.
+    Vector3 desiredRotationDirection;    // the direction the hero desired to rotate toward.
+    GameObject targetHero;      // the selected enemy to be attacked.
     ObjStatus status;
+
+    public GameObject testTarget;
 
     private void Awake()
     {
         moveSpeed = 0.2f;
         this.status = ObjStatus.idle;
+        targetToAttack = null;
+        targetsToAttackBank = new List<GameObject>();
     }
 
     void Start()
     {
-        //testMovement();
+        testMovement();
+        /*
+        skill = this.GetComponent<Skill>();
+        TargetInRange(testTarget);
+        prepareToAttack();
+        */
     }
 
-   
-    void Update()
+    private void prepareToAttack()
     {
+        if (IsObjRotating()) // TO BE CHANGED
+            return;
+
+        Vector3 targetPos = targetToAttack.transform.position;
+        desiredRotationDirection = getVectorDirectionTowardTarget(targetToAttack.transform.position);
+        if(!IsLookingAtTheTarget(targetPos))
+            StartCoroutine(rotateTowardDirection(prepareToAttack));
+        else
+            attack();
 
     }
 
     private void attack()
     {
-        skill.isTargetAttackAble(this.transform.position, heroToAttack.transform.position);
+        skill.attack();
     }
+
     /*
     private IEnumerator autoAttack()
     {
@@ -57,16 +77,90 @@ public class HeroUnit : MonoBehaviour
     }
     */
 
+    private void setHeroToAttack(GameObject targetToAttack)
+    {
+        this.targetToAttack = targetToAttack;
+        this.status = ObjStatus.attacking;
+    }
+
+    private void addHeroesToAttackBank(GameObject targetToAttack)
+    {
+        targetsToAttackBank.Add(targetToAttack);
+
+        bool isNeedToBeSetAsTarget = (this.targetToAttack == null || this.targetToAttack == targetHero);
+
+        if (isNeedToBeSetAsTarget)
+        {
+            setHeroToAttack(targetToAttack);
+        }
+    }
+
+    public void TargetInRange(GameObject targetToAttack)
+    {
+        addHeroesToAttackBank(targetToAttack);
+        
+        
+    }
+
+    public bool IsObjMoving()
+    {
+        return Vector3.Distance(transform.position, desiredPos) > DESIRED_POS_MARGIN_OF_ERROR;
+    }
+
+    public bool IsObjRotating()
+    {
+        float angelDif = diffAngle(desiredRotationDirection);
+            return angelDif > DESIRED_POS_MARGIN_OF_ERROR * 0.001f;
+    }
+
+    private bool IsLookingAtTheTarget(Vector3 targetPos)
+    {
+        Vector3 direction = getVectorDirectionTowardTarget(desiredPos);
+        float angelDif = diffAngle(direction);
+        return angelDif <= DESIRED_POS_MARGIN_OF_ERROR * 0.001f;
+    }
+
+
+    /*
+    public bool IsHeroAttacking()
+    {
+        return status == ObjStatus.attacking || status == ObjStatus.moveAndAttack || status == ObjStatus.moveAndAttackAndRotate;
+    }
+
+    public bool IsHeroMoving()
+    {
+        return status == ObjStatus.moving || status == ObjStatus.moveAndAttack || status == ObjStatus.moveAndRotate || status == ObjStatus.moveAndAttackAndRotate;
+    }
+
+    public bool IsHeroRotating()
+    {
+        return status == ObjStatus.rotating || status == ObjStatus.moveAndRotate|| status == ObjStatus.moveAndAttackAndRotate;
+    }
+
+    public bool IsHeroIdleOrSiege()
+    {
+        return status == ObjStatus.idle || status == ObjStatus.siege;
+    }
+    */
+
     private void testMovement()
     {
         //SetHeroDesirePos(Vector3.zero);
         //StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
+        //StartCoroutine(testRotateFuncChangePosWhileRotate(new Vector3(-10f, -10f, -10f), 0.4f));
+        
         List<Vector3> testPoses = new List<Vector3>();
         testPoses.Add(new Vector3(5f, 0f, 5f));
         testPoses.Add(new Vector3(-5f, 0f, 5f));
         testPoses.Add(new Vector3(-10f, 0f, -10f));
         testPoses.Add(new Vector3(2f, 0f, -10f));
         StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, 3f, true));
+        
+    }
+
+    private Vector3 getVectorDirectionTowardTarget(Vector3 target)
+    {
+        return desiredPos - this.transform.position;
     }
 
     /// <summary>
@@ -74,14 +168,16 @@ public class HeroUnit : MonoBehaviour
     /// Author: Ilan 
     /// In addtion, rotate the Object toward the pos.
     /// </summary>
-    private IEnumerator moveObject()
+    private IEnumerator moveObject(Action onFinishMovment)
     {
         Vector3 desiredPos = this.desiredPos;
-        Vector3 direction = desiredPos - this.transform.position;
+        Vector3 direction = getVectorDirectionTowardTarget(desiredPos);
         direction =  direction.normalized;
-        StartCoroutine(rotateTowardDirection());
 
-        while (Vector3.Distance((this.transform.position), desiredPos) > DESIRED_POS_MARGIN_OF_ERROR && (status == ObjStatus.moving || status == ObjStatus.moveAndAttack)) // Checks if the object reached to the desired pos, and if it's on movment
+        this.desiredRotationDirection = direction;
+        StartCoroutine(rotateTowardDirection(null));
+
+        while (Vector3.Distance((this.transform.position), desiredPos) > DESIRED_POS_MARGIN_OF_ERROR) // Checks if the object reached to the desired pos, and if it's on movment
         {
             if (desiredPos != this.desiredPos) // checks if the movment is still relvant
                 yield break;
@@ -90,6 +186,9 @@ public class HeroUnit : MonoBehaviour
             yield return new WaitForSeconds(FRAME_RATE);
         }
         this.transform.position = desiredPos;
+
+        if (onFinishMovment != null && !IsObjMoving())
+            onFinishMovment();
     }
 
     /// <summary>
@@ -97,18 +196,17 @@ public class HeroUnit : MonoBehaviour
     /// Author: Ilan
     /// </summary>
     /// TO BE EDIT, smart rotate that support target shoot lock
-    private IEnumerator rotateTowardDirection()
+    private IEnumerator rotateTowardDirection(Action onFinishRotate)
     {
-        Vector3 desiredPos = this.desiredPos;
+        // Determine which direction to rotate towards
+        Vector3 targetDirection = this.desiredRotationDirection;
         float singleStep = moveSpeed * 0.2f; // The step size is equal to speed times frame time.
         Quaternion rotationAmount; // The rotation amount per each iteration
-        // Determine which direction to rotate towards
-        Vector3 targetDirection = desiredPos - transform.position;
 
         float angelDif = diffAngle(targetDirection);
-        while (angelDif > DESIRED_POS_MARGIN_OF_ERROR * 0.001f && (status == ObjStatus.moving || status == ObjStatus.moveAndAttack)) // Checks if the object finished to rotate target, and if it's on movment
+        while (angelDif > DESIRED_POS_MARGIN_OF_ERROR * 0.001f) // Checks if the object finished to rotate target, and if it's on movment
         {
-            if (desiredPos != this.desiredPos) // checks if the rotation is still relvant
+            if (targetDirection != this.desiredRotationDirection) // checks if the rotation is still relvant
                 yield break;
 
             // Rotate the forward vector towards the target direction by one step
@@ -126,6 +224,8 @@ public class HeroUnit : MonoBehaviour
         }
         this.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(this.transform.forward, targetDirection, singleStep, 0.0f));
 
+        if (onFinishRotate != null && !IsObjRotating())
+            onFinishRotate();
     }
 
     /// <summary>
@@ -149,8 +249,7 @@ public class HeroUnit : MonoBehaviour
     public void SetHeroDesirePos(Vector3 pos)
     {
         this.desiredPos = pos;
-        this.status = ObjStatus.moving;
-        StartCoroutine(moveObject());
+        StartCoroutine(moveObject(null));
     }
 
     /// <summary>
@@ -181,5 +280,17 @@ public class HeroUnit : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         this.desiredPos = pos;
+    }
+
+    /// <summary>
+    /// Uses to test the object desireRotateDirection change while rotating
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="Poses"></param>
+    /// <returns></returns>
+    private IEnumerator testRotateFuncChangePosWhileRotate(Vector3 pos, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        this.desiredRotationDirection = pos;
     }
 }

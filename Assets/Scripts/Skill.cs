@@ -9,26 +9,26 @@ public class Skill : MonoBehaviour
     float damage;
     float range;
     float attackSpeed;
-    float cooldown; 
+    float cooldown;
+    bool canAttackOnMovment;
+    bool needToBeAimed; // if ture, the target has to rotate toward the target
     [SerializeField] GameObject projectile;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        attack(Vector3.zero);
+        //attack();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool CanAttackOnMovment() => canAttackOnMovment;
+    public bool IsNeedToBeAimed() => needToBeAimed;
 
     public bool isTargetAttackAble(Vector3 current, Vector3 target)
     {
         return Vector3.Distance(current, target) <= range;
     }
-    public void attack(Vector3 targetPos)
+    public void attack()
     {
         Vector3 pos = this.transform.position;
         Quaternion rotation = this.transform.rotation;
