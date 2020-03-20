@@ -14,6 +14,10 @@ public class Skill : MonoBehaviour
     bool needToBeAimed; // if ture, the target has to rotate toward the target
     [SerializeField] GameObject projectile;
 
+    private void Awake()
+    {
+        range = 5f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,7 @@ public class Skill : MonoBehaviour
 
     public bool CanAttackOnMovment() => canAttackOnMovment;
     public bool IsNeedToBeAimed() => needToBeAimed;
+    public float getRange() => range;
 
     public bool isTargetAttackAble(Vector3 current, Vector3 target)
     {
@@ -42,8 +47,9 @@ public class Skill : MonoBehaviour
         Rigidbody rb = projGameObj.GetComponent<Rigidbody>();
         Projectile projCtrl = projGameObj.GetComponent<Projectile>();
 
-        rb.velocity = Vector3.forward * projSpeed;
+        rb.velocity = transform.forward * projSpeed;
         projCtrl.onHitMechs += hitTarget;
+
     }
 
     private void hitTarget(Projectile proj, Collider target)

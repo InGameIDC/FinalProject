@@ -10,6 +10,7 @@ enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, 
 public class HeroUnit : MonoBehaviour
 {
     const float FRAME_RATE = 0.0167f;
+    // const float FRAME_RATE = 0.005f; // use for fast tasting
     const float DESIRED_POS_MARGIN_OF_ERROR = 0.1f;
     const float RESPAWN_TIME = 10f;
 
@@ -17,7 +18,10 @@ public class HeroUnit : MonoBehaviour
     Action <HeroUnit> OnHit;        // handles hero hit ( health > 0)
     Action <HeroUnit> OnRespawn;   //
     Action <HeroUnit> OnDeath;    // handles hero death (0 >= health)
-    //private Action<HeroUnit> OnReachPos; // function that would been preform when the hero reach the desired pos
+    // private Action<HeroUnit> onFinishAction; // functions that would be preform when the hero finish an action;
+    private Action onFinishMovment; // function that would be preform when the hero finish to move / rotate
+    private Action onStartMovment; // function that would be preform when the hero start to move / rotate
+    //private Action<HeroUnit> onFinishRotate; // function that would be preform when the finish to rotate
 
     int id;
     float currentHeatlh;
@@ -28,10 +32,10 @@ public class HeroUnit : MonoBehaviour
     GameObject targetToAttack;      // this is the target to be attacked by the hero.
     Vector3 desiredPos;        // the location desired to move to.
     Vector3 desiredRotationDirection;    // the direction the hero desired to rotate toward.
-    GameObject targetHero;      // the selected enemy to be attacked.
+    GameObject targetObj;      // the selected enemy to be attacked.
     ObjStatus status;
 
-    public GameObject testTarget;
+    public GameObject testTarget; // only for testing
 
     private void Awake()
     {
@@ -43,12 +47,18 @@ public class HeroUnit : MonoBehaviour
 
     void Start()
     {
-        testMovement();
-        /*
+        onFinishMovment += heroManager;
+        onStartMovment += cancelOrders;
+        //testMovement();
+
+        //StartCoroutine(testPrintRotationEveryInterval(1f));
         skill = this.GetComponent<Skill>();
-        TargetInRange(testTarget);
-        prepareToAttack();
-        */
+        //TargetInRange(testTarget);
+        SetTargetObj(testTarget);
+
+
+
+
     }
 
     private void prepareToAttack()
@@ -58,8 +68,11 @@ public class HeroUnit : MonoBehaviour
 
         Vector3 targetPos = targetToAttack.transform.position;
         desiredRotationDirection = getVectorDirectionTowardTarget(targetToAttack.transform.position);
-        if(!IsLookingAtTheTarget(targetPos))
-            StartCoroutine(rotateTowardDirection(prepareToAttack));
+        if (!IsLookingAtTheTarget(targetPos))
+        {
+            StartCoroutine(rotateTowardDirection());
+            //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
+        }
         else
             attack();
 
@@ -77,10 +90,10 @@ public class HeroUnit : MonoBehaviour
     }
     */
 
+        /*
     private void setHeroToAttack(GameObject targetToAttack)
     {
         this.targetToAttack = targetToAttack;
-        this.status = ObjStatus.attacking;
     }
 
     private void addHeroesToAttackBank(GameObject targetToAttack)
@@ -94,12 +107,71 @@ public class HeroUnit : MonoBehaviour
             setHeroToAttack(targetToAttack);
         }
     }
+    */
+
+    public void SetTargetObj(GameObject target)
+    {
+        this.targetObj = target;
+        heroManager(); // to be implemented with delegation subscribe
+    }
+
+    private void heroManager()
+    {
+        /*
+        if (targetsToAttackBank.Count == 0) // || targetToAttack != null)
+            return;
+            */
+
+        if (targetsToAttackBank.Contains(targetObj))
+        {
+            desiredPos = transform.position;
+            targetToAttack = targetObj;
+            prepareToAttack();
+        }
+        else if(targetObj != null)
+        {
+            SetHeroDesirePos(calcClosestPosWithThisDistance(skill.getRange(), transform.position, targetObj.transform.position));
+        }
+        else if(!IsObjMoving() && !IsObjRotating())
+        {
+            targetToAttack = targetsToAttackBank[0];
+            prepareToAttack();
+        }
+        
+    }
+
+    /// <summary>
+    /// Calculate the closet position from current to the targetPos, that keep the mention distance from the target
+    /// </summary>
+    /// <param name="reqDistance">The minimu distance required</param>
+    /// <param name="current">The object itself Pos</param>
+    /// <param name="targetPos">The tatget Pos</param>
+    /// <returns></returns>
+    private Vector3 calcClosestPosWithThisDistance(float reqDistance, Vector3 current, Vector3 targetPos)
+    {
+        float distance = Vector3.Distance(current, targetPos) - reqDistance;
+        if (distance <= 0)
+            return current;
+
+        return Vector3.Normalize(targetPos - current) * distance;
+    }
+
+    private void cancelOrders()
+    {
+        targetObj = null;
+        targetToAttack = null;
+        //desiredPos = transform.position; <<<<<================================================== the command need to be removed
+        desiredRotationDirection = transform.forward;
+    }
 
     public void TargetInRange(GameObject targetToAttack)
     {
-        addHeroesToAttackBank(targetToAttack);
-        
-        
+        //addHeroesToAttackBank(targetToAttack);
+
+        targetsToAttackBank.Add(targetToAttack);
+        heroManager(); // need to be implemented with delegation
+
+
     }
 
     public bool IsObjMoving()
@@ -113,9 +185,14 @@ public class HeroUnit : MonoBehaviour
             return angelDif > DESIRED_POS_MARGIN_OF_ERROR * 0.001f;
     }
 
+    public bool IsObjOnMovment()
+    {
+        return IsObjMoving() || IsObjRotating();
+    }
+
     private bool IsLookingAtTheTarget(Vector3 targetPos)
     {
-        Vector3 direction = getVectorDirectionTowardTarget(desiredPos);
+        Vector3 direction = getVectorDirectionTowardTarget(targetPos);
         float angelDif = diffAngle(direction);
         return angelDif <= DESIRED_POS_MARGIN_OF_ERROR * 0.001f;
     }
@@ -143,24 +220,9 @@ public class HeroUnit : MonoBehaviour
     }
     */
 
-    private void testMovement()
-    {
-        //SetHeroDesirePos(Vector3.zero);
-        //StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
-        //StartCoroutine(testRotateFuncChangePosWhileRotate(new Vector3(-10f, -10f, -10f), 0.4f));
-        
-        List<Vector3> testPoses = new List<Vector3>();
-        testPoses.Add(new Vector3(5f, 0f, 5f));
-        testPoses.Add(new Vector3(-5f, 0f, 5f));
-        testPoses.Add(new Vector3(-10f, 0f, -10f));
-        testPoses.Add(new Vector3(2f, 0f, -10f));
-        StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, 3f, true));
-        
-    }
-
     private Vector3 getVectorDirectionTowardTarget(Vector3 target)
     {
-        return desiredPos - this.transform.position;
+        return target - this.transform.position;
     }
 
     /// <summary>
@@ -168,14 +230,14 @@ public class HeroUnit : MonoBehaviour
     /// Author: Ilan 
     /// In addtion, rotate the Object toward the pos.
     /// </summary>
-    private IEnumerator moveObject(Action onFinishMovment)
+    private IEnumerator moveObject()
     {
         Vector3 desiredPos = this.desiredPos;
         Vector3 direction = getVectorDirectionTowardTarget(desiredPos);
         direction =  direction.normalized;
 
         this.desiredRotationDirection = direction;
-        StartCoroutine(rotateTowardDirection(null));
+        StartCoroutine(rotateTowardDirection());
 
         while (Vector3.Distance((this.transform.position), desiredPos) > DESIRED_POS_MARGIN_OF_ERROR) // Checks if the object reached to the desired pos, and if it's on movment
         {
@@ -187,8 +249,10 @@ public class HeroUnit : MonoBehaviour
         }
         this.transform.position = desiredPos;
 
-        if (onFinishMovment != null && !IsObjMoving())
+        if (onFinishMovment != null && !IsObjOnMovment())
+        {
             onFinishMovment();
+        }
     }
 
     /// <summary>
@@ -196,7 +260,7 @@ public class HeroUnit : MonoBehaviour
     /// Author: Ilan
     /// </summary>
     /// TO BE EDIT, smart rotate that support target shoot lock
-    private IEnumerator rotateTowardDirection(Action onFinishRotate)
+    private IEnumerator rotateTowardDirection()
     {
         // Determine which direction to rotate towards
         Vector3 targetDirection = this.desiredRotationDirection;
@@ -224,8 +288,10 @@ public class HeroUnit : MonoBehaviour
         }
         this.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(this.transform.forward, targetDirection, singleStep, 0.0f));
 
-        if (onFinishRotate != null && !IsObjRotating())
-            onFinishRotate();
+        if (onFinishMovment != null && !IsObjOnMovment())
+        {
+            onFinishMovment();
+        }
     }
 
     /// <summary>
@@ -249,7 +315,23 @@ public class HeroUnit : MonoBehaviour
     public void SetHeroDesirePos(Vector3 pos)
     {
         this.desiredPos = pos;
-        StartCoroutine(moveObject(null));
+        onStartMovment();
+        StartCoroutine(moveObject());
+    }
+
+    private void testMovement()
+    {
+        //SetHeroDesirePos(Vector3.zero);
+        //StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
+        //StartCoroutine(testRotateFuncChangePosWhileRotate(new Vector3(-10f, -10f, -10f), 0.4f));
+
+        List<Vector3> testPoses = new List<Vector3>();
+        testPoses.Add(new Vector3(5f, 0.125f, 5f));
+        testPoses.Add(new Vector3(-5f, 0.125f, 5f));
+        testPoses.Add(new Vector3(-10f, 0.125f, -10f));
+        testPoses.Add(new Vector3(2f, 0.125f, -10f));
+        StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, caclTimeRelativeToFramRate(3f), false));
+
     }
 
     /// <summary>
@@ -260,14 +342,14 @@ public class HeroUnit : MonoBehaviour
     /// <returns></returns>
     private IEnumerator testMovmentFuncListOfPosOrders(List<Vector3> poses, float delay, bool patrolLoop)
     {
-        while (patrolLoop)
+        do
         {
             foreach (Vector3 pos in poses)
             {
                 SetHeroDesirePos(pos);
                 yield return new WaitForSeconds(delay);
             }
-        }
+        } while (patrolLoop);
     }
 
     /// <summary>
@@ -292,5 +374,20 @@ public class HeroUnit : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         this.desiredRotationDirection = pos;
+    }
+
+
+    private IEnumerator testPrintRotationEveryInterval(float delay)
+    {
+        while (true)
+        {
+            Debug.Log(this.transform.rotation);
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
+    private float caclTimeRelativeToFramRate(float secs)
+    {
+        return secs * 59.888f * FRAME_RATE;
     }
 }
