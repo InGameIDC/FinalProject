@@ -13,10 +13,12 @@ public class HeroUnit : MonoBehaviour
     const float DESIRED_POS_MARGIN_OF_ERROR = 0.1f;
     const float RESPAWN_TIME = 10f;
 
-    Action <HeroUnit> OnMove;        //
-    Action <HeroUnit> OnHit;        // handles hero hit ( health > 0)
-    Action <HeroUnit> OnRespawn;   //
-    Action <HeroUnit> OnDeath;    // handles hero death (0 >= health)
+    Action <HeroUnit> OnMove;        //  
+    Action <HeroUnit> OnRespawn = delegate { };   //
+
+    //******************* Life Lost Deligation *******************
+    Action <HeroUnit, float> OnHit = delegate { };        // handles hero hit ( health > 0)
+    Action <HeroUnit> OnDeath = delegate { };    // handles hero death (0 >= health)
 
     int id;
     float currentHeatlh;
@@ -29,15 +31,28 @@ public class HeroUnit : MonoBehaviour
     HeroUnit targetHero;      // the selected enemy to be attacked.
     ObjStatus status;
 
+    private Scanner scanner;    // the scanner of the hero
+
     private void Awake()
     {
         moveSpeed = 0.2f;
         this.status = ObjStatus.idle;
+
+        herosToAttackBank = new List<HeroUnit>();
     }
 
     void Start()
     {
+        //who deals with the hero entering/ exiting ??? the BattleController or the HeroUnit? here is the HeroUnit version 
+        // setting the scanner and deligations
+        scanner = this.gameObject.transform.GetComponentInChildren<Scanner>();
+        scanner.onHeroEnter += onEnemyEntered;
+        scanner.onHeroExit += onEnemyExit;
+
+        
+
         //testMovement();
+
     }
 
    
@@ -181,5 +196,103 @@ public class HeroUnit : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         this.desiredPos = pos;
+    }
+
+    // ******************* Life Lost functions *******************
+    /// <summary>
+    /// Reduce XP when hit and checks if the player is dead as a result
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void TakeDamage(float damageValue)
+    {
+        currentHeatlh -= damageValue;
+
+        OnHit(this, currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
+
+        if(currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
+        {
+            this.status = ObjStatus.dead;   // change status to dead
+            this.herosToAttackBank = null;  // reset the bank of possible enemys in range
+            this.targetHero = null;         // reset the target hero
+            OnDeath(this);                  // tells all classes that it is dead
+
+            StartCoroutine(waitForRespawn());   // wait to respawn the hero
+        }
+
+    }
+
+    /// <summary>
+    /// wait for RESPAWN_TIME seconds before appearing again in the game
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    private IEnumerator waitForRespawn()
+    {
+        yield return new WaitForSeconds(RESPAWN_TIME);
+        respawnHero();
+    }
+
+    /// <summary>
+    /// returning the hero to the game after it was killed
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    private void respawnHero()
+    {
+        // repeating "Awake" function
+        this.status = ObjStatus.idle;
+        moveSpeed = 0.2f;
+        herosToAttackBank.Clear();
+
+        currentHeatlh = maxHealth;  // reset current health
+        //TODO: add a starting position
+
+        OnRespawn(this);            // tells all classes that it is respawning  
+    }
+
+
+    // ******************* Targets functions *******************
+    /// <summary>
+    /// returning the hero to the game after it was killed
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void onEnemyEntered(HeroUnit hero, HeroUnit enemy)
+    {
+        if (this.name == hero.name)                     // checking if the range that was invaded was mine
+        {
+            if (!(herosToAttackBank.Contains(enemy)))   // check if the enemy is already in my bank (suppose to be always true)
+            {
+                herosToAttackBank.Add(enemy);           // if not, add the enemy to the bank
+            }
+
+            if(heroToAttack == null)                    // if I dont have a target, make the enemy that entered the target
+            {
+                heroToAttack = enemy;
+                //TODO: figure if need to change the status
+            }
+        }
+    }
+
+    public void onEnemyExit(HeroUnit hero, HeroUnit enemy)
+    {
+        if (this.name == hero.name)                     // checking if the range that was exited was mine
+        {
+            if (herosToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
+            {
+                herosToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
+            }
+
+            if (heroToAttack == enemy)                  // if the target was the enemy?
+            {
+                heroToAttack = enemy;
+                //TODO: figure if need to change the status
+            }
+        }
     }
 }
