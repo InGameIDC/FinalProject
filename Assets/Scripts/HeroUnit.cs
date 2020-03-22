@@ -9,385 +9,382 @@ enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, 
 
 public class HeroUnit : MonoBehaviour
 {
-    const float FRAME_RATE = 0.0167f;
-    // const float FRAME_RATE = 0.005f; // use for fast tasting
-    const float DESIRED_POS_MARGIN_OF_ERROR = 0.1f;
-    const float RESPAWN_TIME = 10f;
 
-    Action <HeroUnit> OnMove;        //
-    Action <HeroUnit> OnHit;        // handles hero hit ( health > 0)
-    Action <HeroUnit> OnRespawn;   //
-    Action <HeroUnit> OnDeath;    // handles hero death (0 >= health)
-    // private Action<HeroUnit> onFinishAction; // functions that would be preform when the hero finish an action;
-    private Action onFinishMovment; // function that would be preform when the hero finish to move / rotate
-    private Action onStartMovment; // function that would be preform when the hero start to move / rotate
-    //private Action<HeroUnit> onFinishRotate; // function that would be preform when the finish to rotate
 
-    int id;
-    float currentHeatlh;
-    float maxHealth;
-    Skill skill;
-    float moveSpeed;
-    List <GameObject> targetsToAttackBank;
-    GameObject targetToAttack;      // this is the target to be attacked by the hero.
-    Vector3 desiredPos;        // the location desired to move to.
-    Vector3 desiredRotationDirection;    // the direction the hero desired to rotate toward.
-    GameObject targetObj;      // the selected enemy to be attacked.
-    ObjStatus status;
 
+    Action OnTargetInFieldOfView;                         // On scan End
+    Action<HeroUnit> OnMove;                             //
+    Action<HeroUnit> OnHit;                             // Handles hero hit ( health > 0)
+    Action<HeroUnit> OnRespawn;                        //
+    Action<HeroUnit> OnDeath;                         // Handles hero death (0 >= health)
+    // private Action<HeroUnit> //onFinishAction;    // Functions that would be preform when the hero finish an action;
+    private Action onFinishMovment;                 // Function that would be preform when the hero finish to move / rotate
+    private Action onStartMovment;                 // Function that would be preform when the hero start to move / rotate
+    //private Action<HeroUnit> onFinishRotate;    // Function that would be preform when the finish to rotate
+
+    private int _id;
+    private float _currentHeatlh;
+    private float _maxHealth;
+    private Skill _skill;
+    private List<GameObject> _targetsToAttackBank;
+    private GameObject _targetToAttack;             // This is the target to be attacked by the hero.
+    private GameObject _targetObj;                 // The selected enemy to be attacked.
+    private ObjStatus _status;                    // The hero order status (CURRECTLY NOT IN USE, MIGHT BE REMOVED)
+    private bool _isScanning;
+    private Movment _movement;                  // The movment component script
+
+
+    // testing
+    bool stop;
+    int testCounter;
     public GameObject testTarget; // only for testing
 
+    /// Says good morning to the script
     private void Awake()
     {
-        moveSpeed = 0.2f;
-        this.status = ObjStatus.idle;
-        targetToAttack = null;
-        targetsToAttackBank = new List<GameObject>();
+        this._status = ObjStatus.idle;
+        _targetToAttack = null;
+        _targetsToAttackBank = new List<GameObject>();
+        _skill = this.GetComponent<Skill>();
+        _movement = this.GetComponent<Movment>();
+
+        testCounter = 0;
+        stop = false;
+
+        //_movement.OnFinishMovment += heroManager;
+        //_movement.OnStartMovment += prepareForNewOrder;
     }
 
     void Start()
     {
-        onFinishMovment += heroManager;
-        onStartMovment += cancelOrders;
         //testMovement();
 
         //StartCoroutine(testPrintRotationEveryInterval(1f));
-        skill = this.GetComponent<Skill>();
+
         //TargetInRange(testTarget);
-        SetTargetObj(testTarget);
+        //SetTargetObj(testTarget);
 
-
-
-
+        //Debug.Log(skill.isTargetInAvailable(testTarget));
+        //_navComp.GoTo(new Vector3(1f, 0f, 2f));
+        //Test.CreateASphre(new Vector3(1f, 0f, 2f));
+        //stopAllAfterDelay(10f);
+        //Test.DrawCircle(this.gameObject, skill.GetRange() - 0.5f, 0.05f);
+        GoTo(_movement.GetXZposRelativeVector(new Vector3(6f, 0f, -8f)));
+        //StartCoroutine(Test.ActiveOnIntervals(_movement.StopMovment, 1f));
+        //StartCoroutine(testPrintDirection());
     }
 
+    private void Update() //// @@@@ TO BE REMOVED!!
+    {
+        //heroManager();
+        testAddTargets(testTarget);
+    }
+    /*
+    private IEnumerator testPrintDirection()
+    {
+        while (true)
+        {
+            //if (desiredRotationDirection != null)
+                //Debug.Log(desiredRotationDirection);
+
+            if (testTarget != null)
+                Debug.Log(testTarget.Equals(_movment.desiredRotationDirection));
+
+            Debug.Log(desiredRotationDirection + " " + testTarget.transform.position);
+            yield return new WaitForSeconds(0.75f);
+        }
+    }
+*/
+    /// <summary>
+    /// Attack the target if its infront of the hero and the hero is not on movment,
+    /// otherwise: if the hero is on movment, wait, if not tells the hero to lock on the target
+    /// Author: Ilan
+    /// </summary>
     private void prepareToAttack()
     {
-        if (IsObjRotating()) // TO BE CHANGED
+        if (_movement.IsObjRotating()) // TO BE CHANGED // If moving / rotating toward the target, skip
             return;
 
-        Vector3 targetPos = targetToAttack.transform.position;
-        desiredRotationDirection = getVectorDirectionTowardTarget(targetToAttack.transform.position);
-        if (!IsLookingAtTheTarget(targetPos))
+        Vector3 targetPos = _targetToAttack.transform.position;      
+        if (!_movement.IsLookingAtTheTarget(targetPos)) // if the target is not infront of the hero, tells it to rotate toward it
         {
-            StartCoroutine(rotateTowardDirection());
+            _movement.OnFinishMovment += heroManager;
+            _movement.TargetLock(_targetToAttack, _skill.GetRange());
             //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
         }
-        else
+        else  // if not rotating and the target is infornt of the hero, attack
             attack();
 
+        heroManager();
     }
 
     private void attack()
     {
-        skill.attack();
+        _skill.attack();
+    }
+
+    /// <summary>
+    /// WARNING!
+    /// use it primarly for testing
+    /// Stops all the commands, and delegations of the hero after the given delay
+    /// Author: Ilan
+    /// </summary>
+    private void stopAllAfterDelay(float delay)
+    {
+        StopCoroutine(StopAfterDelay(delay));
+    }
+
+    /// <summary>
+    /// WARNING!
+    /// use it primarly for testing
+    /// Stops all the commands, and delegations of the hero after the given delay.
+    /// Author: Ilan
+    /// </summary>
+    private IEnumerator StopAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        stopAll();
+    }
+
+    /// <summary>
+    /// WARNING!
+    /// use it primary for testing.
+    /// Stops all the commands, and delegations of the hero.
+    /// Author: Ilan
+    /// </summary>
+    private void stopAll()
+    {
+        cancelOrders();
+        OnTargetInFieldOfView = null;
+        OnMove = null;
+        OnHit = null;
+        OnRespawn = null;
+        OnDeath = null;
+        onFinishMovment = null;
+        onStartMovment = null;
+        stop = true;
+    }
+
+    /// <summary>
+    /// Cancel the hero orders
+    /// Author: Ilan
+    /// </summary>
+    private void cancelOrders()
+    {
+        _targetObj = null;
+        prepareForNewOrder();
+    }
+
+    /// <summary>
+    /// Setup toward new order
+    /// Author: Ilan
+    /// </summary>
+    private void prepareForNewOrder()
+    {
+        _targetToAttack = null;
+        stopScanningIfTargetReachable();
+        //desiredPos = transform.position; <<<<<================================================== the comment need to be removed
+        _movement.StopMovment();
     }
 
     /*
-    private IEnumerator autoAttack()
+private void setHeroToAttack(GameObject targetToAttack)
+{
+    this.targetToAttack = targetToAttack;
+}
+
+private void addHeroesToAttackBank(GameObject targetToAttack)
+{
+    targetsToAttackBank.Add(targetToAttack);
+
+    bool isNeedToBeSetAsTarget = (this.targetToAttack == null || this.targetToAttack == targetHero);
+
+    if (isNeedToBeSetAsTarget)
     {
-
+        setHeroToAttack(targetToAttack);
     }
-    */
+}
+*/
 
-        /*
-    private void setHeroToAttack(GameObject targetToAttack)
-    {
-        this.targetToAttack = targetToAttack;
-    }
-
-    private void addHeroesToAttackBank(GameObject targetToAttack)
-    {
-        targetsToAttackBank.Add(targetToAttack);
-
-        bool isNeedToBeSetAsTarget = (this.targetToAttack == null || this.targetToAttack == targetHero);
-
-        if (isNeedToBeSetAsTarget)
-        {
-            setHeroToAttack(targetToAttack);
-        }
-    }
-    */
-
+    /// <summary>
+    /// Sets the given target as the hero primary target to attack.
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="target"></param>
     public void SetTargetObj(GameObject target)
     {
-        this.targetObj = target;
+        this._targetObj = target;
         heroManager(); // to be implemented with delegation subscribe
     }
 
-    private void heroManager()
+    private void heroManager() // stats the heroManager funcs with coroutine
     {
+        StartCoroutine(activeHeroManager());
+    }
+    /// <summary>
+    /// The hero logic
+    /// Author: Ilan
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator activeHeroManager() // WARNING - SUPER SENSETIVE, DO NOT EDIT
+    {
+        if (++testCounter == 10000) // wont preform any func after 10000 iterations (for testing)
+            stopAll();
+        else if (stop) // testing
+            yield return new WaitForSeconds(100);
+
+
+        yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE / 10);
+
+
+
+        if (_targetObj != null && _movement.IsObjMoving())
+            yield return null;
         /*
         if (targetsToAttackBank.Count == 0) // || targetToAttack != null)
             return;
             */
 
-        if (targetsToAttackBank.Contains(targetObj))
+        if (_targetObj != null && _targetsToAttackBank.Contains(_targetObj) && _skill.isTargetAttackable(_targetObj)) // If the main target is not null and within the range, would start to attack
         {
-            desiredPos = transform.position;
-            targetToAttack = targetObj;
+            _movement.StopMovment();
+            _targetToAttack = _targetObj;
             prepareToAttack();
         }
-        else if(targetObj != null)
+        else if(_targetObj != null && !_movement.IsObjMoving()) // If these a main target, and its not within the given range, would move toward it.
         {
-            SetHeroDesirePos(calcClosestPosWithThisDistance(skill.getRange(), transform.position, targetObj.transform.position));
+            if(!TargetInRange(_targetObj))
+                GoTo(_movement.CalcClosestPosWithThisDistance(_skill.GetRange(), transform.position, _targetObj.transform.position));
         }
-        else if(!IsObjMoving() && !IsObjRotating())
-        {
-            targetToAttack = targetsToAttackBank[0];
-            prepareToAttack();
+        else if(!_movement.IsObjMoving() && !_movement.IsObjRotating() && isThereATargets()) // If not moving and there are targets in the targets bank
+        { // NEED TO BE EDITED TO SUPPORT MULTI TARGETS WITHIN THE RANGE!! <==###########################
+            if (_skill.isTargetAttackable(_targetsToAttackBank[0])) // If the first target is attackable, would start to attack
+            {
+                _targetToAttack = _targetsToAttackBank[0];
+                prepareToAttack();
+            }
+            else // Would start scanning track the target.
+            {
+                startScanningIfTargetReachable(_targetsToAttackBank[0]);
+                OnTargetInFieldOfView = heroManager;
+            }
         }
         
     }
+    /// <summary>
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="target"></param>
+    private void testAddTargets(GameObject target) // A test function that track a target and add it to the hero targetsbank if it is within the skill range
+    {
+        if (target == null)
+        {
+            if (_targetsToAttackBank.Contains(target)) _targetsToAttackBank.Remove(target);
+            return;
+        }
+
+        if (!_targetsToAttackBank.Contains(target))
+        {
+            if (_skill.isTargetInRange(target.transform.position)) {
+                Test.SetTargetColor(target, Color.red);
+                _targetsToAttackBank.Add(target);
+                heroManager();
+            }
+        }
+        else
+        {
+            if (!_skill.isTargetInRange(target.transform.position))
+            {
+                Test.SetTargetColor(target, Color.green);
+                _targetsToAttackBank.Remove(target);
+                heroManager();
+            }
+        }
+    }
 
     /// <summary>
-    /// Calculate the closet position from current to the targetPos, that keep the mention distance from the target
+    /// Start the traking corutine to track the target
+    /// Author: Ilan
     /// </summary>
-    /// <param name="reqDistance">The minimu distance required</param>
-    /// <param name="current">The object itself Pos</param>
-    /// <param name="targetPos">The tatget Pos</param>
+    /// <param name="target">The target to be track</param>
+    private void startScanningIfTargetReachable(GameObject target)
+    {
+        Debug.Log("startScan");
+        if (_isScanning)
+            return;
+
+        _isScanning = true;
+        StartCoroutine(autoScan(target));
+    }
+
+    /// <summary>
+    /// Stop the tracking corutine
+    /// Author: Ilan
+    /// </summary>
+    private void stopScanningIfTargetReachable()
+    {
+        Debug.Log("stopScan");
+        _isScanning = false;
+        OnTargetInFieldOfView = null;
+    }
+
+    /// <summary>
+    /// Start tracking after the target
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="target">Target to be track</param>
     /// <returns></returns>
-    private Vector3 calcClosestPosWithThisDistance(float reqDistance, Vector3 current, Vector3 targetPos)
+    private IEnumerator autoScan(GameObject target)
     {
-        float distance = Vector3.Distance(current, targetPos) - reqDistance;
-        if (distance <= 0)
-            return current;
+        Debug.Log("autoScan");
+        bool isTargetAvailable = _skill.isTargetAttackable(target);
+        while(!isTargetAvailable && _isScanning)
+        {
+            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+        }
 
-        return Vector3.Normalize(targetPos - current) * distance;
+        if (isTargetAvailable && OnTargetInFieldOfView != null)
+            OnTargetInFieldOfView();
     }
 
-    private void cancelOrders()
+    
+    private bool isThereATargets()
     {
-        targetObj = null;
-        targetToAttack = null;
-        //desiredPos = transform.position; <<<<<================================================== the command need to be removed
-        desiredRotationDirection = transform.forward;
+        return _targetsToAttackBank.Count > 0;
     }
 
-    public void TargetInRange(GameObject targetToAttack)
+
+    /// <summary>
+    /// Check if the target within the skill range.
+    /// If the target within the range, add the target to the hero targets bank
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="targetToAttack">Target to be checked</param>
+    /// <returns>true if the target is within the skill range</returns>
+    public bool TargetInRange(GameObject targetToAttack)
     {
         //addHeroesToAttackBank(targetToAttack);
-
-        targetsToAttackBank.Add(targetToAttack);
-        heroManager(); // need to be implemented with delegation
-
-
-    }
-
-    public bool IsObjMoving()
-    {
-        return Vector3.Distance(transform.position, desiredPos) > DESIRED_POS_MARGIN_OF_ERROR;
-    }
-
-    public bool IsObjRotating()
-    {
-        float angelDif = diffAngle(desiredRotationDirection);
-            return angelDif > DESIRED_POS_MARGIN_OF_ERROR * 0.001f;
-    }
-
-    public bool IsObjOnMovment()
-    {
-        return IsObjMoving() || IsObjRotating();
-    }
-
-    private bool IsLookingAtTheTarget(Vector3 targetPos)
-    {
-        Vector3 direction = getVectorDirectionTowardTarget(targetPos);
-        float angelDif = diffAngle(direction);
-        return angelDif <= DESIRED_POS_MARGIN_OF_ERROR * 0.001f;
-    }
-
-
-    /*
-    public bool IsHeroAttacking()
-    {
-        return status == ObjStatus.attacking || status == ObjStatus.moveAndAttack || status == ObjStatus.moveAndAttackAndRotate;
-    }
-
-    public bool IsHeroMoving()
-    {
-        return status == ObjStatus.moving || status == ObjStatus.moveAndAttack || status == ObjStatus.moveAndRotate || status == ObjStatus.moveAndAttackAndRotate;
-    }
-
-    public bool IsHeroRotating()
-    {
-        return status == ObjStatus.rotating || status == ObjStatus.moveAndRotate|| status == ObjStatus.moveAndAttackAndRotate;
-    }
-
-    public bool IsHeroIdleOrSiege()
-    {
-        return status == ObjStatus.idle || status == ObjStatus.siege;
-    }
-    */
-
-    private Vector3 getVectorDirectionTowardTarget(Vector3 target)
-    {
-        return target - this.transform.position;
-    }
-
-    /// <summary>
-    /// Move the Gameobject to the desiredPos.
-    /// Author: Ilan 
-    /// In addtion, rotate the Object toward the pos.
-    /// </summary>
-    private IEnumerator moveObject()
-    {
-        Vector3 desiredPos = this.desiredPos;
-        Vector3 direction = getVectorDirectionTowardTarget(desiredPos);
-        direction =  direction.normalized;
-
-        this.desiredRotationDirection = direction;
-        StartCoroutine(rotateTowardDirection());
-
-        while (Vector3.Distance((this.transform.position), desiredPos) > DESIRED_POS_MARGIN_OF_ERROR) // Checks if the object reached to the desired pos, and if it's on movment
+        if (_skill.isTargetInRange(targetToAttack.transform.position))
         {
-            if (desiredPos != this.desiredPos) // checks if the movment is still relvant
-                yield break;
-
-            this.transform.position += direction * moveSpeed;
-            yield return new WaitForSeconds(FRAME_RATE);
+            _targetsToAttackBank.Add(targetToAttack);
+            heroManager(); // need to be implemented with delegation
+            return true;
         }
-        this.transform.position = desiredPos;
 
-        if (onFinishMovment != null && !IsObjOnMovment())
-        {
-            onFinishMovment();
-        }
+        return false;
     }
+
 
     /// <summary>
-    /// Rotate the target toward the desired direction
-    /// Author: Ilan
+    /// this method command the hero unit to go to the desired location.
+    /// Author: Dor
     /// </summary>
-    /// TO BE EDIT, smart rotate that support target shoot lock
-    private IEnumerator rotateTowardDirection()
+    public void GoTo(Vector3 desiredPos)
     {
-        // Determine which direction to rotate towards
-        Vector3 targetDirection = this.desiredRotationDirection;
-        float singleStep = moveSpeed * 0.2f; // The step size is equal to speed times frame time.
-        Quaternion rotationAmount; // The rotation amount per each iteration
-
-        float angelDif = diffAngle(targetDirection);
-        while (angelDif > DESIRED_POS_MARGIN_OF_ERROR * 0.001f) // Checks if the object finished to rotate target, and if it's on movment
-        {
-            if (targetDirection != this.desiredRotationDirection) // checks if the rotation is still relvant
-                yield break;
-
-            // Rotate the forward vector towards the target direction by one step
-            Vector3 newDirection = Vector3.RotateTowards(this.transform.forward, targetDirection, singleStep, 0.0f);
-
-            // Draw a ray pointing at our target in
-            Debug.DrawRay(transform.position, newDirection, Color.red);
-            // Calculate a rotation a step closer to the target and applies rotation to this object
-            rotationAmount = Quaternion.LookRotation(newDirection);
-        
-            this.transform.rotation = rotationAmount; // rotate the object
-            angelDif = diffAngle(targetDirection); // calculate the diffrance between the current angle, to the require
-
-            yield return new WaitForSeconds(FRAME_RATE);
-        }
-        this.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(this.transform.forward, targetDirection, singleStep, 0.0f));
-
-        if (onFinishMovment != null && !IsObjOnMovment())
-        {
-            onFinishMovment();
-        }
+        _movement.OnFinishMovment += heroManager;
+        _movement.GoTo(desiredPos);
     }
+    
 
-    /// <summary>
-    /// Calculate the diffrance between the current angel, to the require 
-    /// Author: Ilan 
-    /// </summary>
-    /// <param name="target">The target direction vector (desiredPos - transform.position) </param>
-    /// <returns>Returns the diffrances angle</returns>
-    private float diffAngle(Vector3 targetDirection)
-    {
-        Vector3 newDirection = Vector3.RotateTowards(this.transform.forward, targetDirection, 360f, 0.0f);
-        Quaternion rotationLeft = Quaternion.LookRotation(newDirection);
-        return Quaternion.Angle(transform.rotation, rotationLeft);
-    }
-
-    /// <summary>
-    /// Change the hero DesirePos, and start the movment func, to move the hero toward the new pos.
-    /// Author: Ilan 
-    /// </summary>
-    /// <param name="pos">The new pos, that the hero will move to</param>
-    public void SetHeroDesirePos(Vector3 pos)
-    {
-        this.desiredPos = pos;
-        onStartMovment();
-        StartCoroutine(moveObject());
-    }
-
-    private void testMovement()
-    {
-        //SetHeroDesirePos(Vector3.zero);
-        //StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
-        //StartCoroutine(testRotateFuncChangePosWhileRotate(new Vector3(-10f, -10f, -10f), 0.4f));
-
-        List<Vector3> testPoses = new List<Vector3>();
-        testPoses.Add(new Vector3(5f, 0.125f, 5f));
-        testPoses.Add(new Vector3(-5f, 0.125f, 5f));
-        testPoses.Add(new Vector3(-10f, 0.125f, -10f));
-        testPoses.Add(new Vector3(2f, 0.125f, -10f));
-        StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, caclTimeRelativeToFramRate(3f), false));
-
-    }
-
-    /// <summary>
-    /// Uses to test the object movment
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="Poses"></param>
-    /// <returns></returns>
-    private IEnumerator testMovmentFuncListOfPosOrders(List<Vector3> poses, float delay, bool patrolLoop)
-    {
-        do
-        {
-            foreach (Vector3 pos in poses)
-            {
-                SetHeroDesirePos(pos);
-                yield return new WaitForSeconds(delay);
-            }
-        } while (patrolLoop);
-    }
-
-    /// <summary>
-    /// Uses to test the object reaction to pos change while moving
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="Poses"></param>
-    /// <returns></returns>
-    private IEnumerator testMovmentFuncChangePosWhileMov(Vector3 pos, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        this.desiredPos = pos;
-    }
-
-    /// <summary>
-    /// Uses to test the object desireRotateDirection change while rotating
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="Poses"></param>
-    /// <returns></returns>
-    private IEnumerator testRotateFuncChangePosWhileRotate(Vector3 pos, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        this.desiredRotationDirection = pos;
-    }
-
-
-    private IEnumerator testPrintRotationEveryInterval(float delay)
-    {
-        while (true)
-        {
-            Debug.Log(this.transform.rotation);
-            yield return new WaitForSeconds(delay);
-        }
-    }
-
-    private float caclTimeRelativeToFramRate(float secs)
-    {
-        return secs * 59.888f * FRAME_RATE;
-    }
+    
 }
