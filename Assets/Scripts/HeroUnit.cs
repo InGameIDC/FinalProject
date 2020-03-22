@@ -43,13 +43,6 @@ public class HeroUnit : MonoBehaviour
 
     void Start()
     {
-        //who deals with the hero entering/ exiting ??? the BattleController or the HeroUnit? here is the HeroUnit version 
-        // setting the scanner and deligations
-        scanner = this.gameObject.transform.GetComponentInChildren<Scanner>();
-        scanner.onHeroEnter += onEnemyEntered;
-        scanner.onHeroExit += onEnemyExit;
-
-        
 
         //testMovement();
 
@@ -257,42 +250,64 @@ public class HeroUnit : MonoBehaviour
 
     // ******************* Targets functions *******************
     /// <summary>
-    /// returning the hero to the game after it was killed
+    /// adds an enemy to the enemy bank
     /// Author: OrS
     /// </summary>
     /// <param></param>
     /// <returns></returns>
-    public void onEnemyEntered(HeroUnit hero, HeroUnit enemy)
+    public void addEnemyToBank(HeroUnit enemy)
     {
-        if (this.name == hero.name)                     // checking if the range that was invaded was mine
-        {
-            if (!(herosToAttackBank.Contains(enemy)))   // check if the enemy is already in my bank (suppose to be always true)
-            {
-                herosToAttackBank.Add(enemy);           // if not, add the enemy to the bank
-            }
 
-            if(heroToAttack == null)                    // if I dont have a target, make the enemy that entered the target
-            {
-                heroToAttack = enemy;
-                //TODO: figure if need to change the status
-            }
+        if (!(herosToAttackBank.Contains(enemy)))   // check if the enemy is already in my bank (suppose to be always true)
+        {
+            herosToAttackBank.Add(enemy);           // if not, add the enemy to the bank
         }
+
+        if(heroToAttack == null)                    // if I dont have a target, make the enemy that entered the target
+        {
+            heroToAttack = enemy;
+            attackEnemy();                          // how to attack, when, etc.
+        }
+        
     }
 
-    public void onEnemyExit(HeroUnit hero, HeroUnit enemy)
+    /// <summary>
+    /// removes an enemy from the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void removeEnemyFromBank(HeroUnit enemy)
     {
-        if (this.name == hero.name)                     // checking if the range that was exited was mine
+        if (herosToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
         {
-            if (herosToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
-            {
-                herosToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
-            }
+            herosToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
+        }
 
-            if (heroToAttack == enemy)                  // if the target was the enemy?
+        if (heroToAttack == enemy)                  // if the target was the enemy we change the target to the next item in the list
+        {
+            if (herosToAttackBank.Count != 0)
             {
-                heroToAttack = enemy;
-                //TODO: figure if need to change the status
+                heroToAttack = herosToAttackBank[0];
+                attackEnemy();
+            }
+            else
+            {
+                heroToAttack = null;
             }
         }
+
+    }
+
+    // ******************* Attack functions *******************
+    /// <summary>
+    /// removes an enemy from the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void attackEnemy()
+    {
+
     }
 }
