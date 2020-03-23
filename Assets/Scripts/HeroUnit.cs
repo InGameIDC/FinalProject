@@ -37,7 +37,8 @@ public class HeroUnit : MonoBehaviour
     // testing
     bool stop;
     int testCounter;
-    public GameObject testTarget; // only for testing
+    [SerializeField] List<GameObject> testTargets; // only for testing
+    [SerializeField] List<GameObject> testGameTargets; // only for testing
 
     /// Says good morning to the script
     private void Awake()
@@ -68,16 +69,19 @@ public class HeroUnit : MonoBehaviour
         //_navComp.GoTo(new Vector3(1f, 0f, 2f));
         //Test.CreateASphre(new Vector3(1f, 0f, 2f));
         //stopAllAfterDelay(10f);
-        //Test.DrawCircle(this.gameObject, skill.GetRange() - 0.5f, 0.05f);
-        GoTo(_movement.GetXZposRelativeVector(new Vector3(6f, 0f, -8f)));
+        Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
+        //GoTo(_movement.GetXZposRelativeVector(new Vector3(6f, 0f, -8f)));
+        StartCoroutine(Test.ActiveOnIntervals(testScanForTargets, 0.5f));
+        //StartCoroutine(Test.ActiveOnIntervals(heroManager, 0.05f));
+        StartCoroutine(testAttackTargets());
         //StartCoroutine(Test.ActiveOnIntervals(_movement.StopMovment, 1f));
         //StartCoroutine(testPrintDirection());
     }
 
     private void Update() //// @@@@ TO BE REMOVED!!
     {
-        //heroManager();
-        testAddTargets(testTarget);
+        heroManager();
+        //testAddTargets(testTarget);
     }
     /*
     private IEnumerator testPrintDirection()
@@ -182,7 +186,7 @@ public class HeroUnit : MonoBehaviour
     private void prepareForNewOrder()
     {
         _targetToAttack = null;
-        stopScanningIfTargetReachable();
+        stopScannings();
         //desiredPos = transform.position; <<<<<================================================== the comment need to be removed
         _movement.StopMovment();
     }
@@ -219,109 +223,139 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
 
     private void heroManager() // stats the heroManager funcs with coroutine
     {
-        StartCoroutine(activeHeroManager());
+        activeHeroManager();
+        //StartCoroutine(activeHeroManager());
     }
     /// <summary>
     /// The hero logic
     /// Author: Ilan
     /// </summary>
     /// <returns></returns>
-    private IEnumerator activeHeroManager() // WARNING - SUPER SENSETIVE, DO NOT EDIT
+    private void activeHeroManager() // WARNING - SUPER SENSETIVE, DO NOT EDIT
     {
-        if (++testCounter == 10000) // wont preform any func after 10000 iterations (for testing)
+        if (++testCounter == 500000)
+        { // wont preform any func after 10000 iterations (for testing)
             stopAll();
+            Destroy(this);
+        }
         else if (stop) // testing
-            yield return new WaitForSeconds(100);
+            return; //yield return new WaitForSeconds(100);
 
 
-        yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE / 10);
+        //yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE / 10);
 
-
-
-        if (_targetObj != null && _movement.IsObjMoving())
-            yield return null;
+        bool isHeroMoving = _movement.IsObjMoving();
         /*
         if (targetsToAttackBank.Count == 0) // || targetToAttack != null)
             return;
             */
-
+        
         if (_targetObj != null && _targetsToAttackBank.Contains(_targetObj) && _skill.isTargetAttackable(_targetObj)) // If the main target is not null and within the range, would start to attack
         {
             _movement.StopMovment();
             _targetToAttack = _targetObj;
             prepareToAttack();
         }
-        else if(_targetObj != null && !_movement.IsObjMoving()) // If these a main target, and its not within the given range, would move toward it.
+        else if (_targetObj != null && isHeroMoving)
         {
+            return;//yield return null;
+        }
+        else if(_targetObj != null && !isHeroMoving) // If these a main target, and its not within the given range, would move toward it.
+        {
+            /*
             if(!TargetInRange(_targetObj))
                 GoTo(_movement.CalcClosestPosWithThisDistance(_skill.GetRange(), transform.position, _targetObj.transform.position));
+            */
+            prepareForNewOrder();
+            OnTargetInFieldOfView = heroManager;
+            startTrackIfObjTargetAttackable();
+            if (!TargetInRange(_targetObj))
+                GoTo(_targetObj.transform.position);
+                
         }
-        else if(!_movement.IsObjMoving() && !_movement.IsObjRotating() && isThereATargets()) // If not moving and there are targets in the targets bank
+        else if(!isHeroMoving && !_movement.IsObjRotating() && isThereATargets()) // If not moving and there are targets in the targets bank
         { // NEED TO BE EDITED TO SUPPORT MULTI TARGETS WITHIN THE RANGE!! <==###########################
-            if (_skill.isTargetAttackable(_targetsToAttackBank[0])) // If the first target is attackable, would start to attack
+            GameObject target = findAnAttackableTarget();
+            if (target != null) // If the first target is attackable, would start to attack
             {
-                _targetToAttack = _targetsToAttackBank[0];
+                _targetToAttack = target;
                 prepareToAttack();
             }
             else // Would start scanning track the target.
             {
-                startScanningIfTargetReachable(_targetsToAttackBank[0]);
+                startScanningForAnAttackableTarget();
                 OnTargetInFieldOfView = heroManager;
             }
         }
         
     }
+
+
     /// <summary>
+    /// Start the traking of a the obj target spesific target if its attackable
     /// Author: Ilan
     /// </summary>
-    /// <param name="target"></param>
-    private void testAddTargets(GameObject target) // A test function that track a target and add it to the hero targetsbank if it is within the skill range
+    private void startTrackIfObjTargetAttackable()
     {
-        if (target == null)
-        {
-            if (_targetsToAttackBank.Contains(target)) _targetsToAttackBank.Remove(target);
+        if (_isScanning)
             return;
-        }
 
-        if (!_targetsToAttackBank.Contains(target))
+        _isScanning = true;
+        StartCoroutine(trackIfObjTargetAttackable());
+    }
+
+    public IEnumerator trackIfObjTargetAttackable()
+    {
+        while (_targetObj != null && !_skill.isTargetAttackable(_targetObj))
         {
-            if (_skill.isTargetInRange(target.transform.position)) {
-                Test.SetTargetColor(target, Color.red);
-                _targetsToAttackBank.Add(target);
-                heroManager();
-            }
+            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
         }
-        else
+        //_targetsTo######AttackBank.Add()
+        _isScanning = false;
+
+        if (OnTargetInFieldOfView != null)
         {
-            if (!_skill.isTargetInRange(target.transform.position))
-            {
-                Test.SetTargetColor(target, Color.green);
-                _targetsToAttackBank.Remove(target);
-                heroManager();
-            }
+            OnTargetInFieldOfView();
+            OnTargetInFieldOfView = null;
         }
     }
 
+
     /// <summary>
-    /// Start the traking corutine to track the target
+    /// Search if there an attackable target within the targetbank
+    /// </summary>
+    /// <returns></returns>
+    public GameObject findAnAttackableTarget()
+    {
+        foreach (GameObject target in _targetsToAttackBank)
+        {
+            if(target != null && _skill.isTargetAttackable(target))
+                return target;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Start the traking corutine to track the targetes
     /// Author: Ilan
     /// </summary>
     /// <param name="target">The target to be track</param>
-    private void startScanningIfTargetReachable(GameObject target)
+    private void startScanningForAnAttackableTarget()
     {
         Debug.Log("startScan");
         if (_isScanning)
             return;
 
         _isScanning = true;
-        StartCoroutine(autoScan(target));
+        StartCoroutine(autoScan());
     }
 
     /// <summary>
     /// Stop the tracking corutine
     /// Author: Ilan
     /// </summary>
-    private void stopScanningIfTargetReachable()
+    private void stopScannings()
     {
         Debug.Log("stopScan");
         _isScanning = false;
@@ -334,17 +368,29 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     /// </summary>
     /// <param name="target">Target to be track</param>
     /// <returns></returns>
-    private IEnumerator autoScan(GameObject target)
+    private IEnumerator autoScan()
     {
         Debug.Log("autoScan");
-        bool isTargetAvailable = _skill.isTargetAttackable(target);
-        while(!isTargetAvailable && _isScanning)
+        GameObject target = null;
+        while(target == null && _isScanning)
         {
+            target = findAnAttackableTarget();
             yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+
+            if (!isThereATargets()) // in case that there are no more targets
+                _isScanning = false;
         }
 
-        if (isTargetAvailable && OnTargetInFieldOfView != null)
+        _targetsToAttackBank.Remove(target);
+        _targetsToAttackBank.Insert(0, target);
+
+        _isScanning = false;
+
+        if (target != null && OnTargetInFieldOfView != null)
+        {
             OnTargetInFieldOfView();
+            OnTargetInFieldOfView = null;
+        }
     }
 
     
@@ -366,8 +412,8 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         //addHeroesToAttackBank(targetToAttack);
         if (_skill.isTargetInRange(targetToAttack.transform.position))
         {
-            _targetsToAttackBank.Add(targetToAttack);
-            heroManager(); // need to be implemented with delegation
+            //_targetsToAttackBank.Add(targetToAttack);
+            //heroManager(); // need to be implemented with delegation
             return true;
         }
 
@@ -384,7 +430,61 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         _movement.OnFinishMovment += heroManager;
         _movement.GoTo(desiredPos);
     }
-    
 
-    
+    /// <summary>
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="target"></param>
+    private void testAddTarget(GameObject target) // A test function that track a target and add it to the hero targetsbank if it is within the skill range
+    {
+        if (target == null)
+        {
+            if (_targetsToAttackBank.Contains(target)) _targetsToAttackBank.Remove(target);
+            return;
+        }
+
+        if (!_targetsToAttackBank.Contains(target))
+        {
+            if (_skill.isTargetInRange(target.transform.position))
+            {
+                Test.SetTargetColor(target, Color.red);
+                _targetsToAttackBank.Add(target);
+                heroManager();
+            }
+        }
+        else
+        {
+            if (!_skill.isTargetInRange(target.transform.position))
+            {
+                Test.SetTargetColor(target, Color.green);
+                _targetsToAttackBank.Remove(target);
+                heroManager();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Run the testAddTargets on the testTargets list
+    /// </summary>
+    public void testScanForTargets()
+    {
+        foreach (GameObject target in testGameTargets)
+        {
+            testAddTarget(target);
+        }
+    }
+
+    public IEnumerator testAttackTargets()
+    {
+        foreach(GameObject target in testTargets)
+        {
+            SetTargetObj(target);
+            while(target != null)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
+
+
 }
