@@ -9,14 +9,15 @@ enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, 
 
 public class HeroUnit : MonoBehaviour
 {
+    Action<HeroUnit> OnRespawn = delegate { };   //
+
+    //******************* Life Lost Deligation *******************
+    Action<HeroUnit, float> OnHit = delegate { };        // handles hero hit ( health > 0)
+    Action<HeroUnit> OnDeath = delegate { };    // handles hero death (0 >= health)
 
 
-
-    Action OnTargetInFieldOfView;                         // On scan End
-    Action<HeroUnit> OnMove;                             //
-    Action<HeroUnit> OnHit;                             // Handles hero hit ( health > 0)
-    Action<HeroUnit> OnRespawn;                        //
-    Action<HeroUnit> OnDeath;                         // Handles hero death (0 >= health)
+    Action OnTargetInFieldOfView;                      // On scan End
+    Action<HeroUnit> OnMove;                          //
     // private Action<HeroUnit> //onFinishAction;    // Functions that would be preform when the hero finish an action;
     private Action onFinishMovment;                 // Function that would be preform when the hero finish to move / rotate
     private Action onStartMovment;                 // Function that would be preform when the hero start to move / rotate
@@ -54,11 +55,15 @@ public class HeroUnit : MonoBehaviour
 
         //_movement.OnFinishMovment += heroManager;
         //_movement.OnStartMovment += prepareForNewOrder;
+
     }
+
 
     void Start()
     {
+
         //testMovement();
+
 
         //StartCoroutine(testPrintRotationEveryInterval(1f));
 
@@ -76,6 +81,7 @@ public class HeroUnit : MonoBehaviour
         StartCoroutine(testAttackTargets());
         //StartCoroutine(Test.ActiveOnIntervals(_movement.StopMovment, 1f));
         //StartCoroutine(testPrintDirection());
+
     }
 
     private void Update() //// @@@@ TO BE REMOVED!!
@@ -83,22 +89,7 @@ public class HeroUnit : MonoBehaviour
         heroManager();
         //testAddTargets(testTarget);
     }
-    /*
-    private IEnumerator testPrintDirection()
-    {
-        while (true)
-        {
-            //if (desiredRotationDirection != null)
-                //Debug.Log(desiredRotationDirection);
 
-            if (testTarget != null)
-                Debug.Log(testTarget.Equals(_movment.desiredRotationDirection));
-
-            Debug.Log(desiredRotationDirection + " " + testTarget.transform.position);
-            yield return new WaitForSeconds(0.75f);
-        }
-    }
-*/
     /// <summary>
     /// Attack the target if its infront of the hero and the hero is not on movment,
     /// otherwise: if the hero is on movment, wait, if not tells the hero to lock on the target
@@ -486,5 +477,126 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         }
     }
 
+
+
+    // ******************* Life Lost functions *******************
+    /// <summary>
+    /// Reduce XP when hit and checks if the player is dead as a result
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void TakeDamage(float damageValue)
+    {
+        _currentHeatlh -= damageValue;
+
+        OnHit(this, _currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
+
+        if(_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
+        {
+            this._status = ObjStatus.dead;   // change status to dead
+            this._targetsToAttackBank = null;  // reset the bank of possible enemys in range
+            this._targetObj = null;         // reset the target hero
+            OnDeath(this);                  // tells all classes that it is dead
+
+            StartCoroutine(waitForRespawn());   // wait to respawn the hero
+        }
+
+    }
+
+    /// <summary>
+    /// wait for RESPAWN_TIME seconds before appearing again in the game
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    private IEnumerator waitForRespawn()
+    {
+        yield return new WaitForSeconds(GlobalCodeSettings.RESPAWN_TIME);
+        respawnHero();
+    }
+
+    /// <summary>
+    /// returning the hero to the game after it was killed
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    private void respawnHero()
+    {
+        // repeating "Awake" function
+        this._status = ObjStatus.idle;
+        //_moveSpeed = 0.2f; // <============= To Check
+        _targetsToAttackBank.Clear();
+
+        _currentHeatlh = _maxHealth;  // reset current health
+        //TODO: add a starting position
+
+        OnRespawn(this);            // tells all classes that it is respawning  
+    }
+
+
+    // ******************* Targets functions *******************
+    /// <summary>
+    /// adds an enemy to the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void addEnemyToBank(GameObject enemy)
+    {
+
+        if (!(_targetsToAttackBank.Contains(enemy)))   // check if the enemy is already in my bank (suppose to be always true)
+        {
+            _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
+        }
+
+        if(_targetToAttack == null)                    // if I dont have a target, make the enemy that entered the target
+        {
+            _targetToAttack = enemy;
+            attackEnemy();                          // how to attack, when, etc.
+        }
+        
+    }
+
+    /// <summary>
+    /// removes an enemy from the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void removeEnemyFromBank(GameObject enemy)
+    {
+        if (_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
+        {
+            _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
+        }
+
+        if (_targetToAttack == enemy)                  // if the target was the enemy we change the target to the next item in the list
+        {
+            if (_targetsToAttackBank.Count != 0)
+            {
+                _targetToAttack = _targetsToAttackBank[0];
+                attackEnemy();
+            }
+            else
+            {
+                _targetToAttack = null;
+            }
+        }
+
+    }
+
+    // ******************* Attack functions *******************
+    /// <summary>
+    /// removes an enemy from the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void attackEnemy()
+    {
+
+    }
 
 }
