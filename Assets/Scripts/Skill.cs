@@ -95,6 +95,12 @@ public class Skill : MonoBehaviour
     private void hitTarget(Projectile proj, Collider target)
     {
         Debug.Log("hitted");
+        Health targetHealth = target.gameObject.GetComponent<Health>();
+        if(targetHealth != null)
+        {
+            // Dance tango
+        }
+
         Destroy(proj.transform.gameObject);
         Destroy(target.transform.gameObject);
     }

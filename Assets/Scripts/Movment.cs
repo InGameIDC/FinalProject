@@ -6,8 +6,8 @@ using UnityEngine.AI;
 
 public class Movment : MonoBehaviour
 {
-	public  Action OnFinishMovment;                   // Functions that would be preform when the hero finish to move / rotate
-	public Action OnStartMovment;                    // Functions that would be preform when the hero start to move / rotate
+	public  Action OnFinishMovment = delegate { };                   // Functions that would be preform when the hero finish to move / rotate
+	public Action OnStartMovment = delegate { };                    // Functions that would be preform when the hero start to move / rotate
 	private float _moveSpeed;                       // The obect movment speed
 	private Vector3 _desiredPos;                   // The location desired to move to.
 	private Vector3 _desiredRotationDirection;    // The direction the hero desired to rotate toward.
@@ -16,6 +16,10 @@ public class Movment : MonoBehaviour
 	private GameObject _targetRotationLock;    // The target that the obj would track (with rotation)
 	private bool _isRotationLock;             // True if the object is lock on the target
 	NavMeshAgent _navMeshAgent;              // Keep NavMeshAgent component
+	private bool _isMovmentFinishTracking;
+	private GameObject _targetLocationLock;    // The obj will track the location of this target
+	private bool _isTargetLocationLock;
+
 
 
 
@@ -62,6 +66,8 @@ public class Movment : MonoBehaviour
 		_targetRotationLock = null;
 		_desiredPos = transform.position;
 		_desiredRotationDirection = transform.position; // = transform.forward;
+		stopMovmentFinishTrack();
+		stopTargetLocationTrack();
 		StopNav();
 	}
 
@@ -82,13 +88,89 @@ public class Movment : MonoBehaviour
 	/// </summary>
 	public void GoTo(Vector3 pos)
 	{
-		Debug.Log("SetObjDesirePos");
+		//Debug.Log("SetObjDesirePos");
 		if (OnStartMovment != null)
 			OnStartMovment();
 		setDesiredPos(pos);
 		//StartCoroutine(moveObject());
 		_navMeshAgent.isStopped = false;
-		_navMeshAgent.SetDestination(_desiredPos);
+		_navMeshAgent.SetDestination(pos);
+
+		if (OnFinishMovment != null)
+			startMovmentFinishTrack();
+	}
+
+	public void GoAfterTarget(GameObject target)
+	{
+		//Debug.Log("SetObjDesirePos");
+		if (OnStartMovment != null)
+			OnStartMovment();
+		_desiredPos = target.transform.position;
+		//StartCoroutine(moveObject());
+		_navMeshAgent.isStopped = false;
+		_navMeshAgent.SetDestination(target.transform.position);
+		startTargetLocationTrack();
+
+		if (OnFinishMovment != null)
+			startMovmentFinishTrack();
+	}
+
+	private void startMovmentFinishTrack()
+	{
+		//Debug.Log("startMovFinishTrack");
+		if (_isMovmentFinishTracking)
+			return;
+
+		_isMovmentFinishTracking = true;
+		StartCoroutine(autoMovmentFinishTrack());
+	}
+
+	private void stopMovmentFinishTrack()
+	{
+		//Debug.Log("stopMovFinishTrack");
+		_isMovmentFinishTracking = false;
+		OnFinishMovment = delegate { };
+	}
+
+	private IEnumerator autoMovmentFinishTrack()
+	{
+		while (IsObjMoving() && _isMovmentFinishTracking)
+		{
+			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+		}
+
+		_isMovmentFinishTracking = false;
+		OnFinishMovment();
+	}
+
+	private void startTargetLocationTrack()
+	{
+		//Debug.Log("startMovFinishTrack");
+		if (_isTargetLocationLock)
+			return;
+
+		_isTargetLocationLock = true;
+		StartCoroutine(autoTargetLocationTrack());
+	}
+
+	private void stopTargetLocationTrack()
+	{
+		//Debug.Log("stopMovFinishTrack");
+		_isTargetLocationLock = false;
+		OnFinishMovment = delegate { };
+	}
+
+	private IEnumerator autoTargetLocationTrack()
+	{
+		while (_isTargetLocationLock && _targetLocationLock != null)
+		{
+			if (_desiredPos != _targetLocationLock.transform.position)
+				GoTo(_targetLocationLock.transform.position);
+
+			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+		}
+
+		_isMovmentFinishTracking = false;
 	}
 
 	/// <summary>
@@ -245,7 +327,7 @@ public class Movment : MonoBehaviour
 		Vector3 direction;
 
 		setDesiredRotationDirection(_targetRotationLock.transform.position);
-
+		Debug.Log("Pre Rotation");
 		while (_targetRotationLock != null && isTargetInRange(rangeKeep) && _isRotationLock) // && !IsLookingAtTheTarget(_desiredRotationDirection)) // Checks if the object finished to rotate target, and if it's on movment
 		{
 			setDesiredRotationDirection(_targetRotationLock.transform.position);
@@ -266,9 +348,13 @@ public class Movment : MonoBehaviour
 			}
 
 			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+			Debug.Log("After Rotation Tick");
 		}
+		Debug.Log("End Rotation");
 
-		if (OnFinishMovment != null && !IsObjOnMovment())
+		_desiredRotationDirection = this.transform.position;
+
+		if (OnFinishMovment != null )//&& !IsObjOnMovment())
 			OnFinishMovment();
 
 		StopMovment();
@@ -316,6 +402,8 @@ public class Movment : MonoBehaviour
 	/// <returns>True if the distance between the positions is less than distance</returns>
 	private bool isDistanceBetweenTwoPosesLessThan(Vector3 pos1, Vector3 pos2, float distance)
 	{
+		//float dis = DistancePow2(pos1, pos2);
+		//Debug.Log("Distance: " + dis);
 		return DistancePow2(pos1, pos2) <= (distance * distance);
 	}
 
@@ -436,7 +524,7 @@ public class Movment : MonoBehaviour
 		testPoses.Add(new Vector3(-5f, 0.125f, 5f));
 		testPoses.Add(new Vector3(-10f, 0.125f, -10f));
 		testPoses.Add(new Vector3(2f, 0.125f, -10f));
-		StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, GlobalCodeSettings.CaclTimeRelativeToFramRate(3f), false));
+		//StartCoroutine(testMovmentFuncListOfPosOrders(testPoses, GlobalCodeSettings.CaclTimeRelativeToFramRate(3f), false));
 
 	}
 
@@ -446,18 +534,19 @@ public class Movment : MonoBehaviour
 	/// </summary>
 	/// <param name="Poses"></param>
 	/// <returns></returns>
+	/*
 	private IEnumerator testMovmentFuncListOfPosOrders(List<Vector3> poses, float delay, bool patrolLoop)
 	{
 		do
 		{
 			foreach (Vector3 pos in poses)
 			{
-				GoTo(pos);
+				GoTo(ref pos);
 				yield return new WaitForSeconds(delay);
 			}
 		} while (patrolLoop);
 	}
-
+	*/
 	/// <summary>
 	/// Uses to test the object reaction to pos change while moving
 	/// Author: Ilan

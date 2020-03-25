@@ -9,23 +9,15 @@ enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, 
 
 public class HeroUnit : MonoBehaviour
 {
-    Action<HeroUnit> OnRespawn = delegate { };   //
-
-    //******************* Life Lost Deligation *******************
-    Action<HeroUnit, float> OnHit = delegate { };        // handles hero hit ( health > 0)
-    Action<HeroUnit> OnDeath = delegate { };    // handles hero death (0 >= health)
-
-
-    Action OnTargetInFieldOfView;                      // On scan End
-    Action<HeroUnit> OnMove;                          //
+    Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
+    Action<GameObject> OnTargetInFieldOfView = delegate { };                      // On scan End
+    Action<HeroUnit> OnMove = delegate { };                          //
     // private Action<HeroUnit> //onFinishAction;    // Functions that would be preform when the hero finish an action;
-    private Action onFinishMovment;                 // Function that would be preform when the hero finish to move / rotate
-    private Action onStartMovment;                 // Function that would be preform when the hero start to move / rotate
+    private Action onFinishMovment = delegate { };                 // Function that would be preform when the hero finish to move / rotate
+    private Action onStartMovment = delegate { };                 // Function that would be preform when the hero start to move / rotate
     //private Action<HeroUnit> onFinishRotate;    // Function that would be preform when the finish to rotate
 
     private int _id;
-    private float _currentHeatlh;
-    private float _maxHealth;
     private Skill _skill;
     private List<GameObject> _targetsToAttackBank;
     private GameObject _targetToAttack;             // This is the target to be attacked by the hero.
@@ -33,11 +25,14 @@ public class HeroUnit : MonoBehaviour
     private ObjStatus _status;                    // The hero order status (CURRECTLY NOT IN USE, MIGHT BE REMOVED)
     private bool _isScanning;
     private Movment _movement;                  // The movment component script
+    private Scanner _scanner;
+    private Health _health;
 
 
     // testing
     bool stop;
     int testCounter;
+    [SerializeField] public static GameObject testTarget;
     [SerializeField] List<GameObject> testTargets; // only for testing
     [SerializeField] List<GameObject> testGameTargets; // only for testing
 
@@ -49,6 +44,8 @@ public class HeroUnit : MonoBehaviour
         _targetsToAttackBank = new List<GameObject>();
         _skill = this.GetComponent<Skill>();
         _movement = this.GetComponent<Movment>();
+
+        _scanner = GetComponentInChildren<Scanner>(); // To Be Removed!!
 
         testCounter = 0;
         stop = false;
@@ -76,19 +73,28 @@ public class HeroUnit : MonoBehaviour
         //stopAllAfterDelay(10f);
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
         //GoTo(_movement.GetXZposRelativeVector(new Vector3(6f, 0f, -8f)));
-        StartCoroutine(Test.ActiveOnIntervals(testScanForTargets, 0.5f));
+        //StartCoroutine(Test.ActiveOnIntervals(testScanForTargets, 0.5f));
         //StartCoroutine(Test.ActiveOnIntervals(heroManager, 0.05f));
         StartCoroutine(testAttackTargets());
         //StartCoroutine(Test.ActiveOnIntervals(_movement.StopMovment, 1f));
         //StartCoroutine(testPrintDirection());
+        StartCoroutine(testSelfDestroyAfterDelay(60f));
+        StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
+    }
 
+    private IEnumerator testSelfDestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 
     private void Update() //// @@@@ TO BE REMOVED!!
     {
-        heroManager();
+        //heroManager();
         //testAddTargets(testTarget);
     }
+
+    public GameObject GetHeroTargetObj() => _targetObj;
 
     /// <summary>
     /// Attack the target if its infront of the hero and the hero is not on movment,
@@ -103,14 +109,15 @@ public class HeroUnit : MonoBehaviour
         Vector3 targetPos = _targetToAttack.transform.position;      
         if (!_movement.IsLookingAtTheTarget(targetPos)) // if the target is not infront of the hero, tells it to rotate toward it
         {
-            _movement.OnFinishMovment += heroManager;
+            _movement.OnFinishMovment += prepareToAttack;
             _movement.TargetLock(_targetToAttack, _skill.GetRange());
             //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
         }
         else  // if not rotating and the target is infornt of the hero, attack
             attack();
 
-        heroManager();
+        //heroManager();
+        manageHero();
     }
 
     private void attack()
@@ -150,13 +157,11 @@ public class HeroUnit : MonoBehaviour
     private void stopAll()
     {
         cancelOrders();
-        OnTargetInFieldOfView = null;
-        OnMove = null;
-        OnHit = null;
-        OnRespawn = null;
-        OnDeath = null;
-        onFinishMovment = null;
-        onStartMovment = null;
+        OnTargetInFieldOfView = delegate { };
+        OnMove = delegate { };
+        OnRespawn = delegate { };
+        onFinishMovment = delegate { };
+        onStartMovment = delegate { };
         stop = true;
     }
 
@@ -209,7 +214,8 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     public void SetTargetObj(GameObject target)
     {
         this._targetObj = target;
-        heroManager(); // to be implemented with delegation subscribe
+        GoAfter(target); // FOR TESTING
+        //heroManager(); // to be implemented with delegation subscribe
     }
 
     private void heroManager() // stats the heroManager funcs with coroutine
@@ -258,13 +264,13 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
                 GoTo(_movement.CalcClosestPosWithThisDistance(_skill.GetRange(), transform.position, _targetObj.transform.position));
             */
             prepareForNewOrder();
-            OnTargetInFieldOfView = heroManager;
+            //OnTargetInFieldOfView = heroManager; <===== TO BE FIXED (WONT WORK WITH OUT THIS)
             startTrackIfObjTargetAttackable();
             if (!TargetInRange(_targetObj))
                 GoTo(_targetObj.transform.position);
                 
         }
-        else if(!isHeroMoving && !_movement.IsObjRotating() && isThereATargets()) // If not moving and there are targets in the targets bank
+        else if(!isHeroMoving && !_movement.IsObjRotating() && isThereATarget()) // If not moving and there are targets in the targets bank
         { // NEED TO BE EDITED TO SUPPORT MULTI TARGETS WITHIN THE RANGE!! <==###########################
             GameObject target = findAnAttackableTarget();
             if (target != null) // If the first target is attackable, would start to attack
@@ -275,11 +281,132 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             else // Would start scanning track the target.
             {
                 startScanningForAnAttackableTarget();
-                OnTargetInFieldOfView = heroManager;
+                //OnTargetInFieldOfView = heroManager; <===== TO BE FIXED(WONT WORK WITH OUT THIS)
             }
         }
         
     }
+
+    private void manageHero()
+    {
+        if (_movement.IsObjOnMovment())
+        {
+            return;
+        }
+
+        manageHeroIdle();
+    }
+
+    private void manageHeroIdle()
+    {
+        if (_targetToAttack != null) // If hero is attacking, do not disturb
+            return;
+
+        if(_targetObj != null)
+        {
+            prepareForNewOrder();
+            GoTo(_targetObj.transform.position);
+        }
+
+        GameObject newTarget = findAnAttackableTarget();
+
+        if (newTarget != null) // if the target escaped we change the target to the next item in the list
+        {
+            prepareForNewOrder();
+            _targetToAttack = _targetsToAttackBank[0];
+            prepareToAttack();       // how to attack, when, etc.
+            return;
+        }
+        else
+        {
+            _targetToAttack = null;
+            if (isThereATarget())
+            {
+                OnTargetInFieldOfView += manageTargetAddDuringIdle;
+                startScanningForAnAttackableTarget();
+            }
+        }
+    }
+
+    private void manageTargetAddDuringMovment(GameObject target)
+    {
+        if (target == _targetObj)
+        {
+            if (_skill.isTargetAttackable(target))
+            {
+                    prepareForNewOrder();
+                    _targetToAttack = target;
+                    prepareToAttack();
+            }
+            else
+            {
+                stopScannings();
+                OnTargetInFieldOfView += manageTargetAddDuringMovment;
+                startTrackIfObjTargetAttackable();
+            }
+        }
+        //else if() // TO BE ADDED: case the hero can attack and move
+    }
+
+    private void manageTargetAddDuringIdle(GameObject target)
+    {
+        if ((_targetObj != null && _targetToAttack == _targetObj) || (_targetObj == null && _targetToAttack != null)) // If already attacking a target, keep doing it.
+            return;
+
+        if (_skill.isTargetAttackable(target))
+        {
+            if (target == _targetObj)
+            {
+                prepareForNewOrder();
+                _targetToAttack = target;
+                prepareToAttack();
+            }
+            else if (_targetToAttack == null)                    // if I dont have a target, make the enemy that entered the target
+            {
+                _targetToAttack = target;
+                prepareToAttack();                         // how to attack, when, etc.
+            }
+        }
+        else
+        {
+            if (!_isScanning) // if not scanning, Start scanning for an attackable Targets
+            {
+                OnTargetInFieldOfView += manageTargetAddDuringIdle; 
+                startScanningForAnAttackableTarget();
+            }
+        }
+        
+    }
+
+    private void manageTargetRemoveDuringMovment(GameObject target)
+    {
+        if(target == _targetObj) // If target escape
+            stopScannings();
+
+        if (_targetObj == null)
+        {
+            prepareForNewOrder();
+            manageTargetRemoveDuringIdle(target);
+        }
+    }
+
+    private void manageTargetRemoveDuringIdle(GameObject target)
+    {
+        if(_targetObj != null && target == _targetObj) // If target escape
+        {
+            prepareForNewOrder();
+            GoAfter(target);
+            return;
+        }
+        else if (target != _targetToAttack) // Some other target escaped, 
+            return;
+
+        // IMPORTANT we assume that if we attack, and there is a targetObj, then we attack the targetObj, therefore the prevoius condtion would be trigger.
+
+        manageHeroIdle();
+
+    }
+
 
 
     /// <summary>
@@ -306,26 +433,11 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
 
         if (OnTargetInFieldOfView != null)
         {
-            OnTargetInFieldOfView();
+            OnTargetInFieldOfView(_targetObj);
             OnTargetInFieldOfView = null;
         }
     }
 
-
-    /// <summary>
-    /// Search if there an attackable target within the targetbank
-    /// </summary>
-    /// <returns></returns>
-    public GameObject findAnAttackableTarget()
-    {
-        foreach (GameObject target in _targetsToAttackBank)
-        {
-            if(target != null && _skill.isTargetAttackable(target))
-                return target;
-        }
-
-        return null;
-    }
 
     /// <summary>
     /// Start the traking corutine to track the targetes
@@ -348,9 +460,9 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     /// </summary>
     private void stopScannings()
     {
-        Debug.Log("stopScan");
+        //Debug.Log("stopScan");
         _isScanning = false;
-        OnTargetInFieldOfView = null;
+        OnTargetInFieldOfView = delegate { };
     }
 
     /// <summary>
@@ -368,7 +480,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             target = findAnAttackableTarget();
             yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
 
-            if (!isThereATargets()) // in case that there are no more targets
+            if (!isThereATarget()) // in case that there are no more targets
                 _isScanning = false;
         }
 
@@ -379,13 +491,27 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
 
         if (target != null && OnTargetInFieldOfView != null)
         {
-            OnTargetInFieldOfView();
-            OnTargetInFieldOfView = null;
+            OnTargetInFieldOfView(target);
+            OnTargetInFieldOfView = delegate { };
         }
     }
 
-    
-    private bool isThereATargets()
+    /// <summary>
+    /// Search if there an attackable target within the targetbank
+    /// </summary>
+    /// <returns></returns>
+    public GameObject findAnAttackableTarget()
+    {
+        foreach (GameObject target in _targetsToAttackBank)
+        {
+            if (target != null && _skill.isTargetAttackable(target))
+                return target;
+        }
+
+        return null;
+    }
+
+    private bool isThereATarget()
     {
         return _targetsToAttackBank.Count > 0;
     }
@@ -418,8 +544,14 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     /// </summary>
     public void GoTo(Vector3 desiredPos)
     {
-        _movement.OnFinishMovment += heroManager;
+        //_movement.OnFinishMovment += heroManager;
         _movement.GoTo(desiredPos);
+    }
+
+    public void GoAfter(GameObject target)
+    {
+        //_movement.OnFinishMovment += heroManager;
+        _movement.GoAfterTarget(target);
     }
 
     /// <summary>
@@ -477,31 +609,21 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         }
     }
 
-
-
     // ******************* Life Lost functions *******************
-    /// <summary>
-    /// Reduce XP when hit and checks if the player is dead as a result
-    /// Author: OrS
-    /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    public void TakeDamage(float damageValue)
+    private void initHeroHealth()
     {
-        _currentHeatlh -= damageValue;
+        _health = GetComponent<Health>();
+        _health.InitHealth(100f);
+        _health.OnDeath += Die;
+    }
 
-        OnHit(this, _currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
+    public void Die(GameObject hero)
+    {
+        this._status = ObjStatus.dead;   // change status to dead
+        this._targetsToAttackBank = null;  // reset the bank of possible enemys in range
+        this._targetObj = null;         // reset the target hero
 
-        if(_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
-        {
-            this._status = ObjStatus.dead;   // change status to dead
-            this._targetsToAttackBank = null;  // reset the bank of possible enemys in range
-            this._targetObj = null;         // reset the target hero
-            OnDeath(this);                  // tells all classes that it is dead
-
-            StartCoroutine(waitForRespawn());   // wait to respawn the hero
-        }
-
+        StartCoroutine(waitForRespawn());
     }
 
     /// <summary>
@@ -529,10 +651,10 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         //_moveSpeed = 0.2f; // <============= To Check
         _targetsToAttackBank.Clear();
 
-        _currentHeatlh = _maxHealth;  // reset current health
+        _health.ResetHealth();
         //TODO: add a starting position
 
-        OnRespawn(this);            // tells all classes that it is respawning  
+        OnRespawn(gameObject);            // tells all classes that it is respawning  
     }
 
 
@@ -543,20 +665,23 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     /// </summary>
     /// <param></param>
     /// <returns></returns>
-    public void addEnemyToBank(GameObject enemy)
+    public void AddEnemyToBank(GameObject enemy)
     {
+        if (_targetsToAttackBank.Contains(enemy))   // check if the enemy is already in my bank (suppose to be always true)
+            return;
+        _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
 
-        if (!(_targetsToAttackBank.Contains(enemy)))   // check if the enemy is already in my bank (suppose to be always true)
-        {
-            _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
-        }
+        /*
+        if (enemy == null)
+            Debug.Log("Bug, null target");
+        Debug.Log("manageTargetAdd: " + enemy.name);
+        */
 
-        if(_targetToAttack == null)                    // if I dont have a target, make the enemy that entered the target
-        {
-            _targetToAttack = enemy;
-            attackEnemy();                          // how to attack, when, etc.
-        }
-        
+        if (_movement.IsObjMoving())
+            manageTargetAddDuringMovment(enemy);
+        else
+            manageTargetAddDuringIdle(enemy);
+
     }
 
     /// <summary>
@@ -565,27 +690,25 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     /// </summary>
     /// <param></param>
     /// <returns></returns>
-    public void removeEnemyFromBank(GameObject enemy)
+    public void RemoveEnemyFromBank(GameObject enemy)
     {
-        if (_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
-        {
-            _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
-        }
+        if (!_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
+            return;
+        _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
 
-        if (_targetToAttack == enemy)                  // if the target was the enemy we change the target to the next item in the list
-        {
-            if (_targetsToAttackBank.Count != 0)
-            {
-                _targetToAttack = _targetsToAttackBank[0];
-                attackEnemy();
-            }
-            else
-            {
-                _targetToAttack = null;
-            }
-        }
+
+        if (enemy == null)
+            Debug.Log("Bug, null target");
+        Debug.Log("manageTargetAdd: " + enemy.name);
+
+
+        if (_movement.IsObjMoving())
+            manageTargetRemoveDuringMovment(enemy);
+        else
+            manageTargetRemoveDuringIdle(enemy);
 
     }
+
 
     // ******************* Attack functions *******************
     /// <summary>
