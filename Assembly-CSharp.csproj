@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DevDanielTest\DevDanielScripts\BattleController.cs" />
+    <Compile Include="Assets\DevDanielTest\DevDanielScripts\BattleManager.cs" />
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\InputManager.cs" />
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\Player.cs" />
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\Projectile.cs" />

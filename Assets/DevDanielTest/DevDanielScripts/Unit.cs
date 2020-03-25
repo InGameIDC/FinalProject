@@ -13,7 +13,7 @@ using UnityEngine;
 
 */
 
-public class Unit
+public class Unit : MonoBehaviour
 {
 
     //  To be ignored ATM, as this might be triggered directly from Player.
@@ -31,11 +31,13 @@ public class Unit
     //Initially this is the spawn location of the Unit.
     private Vector3 _currentPosition;
 
-    public Unit(Player unitOwner) {
+    public Unit(Player unitOwner, String unitType) {
 
         owner = unitOwner;
     
     }
+
+
 
 
     /*  This is probably going to be triggered directly from Player class.
