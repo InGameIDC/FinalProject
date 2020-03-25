@@ -183,7 +183,6 @@ public class HeroUnit : MonoBehaviour
     {
         _targetToAttack = null;
         stopScannings();
-        //desiredPos = transform.position; <<<<<================================================== the comment need to be removed
         _movement.StopMovment();
     }
 
@@ -214,82 +213,18 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     public void SetTargetObj(GameObject target)
     {
         this._targetObj = target;
-        GoAfter(target); // FOR TESTING
-        //heroManager(); // to be implemented with delegation subscribe
+        prepareForNewOrder(); // CHECK NEED TO BE CHANGED
+        GoAfter(target); // CHECK NEED TO BE CHANGED
     }
 
-    private void heroManager() // stats the heroManager funcs with coroutine
-    {
-        activeHeroManager();
-        //StartCoroutine(activeHeroManager());
-    }
+    //************ Hero Logic - Start ****************
+
     /// <summary>
-    /// The hero logic
-    /// Author: Ilan
+    /// A function that tells the hero what to do according to the his state
     /// </summary>
-    /// <returns></returns>
-    private void activeHeroManager() // WARNING - SUPER SENSETIVE, DO NOT EDIT
-    {
-        if (++testCounter == 500000)
-        { // wont preform any func after 10000 iterations (for testing)
-            stopAll();
-            Destroy(this);
-        }
-        else if (stop) // testing
-            return; //yield return new WaitForSeconds(100);
-
-
-        //yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE / 10);
-
-        bool isHeroMoving = _movement.IsObjMoving();
-        /*
-        if (targetsToAttackBank.Count == 0) // || targetToAttack != null)
-            return;
-            */
-        
-        if (_targetObj != null && _targetsToAttackBank.Contains(_targetObj) && _skill.isTargetAttackable(_targetObj)) // If the main target is not null and within the range, would start to attack
-        {
-            _movement.StopMovment();
-            _targetToAttack = _targetObj;
-            prepareToAttack();
-        }
-        else if (_targetObj != null && isHeroMoving)
-        {
-            return;//yield return null;
-        }
-        else if(_targetObj != null && !isHeroMoving) // If these a main target, and its not within the given range, would move toward it.
-        {
-            /*
-            if(!TargetInRange(_targetObj))
-                GoTo(_movement.CalcClosestPosWithThisDistance(_skill.GetRange(), transform.position, _targetObj.transform.position));
-            */
-            prepareForNewOrder();
-            //OnTargetInFieldOfView = heroManager; <===== TO BE FIXED (WONT WORK WITH OUT THIS)
-            startTrackIfObjTargetAttackable();
-            if (!TargetInRange(_targetObj))
-                GoTo(_targetObj.transform.position);
-                
-        }
-        else if(!isHeroMoving && !_movement.IsObjRotating() && isThereATarget()) // If not moving and there are targets in the targets bank
-        { // NEED TO BE EDITED TO SUPPORT MULTI TARGETS WITHIN THE RANGE!! <==###########################
-            GameObject target = findAnAttackableTarget();
-            if (target != null) // If the first target is attackable, would start to attack
-            {
-                _targetToAttack = target;
-                prepareToAttack();
-            }
-            else // Would start scanning track the target.
-            {
-                startScanningForAnAttackableTarget();
-                //OnTargetInFieldOfView = heroManager; <===== TO BE FIXED(WONT WORK WITH OUT THIS)
-            }
-        }
-        
-    }
-
     private void manageHero()
     {
-        if (_movement.IsObjOnMovment())
+        if (_movement.IsObjOnMovment()) // If he hero is moving, its already preforming an action
         {
             return;
         }
@@ -297,48 +232,55 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         manageHeroIdle();
     }
 
+    /// <summary>
+    /// A function that tells to an idle hero what to do according to the his state
+    /// </summary>
     private void manageHeroIdle()
     {
-        if (_targetToAttack != null) // If hero is attacking, do not disturb
+        if (_targetToAttack != null && _skill.isTargetAttackable(_targetToAttack)) // If hero has a target to attack, and it is able to attack it, do not distrub
             return;
 
-        if(_targetObj != null)
+        if(_targetObj != null) // If the hero has a targetObj, and its not attacking it, its probably not in the range.
         {
             prepareForNewOrder();
-            GoTo(_targetObj.transform.position);
+            GoAfter(_targetObj);
         }
 
-        GameObject newTarget = findAnAttackableTarget();
+        GameObject newTarget = findAnAttackableTarget(); // Checks if there an attackable target
 
-        if (newTarget != null) // if the target escaped we change the target to the next item in the list
+        if (newTarget != null) // If the target escaped we change the target to the next item in the list
         {
             prepareForNewOrder();
-            _targetToAttack = _targetsToAttackBank[0];
-            prepareToAttack();       // how to attack, when, etc.
+            _targetToAttack = newTarget;
+            prepareToAttack();       // How to attack, when, etc.
             return;
         }
         else
         {
-            _targetToAttack = null;
-            if (isThereATarget())
+            _targetToAttack = null; // There is no an available target, sets the _targetToAttack to null
+            if (isThereATarget()) // If there a target in the attack range
             {
-                OnTargetInFieldOfView += manageTargetAddDuringIdle;
-                startScanningForAnAttackableTarget();
+                OnTargetInFieldOfView += manageTargetAddDuringIdle; // Sets the manage hero at target add function, to be call if the a target become attackable
+                startScanningForAnAttackableTarget(); // Start scanning for an attackable target
             }
         }
     }
 
+    /// <summary>
+    /// A function that tells to a hero, that preform a movment, what to do when a new target enter to attack range
+    /// </summary>
+    /// <param name="target">The new target that has been added to the hero bank</param>
     private void manageTargetAddDuringMovment(GameObject target)
     {
-        if (target == _targetObj)
+        if (target == _targetObj) // If the target is the _targetObj
         {
-            if (_skill.isTargetAttackable(target))
+            if (_skill.isTargetAttackable(target)) // If the hero can attack the target - tells the hero to attack it
             {
                     prepareForNewOrder();
                     _targetToAttack = target;
                     prepareToAttack();
             }
-            else
+            else // If the target is not attackable, tells the hero to start track the target, and if it become attackable, it would recall the function.
             {
                 stopScannings();
                 OnTargetInFieldOfView += manageTargetAddDuringMovment;
@@ -348,48 +290,64 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         //else if() // TO BE ADDED: case the hero can attack and move
     }
 
+    /// <summary>
+    /// A function that tells to an idle hero what to do when a new target enter to attack range
+    /// </summary>
+    /// <param name="target">The new target that has been added to the hero bank</param>
     private void manageTargetAddDuringIdle(GameObject target)
     {
         if ((_targetObj != null && _targetToAttack == _targetObj) || (_targetObj == null && _targetToAttack != null)) // If already attacking a target, keep doing it.
             return;
 
-        if (_skill.isTargetAttackable(target))
+        if (_skill.isTargetAttackable(target)) // If the target is attackable, the hero would start to attack
         {
-            if (target == _targetObj)
+            if (target == _targetObj || _targetObj == null) // if I dont have a target, or its my _targetObj, make the enemy that entered the target
             {
                 prepareForNewOrder();
                 _targetToAttack = target;
-                prepareToAttack();
+                prepareToAttack(); // how to attack, when, etc.
             }
+            /*
             else if (_targetToAttack == null)                    // if I dont have a target, make the enemy that entered the target
             {
                 _targetToAttack = target;
                 prepareToAttack();                         // how to attack, when, etc.
             }
+            */
         }
         else
         {
             if (!_isScanning) // if not scanning, Start scanning for an attackable Targets
             {
-                OnTargetInFieldOfView += manageTargetAddDuringIdle; 
+                OnTargetInFieldOfView += manageTargetAddDuringIdle;  // If finds a target during scanning, calls the function again
                 startScanningForAnAttackableTarget();
             }
         }
         
     }
 
+    /// <summary>
+    /// Tells the hero, that during movment, what to do if a target is no longer in its attack range
+    /// </summary>
+    /// <param name="target">The target that got out of range</param>
     private void manageTargetRemoveDuringMovment(GameObject target)
     {
-        if(target == _targetObj) // If target escape
-            stopScannings();
-
-        if (_targetObj == null)
+        if (target == _targetObj) // If target escape
         {
-            prepareForNewOrder();
-            manageTargetRemoveDuringIdle(target);
+            stopScannings(); // stop the target tracking, and the hero is probably keep moving after the target
+            if(_targetObj == null) // If the target is dead
+            {
+                prepareForNewOrder();
+                manageTargetRemoveDuringIdle(target);
+            }
         }
+
     }
 
+    /// <summary>
+    /// Tells the idle hero what to do if a target is no longer in its attack range
+    /// </summary>
+    /// <param name="target">The target that got out of range</param>
     private void manageTargetRemoveDuringIdle(GameObject target)
     {
         if(_targetObj != null && target == _targetObj) // If target escape
@@ -398,7 +356,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             GoAfter(target);
             return;
         }
-        else if (target != _targetToAttack) // Some other target escaped, 
+        else if (target != _targetToAttack) // Some other target escaped, does not matter
             return;
 
         // IMPORTANT we assume that if we attack, and there is a targetObj, then we attack the targetObj, therefore the prevoius condtion would be trigger.
@@ -407,7 +365,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
 
     }
 
-
+    //************ Hero Logic - END ****************
 
     /// <summary>
     /// Start the traking of a the obj target spesific target if its attackable
@@ -422,6 +380,10 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         StartCoroutine(trackIfObjTargetAttackable());
     }
 
+    /// <summary>
+    /// A tracking function, that lock and target and keep checking if the target is attackable
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator trackIfObjTargetAttackable()
     {
         while (_targetObj != null && !_skill.isTargetAttackable(_targetObj))
@@ -537,6 +499,18 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         return false;
     }
 
+    public IEnumerator testAttackTargets()
+    {
+        foreach (GameObject target in testTargets)
+        {
+            SetTargetObj(target);
+            while (target != null)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
+
 
     /// <summary>
     /// this method command the hero unit to go to the desired location.
@@ -544,7 +518,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     /// </summary>
     public void GoTo(Vector3 desiredPos)
     {
-        //_movement.OnFinishMovment += heroManager;
+        _movement.OnFinishMovment += manageHeroIdle;
         _movement.GoTo(desiredPos);
     }
 
@@ -554,60 +528,6 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         _movement.GoAfterTarget(target);
     }
 
-    /// <summary>
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="target"></param>
-    private void testAddTarget(GameObject target) // A test function that track a target and add it to the hero targetsbank if it is within the skill range
-    {
-        if (target == null)
-        {
-            if (_targetsToAttackBank.Contains(target)) _targetsToAttackBank.Remove(target);
-            return;
-        }
-
-        if (!_targetsToAttackBank.Contains(target))
-        {
-            if (_skill.isTargetInRange(target.transform.position))
-            {
-                Test.SetTargetColor(target, Color.red);
-                _targetsToAttackBank.Add(target);
-                heroManager();
-            }
-        }
-        else
-        {
-            if (!_skill.isTargetInRange(target.transform.position))
-            {
-                Test.SetTargetColor(target, Color.green);
-                _targetsToAttackBank.Remove(target);
-                heroManager();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Run the testAddTargets on the testTargets list
-    /// </summary>
-    public void testScanForTargets()
-    {
-        foreach (GameObject target in testGameTargets)
-        {
-            testAddTarget(target);
-        }
-    }
-
-    public IEnumerator testAttackTargets()
-    {
-        foreach(GameObject target in testTargets)
-        {
-            SetTargetObj(target);
-            while(target != null)
-            {
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-    }
 
     // ******************* Life Lost functions *******************
     private void initHeroHealth()

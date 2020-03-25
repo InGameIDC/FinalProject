@@ -109,6 +109,7 @@ public class Movment : MonoBehaviour
 		//StartCoroutine(moveObject());
 		_navMeshAgent.isStopped = false;
 		_navMeshAgent.SetDestination(target.transform.position);
+		_targetLocationLock = target;
 		startTargetLocationTrack();
 
 		if (OnFinishMovment != null)
@@ -145,7 +146,7 @@ public class Movment : MonoBehaviour
 
 	private void startTargetLocationTrack()
 	{
-		//Debug.Log("startMovFinishTrack");
+		//Debug.Log("startTargetLocationTrack");
 		if (_isTargetLocationLock)
 			return;
 
@@ -155,9 +156,9 @@ public class Movment : MonoBehaviour
 
 	private void stopTargetLocationTrack()
 	{
-		//Debug.Log("stopMovFinishTrack");
+		//Debug.Log("stopTargetLocationTrack");
 		_isTargetLocationLock = false;
-		OnFinishMovment = delegate { };
+		_targetLocationLock = null;
 	}
 
 	private IEnumerator autoTargetLocationTrack()
