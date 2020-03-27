@@ -53,11 +53,11 @@ public class HeroUnit : MonoBehaviour
     void Start()
     {
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
-        /*
+        
         StartCoroutine(testAttackTargets());
 
         StartCoroutine(testSelfDestroyAfterDelay(60f));
-        */
+        
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
     }
 
@@ -525,7 +525,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             return;
 
         Vector3 targetPos = _targetToAttack.transform.position;
-        if (!_movement.IsLookingAtTheTarget(targetPos)) // if the target is not infront of the hero, tells it to rotate toward it
+        if (!SpaceCalTool.IsLookingTowardsTheTarget(gameObject, targetPos, _movement._isHeightCalculated)) // if the target is not infront of the hero, tells it to rotate toward it
         {
             _movement.OnFinishMovment += prepareToAttack;
             _movement.TargetLock(_targetToAttack, _skill.GetRange());
@@ -537,7 +537,19 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         //heroManager();
         manageHero();
     }
+    /*
+    private void AutoAttack()
+    {
+        while (_skill.isTargetAttackable(_targetToAttack))
+        {
+            prepareToAttack();
+            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
 
+            if()
+        }
+        _targetToAttack = null;
+    }
+    */
     private void attack()
     {
         _skill.attack();

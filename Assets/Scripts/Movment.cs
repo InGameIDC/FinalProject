@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.AI;
+using static SpaceCalTool;
 
 public class Movment : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Movment : MonoBehaviour
 	private float _moveSpeed;                       // The obect movment speed
 	private Vector3 _desiredPos;                   // The location desired to move to.
 	private Vector3 _desiredRotationDirection;    // The direction the hero desired to rotate toward.
-	private bool _isHeightCalculated;            // If toggle to true, the movments functions would respect the given poses heigh, otherwise, it would ignore the Y axis
+	public bool _isHeightCalculated { get; }     // If toggle to true, the movments functions would respect the given poses heigh, otherwise, it would ignore the Y axis
 	private bool _isRotationHeightCalculated;   // If toggle to true, the rotation functions would respect the given poses heigh, otherwise, it would ignore the Y axis
 	private GameObject _targetRotationLock;    // The target that the obj would track (with rotation)
 	private bool _isRotationLock;             // True if the object is lock on the target
@@ -31,31 +32,16 @@ public class Movment : MonoBehaviour
 		_desiredPos = transform.position;
 		_moveSpeed = 0.2f;
 		_isRotationLock = false;
-		bindNavMeshAgent();
+		initNavMeshAgent();
 		_navMeshAgent.isStopped = true;
 	}
 
-	/// <summary>
-	/// Binds the NavMeshAgent componenet to the _navMeshAgent property
-	/// If these is no NavMeshAgent component on the object,
-	/// creates a one, and notify on the debugger
-	/// Author: Ilan
-	/// </summary>
-	private void bindNavMeshAgent()
-	{
-		_navMeshAgent = this.GetComponent<NavMeshAgent>();
-		if (_navMeshAgent == null)
-		{
-			Debug.Log("Could not find the navMeshAgen");
-			_navMeshAgent = gameObject.AddComponent(typeof(NavMeshAgent)) as NavMeshAgent;
-		}
-	}
-
-	/// <summary>
-	/// Terminates all the movments funcss
-	/// Author: Ilan
-	/// </summary>
-	public void StopMovment()
+    #region CtrlMovment
+    /// <summary>
+    /// Terminates all the movments funcss
+    /// Author: Ilan
+    /// </summary>
+    public void StopMovment()
 	{
 		OnFinishMovment = null;
 		OnStartMovment = null;
@@ -66,16 +52,6 @@ public class Movment : MonoBehaviour
 		stopMovmentFinishTrack();
 		stopTargetLocationTrack();
 		StopNav();
-	}
-
-	/// <summary>
-	/// this method stops the navigation of the heroUnit.
-	/// Author: Dor
-	/// </summary>
-	public void StopNav()
-	{
-		_navMeshAgent.isStopped = true;
-		_navMeshAgent.velocity = Vector3.zero;
 	}
 
 	/// <summary>
@@ -97,7 +73,24 @@ public class Movment : MonoBehaviour
 			startMovmentFinishTrack();
 	}
 
-	public void GoAfterTarget(GameObject target)
+	/// <summary>
+	/// Sets the desired location that the object would move to,
+	/// with respect to the height calculation mod.
+	/// Author: Ilan
+	/// </summary>
+	/// <param name="direction"></param>
+	private void setDesiredPos(Vector3 direction)
+	{
+		_desiredPos.x = direction.x;
+		_desiredPos.z = direction.z;
+
+		if (_isHeightCalculated)
+			_desiredPos.y = direction.y;
+	}
+    #endregion
+
+    #region Trackers
+    public void GoAfterTarget(GameObject target)
 	{
 		//Debug.Log("SetObjDesirePos");
 		if (OnStartMovment != null)
@@ -187,41 +180,8 @@ public class Movment : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// Calculate the closet position from current to the targetPos, that keep the mention distance from the target
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="reqDistance">The minimu distance required</param>
-	/// <param name="current">The object itself Pos</param>
-	/// <param name="targetPos">The tatget Pos</param>
-	/// <returns></returns>
-	public Vector3 CalcClosestPosWithThisDistance(float reqDistance, Vector3 current, Vector3 targetPos)
-	{
-		Debug.Log("calcClosestPosWithThisDistance");
-		float distance = Vector3.Distance(current, targetPos) - reqDistance;
-		if (distance <= 0)
-			return current;
+    #endregion
 
-		return current + (targetPos - _desiredRotationDirection).normalized * distance;
-	}
-
-	/// <summary>
-	/// Checks if the target is infront of the object, regarding the distanses
-	/// if the height is not set to be calculate, would check only relative to the X and Z axis
-	/// otherwise, would check the Y axis too.
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="targetPos">The target to check</param>
-	/// <returns>true if the target infront of the object</returns>
-	public bool IsLookingAtTheTarget(Vector3 targetPos)
-	{
-	 if (!_isRotationHeightCalculated)
-			targetPos.y = transform.position.y;
-
-		Vector3 direction = getVectorDirectionTowardTarget(targetPos); // Gets the direction vector
-		float angelDif = diffAngle(direction); // Gets the angle diffrent of the object regarding the target pos
-		return angelDif <= GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR * 0.001f; // return true if the diffrence is less than the globam margin of error
-	}
 
 	/*
 	public bool IsLookingAtTheTargetXZ(Vector3 targetPos)
@@ -229,18 +189,7 @@ public class Movment : MonoBehaviour
 		return IsLookingAtTheTarget(GetXZposRelativeVector(targetPos));
 	}
 	*/
-	/// <summary>
-	/// Calculate the diffrence vector between the object to the given target,
-	/// if the obj position would change by this vector, 
-	/// (add the result to the obj pos) the object would be locate at the target pos.
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="target">The target position vector</param>
-	/// <returns>The diffrence vector (target - this.transform.position) </returns>
-	private Vector3 getVectorDirectionTowardTarget(Vector3 target)
-	{
-		return target - this.transform.position;
-	}
+	
 
 	/// <summary>
 	/// Calculate the diffrence vector between the object to the given target,
@@ -257,11 +206,24 @@ public class Movment : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Move the Gameobject to the desiredPos.
-	/// Author: Ilan 
-	/// In addtion, rotate the Object toward the pos.
+	/// Checks if the target is closer than the given number
+	/// Author: Ilan
 	/// </summary>
-	private IEnumerator moveObject() // to implement with navMesh
+	/// <param name="range">the maximum distance to check</param>
+	/// <returns>True if the target distance is less than the range value</returns>
+	private bool isTargetInRange(float range)
+	{
+		return IsDistanceBetweenTwoPosesLessThan(transform.position, _targetRotationLock.transform.position, range);
+	}
+
+
+    #region Movment
+    /// <summary>
+    /// Move the Gameobject to the desiredPos.
+    /// Author: Ilan 
+    /// In addtion, rotate the Object toward the pos.
+    /// </summary>
+    private IEnumerator moveObject() // to implement with navMesh
 	{
 		Vector3 desiredPos = this._desiredPos;
 		Vector3 heighIgoneDesiredPos = GetXZposRelativeVector(desiredPos); // set the position to be at the same heigh as the obj
@@ -269,7 +231,7 @@ public class Movment : MonoBehaviour
 		this._desiredRotationDirection = this._desiredPos;
 		StartCoroutine(rotateTowardDirection());
 
-		Vector3 direction = getVectorDirectionTowardTarget(heighIgoneDesiredPos);
+		Vector3 direction = GetVectorDirectionTowardTarget(this.transform.position, heighIgoneDesiredPos);
 		direction =  direction.normalized;
 
 		while (heighIgoneDesiredPos != transform.position && IsObjMoving()) // Checks if the object reached to the desired pos, and if it's on movment
@@ -285,6 +247,24 @@ public class Movment : MonoBehaviour
 		if (OnFinishMovment != null && !IsObjOnMovment())
 			OnFinishMovment();
 	}
+    #endregion
+
+    #region Rotation
+
+    /// <summary>
+    /// Sets the desired rotation direction,
+    /// with respect to the height calculation mod.
+    /// Author: Ilan
+    /// </summary>
+    /// <param name="direction"></param>
+    private void setDesiredRotationDirection(Vector3 direction)
+	{
+		_desiredRotationDirection.x = direction.x;
+		_desiredRotationDirection.z = direction.z;
+
+		if (_isRotationHeightCalculated)
+			_desiredRotationDirection.y = direction.y;
+	}
 
 	/// <summary>
 	/// Rotate the obj toward the desired rotation direction
@@ -294,9 +274,9 @@ public class Movment : MonoBehaviour
 	{
 		Vector3 targetDirection = this._desiredRotationDirection; // Determine which direction to rotate towards
 
-		Vector3 direction = getVectorDirectionTowardTarget(targetDirection).normalized;
+		Vector3 direction = GetVectorDirectionTowardTarget(this.transform.position, targetDirection).normalized;
 
-		float angelDif = diffAngle(direction);
+		float angelDif = CalcDiffAngle(gameObject, direction);
 		while (angelDif > GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR * 0.001f) // Checks if the object finished to rotate target, and if it's on movment
 		{
 			if (targetDirection != this._desiredRotationDirection) // checks if the rotation is still relvant
@@ -330,11 +310,11 @@ public class Movment : MonoBehaviour
 		{
 			setDesiredRotationDirection(_targetRotationLock.transform.position);
 
-			if (!IsLookingAtTheTarget(_desiredRotationDirection))
+			if (!IsLookingTowardsTheTarget(gameObject, _desiredRotationDirection, _isRotationHeightCalculated))
 			{
 				//this._desiredRotationDirection = GetXZposRelativeVector(this._targetRotationLock.transform.position);
 
-				direction = getVectorDirectionTowardTarget(this._desiredRotationDirection).normalized; // calcs the normalized direction vector
+				direction = GetVectorDirectionTowardTarget(this.transform.position, this._desiredRotationDirection).normalized; // calcs the normalized direction vector
 
 				rotateToAgivenDirection(direction, _moveSpeed * 0.2f);// The amount size is equal to speed times frame time.
 			}
@@ -378,81 +358,40 @@ public class Movment : MonoBehaviour
 
 		this.transform.rotation = rotationAmount; // rotate the object
 	}
+    #endregion
 
+	#region Navigation
 	/// <summary>
-	/// Checks if the target is closer than the given number
+	/// Binds the NavMeshAgent componenet to the _navMeshAgent property
+	/// If these is no NavMeshAgent component on the object,
+	/// creates a one, and notify on the debugger
 	/// Author: Ilan
 	/// </summary>
-	/// <param name="range">the maximum distance to check</param>
-	/// <returns>True if the target distance is less than the range value</returns>
-	private bool isTargetInRange(float range)
+	private void initNavMeshAgent()
 	{
-		return isDistanceBetweenTwoPosesLessThan(transform.position, _targetRotationLock.transform.position, range);
+		_navMeshAgent = this.GetComponent<NavMeshAgent>();
+		if (_navMeshAgent == null)
+		{
+			Debug.Log("Could not find the navMeshAgen");
+			_navMeshAgent = gameObject.AddComponent(typeof(NavMeshAgent)) as NavMeshAgent;
+		}
 	}
 
 	/// <summary>
-	/// Checks if the distance between two vectors is less than the given distance.
-	/// Author: Ilan
+	/// this method stops the navigation of the heroUnit.
+	/// Author: Dor
 	/// </summary>
-	/// <param name="pos1">The first vector position</param>
-	/// <param name="pos2">The second vector position</param>
-	/// <param name="distance">The maximum distance</param>
-	/// <returns>True if the distance between the positions is less than distance</returns>
-	private bool isDistanceBetweenTwoPosesLessThan(Vector3 pos1, Vector3 pos2, float distance)
+	public void StopNav()
 	{
-		//float dis = DistancePow2(pos1, pos2);
-		//Debug.Log("Distance: " + dis);
-		return DistancePow2(pos1, pos2) <= (distance * distance);
-	}
-
-	/// <summary>
-	/// Sets the desired rotation direction,
-	/// with respect to the height calculation mod.
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="direction"></param>
-	private void setDesiredRotationDirection(Vector3 direction)
-	{
-		_desiredRotationDirection.x = direction.x;
-		_desiredRotationDirection.z = direction.z;
-
-		if (_isRotationHeightCalculated)
-			_desiredRotationDirection.y = direction.y;
-	}
-
-	/// <summary>
-	/// Sets the desired location that the object would move to,
-	/// with respect to the height calculation mod.
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="direction"></param>
-	private void setDesiredPos(Vector3 direction)
-	{
-		_desiredPos.x = direction.x;
-		_desiredPos.z = direction.z;
-
-		if (_isHeightCalculated)
-			_desiredPos.y = direction.y;
-	}
-
-	/// <summary>
-	/// Calculate the diffrance between the current angel, to the require 
-	/// Author: Ilan 
-	/// </summary>
-	/// <param name="target">The target direction vector (desiredPos - transform.position) </param>
-	/// <returns>Returns the diffrances angle</returns>
-	private float diffAngle(Vector3 targetDirection)
-	{
-		Vector3 newDirection = Vector3.RotateTowards(this.transform.forward, targetDirection, 360f, 0.0f); // cacls the vector rotation diffrence
-		Quaternion rotationLeft = Quaternion.LookRotation(newDirection);
-		return Quaternion.Angle(transform.rotation, rotationLeft); // calcs the angle diffrence between the current rotation the rotationLeft vector
+		_navMeshAgent.isStopped = true;
+		_navMeshAgent.velocity = Vector3.zero;
 	}
 
 	/// <summary>
 	/// this method checks if  the heroUnit is still navigating.
 	/// Author: Dor
 	/// </summary>
-	public bool IsNavigating()
+	public bool IsNavigating2()
 	{
 		if (!_navMeshAgent.pathPending && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
 		{
@@ -461,17 +400,19 @@ public class Movment : MonoBehaviour
 		return true;
 	}
 
-	public bool IsNavigating2()
+	public bool IsNavigating()
 	{
 		return _navMeshAgent.pathPending || !_navMeshAgent.isStopped;
 	}
+    #endregion
 
-	/// <summary>
-	/// Tells if the object is on movment or rotation
-	/// Author: Ilan
-	/// </summary>
-	/// <returns>True if the object is on movment or rotation</returns>
-	public bool IsObjOnMovment()
+    #region Movment Status Check
+    /// <summary>
+    /// Tells if the object is on movment or rotation
+    /// Author: Ilan
+    /// </summary>
+    /// <returns>True if the object is on movment or rotation</returns>
+    public bool IsObjOnMovment()
 	{
 		return IsObjMoving() || IsObjRotating();
 	}
@@ -482,7 +423,7 @@ public class Movment : MonoBehaviour
 	/// <returns>True if the object is moving</returns>
 	public bool IsObjMoving()
 	{
-		return /*!isDistanceBetweenTwoPosesLessThan(transform.position, _desiredPos, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR); //|| */IsNavigating2();
+		return /*!isDistanceBetweenTwoPosesLessThan(transform.position, _desiredPos, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR); //|| */IsNavigating();
 	}
 
 	/// <summary>
@@ -492,26 +433,16 @@ public class Movment : MonoBehaviour
 	/// <returns></returns>
 	public bool IsObjRotating()
 	{
-		if (isDistanceBetweenTwoPosesLessThan(transform.position, _desiredRotationDirection, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR))
+		if (SpaceCalTool.IsDistanceBetweenTwoPosesLessThan(transform.position, _desiredRotationDirection, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR))
 			return false;
 
-		float angelDif = diffAngle(getVectorDirectionTowardTarget(_desiredRotationDirection));
+		float angelDif = CalcDiffAngle(gameObject ,GetVectorDirectionTowardTarget(this.transform.position ,_desiredRotationDirection));
 		return angelDif > GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR * 0.001f; // if the object is not looking at the desired rotation direction, it probably prefoms a rotation
 	}
+    #endregion
 
-	/// <summary>
-	/// Calculate the distance between the two vector, powed by 2
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="v1">The 1th vector</param>
-	/// <param name="v2">The 2th vector</param>
-	/// <returns>(distance)^2</returns>
-	public float DistancePow2(Vector3 v1, Vector3 v2)
-	{
-		return (v1 - v2).sqrMagnitude;
-	}
-
-	private void testMovement()
+    #region Tests Functions
+    private void testMovement()
 	{
 		//SetHeroDesirePos(Vector3.zero);
 		//StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));
@@ -526,25 +457,6 @@ public class Movment : MonoBehaviour
 
 	}
 
-	/// <summary>
-	/// Uses to test the object movment
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="Poses"></param>
-	/// <returns></returns>
-	/*
-	private IEnumerator testMovmentFuncListOfPosOrders(List<Vector3> poses, float delay, bool patrolLoop)
-	{
-		do
-		{
-			foreach (Vector3 pos in poses)
-			{
-				GoTo(ref pos);
-				yield return new WaitForSeconds(delay);
-			}
-		} while (patrolLoop);
-	}
-	*/
 	/// <summary>
 	/// Uses to test the object reaction to pos change while moving
 	/// Author: Ilan
@@ -577,5 +489,5 @@ public class Movment : MonoBehaviour
 			yield return new WaitForSeconds(delay);
 		}
 	}
-
+    #endregion
 }

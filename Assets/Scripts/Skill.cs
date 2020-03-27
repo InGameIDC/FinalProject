@@ -34,15 +34,7 @@ public class Skill : MonoBehaviour
 
     public bool isTargetAttackable(GameObject target)
     {
-        Vector3 rayDirection = target.transform.position - transform.position;
-        RaycastHit hittedObject;
-        if (Physics.Raycast(transform.position, rayDirection, out hittedObject))
-        {
-            if (hittedObject.transform.gameObject == target && hittedObject.distance < range)
-                return true;
-        }
-
-        return false;
+        return SpaceCalTool.AreObjectsViewableAndWhithinRange(gameObject, target, range);
     }
 
 

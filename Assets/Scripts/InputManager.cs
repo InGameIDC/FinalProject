@@ -40,7 +40,7 @@ public class InputManager : MonoBehaviour
     private GameObject _objectClicked;
 
     //Reference to the BattleManager
-    private BattleManager2 _battleManager;
+    private BattleManager _battleManager;
 
     //Used to detect double taps
     private bool _wasClicked = false;
@@ -53,10 +53,6 @@ public class InputManager : MonoBehaviour
     private Vector3 _lastTouchPosition;
     private float _maxDistance = 3f;
 
-    private void Start()
-    {
-        _battleManager = GameObject.FindObjectOfType<BattleManager2>();
-    }
     private void Update()
     {
         if (Input.touchCount > 0)
@@ -77,13 +73,13 @@ public class InputManager : MonoBehaviour
                 {
                     case TouchPhase.Began:
                         //Checks distance between touches to activate 2-tap correctly
-                        float distance = Vector3.Distance(_lastTouchPosition, _hit.point);
+                        float distancePow2 = Vector3.SqrMagnitude(_lastTouchPosition - _hit.point);
 
                         //Debugging
                         Debug.Log("Object clicked: " + _objectClicked +
                             " in position: " + _hit.collider.transform.position.ToString() +
                             ", impact point is: " + _hit.point.ToString() +
-                            " and distance = " + distance);
+                            " and distance^2 = " + distancePow2);
 
                         //If there was no prior touch recorded, we need to wait for another touch
                         //in the time window defined by _maxDoubleTapTime. this is done via coroutine.
@@ -97,7 +93,7 @@ public class InputManager : MonoBehaviour
                         //time period and space radius, then this is a double tap.
                         else if (_wasClicked && 
                                 (Time.time - _timeOfLastTouch <= _maxDoubleTapTime) &&
-                                distance  <= _maxDistance)
+                                distancePow2 <= (_maxDistance * _maxDistance))
                         {
                             Debug.Log("Double Touch detected");
                             DoubleClick(_objectClicked, _hit);
@@ -137,11 +133,11 @@ public class InputManager : MonoBehaviour
         Debug.Log("Single FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit") || collider.tag.Equals("EnemyUnit"))
         {
-            _battleManager.onUnitClick(_objectClicked);
+            OnUnitClick(_objectClicked);
         } 
         else if (collider.tag.Equals("Terrain"))
         {
-            _battleManager.onFieldClick(hit.point);
+            OnFieldClick(hit.point);
         }
         return;
     }
@@ -151,7 +147,7 @@ public class InputManager : MonoBehaviour
         Debug.Log("Double FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit"))
         {
-            _battleManager.onUnitDoubleClick(collider);
+            OnUnitDoubleClick(collider);
         }
     }
 }

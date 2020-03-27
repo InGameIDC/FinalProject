@@ -15,7 +15,8 @@ public class BattleManager : MonoBehaviour
     {
         initInputManager();
     }
-    
+
+    #region InputManager manage functions
     private void initInputManager()
     {
         _inputManager = transform.GetComponent<InputManager>();
@@ -60,5 +61,5 @@ public class BattleManager : MonoBehaviour
         Debug.Log("target position is " + targetPosition);
         _currentUnit.GoTo(targetPosition);
     }
-
+    #endregion
 }
