@@ -14,6 +14,7 @@ public class BattleManager : MonoBehaviour
     private void Awake()
     {
         initInputManager();
+        _currentUnit = testHero.GetComponent<HeroUnit>();
     }
 
     #region InputManager manage functions
@@ -33,6 +34,7 @@ public class BattleManager : MonoBehaviour
 
     private void OnHeroClicked(GameObject clickedobject)
     {
+        Test.SetTargetColor(clickedobject, Color.magenta);
         //Unit clickedUnit = clickedobject.GetComponent<Unit>();
         if (clickedobject.tag.Equals("HeroUnit")) // && clickedUnit.owner != _currentUnit)
         {

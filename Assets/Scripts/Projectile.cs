@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
-        if (target.tag != "Enemy")
+        if (target.tag != "EnemyUnit")
             return;
 
         if (onHitMechs != null)
