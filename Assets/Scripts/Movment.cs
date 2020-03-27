@@ -6,8 +6,8 @@ using UnityEngine.AI;
 
 public class Movment : MonoBehaviour
 {
-	public  Action OnFinishMovment = delegate { };                   // Functions that would be preform when the hero finish to move / rotate
-	public Action OnStartMovment = delegate { };                    // Functions that would be preform when the hero start to move / rotate
+	public  Action OnFinishMovment = delegate { };    // Functions that would be preform when the hero finish to move / rotate
+	public Action OnStartMovment = delegate { };     // Functions that would be preform when the hero start to move / rotate
 	private float _moveSpeed;                       // The obect movment speed
 	private Vector3 _desiredPos;                   // The location desired to move to.
 	private Vector3 _desiredRotationDirection;    // The direction the hero desired to rotate toward.
@@ -17,10 +17,8 @@ public class Movment : MonoBehaviour
 	private bool _isRotationLock;             // True if the object is lock on the target
 	NavMeshAgent _navMeshAgent;              // Keep NavMeshAgent component
 	private bool _isMovmentFinishTracking;
-	private GameObject _targetLocationLock;    // The obj will track the location of this target
+	private GameObject _targetLocationLock;// The obj will track the location of this target
 	private bool _isTargetLocationLock;
-
-
 
 
 	[SerializeField]
@@ -33,7 +31,6 @@ public class Movment : MonoBehaviour
 		_desiredPos = transform.position;
 		_moveSpeed = 0.2f;
 		_isRotationLock = false;
-
 		bindNavMeshAgent();
 		_navMeshAgent.isStopped = true;
 	}

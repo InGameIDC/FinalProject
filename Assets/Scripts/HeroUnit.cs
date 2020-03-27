@@ -11,11 +11,7 @@ public class HeroUnit : MonoBehaviour
 {
     Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
     Action<GameObject> OnTargetInFieldOfView = delegate { };                      // On scan End
-    Action<HeroUnit> OnMove = delegate { };                          //
-    // private Action<HeroUnit> //onFinishAction;    // Functions that would be preform when the hero finish an action;
-    private Action onFinishMovment = delegate { };                 // Function that would be preform when the hero finish to move / rotate
-    private Action onStartMovment = delegate { };                 // Function that would be preform when the hero start to move / rotate
-    //private Action<HeroUnit> onFinishRotate;    // Function that would be preform when the finish to rotate
+
 
     private int _id;
     private Skill _skill;
@@ -35,6 +31,8 @@ public class HeroUnit : MonoBehaviour
     [SerializeField] public static GameObject testTarget;
     [SerializeField] List<GameObject> testTargets; // only for testing
     [SerializeField] List<GameObject> testGameTargets; // only for testing
+
+    public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
 
     /// Says good morning to the script
     private void Awake()
@@ -58,112 +56,18 @@ public class HeroUnit : MonoBehaviour
 
     void Start()
     {
-
-        //testMovement();
-
-
-        //StartCoroutine(testPrintRotationEveryInterval(1f));
-
-        //TargetInRange(testTarget);
-        //SetTargetObj(testTarget);
-
-        //Debug.Log(skill.isTargetInAvailable(testTarget));
-        //_navComp.GoTo(new Vector3(1f, 0f, 2f));
-        //Test.CreateASphre(new Vector3(1f, 0f, 2f));
-        //stopAllAfterDelay(10f);
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
-        //GoTo(_movement.GetXZposRelativeVector(new Vector3(6f, 0f, -8f)));
-        //StartCoroutine(Test.ActiveOnIntervals(testScanForTargets, 0.5f));
-        //StartCoroutine(Test.ActiveOnIntervals(heroManager, 0.05f));
+
         StartCoroutine(testAttackTargets());
-        //StartCoroutine(Test.ActiveOnIntervals(_movement.StopMovment, 1f));
-        //StartCoroutine(testPrintDirection());
+
         StartCoroutine(testSelfDestroyAfterDelay(60f));
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
     }
 
-    private IEnumerator testSelfDestroyAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-    }
 
-    private void Update() //// @@@@ TO BE REMOVED!!
-    {
-        //heroManager();
-        //testAddTargets(testTarget);
-    }
+    
 
-    public GameObject GetHeroTargetObj() => _targetObj;
 
-    /// <summary>
-    /// Attack the target if its infront of the hero and the hero is not on movment,
-    /// otherwise: if the hero is on movment, wait, if not tells the hero to lock on the target
-    /// Author: Ilan
-    /// </summary>
-    private void prepareToAttack()
-    {
-        if (_movement.IsObjRotating()) // TO BE CHANGED // If moving / rotating toward the target, skip
-            return;
-
-        Vector3 targetPos = _targetToAttack.transform.position;      
-        if (!_movement.IsLookingAtTheTarget(targetPos)) // if the target is not infront of the hero, tells it to rotate toward it
-        {
-            _movement.OnFinishMovment += prepareToAttack;
-            _movement.TargetLock(_targetToAttack, _skill.GetRange());
-            //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
-        }
-        else  // if not rotating and the target is infornt of the hero, attack
-            attack();
-
-        //heroManager();
-        manageHero();
-    }
-
-    private void attack()
-    {
-        _skill.attack();
-    }
-
-    /// <summary>
-    /// WARNING!
-    /// use it primarly for testing
-    /// Stops all the commands, and delegations of the hero after the given delay
-    /// Author: Ilan
-    /// </summary>
-    private void stopAllAfterDelay(float delay)
-    {
-        StopCoroutine(StopAfterDelay(delay));
-    }
-
-    /// <summary>
-    /// WARNING!
-    /// use it primarly for testing
-    /// Stops all the commands, and delegations of the hero after the given delay.
-    /// Author: Ilan
-    /// </summary>
-    private IEnumerator StopAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        stopAll();
-    }
-
-    /// <summary>
-    /// WARNING!
-    /// use it primary for testing.
-    /// Stops all the commands, and delegations of the hero.
-    /// Author: Ilan
-    /// </summary>
-    private void stopAll()
-    {
-        cancelOrders();
-        OnTargetInFieldOfView = delegate { };
-        OnMove = delegate { };
-        OnRespawn = delegate { };
-        onFinishMovment = delegate { };
-        onStartMovment = delegate { };
-        stop = true;
-    }
 
     /// <summary>
     /// Cancel the hero orders
@@ -284,7 +188,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             {
                 stopScannings();
                 OnTargetInFieldOfView += manageTargetAddDuringMovment;
-                startTrackIfObjTargetAttackable();
+                startTrackIfATargetAttackable(_targetObj);
             }
         }
         //else if() // TO BE ADDED: case the hero can attack and move
@@ -367,37 +271,41 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
 
     //************ Hero Logic - END ****************
 
+    //************ Hero Target Scanner ************* 
+    
     /// <summary>
     /// Start the traking of a the obj target spesific target if its attackable
     /// Author: Ilan
     /// </summary>
-    private void startTrackIfObjTargetAttackable()
+    private void startTrackIfATargetAttackable(GameObject target)
     {
         if (_isScanning)
             return;
 
         _isScanning = true;
-        StartCoroutine(trackIfObjTargetAttackable());
+        StartCoroutine(trackIfATargetAttackable(target));
     }
 
     /// <summary>
     /// A tracking function, that lock and target and keep checking if the target is attackable
     /// </summary>
     /// <returns></returns>
-    public IEnumerator trackIfObjTargetAttackable()
+    public IEnumerator trackIfATargetAttackable(GameObject target)
     {
-        while (_targetObj != null && !_skill.isTargetAttackable(_targetObj))
+        while (_targetObj != null && !_skill.isTargetAttackable(target) && _isScanning)
         {
             yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
         }
         //_targetsTo######AttackBank.Add()
-        _isScanning = false;
+        
 
-        if (OnTargetInFieldOfView != null)
+        if (_isScanning && OnTargetInFieldOfView != null)
         {
-            OnTargetInFieldOfView(_targetObj);
+            _isScanning = false;
+            OnTargetInFieldOfView(target);
             OnTargetInFieldOfView = null;
         }
+        _isScanning = false;
     }
 
 
@@ -436,11 +344,12 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     private IEnumerator autoScan()
     {
         Debug.Log("autoScan");
-        GameObject target = null;
-        while(target == null && _isScanning)
+        GameObject target = findAnAttackableTarget();
+
+        while(target == null && _isScanning) // if scanning and target not found
         {
-            target = findAnAttackableTarget();
             yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+            target = findAnAttackableTarget();
 
             if (!isThereATarget()) // in case that there are no more targets
                 _isScanning = false;
@@ -449,13 +358,14 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         _targetsToAttackBank.Remove(target);
         _targetsToAttackBank.Insert(0, target);
 
-        _isScanning = false;
 
-        if (target != null && OnTargetInFieldOfView != null)
+        if (_isScanning && target != null && OnTargetInFieldOfView != null)
         {
+            _isScanning = false;
             OnTargetInFieldOfView(target);
             OnTargetInFieldOfView = delegate { };
         }
+        _isScanning = false;
     }
 
     /// <summary>
@@ -473,55 +383,80 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         return null;
     }
 
+    // ******************* Targets functions *******************
+    /// <summary>
+    /// adds an enemy to the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void AddEnemyToBank(GameObject enemy)
+    {
+        if (_targetsToAttackBank.Contains(enemy))   // check if the enemy is already in my bank (suppose to be always true)
+            return;
+        _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
+
+        /*
+        if (enemy == null)
+            Debug.Log("Bug, null target");
+        Debug.Log("manageTargetAdd: " + enemy.name);
+        */
+
+        if (_movement.IsObjMoving())
+            manageTargetAddDuringMovment(enemy);
+        else
+            manageTargetAddDuringIdle(enemy);
+
+    }
+
+    /// <summary>
+    /// removes an enemy from the enemy bank
+    /// Author: OrS
+    /// </summary>
+    /// <param></param>
+    /// <returns></returns>
+    public void RemoveEnemyFromBank(GameObject enemy)
+    {
+        if (!_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
+            return;
+        _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
+
+
+        if (enemy == null)
+            Debug.Log("Bug, null target");
+        Debug.Log("manageTargetAdd: " + enemy.name);
+
+
+        if (_movement.IsObjMoving())
+            manageTargetRemoveDuringMovment(enemy);
+        else
+            manageTargetRemoveDuringIdle(enemy);
+
+    }
+
+
     private bool isThereATarget()
     {
         return _targetsToAttackBank.Count > 0;
     }
 
-
-    /// <summary>
-    /// Check if the target within the skill range.
-    /// If the target within the range, add the target to the hero targets bank
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="targetToAttack">Target to be checked</param>
-    /// <returns>true if the target is within the skill range</returns>
-    public bool TargetInRange(GameObject targetToAttack)
-    {
-        //addHeroesToAttackBank(targetToAttack);
-        if (_skill.isTargetInRange(targetToAttack.transform.position))
-        {
-            //_targetsToAttackBank.Add(targetToAttack);
-            //heroManager(); // need to be implemented with delegation
-            return true;
-        }
-
-        return false;
-    }
-
-    public IEnumerator testAttackTargets()
-    {
-        foreach (GameObject target in testTargets)
-        {
-            SetTargetObj(target);
-            while (target != null)
-            {
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-    }
-
+    // ******************** Movment Manage Functions *****************
 
     /// <summary>
     /// this method command the hero unit to go to the desired location.
     /// Author: Dor
     /// </summary>
+    /// <param name="desiredPos">Pos to go to</param>
     public void GoTo(Vector3 desiredPos)
     {
         _movement.OnFinishMovment += manageHeroIdle;
         _movement.GoTo(desiredPos);
     }
 
+    /// <summary>
+    /// This function command the hero to follow a GameObject
+    /// </summary>
+    /// <param name="target">Enemy to follow</param>
     public void GoAfter(GameObject target)
     {
         //_movement.OnFinishMovment += heroManager;
@@ -578,68 +513,95 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     }
 
 
-    // ******************* Targets functions *******************
-    /// <summary>
-    /// adds an enemy to the enemy bank
-    /// Author: OrS
-    /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    public void AddEnemyToBank(GameObject enemy)
-    {
-        if (_targetsToAttackBank.Contains(enemy))   // check if the enemy is already in my bank (suppose to be always true)
-            return;
-        _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
-
-        /*
-        if (enemy == null)
-            Debug.Log("Bug, null target");
-        Debug.Log("manageTargetAdd: " + enemy.name);
-        */
-
-        if (_movement.IsObjMoving())
-            manageTargetAddDuringMovment(enemy);
-        else
-            manageTargetAddDuringIdle(enemy);
-
-    }
-
-    /// <summary>
-    /// removes an enemy from the enemy bank
-    /// Author: OrS
-    /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    public void RemoveEnemyFromBank(GameObject enemy)
-    {
-        if (!_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
-            return;
-        _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
-
-
-        if (enemy == null)
-            Debug.Log("Bug, null target");
-        Debug.Log("manageTargetAdd: " + enemy.name);
-
-
-        if (_movement.IsObjMoving())
-            manageTargetRemoveDuringMovment(enemy);
-        else
-            manageTargetRemoveDuringIdle(enemy);
-
-    }
-
-
     // ******************* Attack functions *******************
     /// <summary>
-    /// removes an enemy from the enemy bank
-    /// Author: OrS
+    /// Attack the target if its infront of the hero and the hero is not on movment,
+    /// otherwise: if the hero is on movment, wait, if not tells the hero to lock on the target
+    /// Author: Ilan
     /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    public void attackEnemy()
+    private void prepareToAttack()
     {
+        if (_movement.IsObjRotating()) // TO BE CHANGED // If moving / rotating toward the target, skip
+            return;
 
+        Vector3 targetPos = _targetToAttack.transform.position;
+        if (!_movement.IsLookingAtTheTarget(targetPos)) // if the target is not infront of the hero, tells it to rotate toward it
+        {
+            _movement.OnFinishMovment += prepareToAttack;
+            _movement.TargetLock(_targetToAttack, _skill.GetRange());
+            //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
+        }
+        else  // if not rotating and the target is infornt of the hero, attack
+            attack();
+
+        //heroManager();
+        manageHero();
     }
+
+    private void attack()
+    {
+        _skill.attack();
+    }
+
+    //********************* TESTING **************************
+    /// <summary>
+    /// WARNING!
+    /// use it primarly for testing
+    /// Stops all the commands, and delegations of the hero after the given delay
+    /// Author: Ilan
+    /// </summary>
+    private void stopAllAfterDelay(float delay)
+    {
+        StopCoroutine(StopAfterDelay(delay));
+    }
+
+    /// <summary>
+    /// WARNING!
+    /// use it primarly for testing
+    /// Stops all the commands, and delegations of the hero after the given delay.
+    /// Author: Ilan
+    /// </summary>
+    private IEnumerator StopAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        stopAll();
+    }
+
+    /// <summary>
+    /// WARNING!
+    /// use it primary for testing.
+    /// Stops all the commands, and delegations of the hero.
+    /// Author: Ilan
+    /// </summary>
+    private void stopAll()
+    {
+        cancelOrders();
+        OnTargetInFieldOfView = delegate { };
+        OnMove = delegate { };
+        OnRespawn = delegate { };
+        onFinishMovment = delegate { };
+        onStartMovment = delegate { };
+        stop = true;
+    }
+
+    public IEnumerator testAttackTargets()
+    {
+        foreach (GameObject target in testTargets)
+        {
+            SetTargetObj(target);
+            while (target != null)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+    }
+
+    private IEnumerator testSelfDestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+
+
 
 }

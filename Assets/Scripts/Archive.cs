@@ -137,4 +137,26 @@ public class Archive
     //    }
     //}
 
+
+
+
+    ///// <summary>
+    ///// Check if the target within the skill range.
+    ///// If the target within the range, add the target to the hero targets bank
+    ///// Author: Ilan
+    ///// </summary>
+    ///// <param name="targetToAttack">Target to be checked</param>
+    ///// <returns>true if the target is within the skill range</returns>
+    //public bool TargetInRange(GameObject targetToAttack)
+    //{
+    //    //addHeroesToAttackBank(targetToAttack);
+    //    if (_skill.isTargetInRange(targetToAttack.transform.position))
+    //    {
+    //        //_targetsToAttackBank.Add(targetToAttack);
+    //        //heroManager(); // need to be implemented with delegation
+    //        return true;
+    //    }
+
+    //    return false;
+    //}
 }
