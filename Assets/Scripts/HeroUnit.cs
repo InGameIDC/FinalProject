@@ -42,32 +42,32 @@ public class HeroUnit : MonoBehaviour
         _targetsToAttackBank = new List<GameObject>();
         _skill = this.GetComponent<Skill>();
         _movement = this.GetComponent<Movment>();
+        initScanner();
 
-        _scanner = GetComponentInChildren<Scanner>(); // To Be Removed!!
 
         testCounter = 0;
         stop = false;
 
-        //_movement.OnFinishMovment += heroManager;
-        //_movement.OnStartMovment += prepareForNewOrder;
-
     }
-
 
     void Start()
     {
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
-
+        /*
         StartCoroutine(testAttackTargets());
 
         StartCoroutine(testSelfDestroyAfterDelay(60f));
+        */
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
     }
 
-
+    private void initScanner()
+    {
+        _scanner = GetComponentInChildren<Scanner>();
+        _scanner.OnObjEnter += AddEnemyToBank;
+        _scanner.OnObjExit += RemoveEnemyFromBank;
+    }
     
-
-
 
     /// <summary>
     /// Cancel the hero orders
@@ -577,11 +577,10 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     {
         cancelOrders();
         OnTargetInFieldOfView = delegate { };
-        OnMove = delegate { };
         OnRespawn = delegate { };
-        onFinishMovment = delegate { };
-        onStartMovment = delegate { };
         stop = true;
+        _movement.StopMovment();
+        _isScanning = false;
     }
 
     public IEnumerator testAttackTargets()

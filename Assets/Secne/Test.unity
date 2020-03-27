@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 82677408}
   m_Layer: 0
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: HeroUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 102559313}
   m_Layer: 0
   m_Name: Target (3)
-  m_TagString: Enemy
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -676,6 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523948198}
   - component: {fileID: 523948199}
+  - component: {fileID: 523948200}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -709,8 +710,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621d51092f8ad804ba05f29cf3938f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testScanner: {fileID: 1286488990}
   testHero: {fileID: 82677400}
+--- !u!114 &523948200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523948197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64f49fe9f223714eb1f16f0d1f32f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &563673844
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +737,7 @@ GameObject:
   - component: {fileID: 563673845}
   m_Layer: 0
   m_Name: Target (1)
-  m_TagString: Enemy
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,7 +830,7 @@ GameObject:
   - component: {fileID: 812445659}
   m_Layer: 0
   m_Name: Target (4)
-  m_TagString: Enemy
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1095,7 +1107,7 @@ GameObject:
   - component: {fileID: 1468190233}
   m_Layer: 0
   m_Name: Target (5)
-  m_TagString: Enemy
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1188,7 +1200,7 @@ GameObject:
   - component: {fileID: 1534279367}
   m_Layer: 0
   m_Name: Target (2)
-  m_TagString: Enemy
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1364,7 +1376,7 @@ GameObject:
   - component: {fileID: 1731747032}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Enemy
+  m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
