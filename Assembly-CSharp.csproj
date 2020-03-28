@@ -76,7 +76,9 @@
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\SkillScripts\SkillProjectile.cs" />
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\Unit.cs" />
     <Compile Include="Assets\Scripts\Archive.cs" />
+    <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\GlobalCodeSettings.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\HeroUnit.cs" />
     <Compile Include="Assets\Scripts\Movment.cs" />
     <Compile Include="Assets\Scripts\NavMesh.cs" />

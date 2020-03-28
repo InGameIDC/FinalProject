@@ -8,7 +8,6 @@ public class Projectile : MonoBehaviour
     public Action<Projectile, Collider> onHitMechs; // for data updates
     public Action<Projectile> onHitDsiplayers; // for feedbakcs: visual and audio displays.
 
-
     private void OnTriggerEnter(Collider target)
     {
         if (target.tag != "Enemy")
