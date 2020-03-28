@@ -27,10 +27,6 @@ public class HeroUnit : MonoBehaviour
 
     // testing
     bool stop;
-    int testCounter;
-    [SerializeField] public static GameObject testTarget;
-    [SerializeField] List<GameObject> testTargets; // only for testing
-    [SerializeField] List<GameObject> testGameTargets; // only for testing
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
 
@@ -44,21 +40,14 @@ public class HeroUnit : MonoBehaviour
         _movement = this.GetComponent<Movment>();
         initScanner();
 
-
-        testCounter = 0;
         stop = false;
-
     }
 
     void Start()
     {
-        Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
-        
-        StartCoroutine(testAttackTargets());
-
-        StartCoroutine(testSelfDestroyAfterDelay(60f));
-        
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
+        Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
+        //StartCoroutine(testSelfDestroyAfterDelay(60f));
     }
 
     private void initScanner()
@@ -67,8 +56,10 @@ public class HeroUnit : MonoBehaviour
         _scanner.OnObjEnter += AddEnemyToBank;
         _scanner.OnObjExit += RemoveEnemyFromBank;
     }
-    
 
+    #region Hero Ctrl
+
+    // ******************** Orders Cancel Functions *****************
     /// <summary>
     /// Cancel the hero orders
     /// Author: Ilan
@@ -90,24 +81,29 @@ public class HeroUnit : MonoBehaviour
         _movement.StopMovment();
     }
 
-    /*
-private void setHeroToAttack(GameObject targetToAttack)
-{
-    this.targetToAttack = targetToAttack;
-}
+    // ******************** START - Movment Manage Functions *****************
 
-private void addHeroesToAttackBank(GameObject targetToAttack)
-{
-    targetsToAttackBank.Add(targetToAttack);
-
-    bool isNeedToBeSetAsTarget = (this.targetToAttack == null || this.targetToAttack == targetHero);
-
-    if (isNeedToBeSetAsTarget)
+    /// <summary>
+    /// this method command the hero unit to go to the desired location.
+    /// Author: Dor
+    /// </summary>
+    /// <param name="desiredPos">Pos to go to</param>
+    public void GoTo(Vector3 desiredPos)
     {
-        setHeroToAttack(targetToAttack);
+        _movement.OnFinishMovment += manageHeroIdle;
+        _movement.GoTo(desiredPos);
     }
-}
-*/
+
+    /// <summary>
+    /// This function command the hero to follow a GameObject
+    /// </summary>
+    /// <param name="target">Enemy to follow</param>
+    public void GoAfter(GameObject target)
+    {
+        //_movement.OnFinishMovment += heroManager;
+        _movement.GoAfterTarget(target);
+    }
+    // ******************** END - Movment Manage Functions *****************
 
     /// <summary>
     /// Sets the given target as the hero primary target to attack.
@@ -120,6 +116,10 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         prepareForNewOrder(); // CHECK NEED TO BE CHANGED
         GoAfter(target); // CHECK NEED TO BE CHANGED
     }
+
+    #endregion
+
+    #region Hero Logic
 
     //************ Hero Logic - Start ****************
 
@@ -192,6 +192,23 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             }
         }
         //else if() // TO BE ADDED: case the hero can attack and move
+    }
+
+
+    private void manageTargetAddToBank(GameObject target)
+    {
+        if (_movement.IsObjMoving())
+            manageTargetAddDuringMovment(target);
+        else
+            manageTargetAddDuringIdle(target);
+    }
+
+    private void manageTargetRemoveFromBank(GameObject target)
+    {
+        if (_movement.IsObjMoving())
+            manageTargetRemoveDuringMovment(target);
+        else
+            manageTargetRemoveDuringIdle(target);
     }
 
     /// <summary>
@@ -270,9 +287,11 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     }
 
     //************ Hero Logic - END ****************
+    #endregion
 
+    #region Hero Targets Scanner
     //************ Hero Target Scanner ************* 
-    
+
     /// <summary>
     /// Start the traking of a the obj target spesific target if its attackable
     /// Author: Ilan
@@ -382,7 +401,9 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
 
         return null;
     }
+    #endregion
 
+    #region Targets Functions
     // ******************* Targets functions *******************
     /// <summary>
     /// adds an enemy to the enemy bank
@@ -402,11 +423,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         Debug.Log("manageTargetAdd: " + enemy.name);
         */
 
-        if (_movement.IsObjMoving())
-            manageTargetAddDuringMovment(enemy);
-        else
-            manageTargetAddDuringIdle(enemy);
-
+        manageTargetAddToBank(enemy);
     }
 
     /// <summary>
@@ -426,11 +443,7 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
             Debug.Log("Bug, null target");
         Debug.Log("manageTargetAdd: " + enemy.name);
 
-
-        if (_movement.IsObjMoving())
-            manageTargetRemoveDuringMovment(enemy);
-        else
-            manageTargetRemoveDuringIdle(enemy);
+        manageTargetRemoveFromBank(enemy);
 
     }
 
@@ -439,29 +452,9 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
     {
         return _targetsToAttackBank.Count > 0;
     }
+    #endregion
 
-    // ******************** Movment Manage Functions *****************
 
-    /// <summary>
-    /// this method command the hero unit to go to the desired location.
-    /// Author: Dor
-    /// </summary>
-    /// <param name="desiredPos">Pos to go to</param>
-    public void GoTo(Vector3 desiredPos)
-    {
-        _movement.OnFinishMovment += manageHeroIdle;
-        _movement.GoTo(desiredPos);
-    }
-
-    /// <summary>
-    /// This function command the hero to follow a GameObject
-    /// </summary>
-    /// <param name="target">Enemy to follow</param>
-    public void GoAfter(GameObject target)
-    {
-        //_movement.OnFinishMovment += heroManager;
-        _movement.GoAfterTarget(target);
-    }
 
 
     // ******************* Life Lost functions *******************
@@ -594,25 +587,10 @@ private void addHeroesToAttackBank(GameObject targetToAttack)
         _movement.StopMovment();
         _isScanning = false;
     }
-
-    public IEnumerator testAttackTargets()
-    {
-        foreach (GameObject target in testTargets)
-        {
-            SetTargetObj(target);
-            while (target != null)
-            {
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-    }
-
     private IEnumerator testSelfDestroyAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
-
-
 
 }

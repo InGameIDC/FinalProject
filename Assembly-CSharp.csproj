@@ -74,6 +74,7 @@
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\SkillScripts\SkillObject.cs" />
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\SkillScripts\SkillProjectile.cs" />
     <Compile Include="Assets\DevDanielTest\DevDanielScripts\Unit.cs" />
+    <Compile Include="Assets\Scripts\AI1.cs" />
     <Compile Include="Assets\Scripts\Archive.cs" />
     <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\GlobalCodeSettings.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\Scanner.cs" />
     <Compile Include="Assets\Scripts\Skill.cs" />
     <Compile Include="Assets\Scripts\SpaceCalTool.cs" />
+    <Compile Include="Assets\Scripts\TargetBank.cs" />
     <Compile Include="Assets\Scripts\TargetsBank.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
     <Reference Include="Unity.Timeline.Editor">
