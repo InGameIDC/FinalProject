@@ -62,6 +62,14 @@ public static class SpaceCalTool
 		return DistancePow2(pos1, pos2) <= (distance * distance);
 	}
 
+	public static bool IsDistanceBetweenTwoPosesLessThan(Vector3 pos1, Vector3 pos2, float distance, bool isHeightCalculated)
+	{
+		if(!isHeightCalculated)
+		pos1.y = pos2.y;
+
+		return DistancePow2(pos1, pos2) <= (distance * distance);
+	}
+
 	/// <summary>
 	/// Calculate the diffrance between the current angel, to the require 
 	/// Author: Ilan 

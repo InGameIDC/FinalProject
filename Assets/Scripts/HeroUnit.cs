@@ -64,7 +64,7 @@ public class HeroUnit : MonoBehaviour
     /// Cancel the hero orders
     /// Author: Ilan
     /// </summary>
-    private void cancelOrders()
+    public void CancelOrders()
     {
         _targetObj = null;
         prepareForNewOrder();
@@ -90,6 +90,7 @@ public class HeroUnit : MonoBehaviour
     /// <param name="desiredPos">Pos to go to</param>
     public void GoTo(Vector3 desiredPos)
     {
+        CancelOrders();
         _movement.OnFinishMovment += manageHeroIdle;
         _movement.GoTo(desiredPos);
     }
@@ -580,7 +581,7 @@ public class HeroUnit : MonoBehaviour
     /// </summary>
     private void stopAll()
     {
-        cancelOrders();
+        CancelOrders();
         OnTargetInFieldOfView = delegate { };
         OnRespawn = delegate { };
         stop = true;

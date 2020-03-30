@@ -86,12 +86,26 @@ public static class Test ///Author: Ilan
         LineRenderer line = DrawCircle(container, radius, lineWidth);
 
         line.material = new Material(Shader.Find("Sprites/Default"));
-        line.startColor = Color.red;
-        line.endColor = Color.red;
+        line.startColor = color;
+        line.endColor = color;
 
         return line;
     }
 
 
+    public static IEnumerator MarkCircleAtPos(Vector3 pos, float duration)
+    {
+        yield return MarkCircleAtPos(pos, duration, Color.red);
+    }
 
+    public static IEnumerator MarkCircleAtPos(Vector3 pos, float duration, Color color)
+    {
+        GameObject circle = new GameObject();
+        pos.y += 0.05f;
+        circle.transform.position = pos;
+        DrawCircle(circle, 1f, 0.1f, color);
+        yield return new WaitForSeconds(duration);
+        circle.SetActive(false);
+        MonoBehaviour.Destroy(circle);
+    }
 }

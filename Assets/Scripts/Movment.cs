@@ -402,7 +402,7 @@ public class Movment : MonoBehaviour
 
 	public bool IsNavigating()
 	{
-		return _navMeshAgent.pathPending || !_navMeshAgent.isStopped;
+		return _navMeshAgent.pathPending; //|| !_navMeshAgent.isStopped;
 	}
     #endregion
 
@@ -423,7 +423,7 @@ public class Movment : MonoBehaviour
 	/// <returns>True if the object is moving</returns>
 	public bool IsObjMoving()
 	{
-		return /*!isDistanceBetweenTwoPosesLessThan(transform.position, _desiredPos, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR); //|| */IsNavigating();
+		return !IsDistanceBetweenTwoPosesLessThan(transform.position, _desiredPos, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR, _isHeightCalculated) || IsNavigating();
 	}
 
 	/// <summary>
