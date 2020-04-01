@@ -94,6 +94,6 @@ public class Skill : MonoBehaviour
         }
 
         Destroy(proj.transform.gameObject);
-        Destroy(target.transform.gameObject);
+        //Destroy(target.transform.gameObject); //OrS: No need, killed in the health script
     }
 }
