@@ -35,9 +35,9 @@ public class Health : MonoBehaviour
         if (_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
         {
             OnDeath(gameObject);        // tells all classes that it is dead
-            
-            
-            Destroy(gameObject);    //For Testing
+
+            ResetHealth();
+            //Destroy(gameObject);    //For Testing
         }
 
     }
@@ -58,7 +58,8 @@ public class Health : MonoBehaviour
 
     public void ResetHealth()
     {
-        _currentHeatlh = _maxHealth; ;
+        _currentHeatlh = _maxHealth;
+        GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);
     }
 
 }

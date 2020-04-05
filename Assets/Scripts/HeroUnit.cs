@@ -10,12 +10,9 @@ enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, 
 public class HeroUnit : MonoBehaviour
 {
     Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
-    Action<GameObject> OnTargetInFieldOfView = delegate { };                      // On scan End
-
 
     private int _id;
     private Skill _skill;
-    private List<GameObject> _targetsToAttackBank;
     private GameObject _targetToAttack;             // This is the target to be attacked by the hero.
     private GameObject _targetObj;                 // The selected enemy to be attacked.
     private ObjStatus _status;                    // The hero order status (CURRECTLY NOT IN USE, MIGHT BE REMOVED)
@@ -23,10 +20,9 @@ public class HeroUnit : MonoBehaviour
     private Movment _movement;                  // The movment component script
     private Scanner _scanner;
     private Health _health;
-
-
-    // testing
-    bool stop;
+    private TargetsBank _targetsBank;
+    private TargetFinder _targetFinder;
+    private float _respawnTime;
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
 
@@ -35,12 +31,13 @@ public class HeroUnit : MonoBehaviour
     {
         this._status = ObjStatus.idle;
         _targetToAttack = null;
-        _targetsToAttackBank = new List<GameObject>();
         _skill = this.GetComponent<Skill>();
         _movement = this.GetComponent<Movment>();
+        initTargetsBank();
+        _targetsBank = this.GetComponent<TargetsBank>();
+        _targetFinder = this.GetComponent<TargetFinder>();
         initScanner();
-
-        stop = false;
+        initHeroHealth();
     }
 
     void Start()
@@ -48,14 +45,31 @@ public class HeroUnit : MonoBehaviour
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
-    }
+    }    
 
+    #region Inits
+    private void initTargetsBank()
+    {
+        _targetsBank = this.GetComponent<TargetsBank>();
+        _targetsBank.OnAddTargetToBank += manageTargetAddToBank;
+        _targetsBank.OnRemoveTargetFromBank += manageTargetRemoveFromBank;
+    }
     private void initScanner()
     {
         _scanner = GetComponentInChildren<Scanner>();
-        _scanner.OnObjEnter += AddEnemyToBank;
-        _scanner.OnObjExit += RemoveEnemyFromBank;
+        _scanner.OnObjEnter += _targetsBank.AddEnemyToBank;
+        _scanner.OnObjExit += _targetsBank.RemoveEnemyFromBank;
     }
+
+    private void initHeroHealth()
+    {
+        _health = GetComponent<Health>();
+        //_health.InitHealth(100f);
+        _health.OnDeath += Die;
+        // TO BE CHANGED, TO FIND BATTLEMANAGER WITHOUT FIND!!
+        _health.OnDeath += GameObject.Find("BattleManager").GetComponent<BattleManager>().DieAndRespawn;
+    }
+    #endregion
 
     #region Hero Ctrl
 
@@ -77,7 +91,7 @@ public class HeroUnit : MonoBehaviour
     private void prepareForNewOrder()
     {
         _targetToAttack = null;
-        stopScannings();
+        _targetFinder.stopScannings();
         _movement.StopMovment();
     }
 
@@ -151,7 +165,7 @@ public class HeroUnit : MonoBehaviour
             GoAfter(_targetObj);
         }
 
-        GameObject newTarget = findAnAttackableTarget(); // Checks if there an attackable target
+        GameObject newTarget = _targetFinder.findAnAttackableTarget(_targetsBank.GetTargetsList(), _skill); // Checks if there an attackable target
 
         if (newTarget != null) // If the target escaped we change the target to the next item in the list
         {
@@ -163,10 +177,10 @@ public class HeroUnit : MonoBehaviour
         else
         {
             _targetToAttack = null; // There is no an available target, sets the _targetToAttack to null
-            if (isThereATarget()) // If there a target in the attack range
+            if (_targetsBank.isThereATarget()) // If there a target in the attack range
             {
-                OnTargetInFieldOfView += manageTargetAddDuringIdle; // Sets the manage hero at target add function, to be call if the a target become attackable
-                startScanningForAnAttackableTarget(); // Start scanning for an attackable target
+                _targetFinder.OnTargetInFieldOfView += manageTargetAddDuringIdle; // Sets the manage hero at target add function, to be call if the a target become attackable
+                _targetFinder.startScanningForAnAttackableTarget(_targetsBank.GetTargetsList(), _skill); // Start scanning for an attackable target
             }
         }
     }
@@ -187,9 +201,9 @@ public class HeroUnit : MonoBehaviour
             }
             else // If the target is not attackable, tells the hero to start track the target, and if it become attackable, it would recall the function.
             {
-                stopScannings();
-                OnTargetInFieldOfView += manageTargetAddDuringMovment;
-                startTrackIfATargetAttackable(_targetObj);
+                _targetFinder.stopScannings();
+                _targetFinder.OnTargetInFieldOfView += manageTargetAddDuringMovment;
+                _targetFinder.startTrackIfATargetAttackable(_targetObj, _skill);
             }
         }
         //else if() // TO BE ADDED: case the hero can attack and move
@@ -241,8 +255,8 @@ public class HeroUnit : MonoBehaviour
         {
             if (!_isScanning) // if not scanning, Start scanning for an attackable Targets
             {
-                OnTargetInFieldOfView += manageTargetAddDuringIdle;  // If finds a target during scanning, calls the function again
-                startScanningForAnAttackableTarget();
+                _targetFinder.OnTargetInFieldOfView += manageTargetAddDuringIdle;  // If finds a target during scanning, calls the function again
+                _targetFinder.startScanningForAnAttackableTarget(_targetsBank.GetTargetsList(), _skill);
             }
         }
         
@@ -256,7 +270,7 @@ public class HeroUnit : MonoBehaviour
     {
         if (target == _targetObj) // If target escape
         {
-            stopScannings(); // stop the target tracking, and the hero is probably keep moving after the target
+            _targetFinder.stopScannings(); // stop the target tracking, and the hero is probably keep moving after the target
             if(_targetObj == null) // If the target is dead
             {
                 prepareForNewOrder();
@@ -290,201 +304,12 @@ public class HeroUnit : MonoBehaviour
     //************ Hero Logic - END ****************
     #endregion
 
-    #region Hero Targets Scanner
-    //************ Hero Target Scanner ************* 
-
-    /// <summary>
-    /// Start the traking of a the obj target spesific target if its attackable
-    /// Author: Ilan
-    /// </summary>
-    private void startTrackIfATargetAttackable(GameObject target)
-    {
-        if (_isScanning)
-            return;
-
-        _isScanning = true;
-        StartCoroutine(trackIfATargetAttackable(target));
-    }
-
-    /// <summary>
-    /// A tracking function, that lock and target and keep checking if the target is attackable
-    /// </summary>
-    /// <returns></returns>
-    public IEnumerator trackIfATargetAttackable(GameObject target)
-    {
-        while (_targetObj != null && !_skill.isTargetAttackable(target) && _isScanning)
-        {
-            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
-        }
-        //_targetsTo######AttackBank.Add()
-        
-
-        if (_isScanning && OnTargetInFieldOfView != null)
-        {
-            _isScanning = false;
-            OnTargetInFieldOfView(target);
-            OnTargetInFieldOfView = null;
-        }
-        _isScanning = false;
-    }
-
-
-    /// <summary>
-    /// Start the traking corutine to track the targetes
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="target">The target to be track</param>
-    private void startScanningForAnAttackableTarget()
-    {
-        Debug.Log("startScan");
-        if (_isScanning)
-            return;
-
-        _isScanning = true;
-        StartCoroutine(autoScan());
-    }
-
-    /// <summary>
-    /// Stop the tracking corutine
-    /// Author: Ilan
-    /// </summary>
-    private void stopScannings()
-    {
-        //Debug.Log("stopScan");
-        _isScanning = false;
-        OnTargetInFieldOfView = delegate { };
-    }
-
-    /// <summary>
-    /// Start tracking after the target
-    /// Author: Ilan
-    /// </summary>
-    /// <param name="target">Target to be track</param>
-    /// <returns></returns>
-    private IEnumerator autoScan()
-    {
-        Debug.Log("autoScan");
-        GameObject target = findAnAttackableTarget();
-
-        while(target == null && _isScanning) // if scanning and target not found
-        {
-            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
-            target = findAnAttackableTarget();
-
-            if (!isThereATarget()) // in case that there are no more targets
-                _isScanning = false;
-        }
-
-        _targetsToAttackBank.Remove(target);
-        _targetsToAttackBank.Insert(0, target);
-
-
-        if (_isScanning && target != null && OnTargetInFieldOfView != null)
-        {
-            _isScanning = false;
-            OnTargetInFieldOfView(target);
-            OnTargetInFieldOfView = delegate { };
-        }
-        _isScanning = false;
-    }
-
-    /// <summary>
-    /// Search if there an attackable target within the targetbank
-    /// </summary>
-    /// <returns></returns>
-    public GameObject findAnAttackableTarget()
-    {
-        foreach (GameObject target in _targetsToAttackBank)
-        {
-            if (target != null && _skill.isTargetAttackable(target))
-                return target;
-        }
-
-        return null;
-    }
-    #endregion
-
-    #region Targets Functions
-    // ******************* Targets functions *******************
-    /// <summary>
-    /// adds an enemy to the enemy bank
-    /// Author: OrS
-    /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    public void AddEnemyToBank(GameObject enemy)
-    {
-        if (_targetsToAttackBank.Contains(enemy))   // check if the enemy is already in my bank (suppose to be always true)
-            return;
-        _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
-
-        /*
-        if (enemy == null)
-            Debug.Log("Bug, null target");
-        Debug.Log("manageTargetAdd: " + enemy.name);
-        */
-
-        manageTargetAddToBank(enemy);
-    }
-
-    /// <summary>
-    /// removes an enemy from the enemy bank
-    /// Author: OrS
-    /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    public void RemoveEnemyFromBank(GameObject enemy)
-    {
-        if (!_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
-            return;
-        _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
-
-
-        if (enemy == null)
-            Debug.Log("Bug, null target");
-        Debug.Log("manageTargetAdd: " + enemy.name);
-
-        manageTargetRemoveFromBank(enemy);
-
-    }
-
-
-    private bool isThereATarget()
-    {
-        return _targetsToAttackBank.Count > 0;
-    }
-    #endregion
-
-
-
-
+    #region Health Related
     // ******************* Life Lost functions *******************
-    private void initHeroHealth()
-    {
-        _health = GetComponent<Health>();
-        _health.InitHealth(100f);
-        _health.OnDeath += Die;
-    }
-
     public void Die(GameObject hero)
     {
-        this._status = ObjStatus.dead;   // change status to dead
-        this._targetsToAttackBank = null;  // reset the bank of possible enemys in range
+        //this._status = ObjStatus.dead;   // change status to dead
         this._targetObj = null;         // reset the target hero
-
-        StartCoroutine(waitForRespawn());
-    }
-
-    /// <summary>
-    /// wait for RESPAWN_TIME seconds before appearing again in the game
-    /// Author: OrS
-    /// </summary>
-    /// <param></param>
-    /// <returns></returns>
-    private IEnumerator waitForRespawn()
-    {
-        yield return new WaitForSeconds(GlobalCodeSettings.RESPAWN_TIME);
-        respawnHero();
     }
 
     /// <summary>
@@ -493,20 +318,10 @@ public class HeroUnit : MonoBehaviour
     /// </summary>
     /// <param></param>
     /// <returns></returns>
-    private void respawnHero()
-    {
-        // repeating "Awake" function
-        this._status = ObjStatus.idle;
-        //_moveSpeed = 0.2f; // <============= To Check
-        _targetsToAttackBank.Clear();
+    //private void respawnHero() { //OnRespawn(gameObject); }            // tells all classes that it is respawning  
+    #endregion
 
-        _health.ResetHealth();
-        //TODO: add a starting position
-
-        OnRespawn(gameObject);            // tells all classes that it is respawning  
-    }
-
-
+    #region Attack Manage
     // ******************* Attack functions *******************
     /// <summary>
     /// Attack the target if its infront of the hero and the hero is not on movment,
@@ -528,27 +343,13 @@ public class HeroUnit : MonoBehaviour
         else  // if not rotating and the target is infornt of the hero, attack
             attack();
 
-        //heroManager();
         manageHero();
     }
-    /*
-    private void AutoAttack()
-    {
-        while (_skill.isTargetAttackable(_targetToAttack))
-        {
-            prepareToAttack();
-            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+    // TO BE ADDED: AUTO ATTACK FROM ARCHIVE
+    private void attack(){ _skill.attack(); }
+    #endregion
 
-            if()
-        }
-        _targetToAttack = null;
-    }
-    */
-    private void attack()
-    {
-        _skill.attack();
-    }
-
+    #region Testing
     //********************* TESTING **************************
     /// <summary>
     /// WARNING!
@@ -582,9 +383,7 @@ public class HeroUnit : MonoBehaviour
     private void stopAll()
     {
         CancelOrders();
-        OnTargetInFieldOfView = delegate { };
         OnRespawn = delegate { };
-        stop = true;
         _movement.StopMovment();
         _isScanning = false;
     }
@@ -593,5 +392,5 @@ public class HeroUnit : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
     }
-
+    #endregion
 }

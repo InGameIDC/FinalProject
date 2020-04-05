@@ -159,4 +159,18 @@ public class Archive
 
     //    return false;
     //}
+
+
+    //private void AutoAttack()
+    //{
+    //    while (_skill.isTargetAttackable(_targetToAttack))
+    //    {
+    //        prepareToAttack();
+    //        yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+
+    //        if()
+    //    }
+    //    _targetToAttack = null;
+    //}
+    
 }

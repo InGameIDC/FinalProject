@@ -73,10 +73,10 @@ public class InputManagerMouse : MonoBehaviour
                 float distancePow2 = Vector3.SqrMagnitude(_lastTouchPosition - _hit.point);
 
                 //Debugging
-                Debug.Log("Object clicked: " + _objectClicked +
-                            " in position: " + _hit.collider.transform.position.ToString() +
-                            ", impact point is: " + _hit.point.ToString() +
-                            " and distance = " + distancePow2);
+                //Debug.Log("Object clicked: " + _objectClicked +
+                //            " in position: " + _hit.collider.transform.position.ToString() +
+                //            ", impact point is: " + _hit.point.ToString() +
+                //            " and distance = " + distancePow2);
 
                         if (!_wasClicked)
                         {
@@ -88,7 +88,7 @@ public class InputManagerMouse : MonoBehaviour
                                 (Time.time - _timeOfLastTouch <= _maxDoubleTapTime) &&
                                 distancePow2 <= (_maxDistance * _maxDistance))
                 {
-                            Debug.Log("Double Touch detected");
+                            //Debug.Log("Double Touch detected");
                             DoubleClick(_objectClicked, _hit);
                             _wasClicked = false;
                         }
@@ -104,7 +104,7 @@ public class InputManagerMouse : MonoBehaviour
         yield return new WaitForSecondsRealtime(_maxDoubleTapTime);
         if (_wasClicked)
         {
-            Debug.Log("Single Touch detected");
+            //Debug.Log("Single Touch detected");
             _wasClicked = false;
             SingleClick(_objectClicked, _hit);
             StopCoroutine("SingleOrDouble");
@@ -113,7 +113,7 @@ public class InputManagerMouse : MonoBehaviour
 
     private void SingleClick(GameObject collider, RaycastHit hit)
     {
-        Debug.Log("Single FUNCTION called with object " + collider + " on point " + hit.point);
+        //Debug.Log("Single FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit") || collider.tag.Equals("EnemyUnit"))
         {
             OnUnitClick(_objectClicked);
@@ -127,7 +127,7 @@ public class InputManagerMouse : MonoBehaviour
 
     private void DoubleClick(GameObject collider, RaycastHit hit)
     {
-        Debug.Log("Double FUNCTION called with object " + collider + " on point " + hit.point);
+        //Debug.Log("Double FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit"))
         {
             OnUnitDoubleClick(collider);

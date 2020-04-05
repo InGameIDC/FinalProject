@@ -326,7 +326,7 @@ public class Movment : MonoBehaviour
 			}
 
 			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
-			Debug.Log("After Rotation Tick");
+			//Debug.Log("After Rotation Tick");
 		}
 		Debug.Log("End Rotation");
 
