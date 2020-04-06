@@ -29,12 +29,12 @@ public class TargetsBank : MonoBehaviour
     /// </summary>
     /// <param></param>
     /// <returns></returns>
-    public void AddEnemyToBank(GameObject enemy)
+    public void AddTargetToBank(GameObject target)
     {
-        if (_targetsToAttackBank.Contains(enemy))   // check if the enemy is already in my bank (suppose to be always true)
+        if (_targetsToAttackBank.Contains(target))   // check if the enemy is already in my bank (suppose to be always true)
             return;
-        _targetsToAttackBank.Add(enemy);           // if not, add the enemy to the bank
-
+        _targetsToAttackBank.Add(target);           // if not, add the enemy to the bank
+        removeEnemyOnEnemyDeath(target);
         /*
         if (enemy == null)
             Debug.Log("Bug, null target");
@@ -42,7 +42,7 @@ public class TargetsBank : MonoBehaviour
         */
 
         if (OnAddTargetToBank != null)
-            OnAddTargetToBank(enemy);
+            OnAddTargetToBank(target);
 
     }
 
@@ -52,20 +52,20 @@ public class TargetsBank : MonoBehaviour
     /// </summary>
     /// <param></param>
     /// <returns></returns>
-    public void RemoveEnemyFromBank(GameObject enemy)
+    public void RemoveTargetFromBank(GameObject target)
     {
-        if (!_targetsToAttackBank.Contains(enemy))      // check if the enemy is already in my bank (suppose to be always true)
+        if (!_targetsToAttackBank.Contains(target))      // check if the enemy is already in my bank (suppose to be always true)
             return;
-        _targetsToAttackBank.Remove(enemy);        // if it is, remove the enemy from the bank
+        _targetsToAttackBank.Remove(target);        // if it is, remove the enemy from the bank
 
 
-        if (enemy == null)
+        if (target == null)
             Debug.Log("Bug, null target");
-        Debug.Log("manageTargetAdd: " + enemy.name);
+        Debug.Log("manageTargetAdd: " + target.name);
 
 
         if (OnRemoveTargetFromBank != null)
-            OnRemoveTargetFromBank(enemy);
+            OnRemoveTargetFromBank(target);
     }
 
     public ReadOnlyCollection<GameObject> GetTargetsList()
@@ -73,5 +73,15 @@ public class TargetsBank : MonoBehaviour
         return new ReadOnlyCollection<GameObject>(_targetsToAttackBank);
     }
     
+    private void removeEnemyOnEnemyDeath(GameObject enemy)
+    {
+        Health enemyHealth = enemy.GetComponent<Health>();
+        if (enemyHealth != null)
+            enemyHealth.OnDeath += RemoveTargetFromBank;
+    }
 
+    public bool isTargetInBank(GameObject target)
+    {
+        return _targetsToAttackBank.Contains(target);
+    }
 }

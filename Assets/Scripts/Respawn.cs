@@ -18,24 +18,16 @@ public static class Respawn
     /// <param name="respawnTime"></param>
     public static IEnumerator DieAndRespawn(GameObject gameObject, float respawnTime)
     {
-        //gameObject.GetComponent<Renderer>().enabled = false;
-        //Renderer[] Renderers = gameObject.GetComponentsInChildren<Renderer>();
+        gameObject.transform.position =new Vector3(0, -10, 0);
         gameObject.SetActive(false);
-        //SetRendereEnabled(Renderers, false);
+
         yield return new WaitForSeconds(respawnTime);
-        //gameObject.GetComponent<Renderer>().enabled = true;
-        //SetRendereEnabled(Renderers, true);
+
         gameObject.SetActive(true);
         gameObject.transform.position = respawnPrefabsArray.RandomItem().transform.position;
+
     }
 
-    private static void SetRendereEnabled(Component[] components,bool isEnabled)
-    {
-        foreach(Component comp in components)
-        {
-            //comp.en = isEnabled;
-        }
-    }
     
     /// <summary>
     /// author: dor peretz
@@ -46,10 +38,10 @@ public static class Respawn
     /// <param name="respawnTime"></param>
     public static IEnumerator DieAndRespawnSpecialPosition(GameObject gameObject, Vector3 respawnPos, float respawnTime)
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.SetActive(false);
         yield return new WaitForSeconds(respawnTime);
         gameObject.transform.position = respawnPos;
-        gameObject.GetComponent<Renderer>().enabled = true;
+        gameObject.SetActive(true);
     }
 
     //public void dieAndRespawn(GameObject hero, float time) { StartCoroutine(DieAndRespawn(hero, time)); }

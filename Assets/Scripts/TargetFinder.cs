@@ -9,10 +9,43 @@ public class TargetFinder : MonoBehaviour
     public Action<GameObject> OnTargetInFieldOfView = delegate { }; // On scan End
     private bool _isScanning;
 
+    public Action OnTargetDeath = delegate { };
+    private bool _isTrackingIfTargetAlive;
+
     private void Awake()
     {
         _isScanning = false;
+        _isTrackingIfTargetAlive = false;
     }
+
+
+    // *********** Hero Taget Alive Tracker ********
+    public void StartTrackIfTargetAlive(GameObject target)
+    {
+        if (_isTrackingIfTargetAlive)
+            return;
+
+        _isTrackingIfTargetAlive = true;
+        StartCoroutine(TrackIfTargetAlive(target));
+    }
+
+    private IEnumerator TrackIfTargetAlive(GameObject target)
+    {
+        while (_isTrackingIfTargetAlive && target.activeSelf)
+        {
+            yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+        }
+
+        _isTrackingIfTargetAlive = false;
+        if (!target.activeSelf)
+            OnTargetDeath();
+    }
+    public void stopTackIfTargetAlive()
+    {
+        //Debug.Log("stopScan");
+        _isTrackingIfTargetAlive = false;
+    }
+
 
     //************ Hero Target Scanner ************* 
 
@@ -35,7 +68,7 @@ public class TargetFinder : MonoBehaviour
     /// <returns></returns>
     public IEnumerator trackIfATargetAttackable(GameObject target, Skill skill)
     {
-        while (target != null && !skill.isTargetAttackable(target) && _isScanning)
+        while (target != null && !skill.isTargetAttackable(target) && _isScanning && target.activeSelf)
         {
             yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
         }

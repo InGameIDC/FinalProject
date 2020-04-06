@@ -95,6 +95,7 @@ public class Movment : MonoBehaviour
 		//Debug.Log("SetObjDesirePos");
 		if (OnStartMovment != null)
 			OnStartMovment();
+
 		_desiredPos = target.transform.position;
 		//StartCoroutine(moveObject());
 		_navMeshAgent.isStopped = false;
@@ -153,13 +154,16 @@ public class Movment : MonoBehaviour
 
 	private IEnumerator autoTargetLocationTrack()
 	{
-		while (_isTargetLocationLock && _targetLocationLock != null)
+		while (_isTargetLocationLock && _targetLocationLock != null && _targetLocationLock.activeSelf)
 		{
 			if (_desiredPos != _targetLocationLock.transform.position)
 				GoTo(_targetLocationLock.transform.position);
 
 			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
 		}
+
+		if (_targetLocationLock != null && !_targetLocationLock.activeSelf)
+			StopMovment();
 
 		_isMovmentFinishTracking = false;
 	}
@@ -306,7 +310,7 @@ public class Movment : MonoBehaviour
 
 		setDesiredRotationDirection(_targetRotationLock.transform.position);
 		Debug.Log("Pre Rotation");
-		while (_targetRotationLock != null && isTargetInRange(rangeKeep) && _isRotationLock) // && !IsLookingAtTheTarget(_desiredRotationDirection)) // Checks if the object finished to rotate target, and if it's on movment
+		while (_targetRotationLock != null && isTargetInRange(rangeKeep) && _isRotationLock && _targetRotationLock.activeSelf) // && !IsLookingAtTheTarget(_desiredRotationDirection)) // Checks if the object finished to rotate target, and if it's on movment
 		{
 			setDesiredRotationDirection(_targetRotationLock.transform.position);
 

@@ -7,9 +7,9 @@ using System;
 enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, moveAndRotate, moveAndAttackAndRotate, rotateAndAttack};
 
 
-public class HeroUnit : MonoBehaviour
+public class HeroUnit : MonoBehaviour 
 {
-    Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
+    public Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
 
     private int _id;
     private Skill _skill;
@@ -36,6 +36,7 @@ public class HeroUnit : MonoBehaviour
         initTargetsBank();
         _targetsBank = this.GetComponent<TargetsBank>();
         _targetFinder = this.GetComponent<TargetFinder>();
+        _targetFinder.OnTargetDeath += manageTargetObjDeath;
         initScanner();
         initHeroHealth();
     }
@@ -57,8 +58,8 @@ public class HeroUnit : MonoBehaviour
     private void initScanner()
     {
         _scanner = GetComponentInChildren<Scanner>();
-        _scanner.OnObjEnter += _targetsBank.AddEnemyToBank;
-        _scanner.OnObjExit += _targetsBank.RemoveEnemyFromBank;
+        _scanner.OnObjEnter += _targetsBank.AddTargetToBank;
+        _scanner.OnObjExit += _targetsBank.RemoveTargetFromBank;
     }
 
     private void initHeroHealth()
@@ -81,6 +82,7 @@ public class HeroUnit : MonoBehaviour
     public void CancelOrders()
     {
         _targetObj = null;
+        _targetFinder.stopTackIfTargetAlive();
         prepareForNewOrder();
     }
 
@@ -127,11 +129,11 @@ public class HeroUnit : MonoBehaviour
     /// <param name="target"></param>
     public void SetTargetObj(GameObject target)
     {
+        CancelOrders(); // CHECK NEED TO BE CHANGED
         this._targetObj = target;
-        prepareForNewOrder(); // CHECK NEED TO BE CHANGED
+        _targetFinder.StartTrackIfTargetAlive(target);
         GoAfter(target); // CHECK NEED TO BE CHANGED
     }
-
     #endregion
 
     #region Hero Logic
@@ -298,7 +300,12 @@ public class HeroUnit : MonoBehaviour
         // IMPORTANT we assume that if we attack, and there is a targetObj, then we attack the targetObj, therefore the prevoius condtion would be trigger.
 
         manageHeroIdle();
+    }
 
+    private void manageTargetObjDeath()
+    {
+        CancelOrders();
+        manageHeroIdle();
     }
 
     //************ Hero Logic - END ****************
