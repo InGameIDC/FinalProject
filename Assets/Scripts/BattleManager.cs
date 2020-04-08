@@ -58,13 +58,13 @@ public class BattleManager : MonoBehaviour
         {
             StartCoroutine(Test.MarkCircleAtPos(new Vector3(clickedobject.transform.position.x, 0f, clickedobject.transform.position.z), 0.5f));
             //attack the selected enemy with current unit
-            Debug.Log("current unit is attacking " + clickedobject);
+            //Debug.Log("current unit is attacking " + clickedobject);
             _currentUnit.SetTargetObj(clickedobject);
         }
 
         //This is a problem, as _currentUnit is a Unit script that has no reference
         //to the actual object it is attached to, for the time being.
-        Debug.Log("current unit is attached to " + _currentUnit);
+        //Debug.Log("current unit is attached to " + _currentUnit);
     }
 
     /// <summary>
@@ -75,7 +75,7 @@ public class BattleManager : MonoBehaviour
     private void OnFieldClicked(Vector3 targetPosition)
     {
         StartCoroutine(Test.MarkCircleAtPos(targetPosition, 0.5f, Color.yellow));
-        Debug.Log("target position is " + targetPosition);
+        //Debug.Log("target position is " + targetPosition);
         _currentUnit.GoTo(targetPosition);
     }
 
@@ -90,4 +90,10 @@ public class BattleManager : MonoBehaviour
             OnHeroClicked(clickedobject);
     }
     #endregion
+
+    public void DieAndRespawn(GameObject hero)
+    {
+        StartCoroutine(Respawn.DieAndRespawn(hero, 3f));
+    }
+    public void DieAndRespawnSpecialPosition(GameObject hero, Vector3 pos, float time) { StartCoroutine(Respawn.DieAndRespawnSpecialPosition(hero, pos, time)); }
 }
