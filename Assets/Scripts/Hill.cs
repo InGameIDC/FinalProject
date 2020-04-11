@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Hill : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Hill : MonoBehaviour
     public int numOfEnterdHeros;
     public int hillBalance;
     public float pointsCalcInterval;
+
+    // OrS for score bar
+    public Action<float> OnScoreChange = delegate { };
     private void Awake()
     {
         hillRadius = GetComponent<SphereCollider>().radius;
@@ -27,7 +31,7 @@ public class Hill : MonoBehaviour
     /// </summary>
     private void hillRadiusDebugger()
     {
-        //Test.DrawCircle(gameObject, hillRadius, 1f);
+        Test.DrawCircle(gameObject, hillRadius, 1f);
     }
     /// <summary>
     /// author : dor peretz
@@ -62,12 +66,17 @@ public class Hill : MonoBehaviour
         hillBalance = numOfEnterdHeros - numOfEnterdEnemys;
     }
     /// <summary>
-    /// author: dor peretz
+    /// author: dor peretz 
     /// </summary>
     private void score()
     {
-        windMill += hillBalance;
-        //Debug.Log("Score: " + windMill);
+        if (hillBalance != 0)
+        {
+            windMill += hillBalance;
+            OnScoreChange(windMill);
+            Debug.Log("Score: " + windMill);
+        }
+        
     }
 }
 
