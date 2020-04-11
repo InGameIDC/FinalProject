@@ -10,10 +10,17 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
-        if (target.tag != "Enemy")
+        if (target.tag != "EnemyUnit")
             return;
+        else
+        {
+            target.GetComponent<Health>().TakeDamage(1);        //on hitting - the health is lowered
 
-        if (onHitMechs != null)
-            onHitMechs(this, target);
+            GetComponent<SphereCollider>().isTrigger = false;   // turn off the trigger (can't use the same bullet twice)
+        }
+
+
+        if (onHitMechs != null)          
+            onHitMechs(this, target);     
     }
 }

@@ -34,15 +34,7 @@ public class Skill : MonoBehaviour
 
     public bool isTargetAttackable(GameObject target)
     {
-        Vector3 rayDirection = target.transform.position - transform.position;
-        RaycastHit hittedObject;
-        if (Physics.Raycast(transform.position, rayDirection, out hittedObject))
-        {
-            if (hittedObject.transform.gameObject == target && hittedObject.distance < range)
-                return true;
-        }
-
-        return false;
+        return SpaceCalTool.AreObjectsViewableAndWhithinRange(gameObject, target, range);
     }
 
 
@@ -94,7 +86,7 @@ public class Skill : MonoBehaviour
 
     private void hitTarget(Projectile proj, Collider target)
     {
-        Debug.Log("hitted");
+        //Debug.Log("hitted");
         Health targetHealth = target.gameObject.GetComponent<Health>();
         if(targetHealth != null)
         {
@@ -102,6 +94,6 @@ public class Skill : MonoBehaviour
         }
 
         Destroy(proj.transform.gameObject);
-        Destroy(target.transform.gameObject);
+        //Destroy(target.transform.gameObject); //OrS: No need, killed in the health script
     }
 }

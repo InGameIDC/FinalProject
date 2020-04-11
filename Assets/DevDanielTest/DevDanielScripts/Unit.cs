@@ -10,6 +10,7 @@ using UnityEngine;
   to, which allows it to get all the needed information (stats\skills) from it.
   
   Author: Or Daniel. 
+  רוצה מכות?
 
 */
 
