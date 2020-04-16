@@ -74,7 +74,7 @@ public class Hill : MonoBehaviour
         {
             windMill += hillBalance;
             OnScoreChange(windMill);
-            Debug.Log("Score: " + windMill);
+            //Debug.Log("Score: " + windMill);
         }
         
     }

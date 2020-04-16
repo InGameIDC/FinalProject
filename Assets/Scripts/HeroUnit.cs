@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, moveAndRotate, moveAndAttackAndRotate, rotateAndAttack};
+public enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rotating, moveAndRotate, moveAndAttackAndRotate, rotateAndAttack};
 
 
 public class HeroUnit : MonoBehaviour 
