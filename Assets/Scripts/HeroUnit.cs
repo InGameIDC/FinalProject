@@ -343,7 +343,8 @@ public class HeroUnit : MonoBehaviour
         Vector3 targetPos = _targetToAttack.transform.position;
         if (!SpaceCalTool.IsLookingTowardsTheTarget(gameObject, targetPos, _movement._isHeightCalculated)) // if the target is not infront of the hero, tells it to rotate toward it
         {
-            _movement.OnFinishMovment += prepareToAttack;
+            //_movement.OnFinishMovment += prepareToAttack;
+            _movement.OnFinishMovment += attack;
             _movement.TargetLock(_targetToAttack, _skill.GetRange());
             //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
         }

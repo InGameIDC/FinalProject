@@ -13,8 +13,8 @@ public class Health : MonoBehaviour
     //private float _currentHeatlh;
     //private float _maxHealth;
 
-    public float _currentHeatlh = 2;   //For now to the health bar to work
-    public float _maxHealth = 2;       //For now to the health bar to work
+    private float _currentHeatlh = 2;   //For now to the health bar to work
+    private float _maxHealth = 2;       //For now to the health bar to work
 
 
     // ******************* Life Lost functions *******************

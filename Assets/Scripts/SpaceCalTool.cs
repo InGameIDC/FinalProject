@@ -44,7 +44,7 @@ public static class SpaceCalTool
 
 		Vector3 direction = GetVectorDirectionTowardTarget(currentPos, targetPos); // Gets the direction vector
 		float angelDif = CalcDiffAngle(current, direction); // Gets the angle diffrent of the object regarding the target pos
-		return angelDif <= GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR * 0.001f; // return true if the diffrence is less than the globam margin of error
+		return angelDif <= GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR * 10f;//* 0.001f; // return true if the diffrence is less than the globam margin of error
 	}
 
 	/// <summary>

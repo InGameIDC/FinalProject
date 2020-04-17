@@ -326,10 +326,10 @@ public class Movment : MonoBehaviour
 			{
 				if (OnFinishMovment != null)
 					OnFinishMovment();
-				yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE); // For Efficiency - wait twice aslong than usual before starting the routine agian
+				yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE/4); // For Efficiency - wait twice aslong than usual before starting the routine agian
 			}
 
-			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
+			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE/4);
 			//Debug.Log("After Rotation Tick");
 		}
 		Debug.Log("End Rotation");

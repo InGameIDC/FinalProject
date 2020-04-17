@@ -9,7 +9,7 @@ public class TargetsBank : MonoBehaviour
     public Action<GameObject> OnAddTargetToBank = delegate { };
     public Action<GameObject> OnRemoveTargetFromBank = delegate { };
 
-    public List<GameObject> _targetsToAttackBank;
+    List<GameObject> _targetsToAttackBank;
     private bool _isScanning;
 
     private void Awake()
@@ -31,7 +31,6 @@ public class TargetsBank : MonoBehaviour
     /// <returns></returns>
     public void AddTargetToBank(GameObject target)
     {
-        Debug.Log("add to bank " + target.GetType());
         if (_targetsToAttackBank.Contains(target))   // check if the enemy is already in my bank (suppose to be always true)
             return;
         _targetsToAttackBank.Add(target);           // if not, add the enemy to the bank

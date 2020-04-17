@@ -12,8 +12,6 @@ public class Hill : MonoBehaviour
     public int numOfEnterdHeros;
     public int hillBalance;
     public float pointsCalcInterval;
-
-    // OrS for score bar
     public Action<float> OnScoreChange = delegate { };
     private void Awake()
     {
@@ -31,7 +29,7 @@ public class Hill : MonoBehaviour
     /// </summary>
     private void hillRadiusDebugger()
     {
-        Test.DrawCircle(gameObject, hillRadius, 1f);
+        //Test.DrawCircle(gameObject, hillRadius, 1f);
     }
     /// <summary>
     /// author : dor peretz
@@ -64,19 +62,15 @@ public class Hill : MonoBehaviour
     private void hillUnitsBalance()
     {
         hillBalance = numOfEnterdHeros - numOfEnterdEnemys;
+        OnScoreChange(hillBalance);
     }
     /// <summary>
-    /// author: dor peretz 
+    /// author: dor peretz
     /// </summary>
     private void score()
     {
-        if (hillBalance != 0)
-        {
-            windMill += hillBalance;
-            OnScoreChange(windMill);
-            //Debug.Log("Score: " + windMill);
-        }
-        
+        windMill += hillBalance;
+        //Debug.Log("Score: " + windMill);
     }
 }
 

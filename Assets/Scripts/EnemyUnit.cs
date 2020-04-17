@@ -47,17 +47,18 @@ public class EnemyUnit : MonoBehaviour
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
 
-        
+        GoTo(_hill.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if( _hill.transform.position != transform.position)
         {
-            GoTo(_hill.transform.position);
+            
         }
-
+        */
     }
 
     #region Inits
@@ -192,7 +193,7 @@ public class EnemyUnit : MonoBehaviour
         else
         {
             _targetToAttack = null; // There is no an available target, sets the _targetToAttack to null
-            Debug.Log(" targets in bank: " + _targetsBank._targetsToAttackBank.Count);
+            Debug.Log(" targets in bank: " + _targetsBank.GetTargetsList().Count);
             if (_targetsBank.isThereATarget()) // If there a target in the attack range
             {
                 Debug.Log("there is a target in the bank");
