@@ -81,6 +81,7 @@ public class Skill : MonoBehaviour
 
         rb.velocity = transform.forward * projSpeed;
         projCtrl.onHitMechs += hitTarget;
+        projCtrl.attacker = gameObject;
 
     }
 
@@ -90,7 +91,7 @@ public class Skill : MonoBehaviour
         Health targetHealth = target.gameObject.GetComponent<Health>();
         if(targetHealth != null)
         {
-            // Dance tango
+            target.GetComponent<Health>().TakeDamage(damage);
         }
 
         Destroy(proj.transform.gameObject);
