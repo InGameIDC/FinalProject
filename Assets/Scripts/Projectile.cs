@@ -20,12 +20,6 @@ public class Projectile : MonoBehaviour
             if (onHitMechs != null)
                 onHitMechs(this, target);
 
-
-            Destroy(target);
-        }
-        else
-        {
-            Destroy(this); // Destroy it self if hit a wall
         }
     }
 }

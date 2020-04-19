@@ -9,6 +9,7 @@ public class AI2 : MonoBehaviour
     // testing
     [SerializeField] List<GameObject> targetsList; // only for testing
     [SerializeField] private GameObject _hill;
+    [SerializeField] private Vector3 _taegetLocation;// new Vector3(0.2f, 0.0f, 0.5f)
 
     // Start is called before the first frame update
     void Awake()
@@ -19,7 +20,7 @@ public class AI2 : MonoBehaviour
     private void Start()
     {
         //StartCoroutine(attackTargets());
-        _hero.GoTo(_hill.transform.position);
+        _hero.GoTo(_taegetLocation);
     }
 
     private IEnumerator attackTargets()

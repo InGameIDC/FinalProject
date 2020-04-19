@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : MonoBehaviour
+public class Skill: MonoBehaviour
 {
     float id;
     float damageMultiplier;
-    float damage;
+    [SerializeField] float damage;
     float range;
     float attackSpeed;
     float cooldown;
@@ -17,8 +17,9 @@ public class Skill : MonoBehaviour
 
     private void Awake()
     {
+        damage = 1f;
         range = 5f;
-        cooldown = 1f;
+        cooldown = 2f;
     }
 
     // Start is called before the first frame update
@@ -34,7 +35,14 @@ public class Skill : MonoBehaviour
 
     public bool isTargetAttackable(GameObject target)
     {
-        return SpaceCalTool.AreObjectsViewableAndWhithinRange(gameObject, target, range);
+        bool isAttackable = SpaceCalTool.AreObjectsViewableAndWhithinRange(gameObject, target, range);
+        Debug.Log(gameObject.name + " Checks " + target.name + " and got" + isAttackable);
+        return isAttackable;
+    }
+
+    public bool isTargetAttackableDuringMyMovement(GameObject target)
+    {
+        return SpaceCalTool.AreObjectsViewableAndWhithinRange(gameObject, target, range - 0.2f);
     }
 
 
@@ -75,7 +83,7 @@ public class Skill : MonoBehaviour
 
     private void initProj(GameObject projGameObj)
     {
-        float projSpeed = 10f;
+        float projSpeed = 20f;
         Rigidbody rb = projGameObj.GetComponent<Rigidbody>();
         Projectile projCtrl = projGameObj.GetComponent<Projectile>();
 

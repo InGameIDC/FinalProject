@@ -14,7 +14,6 @@ public static class TeamTool
 {
     public static bool isEnemy(GameObject attacker, GameObject target)
     {
-        Debug.Log(Team.HeroUnit); 
         if (target.tag.Equals(Enum.GetName(typeof(Team), Team.HeroUnit)) || target.tag.Equals(Enum.GetName(typeof(Team), Team.EnemyUnit)))
         {
             if (attacker.tag != target.tag)

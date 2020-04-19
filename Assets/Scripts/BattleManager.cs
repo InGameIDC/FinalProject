@@ -76,6 +76,7 @@ public class BattleManager : MonoBehaviour
     {
         StartCoroutine(Test.MarkCircleAtPos(targetPosition, 0.5f, Color.yellow));
         //Debug.Log("target position is " + targetPosition);
+        
         _currentUnit.GoTo(targetPosition);
     }
 

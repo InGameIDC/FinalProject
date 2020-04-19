@@ -44,6 +44,7 @@ public class TargetsBank : MonoBehaviour
         if (OnAddTargetToBank != null)
             OnAddTargetToBank(target);
 
+        Debug.Log("Added ########: " + target.name);
     }
 
     /// <summary>
@@ -61,8 +62,6 @@ public class TargetsBank : MonoBehaviour
 
         if (target == null)
             Debug.Log("Bug, null target");
-        Debug.Log("manageTargetAdd: " + target.name);
-
 
         if (OnRemoveTargetFromBank != null)
             OnRemoveTargetFromBank(target);

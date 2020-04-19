@@ -15,6 +15,7 @@ public class Hill : MonoBehaviour
     public Action<float> OnScoreChange = delegate { };
     private void Awake()
     {
+        windMill = 0;
         hillRadius = GetComponent<SphereCollider>().radius;
         pointsCalcInterval = 0.3f;
         Test.DrawCircle(gameObject, hillRadius, 0.2f, Color.cyan);
@@ -62,7 +63,6 @@ public class Hill : MonoBehaviour
     private void hillUnitsBalance()
     {
         hillBalance = numOfEnterdHeros - numOfEnterdEnemys;
-        OnScoreChange(hillBalance);
     }
     /// <summary>
     /// author: dor peretz
@@ -70,6 +70,7 @@ public class Hill : MonoBehaviour
     private void score()
     {
         windMill += hillBalance;
+        OnScoreChange(windMill);
         //Debug.Log("Score: " + windMill);
     }
 }

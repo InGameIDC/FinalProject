@@ -19,20 +19,12 @@ public class Scanner : MonoBehaviour
     /// <returns></returns>
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name != "Enemy")
-            return;
-
         //GameObject unit = collider.GetComponent<GameObject>();
         GameObject unit = collider.gameObject;
-
-        //if(unit != null)    // if the object that entered is a HeroUnit
-        //{
-            
-            if (TeamTool.isEnemy(transform.parent.gameObject, unit))    // if the heroUnit is an enemy
-            {
-                OnObjEnter(unit);    // tells all other classes which hero scanned a new enemy and who is the enemy
-            }
-        //}
+        if (TeamTool.isEnemy(transform.parent.gameObject, unit))    // if the heroUnit is an enemy
+        {
+            OnObjEnter(unit);    // tells all other classes which hero scanned a new enemy and who is the enemy
+        }
     }
 
     /// <summary>
@@ -47,13 +39,10 @@ public class Scanner : MonoBehaviour
         //GameObject unit = collider.GetComponent<GameObject>();
         GameObject unit = collider.gameObject;
 
-        //if (unit != null)    // if the object that exited is a HeroUnit
-        //{
-            if (TeamTool.isEnemy(gameObject, unit))    // if the heroUnit is an enemy
-            {
-                OnObjExit(unit);    // tells all other classes which hero scanned an enemy that exited its range and who is the enemy
-            }
-        //}
+        if (TeamTool.isEnemy(gameObject, unit))    // if the heroUnit is an enemy
+        {
+            OnObjExit(unit);    // tells all other classes which hero scanned an enemy that exited its range and who is the enemy
+        }
     }
 
 }

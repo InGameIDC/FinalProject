@@ -30,7 +30,7 @@ public class Movment : MonoBehaviour
 	{
 		_desiredRotationDirection = transform.position;
 		_desiredPos = transform.position;
-		_moveSpeed = 0.2f;
+		_moveSpeed = 0.05f;
 		_isRotationLock = false;
 		initNavMeshAgent();
 		_navMeshAgent.isStopped = true;
@@ -131,6 +131,7 @@ public class Movment : MonoBehaviour
 			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
 		}
 
+		StopNav(); //StopMovment(); ##A
 		_isMovmentFinishTracking = false;
 		OnFinishMovment();
 	}
@@ -163,7 +164,7 @@ public class Movment : MonoBehaviour
 		}
 
 		if (_targetLocationLock != null && !_targetLocationLock.activeSelf)
-			StopMovment();
+			StopNav(); //StopMovment(); ##A
 
 		_isMovmentFinishTracking = false;
 	}
@@ -177,6 +178,7 @@ public class Movment : MonoBehaviour
 	public void TargetLock(GameObject target, float range)
 	{
 		this._targetRotationLock = target;
+		Debug.Log(gameObject.name + " TargetLock: " + target);
 		if (!_isRotationLock)
 		{
 			_isRotationLock = true;
@@ -217,6 +219,7 @@ public class Movment : MonoBehaviour
 	/// <returns>True if the target distance is less than the range value</returns>
 	private bool isTargetInRange(float range)
 	{
+		Debug.Log(gameObject.name + " isTargetInRange for " + _targetRotationLock);
 		return IsDistanceBetweenTwoPosesLessThan(transform.position, _targetRotationLock.transform.position, range);
 	}
 
@@ -309,8 +312,8 @@ public class Movment : MonoBehaviour
 		Vector3 direction;
 
 		setDesiredRotationDirection(_targetRotationLock.transform.position);
-		Debug.Log("Pre Rotation");
-		while (_targetRotationLock != null && isTargetInRange(rangeKeep) && _isRotationLock && _targetRotationLock.activeSelf) // && !IsLookingAtTheTarget(_desiredRotationDirection)) // Checks if the object finished to rotate target, and if it's on movment
+		Debug.Log(gameObject.name + " Pre Rotation");
+		while (_targetRotationLock != null && isTargetInRange(rangeKeep + 0.2f) && _isRotationLock && _targetRotationLock.activeSelf) // && !IsLookingAtTheTarget(_desiredRotationDirection)) // Checks if the object finished to rotate target, and if it's on movment
 		{
 			setDesiredRotationDirection(_targetRotationLock.transform.position);
 
@@ -320,19 +323,23 @@ public class Movment : MonoBehaviour
 
 				direction = GetVectorDirectionTowardTarget(this.transform.position, this._desiredRotationDirection).normalized; // calcs the normalized direction vector
 
-				rotateToAgivenDirection(direction, _moveSpeed * 0.2f);// The amount size is equal to speed times frame time.
+				rotateToAgivenDirection(direction, _moveSpeed * 0.4f);// The amount size is equal to speed times frame time.
 			}
 			else // if already looking at the target
 			{
 				if (OnFinishMovment != null)
 					OnFinishMovment();
-				yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE/4); // For Efficiency - wait twice aslong than usual before starting the routine agian
+				yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE); // For Efficiency - wait twice aslong than usual before starting the routine agian
 			}
 
-			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE/4);
+			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
 			//Debug.Log("After Rotation Tick");
+			Debug.Log(gameObject.name + "_targetRotationLock: " + _targetRotationLock);
+			Debug.Log(gameObject.name + "isTargetInRange(rangeKeep): " + isTargetInRange(rangeKeep));
+			Debug.Log(gameObject.name + "_isRotationLock: " + _isRotationLock);
+			Debug.Log(gameObject.name + "_targetRotationLock.activeSelf: " + _targetRotationLock.activeSelf);
 		}
-		Debug.Log("End Rotation");
+		Debug.Log(gameObject.name + " End Rotation");
 
 		_desiredRotationDirection = this.transform.position;
 
@@ -427,7 +434,8 @@ public class Movment : MonoBehaviour
 	/// <returns>True if the object is moving</returns>
 	public bool IsObjMoving()
 	{
-		return !IsDistanceBetweenTwoPosesLessThan(transform.position, _desiredPos, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR, _isHeightCalculated) || IsNavigating();
+		bool check = !IsDistanceBetweenTwoPosesLessThan(transform.position, _desiredPos, GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR, _isHeightCalculated) || IsNavigating();
+		return check;
 	}
 
 	/// <summary>
@@ -443,10 +451,12 @@ public class Movment : MonoBehaviour
 		float angelDif = CalcDiffAngle(gameObject ,GetVectorDirectionTowardTarget(this.transform.position ,_desiredRotationDirection));
 		return angelDif > GlobalCodeSettings.DESIRED_POS_MARGIN_OF_ERROR * 0.001f; // if the object is not looking at the desired rotation direction, it probably prefoms a rotation
 	}
-    #endregion
 
-    #region Tests Functions
-    private void testMovement()
+	public bool IsTargetLock() => _isRotationLock;
+	#endregion
+
+	#region Tests Functions
+	private void testMovement()
 	{
 		//SetHeroDesirePos(Vector3.zero);
 		//StartCoroutine(testMovmentFuncChangePosWhileMov(new Vector3(1f, 1f, 1f), 1f));

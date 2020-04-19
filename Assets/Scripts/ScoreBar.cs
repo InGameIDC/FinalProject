@@ -20,7 +20,6 @@ public class ScoreBar : MonoBehaviour
 
     private void ScoreUpdate(float newScore)
     {
-       
         float updatedScore = newScore + 100;
         UpdateBar(updatedScore, maxScore);
 

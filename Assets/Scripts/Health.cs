@@ -13,8 +13,8 @@ public class Health : MonoBehaviour
     //private float _currentHeatlh;
     //private float _maxHealth;
 
-    private float _currentHeatlh = 2;   //For now to the health bar to work
-    private float _maxHealth = 2;       //For now to the health bar to work
+    private float _currentHeatlh = 10;   //For now to the health bar to work
+    private float _maxHealth = 10;       //For now to the health bar to work
 
 
     // ******************* Life Lost functions *******************
@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
             OnDeath(gameObject);        // tells all classes that it is dead
 
             ResetHealth();
+            Destroy(gameObject);
             //Destroy(gameObject);    //For Testing
         }
 

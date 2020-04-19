@@ -27,6 +27,10 @@ public class HeroUnit : MonoBehaviour
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
 
+    private int testCounter; // # FOR TEST
+    private int cap = 10000; // # FOR TEST
+    private IEnumerator autoMange; // # FOR TEST
+
     /// Says good morning to the script
     private void Awake()
     {
@@ -41,14 +45,23 @@ public class HeroUnit : MonoBehaviour
         _targetFinder.OnTargetDeath += manageTargetObjDeath;
         initScanner();
         initHeroHealth();
+
+        autoMange = Test.ActiveOnIntervals(manageHero, 0.05f);  // # FOR TEST
+        testCounter = 0;  // # FOR TEST
     }
 
     void Start()
     {
-        StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
+        StartCoroutine(autoMange);
         Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
-    }    
+    }
+
+    private void Update()
+    {
+        if(testCounter % 50 == 0)
+            Debug.Log(testCounter); // # FOR TEST
+    }
 
     #region Inits
     private void initTargetsBank()
@@ -70,7 +83,7 @@ public class HeroUnit : MonoBehaviour
         //_health.InitHealth(100f);
         _health.OnDeath += Die;
         // TO BE CHANGED, TO FIND BATTLEMANAGER WITHOUT FIND!!
-        _health.OnDeath += GameObject.Find("BattleManager").GetComponent<BattleManager>().DieAndRespawn;
+        //_health.OnDeath += GameObject.Find("BattleManager").GetComponent<BattleManager>().DieAndRespawn;
     }
     #endregion
 
@@ -160,13 +173,24 @@ public class HeroUnit : MonoBehaviour
     /// </summary>
     private void manageHeroIdle()
     {
-        if (_targetToAttack != null && _skill.isTargetAttackable(_targetToAttack)) // If hero has a target to attack, and it is able to attack it, do not distrub
+        if (testCounter >= cap)
+        {
+            stopAll();
             return;
+        }
+
+        ++testCounter;
+
+        if (_targetToAttack != null && _skill.isTargetAttackable(_targetToAttack)) // If hero has a target to attack, and it is able to attack it, do not distrub
+        {
+            return;
+        }
 
         if(_targetObj != null) // If the hero has a targetObj, and its not attacking it, its probably not in the range.
         {
             prepareForNewOrder();
             GoAfter(_targetObj);
+            return;
         }
 
         GameObject newTarget = _targetFinder.findAnAttackableTarget(_targetsBank.GetTargetsList(), _skill); // Checks if there an attackable target
@@ -195,16 +219,27 @@ public class HeroUnit : MonoBehaviour
     /// <param name="target">The new target that has been added to the hero bank</param>
     private void manageTargetAddDuringMovment(GameObject target)
     {
+        Debug.Log(gameObject.name + " manageTargetAddDuringMovment");
+        if (testCounter >= cap)
+        {
+            stopAll();
+            return;
+        }
+
+        ++testCounter;
+
         if (target == _targetObj) // If the target is the _targetObj
         {
-            if (_skill.isTargetAttackable(target)) // If the hero can attack the target - tells the hero to attack it
+            if (_skill.isTargetAttackableDuringMyMovement(target)) // If the hero can attack the target - tells the hero to attack it
             {
+                Debug.Log(gameObject.name + " Can Attack");
                     prepareForNewOrder();
                     _targetToAttack = target;
                     prepareToAttack();
             }
             else // If the target is not attackable, tells the hero to start track the target, and if it become attackable, it would recall the function.
             {
+                Debug.Log(gameObject.name + " Cannot Attack");
                 _targetFinder.stopScannings();
                 _targetFinder.OnTargetInFieldOfView += manageTargetAddDuringMovment;
                 _targetFinder.startTrackIfATargetAttackable(_targetObj, _skill);
@@ -236,8 +271,18 @@ public class HeroUnit : MonoBehaviour
     /// <param name="target">The new target that has been added to the hero bank</param>
     private void manageTargetAddDuringIdle(GameObject target)
     {
+        if (testCounter >= cap)
+        {
+            stopAll();
+            return;
+        }
+
+        ++testCounter;
+
         if ((_targetObj != null && _targetToAttack == _targetObj) || (_targetObj == null && _targetToAttack != null)) // If already attacking a target, keep doing it.
             return;
+
+        Debug.Log(gameObject.name + " manageTargetAddDuringIdle");
 
         if (_skill.isTargetAttackable(target)) // If the target is attackable, the hero would start to attack
         {
@@ -343,15 +388,20 @@ public class HeroUnit : MonoBehaviour
             return;
 
         Vector3 targetPos = _targetToAttack.transform.position;
+
+        _movement.OnFinishMovment += attack; // TO BE FIXIED TO USE manageHero....
+        _movement.TargetLock(_targetToAttack, _skill.GetRange());
+        /*
         if (!SpaceCalTool.IsLookingTowardsTheTarget(gameObject, targetPos, _movement._isHeightCalculated)) // if the target is not infront of the hero, tells it to rotate toward it
         {
             //_movement.OnFinishMovment += prepareToAttack;
-            _movement.OnFinishMovment += attack;
+            _movement.OnFinishMovment += prepareToAttack;
             _movement.TargetLock(_targetToAttack, _skill.GetRange());
             //onFinishMovment += prepareToAttack; // subscribe it self, to start attack and the end of the rotation;
         }
         else  // if not rotating and the target is infornt of the hero, attack
             attack();
+        */
 
         manageHero();
     }
@@ -396,6 +446,8 @@ public class HeroUnit : MonoBehaviour
         OnRespawn = delegate { };
         _movement.StopMovment();
         _isScanning = false;
+        StopCoroutine(autoMange);
+        StopAllCoroutines();
     }
     private IEnumerator testSelfDestroyAfterDelay(float delay)
     {
