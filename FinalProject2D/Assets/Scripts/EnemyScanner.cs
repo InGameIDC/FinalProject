@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class HeroScanner : MonoBehaviour
+public class EnemyScanner : MonoBehaviour
 {
     public Action<GameObject> OnObjEnter = delegate { };
     public Action<GameObject> OnObjExit = delegate { };
@@ -19,10 +19,10 @@ public class HeroScanner : MonoBehaviour
         GameObject unit = collision.gameObject;
         //Debug.Log(gameObject.name + ": something enterd"); //For Testing OrS
 
-        if (unit.tag == "EnemyUnit")
+        if (unit.tag == "HeroUnit")
         {
             OnObjEnter(unit);
-            //Debug.Log(gameObject.name + ": enemy enterd"); //For Testing OrS
+            //Debug.Log(gameObject.name + ": Hero enterd"); //For Testing OrS
         }
     }
 
@@ -38,11 +38,10 @@ public class HeroScanner : MonoBehaviour
         GameObject unit = collision.gameObject;
         //Debug.Log(gameObject.name + ": something exited");//For Testing OrS
 
-        if (unit.tag == "EnemyUnit")
+        if (unit.tag == "HeroUnit")
         {
             OnObjExit(unit);
-            //Debug.Log(gameObject.name + ": enemy exited"); //For Testing OrS
+            //Debug.Log(gameObject.name + ": Hero exited"); //For Testing OrS
         }
     }
-
 }
