@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HeroUnit
   - EnemyUnit
+  - Hill
   layers:
   - Default
   - TransparentFX
