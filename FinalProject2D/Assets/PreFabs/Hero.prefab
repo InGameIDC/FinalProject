@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentHeatlh: 4
+  _maxHealth: 4
 --- !u!1001 &8225835985517082388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 7317064910310167239, guid: 4168a2b96ee7551449a11fb4ba65c547,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.396997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7317064910310167239, guid: 4168a2b96ee7551449a11fb4ba65c547,
         type: 3}
