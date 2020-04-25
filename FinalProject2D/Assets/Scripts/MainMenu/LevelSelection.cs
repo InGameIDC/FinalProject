@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LevelSelection : MonoBehaviour
 {
 
     [SerializeField] private bool unlocked; // Default value is false
     public Image lockImage;
+    GameObject gs;
 
     private void Start()
     {
         UpdateLevelImage();
+
+        gs = GameObject.FindGameObjectWithTag("GameStatus");
     }
 
     private void UpdateLevelImage()
@@ -31,7 +35,8 @@ public class LevelSelection : MonoBehaviour
     {
         if (unlocked)
         {
-            SceneManager.LoadScene(levelName);
+            gs.GetComponent<GameStatus>().lastLevelCosen = levelName;
+            SceneManager.LoadScene("ChooseHeroes");
         }
     }
 
