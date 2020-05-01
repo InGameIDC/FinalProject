@@ -1210,6 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
+  isRotateOnly: 1
   radius: 0.75
   height: 2
   repathRate: 0.5
@@ -2630,12 +2631,12 @@ PrefabInstance:
     - target: {fileID: 3090831313479427977, guid: 4dd29220d70c66c4894b0eb58a1fab62,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 3090831313479427977, guid: 4dd29220d70c66c4894b0eb58a1fab62,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.75
+      value: -2.44
       objectReference: {fileID: 0}
     - target: {fileID: 3090831313479427977, guid: 4dd29220d70c66c4894b0eb58a1fab62,
         type: 3}
