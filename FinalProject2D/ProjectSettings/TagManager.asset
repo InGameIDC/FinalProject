@@ -7,6 +7,12 @@ TagManager:
   - HeroUnit
   - EnemyUnit
   - Hill
+  - GameStatus
+  - upgradeB
+  - infoB
+  - infoP
+  - useB
+  - LevelTxt
   layers:
   - Default
   - TransparentFX
