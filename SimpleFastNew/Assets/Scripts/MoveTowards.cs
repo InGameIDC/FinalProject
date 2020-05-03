@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveTowards : MonoBehaviour
 {
-    public float minSpeed;
-    public float maxSpeed;
+    private float minSpeed = 0.75f;
+    private float maxSpeed = 1.5f;
     private float speed;
 
     public Transform otherCherry;
