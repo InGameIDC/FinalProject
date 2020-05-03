@@ -80,7 +80,7 @@ public static class SpaceCalTool
 	/// <returns>Returns the diffrances angle</returns>
 	public static float CalcDiffAngle(GameObject gameObject, Vector3 targetDirection)
 	{
-		return CalcDiffAngle(gameObject.transform.rotation, gameObject.transform.forward, targetDirection);
+		return CalcDiffAngle(gameObject.transform.rotation, targetDirection);
 	}
 
 	/// <summary>
@@ -89,11 +89,11 @@ public static class SpaceCalTool
 	/// </summary>
 	/// <param name="target">The target direction vector (desiredPos - transform.position) </param>
 	/// <returns>Returns the diffrances angle</returns>
-	public static float CalcDiffAngle(Quaternion current, Vector2 forward, Vector2 targetDirection)
+	public static float CalcDiffAngle(Quaternion current, Vector2 targetDirection)
 	{
-		Vector2 newDirection = Vector3.RotateTowards(forward, targetDirection, 360f, 0.0f); // cacls the vector rotation diffrence
-		Quaternion rotationLeft = Quaternion.LookRotation(newDirection);
-		return Quaternion.Angle(current, rotationLeft); // calcs the angle diffrence between the current rotation the rotationLeft vector
+		float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90;
+		Quaternion newDirection = Quaternion.RotateTowards(current, Quaternion.Euler(0, 0, angle), 360f);
+		return Quaternion.Angle(current, newDirection);
 	}
 
 

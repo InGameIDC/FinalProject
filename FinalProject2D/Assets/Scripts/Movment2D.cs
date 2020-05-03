@@ -6,6 +6,7 @@ using System;
 
 public class Movment2D : MonoBehaviour
 {
+	public Action OnFinishRotation = delegate { };
     public Action OnFinishMovment = delegate { };     // Functions that would be preform when the hero finish to move / rotate
     public Action OnStartMovment = delegate { };     // Functions that would be preform when the hero start to move / rotate
     [SerializeField]private float _moveSpeed;       // The obect movment speed
@@ -181,8 +182,8 @@ public class Movment2D : MonoBehaviour
 			else // if already looking at the target
 			{
 				_isRotating = false;
-				if (OnFinishMovment != null)
-					OnFinishMovment();
+				if (OnFinishRotation != null)
+					OnFinishRotation();
 				yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE); // For Efficiency - wait twice aslong than usual before starting the routine agian
 			}
 
@@ -194,7 +195,7 @@ public class Movment2D : MonoBehaviour
 		_isRotating = false;
 		_desiredRotationDirection = this.transform.position;
 
-		if (OnFinishMovment != null)//&& !IsObjOnMovment())
+		if (OnFinishMovment != null)
 			OnFinishMovment();
 
 		StopMovment();
@@ -210,7 +211,8 @@ public class Movment2D : MonoBehaviour
 	private void rotateToAgivenDirection(GameObject objToRotate, Vector2 direction, float amount)
 	{
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
-		objToRotate.transform.rotation = Quaternion.RotateTowards(objToRotate.transform.rotation, Quaternion.Euler(0, 0, angle), amount);
+		Quaternion desiredDirection = Quaternion.Euler(0, 0, angle);
+		objToRotate.transform.rotation = Quaternion.RotateTowards(objToRotate.transform.rotation, desiredDirection, amount);
 	}
 
 

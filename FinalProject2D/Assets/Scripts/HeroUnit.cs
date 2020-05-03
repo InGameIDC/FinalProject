@@ -342,6 +342,10 @@ public class HeroUnit : MonoBehaviour
         if (_movement.IsObjRotatingOnly()) // TO BE CHANGED // If moving / rotating toward the target, skip
             return;
 
+        _movement.OnFinishRotation += attack;
+        _movement.OnFinishMovment += manageHero;
+        _movement.TargetLock(_targetToAttack, _skill.GetRange());
+        /*
         Vector2 targetPos = _targetToAttack.transform.position;
         if (!SpaceCalTool.IsLookingTowardsTheTarget(gameObject, targetPos)) // if the target is not infront of the hero, tells it to rotate toward it
         {
@@ -351,9 +355,10 @@ public class HeroUnit : MonoBehaviour
         }
         else  // if not rotating and the target is infornt of the hero, attack
             attack();
+        */
 
-        manageHero();
-        
+        //manageHero();
+
     }
     // TO BE ADDED: AUTO ATTACK FROM ARCHIVE
     private void attack(){ _skill.attack(); }
