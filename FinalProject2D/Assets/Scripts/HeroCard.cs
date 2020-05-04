@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroCard : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class HeroCard : MonoBehaviour
     public GameObject useB;
     public GameObject infoB;
     public GameObject infoP;
-
+    public Image profileImage;
     private void Start()
     {
         //get information from XML
@@ -27,6 +28,12 @@ public class HeroCard : MonoBehaviour
         infoB = GameObject.FindGameObjectWithTag("infoB");
         infoP = GameObject.FindGameObjectWithTag("infoP");
         */
+
+        if(cardStat == cardStatus.locked)
+        {
+            profileImage.GetComponent<Image>().color = new Color32(120, 120, 120, 105); 
+        }
+        
     }
 
     public void onClick()
@@ -43,7 +50,7 @@ public class HeroCard : MonoBehaviour
                 {
                     infoB.SetActive(true);
                     useB.SetActive(true);
-                    upgradeB.transform.localPosition = new Vector3(0f, -51.035f, 0);
+                    upgradeB.transform.localPosition = new Vector3(0f, -177.2f, 0);
                     upgradeB.SetActive(true);
 
                 }
