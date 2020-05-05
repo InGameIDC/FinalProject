@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class RandomPatrol : MonoBehaviour
 {
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    private float minX = -8.2f;
+    private float maxX = 8.2f;
+    private float minY = -4.3f;
+    private float maxY = 4.3f;
 
-    public float minSpeed;
-    public float maxSpeed;
+    public float minSpeed = 0.75f;
+    public float maxSpeed = 3f;
     private float speed;
 
 
