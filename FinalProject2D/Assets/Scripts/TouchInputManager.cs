@@ -13,7 +13,7 @@ using UnityEngine;
     */
 
 
-public class InputManager : MonoBehaviour
+public class TouchInputManager : MonoBehaviour
 {
     public Action<GameObject> OnUnitDoubleClick = delegate { };
     public Action<GameObject> OnUnitClick = delegate { };
@@ -22,25 +22,24 @@ public class InputManager : MonoBehaviour
 
     //Defining a singleton for the InputManager.
     #region InputManager singleton
-    private static InputManager _instance;
-    public static InputManager instance
+    private static TouchInputManager _instance;
+    public static TouchInputManager Instance
     {
         get
         {
             if (_instance == null)
-                _instance = GameObject.FindObjectOfType<InputManager>();
+                _instance = GameObject.FindObjectOfType<TouchInputManager>();
             return _instance;
         }
     }
     #endregion
 
     //Defining ray to detect objects clicked 
-    private Ray _ray;
-    private RaycastHit _hit;
+    private RaycastHit2D _hit;
     private GameObject _objectClicked;
 
     //Reference to the BattleManager
-    private BattleManager _battleManager;
+    //private BattleManager _battleManager;
 
     //Used to detect double taps
     private bool _wasClicked = false;
@@ -50,7 +49,7 @@ public class InputManager : MonoBehaviour
     //In case we want the Unit to trigger double tap only if the two taps were near the
     //Unit itself, this should be used to detect the location of the touch.
     
-    private Vector3 _lastTouchPosition;
+    private Vector2 _lastTouchPosition;
     private float _maxDistance = 3f;
 
     private void Update()
@@ -59,9 +58,10 @@ public class InputManager : MonoBehaviour
         {
             //Standard detection of taps and their location on screen.
             Touch touch = Input.GetTouch(0);
-            _ray = Camera.main.ScreenPointToRay(touch.position);
+            _hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
+
             //If we clicked on a collider object
-            if (Physics.Raycast(_ray, out _hit))
+            if (_hit.collider != null)
             {
                 
                 //Saves the game object that we interacted with.
@@ -72,13 +72,13 @@ public class InputManager : MonoBehaviour
                 {
                     case TouchPhase.Began:
                         //Checks distance between touches to activate 2-tap correctly
-                        float distancePow2 = Vector3.SqrMagnitude(_lastTouchPosition - _hit.point);
+                        float distanceFromLastClick = Vector2.SqrMagnitude(_lastTouchPosition - _hit.point);
 
                         //Debugging
                         Debug.Log("Object clicked: " + _objectClicked +
                             " in position: " + _hit.collider.transform.position.ToString() +
                             ", impact point is: " + _hit.point.ToString() +
-                            " and distance^2 = " + distancePow2);
+                            " and distance^2 = " + distanceFromLastClick);
 
                         //If there was no prior touch recorded, we need to wait for another touch
                         //in the time window defined by _maxDoubleTapTime. this is done via coroutine.
@@ -92,7 +92,7 @@ public class InputManager : MonoBehaviour
                         //time period and space radius, then this is a double tap.
                         else if (_wasClicked && 
                                 (Time.time - _timeOfLastTouch <= _maxDoubleTapTime) &&
-                                distancePow2 <= (_maxDistance * _maxDistance))
+                                distanceFromLastClick <= (_maxDistance * _maxDistance))
                         {
                             Debug.Log("Double Touch detected");
                             DoubleClick(_objectClicked, _hit);
@@ -127,7 +127,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void SingleClick(GameObject collider, RaycastHit hit)
+    private void SingleClick(GameObject collider, RaycastHit2D hit)
     {
         Debug.Log("Single FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit") || collider.tag.Equals("EnemyUnit"))
@@ -141,7 +141,7 @@ public class InputManager : MonoBehaviour
         return;
     }
 
-    private void DoubleClick(GameObject collider, RaycastHit hit)
+    private void DoubleClick(GameObject collider, RaycastHit2D hit)
     {
         Debug.Log("Double FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit"))
