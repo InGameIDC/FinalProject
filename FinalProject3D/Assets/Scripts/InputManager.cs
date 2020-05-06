@@ -60,6 +60,7 @@ public class InputManager : MonoBehaviour
             //Standard detection of taps and their location on screen.
             Touch touch = Input.GetTouch(0);
             _ray = Camera.main.ScreenPointToRay(touch.position);
+
             //If we clicked on a collider object
             if (Physics.Raycast(_ray, out _hit))
             {
