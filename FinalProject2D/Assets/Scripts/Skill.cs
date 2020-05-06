@@ -6,7 +6,7 @@ public class Skill : MonoBehaviour
 {
     private float _id;
     private float _damageMultiplier;
-    [SerializeField] private float _damage;
+    private float _damage;
     [SerializeField] float _range;
     private float _attackSpeed;
     private float _cooldown;
@@ -18,9 +18,7 @@ public class Skill : MonoBehaviour
 
     private void Awake()
     {
-        _cooldown = 2f;
-        _damage = 1f;
-        _range = 5;
+        _cooldown = 1f;
         initFirePoint();
     }
 
@@ -88,16 +86,16 @@ public class Skill : MonoBehaviour
 
         rb.velocity = _firePoint.transform.up * projSpeed;
         projCtrl.onHitMechs += hitTarget;
-        projCtrl.attacker = gameObject;
+
     }
 
-    private void hitTarget(Projectile proj, Collider2D target)
+    private void hitTarget(Projectile proj, Collider target)
     {
         //Debug.Log("hitted");
         Health targetHealth = target.gameObject.GetComponent<Health>();
         if(targetHealth != null)
         {
-            target.GetComponent<Health>().TakeDamage(_damage);
+            // Dance tango
         }
 
         Destroy(proj.transform.gameObject);
