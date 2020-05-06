@@ -13,6 +13,13 @@ TagManager:
   - infoP
   - useB
   - LevelTxt
+  - HeroCard1
+  - HeroCard2
+  - HeroCard3
+  - ChosenHeroPanel
+  - UpgradeBar
+  - GeneralHeroCard
+  - HerosToChooseScript
   layers:
   - Default
   - TransparentFX

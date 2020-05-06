@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HerosCollection>
+  <Heros>
+    <hero name="Banana">
+      <Id>1</Id>
+      <FamilyId>1</FamilyId>
+      <Damage>2</Damage>
+      <Health>8</Health>
+    </hero>
+    <hero name="Grapes">
+      <Id>2</Id>
+      <FamilyId>2</FamilyId>
+      <Damage>5</Damage>
+      <Health>6</Health>
+    </hero>
+    <hero name="Lemon">
+      <Id>3</Id>
+      <FamilyId>1</FamilyId>
+      <Damage>3</Damage>
+      <Health>10</Health>
+    </hero>
+    <hero name="Watermelon">
+      <Id>4</Id>
+      <FamilyId>2</FamilyId>
+      <Damage>2</Damage>
+      <Health>10</Health>
+    </hero>
+    <hero name="Brocoli">
+      <Id>5</Id>
+      <FamilyId>1</FamilyId>
+      <Damage>4</Damage>
+      <Health>10</Health>
+    </hero>
+  </Heros>
+</HerosCollection>

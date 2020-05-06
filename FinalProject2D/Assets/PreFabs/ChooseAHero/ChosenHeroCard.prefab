@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6435195449472821918}
   - component: {fileID: 6435195449472821905}
-  - component: {fileID: 6435195449472821904}
+  - component: {fileID: 5060661054994713695}
   m_Layer: 5
   m_Name: ChosenHeroCard
   m_TagString: Untagged
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6435195449472821904}
+      - m_Target: {fileID: 5060661054994713695}
         m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
@@ -171,7 +171,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6435195449472821904
+--- !u!114 &5060661054994713695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,17 +180,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6435195449472821919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8be0de69969bc44687af53b4629c94a, type: 3}
+  m_Script: {fileID: 11500000, guid: a2b662d547b91194383d32aaf9a5d7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardStat: 2
-  upgradeStat: 0
-  cardShow: 0
-  upgradeB: {fileID: 6435195450617870593}
-  useB: {fileID: 6435195450652080105}
-  infoB: {fileID: 6435195450443601186}
-  infoP: {fileID: 6435195450315783461}
+  heroId: 0
+  level: 0
+  familyId: 0
   profileImage: {fileID: 0}
+  levelDisplay: {fileID: 6435195450185168792}
 --- !u!1 &6435195449911949804
 GameObject:
   m_ObjectHideFlags: 0
