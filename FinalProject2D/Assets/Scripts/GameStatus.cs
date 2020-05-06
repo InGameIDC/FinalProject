@@ -9,6 +9,13 @@ public class GameStatus : MonoBehaviour
     public string lastScene = "HomeMenu";
     public string lastLevelCosen = "Test";
 
+    // TODO: to delete after xml and images
+    public Sprite s1;
+    public Sprite s2;
+    public Sprite s3;
+    public Sprite s4;
+    public Sprite s5;
+
     // Start is called before the first frame update
     void Start()
     {
