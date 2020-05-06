@@ -223,10 +223,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 4
 =======
   m_RootOrder: 5
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 4
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &61862640
 MonoBehaviour:
@@ -542,10 +546,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 1
 =======
   m_RootOrder: 2
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 1
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &387078033
 GameObject:
@@ -723,10 +731,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 10
 =======
   m_RootOrder: 11
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 10
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &594998280
 GameObject:
@@ -855,10 +867,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 12
 =======
   m_RootOrder: 13
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 12
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &753211881
 PrefabInstance:
@@ -1291,10 +1307,14 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934459777}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Enabled: 1
 =======
   m_Enabled: 0
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_Enabled: 1
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79d4cf02ae4b292499ea665a1bd99ec1, type: 3}
   m_Name: 
@@ -1520,10 +1540,14 @@ RectTransform:
   - {fileID: 753211882}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 6
 =======
   m_RootOrder: 7
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 6
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1691,10 +1715,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 9
 =======
   m_RootOrder: 10
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 9
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1118985451 stripped
 GameObject:
@@ -2071,10 +2099,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 13
 =======
       value: 14
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+      value: 13
+>>>>>>> parent of 7065e8cf... added input managers - but not working
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -3389,10 +3421,14 @@ Transform:
   - {fileID: 594998281}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 11
 =======
   m_RootOrder: 12
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 11
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1432616649
 MonoBehaviour:
@@ -3518,6 +3554,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 7
 =======
   m_RootOrder: 8
@@ -3592,6 +3629,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 7
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673024037
 GameObject:
@@ -3840,10 +3880,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 5
 =======
   m_RootOrder: 6
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 5
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102092198
 GameObject:
@@ -3893,10 +3937,14 @@ Transform:
   - {fileID: 1131778631}
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 14
 =======
   m_RootOrder: 15
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 14
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2139374337
 GameObject:
@@ -3941,10 +3989,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 8
 =======
   m_RootOrder: 9
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+  m_RootOrder: 8
+>>>>>>> parent of 7065e8cf... added input managers - but not working
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &975178366434307760
 PrefabInstance:
@@ -4019,10 +4071,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 2
 =======
       value: 3
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+      value: 2
+>>>>>>> parent of 7065e8cf... added input managers - but not working
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -5044,10 +5100,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 3
 =======
       value: 4
 >>>>>>> parent of 36ebdcbe... Test >> Test_Ilan
+=======
+      value: 3
+>>>>>>> parent of 7065e8cf... added input managers - but not working
       objectReference: {fileID: 0}
     - target: {fileID: 3090831313479427977, guid: 4dd29220d70c66c4894b0eb58a1fab62,
         type: 3}
