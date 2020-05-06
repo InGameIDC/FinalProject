@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &57563577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4998307776915107296, guid: 381d590cf45f7504e810a4a24ef9ccbe,
+    type: 3}
+  m_PrefabInstance: {fileID: 4998307776240363920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &123461461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166,7 +172,7 @@ PrefabInstance:
     - target: {fileID: 2417267480344721385, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2417267480344721385, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
         type: 3}
@@ -187,6 +193,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: apple (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minX
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxX
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minY
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxY
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: secondsToMaxDifficulty
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8bcf9dbe901d7409bb70d4a6a17c06, type: 3}
@@ -235,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 2417267480344721385, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2417267480344721385, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
         type: 3}
@@ -256,6 +297,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: apple (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minX
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxX
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minY
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxY
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: secondsToMaxDifficulty
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8bcf9dbe901d7409bb70d4a6a17c06, type: 3}
@@ -453,7 +529,7 @@ PrefabInstance:
     - target: {fileID: 2417267480344721385, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2417267480344721385, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
         type: 3}
@@ -474,6 +550,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minX
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxX
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minY
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxY
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: secondsToMaxDifficulty
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8bcf9dbe901d7409bb70d4a6a17c06, type: 3}
@@ -544,8 +655,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: apple (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minX
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxX
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minY
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxY
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: minSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417267480344721399, guid: ac8bcf9dbe901d7409bb70d4a6a17c06,
+        type: 3}
+      propertyPath: secondsToMaxDifficulty
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8bcf9dbe901d7409bb70d4a6a17c06, type: 3}
+--- !u!1 &2017549587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4998307775970101799, guid: 381d590cf45f7504e810a4a24ef9ccbe,
+    type: 3}
+  m_PrefabInstance: {fileID: 4998307776240363920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4998307776240363920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -672,6 +824,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998307776636682430, guid: 381d590cf45f7504e810a4a24ef9ccbe,
+        type: 3}
+      propertyPath: restartPanel
+      value: 
+      objectReference: {fileID: 2017549587}
+    - target: {fileID: 4998307776636682430, guid: 381d590cf45f7504e810a4a24ef9ccbe,
+        type: 3}
+      propertyPath: timerDisplay
+      value: 
+      objectReference: {fileID: 57563577}
+    - target: {fileID: 4998307776636682430, guid: 381d590cf45f7504e810a4a24ef9ccbe,
+        type: 3}
+      propertyPath: timer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 381d590cf45f7504e810a4a24ef9ccbe, type: 3}
