@@ -23,12 +23,14 @@ public class HeroUnit : MonoBehaviour
     private TargetsBank _targetsBank;
     private TargetFinder _targetFinder;
     private float _respawnTime;
+    [SerializeField] public Team heroTeam;
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
 
     /// Says good morning to the script
     private void Awake()
     {
+        gameObject.tag = Enum.GetName(typeof(Team), heroTeam);
         this._status = ObjStatus.idle;
         _targetToAttack = null;
         _skill = this.GetComponent<Skill>();

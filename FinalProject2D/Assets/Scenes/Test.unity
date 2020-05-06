@@ -1222,6 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d750e33498ba8af40a72d8702af2094d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0
   _range: 5
   projectile: {fileID: 5996099031222366820, guid: 6dc1967117e6afa4ea402e8002b9e523,
     type: 3}
@@ -1346,6 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f230137e700ba408b11f36d2adbcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroTeam: 0
 --- !u!114 &934459792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,7 +1699,7 @@ GameObject:
   - component: {fileID: 1131778634}
   - component: {fileID: 1131778633}
   - component: {fileID: 1131778632}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1969,7 +1971,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Name
-      value: Hero (1)
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -1979,12 +1981,12 @@ PrefabInstance:
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.07
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.27
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -3057,6 +3059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f230137e700ba408b11f36d2adbcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heroTeam: 1
 --- !u!114 &1256546589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3151,6 +3154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d750e33498ba8af40a72d8702af2094d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0
   _range: 5
   projectile: {fileID: 5996099031222366820, guid: 6dc1967117e6afa4ea402e8002b9e523,
     type: 3}
@@ -3214,7 +3218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1432616645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3222,7 +3226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432616644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc886e6be8eaf554eb0a0e2deeeafef1, type: 3}
   m_Name: 
@@ -3303,7 +3307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432616644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.55, y: -5.1, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 594998281}
@@ -3317,11 +3321,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432616644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d750e33498ba8af40a72d8702af2094d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0
   _range: 0
   projectile: {fileID: 5996099031222366820, guid: 6dc1967117e6afa4ea402e8002b9e523,
     type: 3}
@@ -3782,7 +3787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102092198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1673024038}
@@ -3849,17 +3854,22 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_TagString
-      value: EnemyUnit
+      value: HeroUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.26
+      value: -3.83
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269634, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}

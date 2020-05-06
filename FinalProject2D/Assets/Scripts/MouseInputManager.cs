@@ -56,11 +56,14 @@ public class MouseInputManager : MonoBehaviour
     }
     private void Update()
     {
+        //Debug.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, Color.red, 2f);
         if (Input.GetMouseButtonDown(0))
         {
             //Standard detection of taps and their location on screen.
             Vector3 position = Input.mousePosition;
             _hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(position), Vector2.zero);
+            
+            //Debug.Log(Camera.main.ScreenToWorldPoint(position));
 
             //If we clicked on a collider object
             if (_hit.collider != null)
