@@ -77,22 +77,20 @@ public class MouseInputManager : MonoBehaviour
                             + "Distance from last touch is: " + distanceFromLastClick);
 
                 if (!_wasClicked)
-                        {
-                            _wasClicked = true;
-                            StartCoroutine("SingleOrDouble");
-                        }
-                        
-                        else if (_wasClicked && 
-                                (Time.time - _timeOfLastTouch <= _maxDoubleTapTime) &&
-                                distanceFromLastClick <= (_maxDistance * _maxDistance))
                 {
-                            Debug.Log("Double Touch detected");
-                            DoubleClick(_objectClicked, _hit);
-                            _wasClicked = false;
-                        }
-                        _timeOfLastTouch = Time.time;
-                        _lastTouchPosition = _hit.point;
-
+                    _wasClicked = true;
+                    StartCoroutine("SingleOrDouble");
+                }       
+                else if (_wasClicked
+                    && (Time.time - _timeOfLastTouch <= _maxDoubleTapTime)
+                    && distanceFromLastClick <= (_maxDistance * _maxDistance))
+                {
+                    Debug.Log("Double Touch detected");
+                    DoubleClick(_objectClicked, _hit);
+                    _wasClicked = false;
+                }
+                _timeOfLastTouch = Time.time;
+                _lastTouchPosition = _hit.point;
             }
         }
 

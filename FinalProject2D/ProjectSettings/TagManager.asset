@@ -20,6 +20,7 @@ TagManager:
   - HeroCard1
   - HeroCard2
   - HeroCard3
+  - Terrain
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Obstacle
   - 
   - 
   - 
