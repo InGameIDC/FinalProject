@@ -6,10 +6,10 @@ using System;
 
 public class TimerCountdown : MonoBehaviour
 {
-    public GameObject textDisplay;
-    public int secondsLeft = 180;
-    public bool takingAway = false;
-    public Action<GameObject> OnGameStop = delegate { }; // letting classes know that the time of the game is over 
+    public GameObject textDisplay;                          //the timer text display
+    public int secondsLeft = 180;                           //seconds left to the battle
+    public bool takingAway = false;                         //need to reduce time from timer
+    public GameObject endPanel;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class TimerCountdown : MonoBehaviour
         }
         else if(secondsLeft == 0)
         {
-            OnGameStop(textDisplay);
+            endPanel.SetActive(true);
         }
     }
 

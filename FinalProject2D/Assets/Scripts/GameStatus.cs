@@ -7,7 +7,7 @@ public class GameStatus : MonoBehaviour
     public float currentXP = 0f;
     public int coins = 200;
     public string lastScene = "HomeMenu";
-    public string lastLevelCosen = "Test";
+    public int lastLevelCosen = 3;
 
     // TODO: to delete after xml and images
     public Sprite s1;
@@ -23,7 +23,7 @@ public class GameStatus : MonoBehaviour
         currentXP = PlayerPrefs.GetFloat("currentXP", 0);
         coins = PlayerPrefs.GetInt("coins", 0);
         lastScene = PlayerPrefs.GetString("lastScene", "HomeMenu");
-        lastLevelCosen = PlayerPrefs.GetString("lastLevelCosen", "Test");
+        lastLevelCosen = PlayerPrefs.GetInt("lastLevelCosen", 3);
 
     }
 
@@ -38,7 +38,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetFloat("currentXP", currentXP);
         PlayerPrefs.SetInt("coins", coins);
         PlayerPrefs.SetString("lastScene", lastScene);
-        PlayerPrefs.SetString("lastLevelCosen", lastLevelCosen);
+        PlayerPrefs.SetInt("lastLevelCosen", lastLevelCosen);
     }
 
 }

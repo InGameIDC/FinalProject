@@ -31,11 +31,11 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
-    public void PressSelection(string levelName)
+    public void PressSelection(int levelidx)
     {
         if (unlocked)
         {
-            gs.GetComponent<GameStatus>().lastLevelCosen = levelName;
+            gs.GetComponent<GameStatus>().lastLevelCosen = levelidx;
             SceneManager.LoadScene("ChooseHeroes");
         }
     }

@@ -138,7 +138,7 @@ public class ScoreBar : MonoBehaviour
     /// <param name="maxValue">The maximum value of the bar.</param>
     public void UpdateBar(float currentValue, float maxValue)
     {
-        Debug.Log("curr " + currentValue + ", max " + maxValue);
+        //Debug.Log("curr " + currentValue + ", max " + maxValue);
         // If the bar image is left unassigned, then return.
         if (barImage == null)
             return;

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -11,15 +13,29 @@ public class BattleManager : MonoBehaviour
     [SerializeField] GameObject _inputManager;
     private HeroUnit _currentUnit;
 
+    // for loading next level and some data
+    GameObject gs;
+
+    // For Score System
+    public float gameScore;
+    public Action<int> onGameScoreEnd = delegate { };
+    public GameObject egp;
+
+
     // Start is called before the first frame update
     private void Awake()
     {
+        gs = GameObject.FindGameObjectWithTag("GameStatus");
         _currentUnit = testHero.GetComponent<HeroUnit>();
     }
     private void Start()
     {
         //initInputManager();
         initInputMouseManager();
+
+        //follow the score
+        GameObject hill = GameObject.FindGameObjectWithTag("Hill");
+        hill.GetComponent<Hill>().OnScoreChange += ScoreUpdate;
     }
 
     #region InputManager manage functions
@@ -100,4 +116,49 @@ public class BattleManager : MonoBehaviour
         StartCoroutine(Respawn.DieAndRespawn(hero, 3f));
     }
     public void DieAndRespawnSpecialPosition(GameObject hero, Vector3 pos, float time) { StartCoroutine(Respawn.DieAndRespawnSpecialPosition(hero, pos, time)); }
+
+    /// <summary>
+    /// Author:OrS
+    /// follow the score of the game, and in case of winning/loosing according to the score deligate that the game has ended
+    /// </summary>
+    /// <param name="newScore"></param>
+    private void ScoreUpdate(float newScore)
+    {
+        gameScore = newScore;
+        //Debug.Log(gameScore);
+
+        if(gameScore == 100 || gameScore ==-100)
+        {
+            egp.SetActive(true);
+            onGameScoreEnd((int)gameScore);
+        }
+
+    }
+
+    #region end Battle Options
+
+    public void goToMenu()
+    {
+        SceneManager.LoadScene("HomeMenu");
+    }
+
+    public void goToNextLevel()
+    {
+        int idx = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if(idx > 5)
+        {
+            idx = 5;
+        }
+        gs.GetComponent<GameStatus>().lastLevelCosen = idx;
+        SceneManager.LoadScene("ChooseHeroes");
+    }
+
+    public void restartLevel()
+    {
+        SceneManager.LoadScene("ChooseHeroes");
+    }
+
+    #endregion
+
 }
