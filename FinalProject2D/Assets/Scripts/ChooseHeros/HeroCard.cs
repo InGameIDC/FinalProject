@@ -12,7 +12,7 @@ public class HeroCard : MonoBehaviour
 
     public int heroId;
 
-    private GameStatus gs;
+    private GameObject gs;
     private ChangeHero cm;
     private heroesToChoose htc;
 
@@ -25,6 +25,8 @@ public class HeroCard : MonoBehaviour
     public GameObject infoP;
     public GameObject upgradeBar;
     public GameObject levelDisplay;
+    public GameObject upgradeText;
+    public GameObject upgradeButtonText;
     public Image profileImage;
 
     public int partsForNextUpgrade;
@@ -32,11 +34,12 @@ public class HeroCard : MonoBehaviour
 
     public int level;
     public int familyId;
+    public int upgradeCost;
 
 
     private void Start()
     {
-        gs = GameObject.FindGameObjectWithTag("GameStatus").GetComponent<GameStatus>();
+        gs = GameObject.FindGameObjectWithTag("GameStatus");
         cm = GameObject.FindGameObjectWithTag("ChosenHeroPanel").GetComponent<ChangeHero>();
         htc = GameObject.FindGameObjectWithTag("HerosToChooseScript").GetComponent<heroesToChoose>(); 
 
@@ -44,15 +47,24 @@ public class HeroCard : MonoBehaviour
         cm.finishChange += completeInUse;
         //get information from XML
         loadHeroData(heroId);
-        
 
+        upgradeText.GetComponent<TMPro.TextMeshProUGUI>().text = partsCollected + "/" + partsForNextUpgrade;
         levelDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Level " + level;
 
         if (cardStat == cardStatus.locked)
         {
             profileImage.GetComponent<Image>().color = new Color32(120, 120, 120, 105); 
         }
+
+        //if already ready to upgrade
+        if(upgradeStat == upgradeStatus.ready)
+        {
+            upgradeButtonUpdate();
+        }
         
+
+
+
     }
 
     /// <summary>
@@ -67,6 +79,7 @@ public class HeroCard : MonoBehaviour
 
         //cancel in use process if it was started and unfinished
         cm.inChangeProcess = false;
+        closeMenu();
 
         //show specific buttons
         if (!cardShow)      //need to show buttons
@@ -83,7 +96,8 @@ public class HeroCard : MonoBehaviour
                 {
                     infoB.SetActive(true);
                     useB.SetActive(true);
-                    upgradeB.transform.localPosition = new Vector3(0f, -177.2f, 0);
+                    upgradeB.transform.localPosition = new Vector3(0f, -187.55f, 0);
+                    upgradeButtonText.GetComponent<TMPro.TextMeshProUGUI>().text = upgradeCost.ToString();
                     upgradeB.SetActive(true);
 
                 }
@@ -98,7 +112,8 @@ public class HeroCard : MonoBehaviour
                 if(upgradeStat == upgradeStatus.ready)
                 {
                     infoB.SetActive(true);
-                    upgradeB.transform.localPosition = new Vector3(0f, useB.transform.localPosition.y, 0f);
+                    upgradeB.transform.localPosition = new Vector3(0f, -137, 0f);
+                    upgradeButtonText.GetComponent<TMPro.TextMeshProUGUI>().text = upgradeCost.ToString();
                     upgradeB.SetActive(true);
                 }
                 else
@@ -113,6 +128,7 @@ public class HeroCard : MonoBehaviour
         {
             closeMenu();
             cardShow = false;
+
         }
     }
 
@@ -132,50 +148,57 @@ public class HeroCard : MonoBehaviour
         {
             case 1:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/BananaProfile.jpg") as Sprite;
-                profileImage.GetComponent<Image>().sprite = gs.s1;
+                profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s1;
                 cardStat = cardStatus.inUse;
                 upgradeStat = upgradeStatus.ready;
                 partsForNextUpgrade = 4;
                 partsCollected = 4;
+                upgradeCost = 200;
                 break;
 
             case 2:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Grapes_Profile.jpg") as Sprite;
-                profileImage.GetComponent<Image>().sprite = gs.s2;
+                profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s2;
                 cardStat = cardStatus.inUse;
                 upgradeStat = upgradeStatus.ready;
                 partsForNextUpgrade = 4;
                 partsCollected = 4;
+                upgradeCost = 400;
                 break;
 
             case 3:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Lemon_profile.jpg") as Sprite;
-                profileImage.GetComponent<Image>().sprite = gs.s3;
+                profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s3;
                 cardStat = cardStatus.inUse;
                 upgradeStat = upgradeStatus.notReady;
                 partsForNextUpgrade = 4;
                 partsCollected = 2;
+                upgradeCost = 400;
                 break;
 
             case 4:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI\\PNG\\Watermelon_Profile") as Sprite;
-                profileImage.GetComponent<Image>().sprite = gs.s4;
+                profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s4;
                 cardStat = cardStatus.opened;
                 upgradeStat = upgradeStatus.notReady;
                 partsForNextUpgrade = 4;
                 partsCollected = 3;
+                upgradeCost = 200;
                 break;
 
             default:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/UI/PNG/Brocoli_Profile") ;
-                profileImage.GetComponent<Image>().sprite = gs.s5;
+                profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s5;
                 cardStat = cardStatus.locked;
                 upgradeStat = upgradeStatus.notReady;
                 partsForNextUpgrade = 0;
                 partsCollected = 0;
+                upgradeCost = 500;
                 break;
         }
+
         GetComponentInChildren<SimpleHealthBar>().UpdateBar(partsCollected, partsForNextUpgrade);
+        
 
     }
 
@@ -202,6 +225,11 @@ public class HeroCard : MonoBehaviour
         upgradeB.SetActive(false);
         upgradeBar.SetActive(true);
         GetComponentInChildren<SimpleHealthBar>().UpdateBar(partsCollected, partsForNextUpgrade);
+
+        if (upgradeStat == upgradeStatus.ready)
+        {
+            upgradeButtonUpdate();
+        }
     }
 
     private void completeInUse(int id)
@@ -214,19 +242,39 @@ public class HeroCard : MonoBehaviour
 
     public void onUpgrade()
     {
+
+        if (upgradeCost > gs.GetComponent<GameStatus>().coins)
+        {
+            Debug.Log("cant upgrade");
+            return;
+        }
+
         //ToDo - update data in xml and reload the card
         level += 1;
         partsCollected = 0;
         levelDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Level " + level;
+        upgradeText.GetComponent<TMPro.TextMeshProUGUI>().text = partsCollected + "/" + partsForNextUpgrade;
+        gs.GetComponent<GameStatus>().coins -= upgradeCost;
 
         upgradeStat = upgradeStatus.notReady;
         onClick();
+        htc.updateBars();
 
-        if(cardStat == cardStatus.inUse)
+
+
+        if (cardStat == cardStatus.inUse)
         {
             cm.cardUpgrade(heroId, level);
         }
 
+    }
+
+    private void upgradeButtonUpdate()
+    {
+        upgradeB.SetActive(true);
+        upgradeB.transform.localPosition = new Vector3(0f, -82.4f, 0);
+        upgradeButtonText.GetComponent<TMPro.TextMeshProUGUI>().text = upgradeCost.ToString();
+        upgradeBar.SetActive(false);
     }
 
     private void turnOffInUse(int id)
