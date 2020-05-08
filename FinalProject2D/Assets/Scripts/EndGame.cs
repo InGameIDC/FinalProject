@@ -7,6 +7,7 @@ public class EndGame : MonoBehaviour
     public GameObject tc;          //timerCountdown object
     public GameObject bm;          //BattleManager object
     public GameObject endPanel;    //the pannel to display
+    public GameObject gsObject;           //gamestatus object
 
     public GameObject endDisplay;
     public GameObject coinsDisplay;
@@ -15,10 +16,14 @@ public class EndGame : MonoBehaviour
     public GameObject nextLevelButton;
     public GameObject restartButton;
 
+    private GameStatus gs;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        gs = gsObject.GetComponent<GameStatus>();
+
         int currScore = (int)bm.GetComponent<BattleManager>().gameScore;
         Time.timeScale = 0f;
         if(tc.GetComponent<TimerCountdown>().secondsLeft <= 0)
@@ -73,6 +78,8 @@ public class EndGame : MonoBehaviour
         Chest.SetActive(true);
         nextLevelButton.SetActive(true); 
         restartButton.SetActive(false);
+        gsObject.GetComponent<GameStatus>().coins += 400;
+        gsObject.GetComponent<GameStatus>().currentXP += 1000;
     }
 
     private void lostMessage()
