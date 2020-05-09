@@ -17,6 +17,7 @@ public class ChangeHero : MonoBehaviour
 
     public Action<int> turnOffInUse = delegate { };
     public Action<int> finishChange = delegate { };
+    public Action<bool> inUseOutlineOn = delegate { };
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +41,18 @@ public class ChangeHero : MonoBehaviour
 
     public void inChange(int id, int level, int family)
     {
+
         inChangeProcess = true;
         inChangeLevel = level;
         inChangeFamily = family;
         inChangeId = id;
+        inUseOutlineOn(true);
     }
+
     public void finishChosenChange(int id)
     {
         finishChange(id);
+        inUseOutlineOn(false);
     }
 
     public void notInUse(int id)

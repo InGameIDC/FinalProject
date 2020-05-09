@@ -32,7 +32,6 @@ public class heroesToChoose : MonoBehaviour
         if(gs.GetComponent<GameStatus>().isToLevel == 0)
         {
             goButton.SetActive(false);
-            backButton.SetActive(true);
         }
 
         updateBars();
