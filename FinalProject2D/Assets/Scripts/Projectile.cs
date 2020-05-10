@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     public Action<Projectile> onHitDsiplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
 
-    private void OnTriggerEnter2D(Collider2D target)
+    protected virtual void OnTriggerEnter2D(Collider2D target)
     {
         if (TeamTool.isEnemy(attacker, target.gameObject))
         {
