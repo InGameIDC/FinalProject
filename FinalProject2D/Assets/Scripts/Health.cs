@@ -9,8 +9,8 @@ public class Health : MonoBehaviour
     public Action<GameObject, float> OnHit = delegate { };        // handles object hit ( health > 0)
     public Action<GameObject> OnDeath = delegate { };    // handles object death (0 >= health)
 
-    public float _currentHeatlh = 4;   //For now to the health bar to work
-    public float _maxHealth = 4;       //For now to the health bar to work
+    private float _currentHeatlh = 4;   //For now to the health bar to work
+    [SerializeField] public float _maxHealth = 4;       //For now to the health bar to work
 
     /// <summary>
     /// Initiate health parameters
@@ -39,8 +39,10 @@ public class Health : MonoBehaviour
         {
             OnDeath(gameObject);        // tells all classes that it is dead
 
-            ResetHealth();
             //Destroy(gameObject);    //For Testing
+            gameObject.SetActive(false);
+            ResetHealth();
+            
         }
 
     }

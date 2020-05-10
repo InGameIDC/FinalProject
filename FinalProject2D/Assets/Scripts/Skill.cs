@@ -8,8 +8,8 @@ public class Skill : MonoBehaviour
     private float _damageMultiplier;
     [SerializeField]  private float _damage = 1f;
     [SerializeField] float _range = 5f;
-    private float _attackSpeed;
-    [SerializeField]  private float _cooldown = 2f;
+    [SerializeField] private float _projSpeed = 5f;
+    [SerializeField] private float _cooldown = 2f;
     private bool _isOnCooldown;
     private bool _canAttackOnMovment;
     private bool _needToBeAimed; // if ture, the target has to rotate toward the target
@@ -79,11 +79,10 @@ public class Skill : MonoBehaviour
 
     private void initProj(GameObject projGameObj)
     {
-        float projSpeed = 10f;
         Rigidbody2D rb = projGameObj.GetComponent<Rigidbody2D>();
         Projectile projCtrl = projGameObj.GetComponent<Projectile>();
 
-        rb.velocity = _firePoint.transform.up * projSpeed;
+        rb.velocity = _firePoint.transform.up * _projSpeed;
         projCtrl.onHitMechs += hitTarget;
         projCtrl.attacker = gameObject;
 

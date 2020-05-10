@@ -59,6 +59,9 @@ public class Movment2D : MonoBehaviour
 		_rb.velocity = Vector2.zero;
 		_isRotationLock = false;
 		_targetLocationLock = null;
+		OnFinishMovment = delegate { };
+		OnStartMovment = delegate { };
+		OnFinishRotation = delegate { };
 	}
 
 	/// <summary>
@@ -149,6 +152,9 @@ public class Movment2D : MonoBehaviour
 		_AI.isStopped = true;
 		_isMoving = false;
 		OnFinishMovment();
+
+		OnFinishMovment = delegate { };
+		OnStartMovment = delegate { };
 	}
 	#endregion
 
