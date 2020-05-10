@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// Author:OrS
+/// This class is for the timer countdown
+/// it counts the time backwards and in case that the timer is up, it is finishes the battle
+/// </summary>
 public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;                          //the timer text display

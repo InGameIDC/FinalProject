@@ -49,9 +49,6 @@ public class HeroCard : MonoBehaviour
 
 
 
-
-
-
     private void Start()
     {
         //initiating the gameobjects for future use

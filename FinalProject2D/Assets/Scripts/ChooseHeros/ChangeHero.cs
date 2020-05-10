@@ -4,84 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// Author:OrS
+/// attached to the chosen hero panel
+/// this class helps with transfering infrormation from the chosen hero cards in the deck and the hero cards in the collection
+/// since there are 3 deck cards and 9+ hero cards this class manages the switching and updating
+/// </summary>
 public class ChangeHero : MonoBehaviour
 {
-    public GameObject card1;
-    public GameObject card2;
-    public GameObject card3;
-
+    //-------hero in change process details-------//
     public int inChangeId;
     public int inChangeLevel;
     public int inChangeFamily;
     public bool inChangeProcess = false;
 
-    public Action<int> turnOffInUse = delegate { };
-    public Action<int> finishChange = delegate { };
-    public Action<bool> inUseOutlineOn = delegate { };
+    //-------deligated functions-------//
+    public Action<int> turnOffInUse = delegate { };         //lets the hero cards know that a hero was swiched in the deck and the "old" hero needs to change status
+    public Action<int> finishChange = delegate { };         //lets the hero cards know that the change of the cards in the deck was completed
+    public Action<bool> inUseOutlineOn = delegate { };      //lets know that the outlines should be disabled/enabled  
+    public Action<int, int> cardUpgrade = delegate { };
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        LoadTeam();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void LoadTeam()
-    {
-        //load the team from the xml
-        card1 = GameObject.FindGameObjectWithTag("HeroCard1");
-        card2 = GameObject.FindGameObjectWithTag("HeroCard2");
-        card3 = GameObject.FindGameObjectWithTag("HeroCard3");
-    }
-
-    public void inChange(int id, int level, int family)
-    {
-
-        inChangeProcess = true;
-        inChangeLevel = level;
-        inChangeFamily = family;
-        inChangeId = id;
-        inUseOutlineOn(true);
-    }
-
-    public void finishChosenChange(int id)
-    {
-        finishChange(id);
-        inUseOutlineOn(false);
-    }
-
-    public void notInUse(int id)
-    {
-        turnOffInUse(id);
-    }
-
-    public void cardUpgrade(int id, int newLevel)
-    {
-        if(card1.GetComponent<ChosenHeroCard>().heroId == id)
-        {
-            //ToDo - reload the card
-            card1.GetComponent<ChosenHeroCard>().level = newLevel;
-            card1.GetComponent<ChosenHeroCard>().updateLevelDisplay(newLevel);
-        }
-
-        if (card2.GetComponent<ChosenHeroCard>().heroId == id)
-        {
-            //ToDo - reload the card
-            card2.GetComponent<ChosenHeroCard>().level = newLevel;
-            card2.GetComponent<ChosenHeroCard>().updateLevelDisplay(newLevel);
-        }
-
-        if (card3.GetComponent<ChosenHeroCard>().heroId == id)
-        {
-            //ToDo - reload the card
-            card3.GetComponent<ChosenHeroCard>().level = newLevel;
-            card3.GetComponent<ChosenHeroCard>().updateLevelDisplay(newLevel);
-        }
-
-    }
 }

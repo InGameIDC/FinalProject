@@ -137,11 +137,19 @@ public class BattleManager : MonoBehaviour
 
     #region end Battle Options
 
+    /// <summary>
+    /// Author: OrS
+    /// loads the Home menu upon clicking go to menu button
+    /// </summary>
     public void goToMenu()
     {
         SceneManager.LoadScene("HomeMenu");
     }
 
+    /// <summary>
+    /// Author: OrS
+    /// loads the next level upon clicking go to next level
+    /// </summary>
     public void goToNextLevel()
     {
         int idx = SceneManager.GetActiveScene().buildIndex + 1;
@@ -154,6 +162,10 @@ public class BattleManager : MonoBehaviour
         SceneManager.LoadScene("ChooseHeroes");
     }
 
+    /// <summary>
+    /// Author: OrS
+    /// loads the level again upon clicking restart button
+    /// </summary>
     public void restartLevel()
     {
         SceneManager.LoadScene("ChooseHeroes");

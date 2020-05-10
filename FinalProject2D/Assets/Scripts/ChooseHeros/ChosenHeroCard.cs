@@ -34,6 +34,7 @@ public class ChosenHeroCard : MonoBehaviour
 
         //connecting deligated functions 
         cm.inUseOutlineOn += startChangeOutline;
+        cm.cardUpgrade += cardWasUpgraded;
 
 
     }
@@ -129,6 +130,22 @@ public class ChosenHeroCard : MonoBehaviour
         else
         {
             imageOutline.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Author:OrS
+    /// when a card in the deck was upgraded, this method is called and updates the level of that card 
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="newLevel"></param>
+    private void cardWasUpgraded(int id, int newLevel)
+    {
+        if (heroId == id)
+        {
+            //ToDo - reload the card
+            level = newLevel;
+            updateLevelDisplay(newLevel);
         }
     }
 }
