@@ -12,6 +12,12 @@ public class Health : MonoBehaviour
     private float _currentHeatlh = 4;   //For now to the health bar to work
     [SerializeField] public float _maxHealth = 4;       //For now to the health bar to work
 
+    private void Awake()
+    {
+        _currentHeatlh = _maxHealth;
+    }
+
+
     /// <summary>
     /// Initiate health parameters
     /// Author: OrS
@@ -37,12 +43,14 @@ public class Health : MonoBehaviour
 
         if (_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
         {
-            OnDeath(gameObject);        // tells all classes that it is dead
+            
 
             //Destroy(gameObject);    //For Testing
-            gameObject.SetActive(false);
-            ResetHealth();
             
+            ResetHealth();
+            OnDeath(gameObject);        // tells all classes that it is dead
+            gameObject.SetActive(false);
+
         }
 
     }

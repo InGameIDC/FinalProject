@@ -18,12 +18,13 @@ public static class Respawn
     /// <param name="respawnTime"></param>
     public static IEnumerator DieAndRespawn(GameObject gameObject, float respawnTime)
     {
-        gameObject.transform.position =new Vector3(0, -10, 0);
+        gameObject.transform.position =new Vector2(0.5f, 4.5f);
         gameObject.SetActive(false);
 
         yield return new WaitForSeconds(respawnTime);
 
         gameObject.SetActive(true);
+        gameObject.GetComponent<HeroUnit>().Start();
         gameObject.transform.position = respawnPrefabsArray.RandomItem().transform.position;
 
     }
@@ -36,7 +37,7 @@ public static class Respawn
     /// <param name="gameObject"></param>
     /// <param name="respawnPos"></param>
     /// <param name="respawnTime"></param>
-    public static IEnumerator DieAndRespawnSpecialPosition(GameObject gameObject, Vector3 respawnPos, float respawnTime)
+    public static IEnumerator DieAndRespawnSpecialPosition(GameObject gameObject, Vector2 respawnPos, float respawnTime)
     {
         gameObject.SetActive(false);
         yield return new WaitForSeconds(respawnTime);

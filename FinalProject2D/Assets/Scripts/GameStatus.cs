@@ -40,7 +40,7 @@ public class GameStatus : MonoBehaviour
 
         xpToNextLevel = xpLevel * 1000;
 
-        Debug.Log("upon waking: currentXP - " + currentXP + " xpToNextLevel - " + xpToNextLevel + " xpLevel - " + xpLevel + " coins - " + coins);
+        //Debug.Log("upon waking: currentXP - " + currentXP + " xpToNextLevel - " + xpToNextLevel + " xpLevel - " + xpLevel + " coins - " + coins);
 
         GameStatusUpdate(true);
 
@@ -66,7 +66,7 @@ public class GameStatus : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("upon Destroy: currentXP - " + currentXP + " xpToNextLevel - " + xpToNextLevel + " xpLevel - " + xpLevel + " coins - " + coins);
+        //Debug.Log("upon Destroy: currentXP - " + currentXP + " xpToNextLevel - " + xpToNextLevel + " xpLevel - " + xpLevel + " coins - " + coins);
         PlayerPrefs.SetFloat("currentXP", currentXP);
         PlayerPrefs.SetFloat("xpToNextLevel", xpToNextLevel);
         PlayerPrefs.SetInt("xpLevel", xpLevel);

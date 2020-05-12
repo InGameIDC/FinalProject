@@ -83,6 +83,12 @@ public class Movment2D : MonoBehaviour
 	{
 		OnStartMovment();
 		_desSetter.target = target.transform;
+
+		if (SpaceCalTool.IsObjectOnMovment(target)) // sets acceleraction
+			_AIPath.maxAcceleration = GlobalCodeSettings.ACCELARATION_TOWARD_MOVING_ENEMY;
+		else
+			_AIPath.maxAcceleration = GlobalCodeSettings.ACCELARATION;
+
 		_isMoving = true;
 		_AI.isStopped = false;
 		startMovmentFinishTrack(); // TO BE CHECKED
@@ -172,7 +178,7 @@ public class Movment2D : MonoBehaviour
 		GameObject objToRotate = _rotator;
 
 		_desiredRotationDirection = _targetLocationLock.transform.position;
-		Debug.Log("Pre Rotation");
+		//Debug.Log("Pre Rotation");
 		while (_targetLocationLock != null && SpaceCalTool.IsDistanceBetweenTwoPosesLessThan(objToRotate.transform.position, _targetLocationLock.transform.position, rangeKeep) && _isRotationLock && _targetLocationLock.activeSelf) // && !IsLookingAtTheTarget(_desiredRotationDirection)) // Checks if the object finished to rotate target, and if it's on movment
 		{
 			_desiredRotationDirection = _targetLocationLock.transform.position;
@@ -197,7 +203,7 @@ public class Movment2D : MonoBehaviour
 			yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
 			//Debug.Log("After Rotation Tick");
 		}
-		Debug.Log("End Rotation");
+		//Debug.Log("End Rotation");
 
 		_isRotating = false;
 		_desiredRotationDirection = this.transform.position;

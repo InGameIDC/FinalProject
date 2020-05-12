@@ -172,5 +172,23 @@ public class Archive
     //    }
     //    _targetToAttack = null;
     //}
-    
+    #region Cooldown
+    /*
+    public void startCooldown()
+    {
+        if (_isOnCooldown)
+            return;
+
+        _isOnCooldown = true;
+        StartCoroutine(cooldownTimeManage());
+    }
+
+    public IEnumerator cooldownTimeManage()
+    {
+        yield return new WaitForSeconds(_cooldown);
+
+        _isOnCooldown = false;
+    }
+    */
+    #endregion
 }
