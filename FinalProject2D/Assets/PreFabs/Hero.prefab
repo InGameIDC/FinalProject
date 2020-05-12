@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 6987883108868980736}
   - component: {fileID: 3765973349329325679}
   - component: {fileID: 6005421254830619975}
+  - component: {fileID: -529257402728531710}
   m_Layer: 8
   m_Name: Hero
   m_TagString: HeroUnit
@@ -267,7 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHeatlh: 4
   _maxHealth: 4
 --- !u!50 &6574837727077882374
 Rigidbody2D:
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 1
   _range: 3.5
+  _projSpeed: 5
   _cooldown: 2
   projectile: {fileID: 3110371163035026975, guid: d60b427aefc7c4e4295b5eb4a011c810,
     type: 3}
@@ -400,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f230137e700ba408b11f36d2adbcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRespawnable: 0
   heroTeam: 0
 --- !u!114 &3765973349329325679
 MonoBehaviour:
@@ -441,15 +443,31 @@ MonoBehaviour:
   orientation: 1
   enableRotation: 1
   targetCompatibility: {fileID: 0}
-  maxAcceleration: 2.5
+  maxAcceleration: 6
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 1
+  pickNextWaypointDist: 2
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 1
+--- !u!58 &-529257402728531710
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975178366514269632}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.1
 --- !u!1 &4852271452369648858
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,8 +647,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -178377379
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 01e2cc3da008db142b9aa02a98afae1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

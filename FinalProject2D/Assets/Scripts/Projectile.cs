@@ -5,7 +5,7 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
-    public Action<Projectile, Collider2D> onHitMechs; // for data updates
+    public Action<Projectile, Collider2D> onHitMechs; // function to be atctivated on the target
     public Action<Projectile> onHitDsiplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
 
@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
         {
             //on hitting - the health is lowered
 
+            // To be implemented on the skill onhit
             GetComponent<CircleCollider2D>().isTrigger = false;   // turn off the trigger (can't use the same bullet twice)
 
             if (onHitMechs != null)

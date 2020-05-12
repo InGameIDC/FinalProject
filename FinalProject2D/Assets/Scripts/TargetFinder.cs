@@ -97,7 +97,8 @@ public class TargetFinder : MonoBehaviour
             return;
 
         _isScanning = true;
-        StartCoroutine(autoScan(targets, skill));
+        if(gameObject.activeSelf) // TO BE FIXED
+            StartCoroutine(autoScan(targets, skill));
     }
 
     /// <summary>

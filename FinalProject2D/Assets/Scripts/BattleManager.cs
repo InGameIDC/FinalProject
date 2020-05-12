@@ -70,13 +70,13 @@ public class BattleManager : MonoBehaviour
         //Unit clickedUnit = clickedobject.GetComponent<Unit>();
         if (clickedobject.tag.Equals("HeroUnit")) // && clickedUnit.owner != _currentUnit)
         {
-            StartCoroutine(Test.MarkCircleAtPos(new Vector2(clickedobject.transform.position.x, clickedobject.transform.position.y), 0.5f, 0.4f, 0.05f, Color.green));
+            StartCoroutine(Test.MarkCircleAtPos(new Vector2(clickedobject.transform.position.x, clickedobject.transform.position.y), 0.3f, 0.4f, 0.025f, Color.green));
             //change current unit if needed.
             _currentUnit = clickedobject.GetComponent<HeroUnit>();
         }
         else if (clickedobject.tag.Equals("EnemyUnit"))
         {
-            StartCoroutine(Test.MarkCircleAtPos(new Vector2(clickedobject.transform.position.x, clickedobject.transform.position.y), 0.5f, 0.4f, 0.05f, Color.red));
+            StartCoroutine(Test.MarkCircleAtPos(new Vector2(clickedobject.transform.position.x, clickedobject.transform.position.y), 0.3f, 0.4f, 0.025f, Color.red));
             //attack the selected enemy with current unit
             //Debug.Log("current unit is attacking " + clickedobject);
             _currentUnit.SetTargetObj(clickedobject);
@@ -94,7 +94,7 @@ public class BattleManager : MonoBehaviour
     /// </summary>
     private void OnFieldClicked(Vector3 targetPosition)
     {
-        StartCoroutine(Test.MarkCircleAtPos(targetPosition, 0.5f, 0.4f, 0.05f, Color.yellow));
+        StartCoroutine(Test.MarkCircleAtPos(targetPosition, 0.3f, 0.4f, 0.025f, Color.yellow));
         //Debug.Log("target position is " + targetPosition);
         _currentUnit.GoTo(targetPosition);
     }
@@ -103,7 +103,7 @@ public class BattleManager : MonoBehaviour
     {
         if (clickedobject.GetComponent<HeroUnit>() == _currentUnit)
         {
-            StartCoroutine(Test.MarkCircleAtPos(new Vector3(clickedobject.transform.position.x, 0f, clickedobject.transform.position.z), 0.5f, 0.4f, 0.05f, Color.green));
+            StartCoroutine(Test.MarkCircleAtPos(new Vector3(clickedobject.transform.position.x, 0f, clickedobject.transform.position.z), 0.3f, 0.4f, 0.025f, Color.green));
             _currentUnit.CancelOrders();
         }
         else
@@ -115,7 +115,7 @@ public class BattleManager : MonoBehaviour
     {
         StartCoroutine(Respawn.DieAndRespawn(hero, 3f));
     }
-    public void DieAndRespawnSpecialPosition(GameObject hero, Vector3 pos, float time) { StartCoroutine(Respawn.DieAndRespawnSpecialPosition(hero, pos, time)); }
+    public void DieAndRespawnSpecialPosition(GameObject hero, Vector2 pos, float time) { StartCoroutine(Respawn.DieAndRespawnSpecialPosition(hero, pos, time)); }
 
     /// <summary>
     /// Author:OrS

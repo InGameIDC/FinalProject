@@ -71,10 +71,11 @@ public class MouseInputManager : MonoBehaviour
                 float distanceFromLastClick = Vector2.SqrMagnitude(_lastTouchPosition - _hit.point);
 
                 //Debugging
-                Debug.Log("Object clicked: " + _objectClicked +
-                            " in position: " + _hit.collider.transform.position.ToString() +
-                            ", impact point is: " + _hit.point.ToString()
-                            + "Distance from last touch is: " + distanceFromLastClick);
+
+                //Debug.Log("Object clicked: " + _objectClicked +
+                //            " in position: " + _hit.collider.transform.position.ToString() +
+                //            ", impact point is: " + _hit.point.ToString()
+                //            + "Distance from last touch is: " + distanceFromLastClick);
 
                 if (!_wasClicked)
                 {
@@ -100,7 +101,7 @@ public class MouseInputManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(_maxDoubleTapTime);
         if (_wasClicked)
         {
-            Debug.Log("Single Touch detected");
+            //Debug.Log("Single Touch detected");
             _wasClicked = false;
             SingleClick(_objectClicked, _hit);
             StopCoroutine("SingleOrDouble");
@@ -109,7 +110,7 @@ public class MouseInputManager : MonoBehaviour
 
     private void SingleClick(GameObject collider, RaycastHit2D hit)
     {
-        Debug.Log("Single FUNCTION called with object " + collider + " on point " + hit.point);
+        //Debug.Log("Single FUNCTION called with object " + collider + " on point " + hit.point);
         if (collider.tag.Equals("HeroUnit") || collider.tag.Equals("EnemyUnit"))
         {
             OnUnitClick(_objectClicked);

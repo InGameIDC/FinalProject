@@ -31,8 +31,11 @@ public static class SpaceCalTool
 	private static RaycastHit2D GetFirstObjectThatNotItSelfOrTerrain(RaycastHit2D[] hittedObjects, GameObject obj)
 	{
 		int i = 0;
-		while ((hittedObjects[i].transform.gameObject == obj || hittedObjects[i].transform.gameObject.tag == "Terrain") && i < hittedObjects.Length)
+		while ( i < hittedObjects.Length && (hittedObjects[i].transform.gameObject == obj || hittedObjects[i].transform.gameObject.tag == "Terrain"))
 			++i;
+
+		if (i >= hittedObjects.Length)
+			return new RaycastHit2D();
 
 		return hittedObjects[i];
 	}
@@ -157,5 +160,17 @@ public static class SpaceCalTool
 		return current + (targetPos - current/*_desiredRotationDirection*/).normalized * distance;
 	}
 
+	// TO_ADD_DOC
+	public static bool IsObjectOnMovment(GameObject obj)
+	{
+		if (obj == null)
+			return false;
+
+		Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+		if (rb != null && Vector2.SqrMagnitude(rb.velocity) < GlobalCodeSettings.Minumum_Movment_To_Count)
+			return true;
+
+		return false;
+	}
     #endregion
 }

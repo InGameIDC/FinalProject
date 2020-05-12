@@ -23,6 +23,7 @@ public class HeroUnit : MonoBehaviour
     private TargetsBank _targetsBank;
     private TargetFinder _targetFinder;
     private float _respawnTime;
+    [SerializeField] private bool isRespawnable = false;
     [SerializeField] public Team heroTeam;
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
@@ -43,13 +44,19 @@ public class HeroUnit : MonoBehaviour
         initHeroHealth();
     }
 
-    void Start()
+    public void Start()
     {
+        Application.targetFrameRate = 300;
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
-        Test.DrawCircle(this.gameObject, _skill.GetRange() - 0.5f, 0.05f);
+        //Test.DrawCircle(this.gameObject, 0.1f, 0.0001f);
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
-    }    
-
+    }
+    /*
+    private void Update()
+    {
+        manageHero();
+    }
+    */
     #region Inits
     private void initTargetsBank()
     {
@@ -70,7 +77,8 @@ public class HeroUnit : MonoBehaviour
         //_health.InitHealth(100f);
         _health.OnDeath += Die;
         // TO BE CHANGED, TO FIND BATTLEMANAGER WITHOUT FIND!!
-        //_health.OnDeath += GameObject.Find("BattleManager").GetComponent<BattleManager>().DieAndRespawn;
+        if(isRespawnable)
+            _health.OnDeath += GameObject.Find("BattleManager").GetComponent<BattleManager>().DieAndRespawn;
     }
     #endregion
 
@@ -134,7 +142,7 @@ public class HeroUnit : MonoBehaviour
         CancelOrders(); // CHECK NEED TO BE CHANGED
         this._targetObj = target;
         _targetFinder.StartTrackIfTargetAlive(target);
-        GoAfter(target); // CHECK NEED TO BE CHANGED
+        //GoAfter(target); // CHECK NEED TO BE CHANGED
     }
     #endregion
 
@@ -339,7 +347,7 @@ public class HeroUnit : MonoBehaviour
     /// </summary>
     private void prepareToAttack()
     {
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
         
         if (_movement.IsObjRotatingOnly()) // TO BE CHANGED // If moving / rotating toward the target, skip
             return;
