@@ -38,6 +38,11 @@ public class BattleManager : MonoBehaviour
         //follow the score
         GameObject hill = GameObject.FindGameObjectWithTag("Hill");
         hill.GetComponent<Hill>().OnScoreChange += ScoreUpdate;
+
+        SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
+        if (currentUnitSpriteManager != null)
+            currentUnitSpriteManager.EnableOutlineCharacter();
+
     }
 
     #region InputManager manage functions
@@ -81,15 +86,11 @@ public class BattleManager : MonoBehaviour
             _currentUnit = clickedobject.GetComponent<HeroUnit>();
 
             if (prevUnitSpriteManager != null)
-            {
                 prevUnitSpriteManager.DisableOutlineCharacter();
-            }
 
             SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
             if (prevUnitSpriteManager != null)
-            {
                 currentUnitSpriteManager.EnableOutlineCharacter();
-            }
 
         }
         //If we're dealing with an EnemyUnit.
@@ -100,10 +101,11 @@ public class BattleManager : MonoBehaviour
             _currentUnit.SetTargetObj(clickedobject);
 
             SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
-            
+
             //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
             //Start indication on new enemy.
-            StartCoroutine(enemySpriteManager.ClickEnemyUnit());
+            if (enemySpriteManager != null)
+                StartCoroutine(enemySpriteManager.ClickBlinkUnit());
         }
 
         //This is a problem, as _currentUnit is a Unit script that has no reference

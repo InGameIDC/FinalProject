@@ -40,7 +40,7 @@ public class SpriteManager : MonoBehaviour
     }
 
     //Used for blinking effect of selecting enemy units
-    public IEnumerator ClickEnemyUnit()
+    public IEnumerator ClickBlinkUnit()
     {
         //how many times the outline will appear and disappear to indicate enemy selected.
         const int NUMBER_OF_BLINKS = 3;
