@@ -5,22 +5,33 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
-    public Action<Projectile, Collider2D> onHitMechs; // function to be atctivated on the target
-    public Action<Projectile> onHitDsiplayers; // for feedbakcs: visual and audio displays.
+    public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
+    public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
 
     protected virtual void OnTriggerEnter2D(Collider2D target)
     {
-        if (TeamTool.isEnemy(attacker, target.gameObject))
+        //Checks that the projectile entered the hit point capsule defined to the player (I wrote it like this for readability reasons):
+        GameObject targetObject = target.gameObject;
+        
+        if (target.tag.Equals("HeroDamageHitArea"))
         {
-            //on hitting - the health is lowered
+            //sets the target to be the hero\enemy (=parent) component, instead of HeroDamageHitArea.
+            GameObject targetParentObject = targetObject.transform.parent.gameObject;
+            targetObject = targetParentObject;
 
-            // To be implemented on the skill onhit
-            GetComponent<CircleCollider2D>().isTrigger = false;   // turn off the trigger (can't use the same bullet twice)
+            if (TeamTool.isEnemy(attacker, targetObject))
+            {
+                //on hitting - the health is lowered
 
-            if (onHitMechs != null)
-                onHitMechs(this, target);
+                // To be implemented on the skill onhit
+                GetComponent<CircleCollider2D>().isTrigger = false;   // turn off the trigger (can't use the same bullet twice)
 
+                if (onHitMechs != null)
+                    onHitMechs(this, targetObject);
+
+            }
         }
+       
     }
 }

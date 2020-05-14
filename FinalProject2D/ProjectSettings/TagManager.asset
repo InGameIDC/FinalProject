@@ -21,6 +21,7 @@ TagManager:
   - HeroCard2
   - HeroCard3
   - Terrain
+  - HeroDamageHitArea
   layers:
   - Default
   - TransparentFX

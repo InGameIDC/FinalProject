@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class BattleManager : MonoBehaviour
     private MouseInputManager _MouseInputManager;
     [SerializeField] GameObject _inputManager;
     private HeroUnit _currentUnit;
+    private HeroUnit _currentEnemyClicked;
 
     // for loading next level and some data
     GameObject gs;
@@ -67,19 +69,41 @@ public class BattleManager : MonoBehaviour
 
     private void OnHeroClicked(GameObject clickedobject)
     {
-        //Unit clickedUnit = clickedobject.GetComponent<Unit>();
-        if (clickedobject.tag.Equals("HeroUnit")) // && clickedUnit.owner != _currentUnit)
+        //If we're dealing with a HeroUnit.
+        if (clickedobject.tag.Equals("HeroUnit")) 
         {
-            StartCoroutine(Test.MarkCircleAtPos(new Vector2(clickedobject.transform.position.x, clickedobject.transform.position.y), 0.3f, 0.4f, 0.025f, Color.green));
-            //change current unit if needed.
+            //If the unit is already selected - we don't change anything.
+            if (_currentUnit.gameObject == clickedobject)
+                return;
+
+            //change the last unit to non-selected and the NEW current unit to selected.
+            SpriteManager prevUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
             _currentUnit = clickedobject.GetComponent<HeroUnit>();
+
+            if (prevUnitSpriteManager != null)
+            {
+                prevUnitSpriteManager.DisableOutlineCharacter();
+            }
+
+            SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
+            if (prevUnitSpriteManager != null)
+            {
+                currentUnitSpriteManager.EnableOutlineCharacter();
+            }
+
         }
-        else if (clickedobject.tag.Equals("EnemyUnit"))
+        //If we're dealing with an EnemyUnit.
+        else if (clickedobject.tag.Equals("EnemyUnit") && _currentUnit != null) 
         {
-            StartCoroutine(Test.MarkCircleAtPos(new Vector2(clickedobject.transform.position.x, clickedobject.transform.position.y), 0.3f, 0.4f, 0.025f, Color.red));
-            //attack the selected enemy with current unit
-            //Debug.Log("current unit is attacking " + clickedobject);
+
+            _currentEnemyClicked = clickedobject.GetComponent<HeroUnit>();
             _currentUnit.SetTargetObj(clickedobject);
+
+            SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
+            
+            //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
+            //Start indication on new enemy.
+            StartCoroutine(enemySpriteManager.ClickEnemyUnit());
         }
 
         //This is a problem, as _currentUnit is a Unit script that has no reference

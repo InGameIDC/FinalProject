@@ -25,7 +25,7 @@ public class ProjectileExplosion : Projectile
                     false; // turn off the trigger (can't use the same bullet twice)
 
                 if (onHitMechs != null)
-                    onHitMechs(this, enemy);
+                    onHitMechs(this, enemy.gameObject);
 
             }
         }

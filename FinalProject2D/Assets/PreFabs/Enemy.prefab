@@ -30,6 +30,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 3.84, z: -5.1984987}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
+  - {fileID: 4290878426603797345}
   - {fileID: 7848177740186788348}
   - {fileID: 7881732971141011869}
   m_Father: {fileID: 0}
@@ -113,8 +114,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHeatlh: 4
   _maxHealth: 4
+--- !u!1 &4798722075789227186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4290878426603797345}
+  - component: {fileID: 7593148392562796993}
+  m_Layer: 0
+  m_Name: DamageHitArea
+  m_TagString: EnemyDamageHitArea
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4290878426603797345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798722075789227186}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0.67, z: -0.048696518}
+  m_LocalScale: {x: 0.41657725, y: 0.2409253, z: 0.46938193}
+  m_Children: []
+  m_Father: {fileID: 3090831313479427977}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &7593148392562796993
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798722075789227186}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &5665130539083145034
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7848177740186788348}
   - component: {fileID: 8890994935582774816}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemyScanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3090831313479427977}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &8890994935582774816
 CircleCollider2D:
@@ -212,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 7317064910310167239, guid: 4168a2b96ee7551449a11fb4ba65c547,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7317064910310167239, guid: 4168a2b96ee7551449a11fb4ba65c547,
         type: 3}

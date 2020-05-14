@@ -72,10 +72,10 @@ public class Skill : MonoBehaviour
     }
 
     // TO BE FIXED SHOOT AND HERO DIE
-    private void hitTarget(Projectile proj, Collider2D target)
+    private void hitTarget(Projectile proj, GameObject target)
     {
         //Debug.Log("hitted");
-        Health targetHealth = target.gameObject.GetComponent<Health>();
+        Health targetHealth = target.GetComponent<Health>();
         if(targetHealth != null)
         {
             target.GetComponent<Health>().TakeDamage(_damage);
