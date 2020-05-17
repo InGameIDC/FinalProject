@@ -66,26 +66,8 @@ public class Skill : MonoBehaviour
         Projectile projCtrl = projGameObj.GetComponent<Projectile>();
 
         rb.velocity = _firePoint.transform.up * _projSpeed;
-        projCtrl.onHitMechs += hitTarget;
         projCtrl.attacker = gameObject;
-
-        //new
         projCtrl.shootDamege = _damage;
-        projCtrl.heroShooting = this.gameObject;
 
-    }
-
-    // TO BE FIXED SHOOT AND HERO DIE
-    private void hitTarget(Projectile proj, GameObject target)
-    {
-        //Debug.Log("hitted");
-        Health targetHealth = target.GetComponent<Health>();
-        if(targetHealth != null)
-        {
-            target.GetComponent<Health>().TakeDamage(_damage);
-        }
-        
-        Destroy(proj.transform.gameObject);
-        //Destroy(target.transform.gameObject); //OrS: No need, killed in the health script
     }
 }

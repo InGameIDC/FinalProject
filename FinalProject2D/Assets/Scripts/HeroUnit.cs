@@ -73,7 +73,7 @@ public class HeroUnit : MonoBehaviour
 
     private void initHeroHealth()
     {
-        _health = GetComponent<Health>();
+        _health = GetComponentInChildren<Health>();
         //_health.InitHealth(100f);
         _health.OnDeath += Die;
         // TO BE CHANGED, TO FIND BATTLEMANAGER WITHOUT FIND!!

@@ -37,9 +37,9 @@ public class Health : MonoBehaviour
     {
         _currentHeatlh -= damageValue;
 
-        GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);    //updae the life Bar
+        transform.parent.gameObject.GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);    //updae the life Bar
 
-        OnHit(gameObject, _currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
+        OnHit(transform.parent.gameObject, _currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
 
         if (_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
         {
@@ -47,9 +47,10 @@ public class Health : MonoBehaviour
 
             //Destroy(gameObject);    //For Testing
             
-            ResetHealth();
-            OnDeath(gameObject);        // tells all classes that it is dead
-            gameObject.SetActive(false);
+            //ResetHealth();
+            OnDeath(transform.parent.gameObject);        // tells all classes that it is dead
+            transform.parent.gameObject.SetActive(false);
+
 
         }
 
@@ -73,7 +74,7 @@ public class Health : MonoBehaviour
     public void ResetHealth()
     {
         _currentHeatlh = _maxHealth;
-        GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);
+        transform.parent.gameObject.GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);
     }
 
 }

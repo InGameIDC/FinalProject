@@ -5,13 +5,12 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
-    public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
+    //public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
     public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
 
     //new
     public float shootDamege;
-    public GameObject heroShooting;
 
     
     protected virtual void OnTriggerEnter2D(Collider2D target)
@@ -40,6 +39,7 @@ public class Projectile : MonoBehaviour
             }
             */
         }
+        Destroy(this.transform.gameObject);
     }
     
 }

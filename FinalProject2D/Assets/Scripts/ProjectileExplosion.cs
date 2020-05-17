@@ -21,15 +21,12 @@ public class ProjectileExplosion : Projectile
             if (TeamTool.isEnemy(attacker, enemy.gameObject))
             {
                 //on hitting - the health is lowered
-                GetComponent<CircleCollider2D>().isTrigger =
-                    false; // turn off the trigger (can't use the same bullet twice)
-
-                if (onHitMechs != null)
-                    onHitMechs(this, enemy.gameObject);
-
+                enemy.GetComponentInChildren<Health>().TakeDamage(shootDamege);
+                
+                GetComponent<CircleCollider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
             }
         }
-        Destroy(this);
+        Destroy(this.transform.gameObject);
     }
 }
 
