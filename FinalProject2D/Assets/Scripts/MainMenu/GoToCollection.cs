@@ -10,12 +10,16 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GoToCollection : MonoBehaviour
 {
+    //-------Outside scripts and classes-------//
+    public GameObject gs; 
+
     /// <summary>
     /// Author:OrS
     /// upon clicking the collection button this method loads the heros to choose scene
     /// </summary>
     public void goToCollection()
     {
+        gs.GetComponent<GameStatus>().isToLevel = 0;
         SceneManager.LoadScene("ChooseHeroes");
     }
 }

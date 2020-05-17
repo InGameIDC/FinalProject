@@ -75,4 +75,5 @@ public class Health : MonoBehaviour
         _currentHeatlh = _maxHealth;
         GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);
     }
+
 }

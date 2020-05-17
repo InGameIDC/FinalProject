@@ -69,6 +69,10 @@ public class Skill : MonoBehaviour
         projCtrl.onHitMechs += hitTarget;
         projCtrl.attacker = gameObject;
 
+        //new
+        projCtrl.shootDamege = _damage;
+        projCtrl.heroShooting = this.gameObject;
+
     }
 
     // TO BE FIXED SHOOT AND HERO DIE
