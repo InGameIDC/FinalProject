@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class SpaceCalTool
 {
-
 	/// <summary>
 	/// Checks if there is no obsticales between the objects, and if thier distance less than the given range
 	/// </summary>
@@ -13,31 +12,20 @@ public static class SpaceCalTool
 	/// <param name="range">Max Distance</param>
 	/// <returns></returns>
 	public static bool AreObjectsViewableAndWhithinRange(GameObject obj1, GameObject obj2, float range)
-    {
-        Vector2 rayDirection = GetVectorDirectionTowardTarget(obj1.transform.position, obj2.transform.position);
-		RaycastHit2D[] hittedObjects = Physics2D.RaycastAll(obj1.transform.position, rayDirection);
+	{
+		LayerMask maskLayersToRelate = LayerMask.GetMask(GlobalCodeSettings.Layers_To_RayCast_Relate) | 1 << obj2.layer;
+		//LayerMask maskLayersToRelate = ~(maskLayersToIgnore | 1 << obj1.layer); For working with objects to ignore
 
-		RaycastHit2D hittedObject = GetFirstObjectThatNotItSelfOrTerrain(hittedObjects, obj1);
+		Vector2 rayDirection = GetVectorDirectionTowardTarget(obj1.transform.position, obj2.transform.position);
+		RaycastHit2D hittedObject = Physics2D.Raycast(obj1.transform.position, rayDirection, range, maskLayersToRelate);
 
 		if (hittedObject.collider != null)
-        {
-            if (hittedObject.transform.gameObject == obj2 && hittedObject.distance < range)
-                return true;
-        }
-
-        return false;
-    }
-
-	private static RaycastHit2D GetFirstObjectThatNotItSelfOrTerrain(RaycastHit2D[] hittedObjects, GameObject obj)
-	{
-		int i = 0;
-		while ( i < hittedObjects.Length && (hittedObjects[i].transform.gameObject == obj || hittedObjects[i].transform.gameObject.tag == "Terrain"))
-			++i;
-
-		if (i >= hittedObjects.Length)
-			return new RaycastHit2D();
-
-		return hittedObjects[i];
+		{
+			if (hittedObject.transform.gameObject == obj2 && hittedObject.distance < range)
+				return true;
+		}
+		
+		return false;
 	}
 
 
@@ -160,7 +148,12 @@ public static class SpaceCalTool
 		return current + (targetPos - current/*_desiredRotationDirection*/).normalized * distance;
 	}
 
-	// TO_ADD_DOC
+	/// <summary>
+	/// Checks the objecct Velocity to decide whether the object is on movment, or not
+	/// The movment would be consider moving only if its velocity SqrMagnitude is higher than <see cref="GlobalCodeSettings.Minumum_Movment_To_Count"/>
+	/// </summary>
+	/// <param name="obj">The object that would be checked</param>
+	/// <returns>True if the object is moving</returns>
 	public static bool IsObjectOnMovment(GameObject obj)
 	{
 		if (obj == null)

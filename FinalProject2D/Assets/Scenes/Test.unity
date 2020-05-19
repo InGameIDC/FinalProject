@@ -877,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 609032414}
   - component: {fileID: 609032413}
   - component: {fileID: 609032415}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap_WalkableObjects
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -1622,7 +1622,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -1954,7 +1954,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -2692,7 +2692,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -3074,7 +3074,7 @@ GameObject:
   - component: {fileID: 1466256548}
   - component: {fileID: 1466256547}
   - component: {fileID: 1466256549}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap_Base
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -5778,7 +5778,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -5870,6 +5870,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304799643475723809, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399506060866825619, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4678560767858774026, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -5989,7 +5999,7 @@ GameObject:
   - component: {fileID: 1726660563}
   - component: {fileID: 1726660562}
   - component: {fileID: 1726660564}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tilemap_Hill
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -6632,7 +6642,7 @@ PrefabInstance:
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 975178366514269632, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
@@ -6749,6 +6759,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _maxHealth
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304799643475723809, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399506060866825619, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5962972296272286381, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}

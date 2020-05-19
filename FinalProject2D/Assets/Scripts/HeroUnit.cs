@@ -18,7 +18,8 @@ public class HeroUnit : MonoBehaviour
     private ObjStatus _status;                    // The hero order status (CURRECTLY NOT IN USE, MIGHT BE REMOVED)
     private bool _isScanning;
     private Movment2D _movement;                  // The movment component script
-    private Scanner _scanner;
+    private ScannerIn _scannerIn;
+    private ScannerOut _scannerOut;
     private Health _health;
     private TargetsBank _targetsBank;
     private TargetFinder _targetFinder;
@@ -40,7 +41,7 @@ public class HeroUnit : MonoBehaviour
         _targetsBank = this.GetComponent<TargetsBank>();
         _targetFinder = this.GetComponent<TargetFinder>();
         _targetFinder.OnTargetDeath += manageTargetObjDeath;
-        initScanner();
+        initScanners();
         initHeroHealth();
     }
 
@@ -64,11 +65,12 @@ public class HeroUnit : MonoBehaviour
         _targetsBank.OnAddTargetToBank += manageTargetAddToBank;
         _targetsBank.OnRemoveTargetFromBank += manageTargetRemoveFromBank;
     }
-    private void initScanner()
+    private void initScanners()
     {
-        _scanner = GetComponentInChildren<Scanner>();
-        _scanner.OnObjEnter += _targetsBank.AddTargetToBank;
-        _scanner.OnObjExit += _targetsBank.RemoveTargetFromBank;
+        _scannerIn = GetComponentInChildren<ScannerIn>();
+        _scannerIn.OnObjEnter += _targetsBank.AddTargetToBank;
+        _scannerOut = GetComponentInChildren<ScannerOut>();
+        _scannerOut.OnObjExit += _targetsBank.RemoveTargetFromBank;
     }
 
     private void initHeroHealth()

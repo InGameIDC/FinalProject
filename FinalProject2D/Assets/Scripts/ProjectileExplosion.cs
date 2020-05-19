@@ -14,20 +14,18 @@ public class ProjectileExplosion : Projectile
 
         Collider2D[] enemiesInSphere;
         
-        enemiesInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, 1 << LayerMask.NameToLayer("Unit"));
+        enemiesInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, 1 << TeamTool.getEnemyLayer(attacker.tag));
         foreach (Collider2D enemy in enemiesInSphere)
         {
             //Damage the enemy
-            if (TeamTool.isEnemy(attacker, enemy.gameObject))
-            {
-                //on hitting - the health is lowered
-                GetComponent<CircleCollider2D>().isTrigger =
-                    false; // turn off the trigger (can't use the same bullet twice)
 
-                if (onHitMechs != null)
-                    onHitMechs(this, enemy.gameObject);
+            //on hitting - the health is lowered
+            GetComponent<CircleCollider2D>().isTrigger =
+                false; // turn off the trigger (can't use the same bullet twice)
 
-            }
+            if (onHitMechs != null)
+                onHitMechs(this, enemy.gameObject);
+
         }
         Destroy(this);
     }

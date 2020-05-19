@@ -112,11 +112,16 @@ public class Movment2D : MonoBehaviour
 	*/
     #endregion
 
-    public void RotateTowards(Vector3 pos)
+    private void RotateTowards(Vector3 pos)
 	{
 		
 	}
 
+	/// <summary>
+	/// Set the gameobject to rotate after the target, as long as its within the given range
+	/// </summary>
+	/// <param name="target">The target to be rotate toward</param>
+	/// <param name="range">Range to keep</param>
 	public void TargetLock(GameObject target, float range)
 	{
 		_AI.isStopped = true;

@@ -191,4 +191,72 @@ public class Archive
     }
     */
     #endregion
+
+    #region SpaceCalTool
+    /// <summary>
+    /// Checks if there is no obsticales between the objects, and if thier distance less than the given range
+    /// </summary>
+    /// <param name="obj1">First Obj</param>
+    /// <param name="obj2">Second Obj</param>
+    /// <param name="range">Max Distance</param>
+    /// <returns></returns>
+    //public static bool AreObjectsViewableAndWhithinRange2(GameObject obj1, GameObject obj2, float range)
+    //{
+    //    Vector2 rayDirection = GetVectorDirectionTowardTarget(obj1.transform.position, obj2.transform.position);
+    //    RaycastHit2D[] hittedObjects = Physics2D.RaycastAll(obj1.transform.position, rayDirection);
+
+    //    RaycastHit2D hittedObject = GetFirstObjectThatNotItSelfOrTerrain(hittedObjects, obj1);
+
+    //    if (hittedObject.collider != null)
+    //    {
+    //        if (hittedObject.transform.gameObject == obj2 && hittedObject.distance < range)
+    //            return true;
+    //    }
+
+    //    return false;
+    //}
+
+    //private static RaycastHit2D GetFirstObjectThatNotItSelfOrTerrain(RaycastHit2D[] hittedObjects, GameObject obj)
+    //{
+    //    int i = 0;
+    //    while (i < hittedObjects.Length && (hittedObjects[i].transform.gameObject == obj || hittedObjects[i].transform.gameObject.tag == "Terrain"))
+    //        ++i;
+
+    //    if (i >= hittedObjects.Length)
+    //        return new RaycastHit2D();
+
+    //    return hittedObjects[i];
+    //}
+    #endregion
+
+    #region Projectile Explosion
+
+    //[SerializeField] private float _hitRadius = 2f;
+
+    //protected override void OnTriggerEnter2D(Collider2D target)
+    //{
+    //    if (!TeamTool.isEnemy(attacker, target.gameObject))
+    //        return;
+
+    //    Collider2D[] enemiesInSphere;
+
+    //    enemiesInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, TeamTool.getEnemyLayer(attacker.tag));
+    //    foreach (Collider2D enemy in enemiesInSphere)
+    //    {
+    //        //Damage the enemy
+    //        if (TeamTool.isEnemy(attacker, enemy.gameObject))
+    //        {
+    //            //on hitting - the health is lowered
+    //            GetComponent<CircleCollider2D>().isTrigger =
+    //                false; // turn off the trigger (can't use the same bullet twice)
+
+    //            if (onHitMechs != null)
+    //                onHitMechs(this, enemy.gameObject);
+
+    //        }
+    //    }
+    //    Destroy(this);
+    //}
+
+    #endregion
 }
