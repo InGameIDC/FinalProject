@@ -216,7 +216,7 @@ public class Movment2D : MonoBehaviour
 		if (OnFinishMovment != null)
 			OnFinishMovment();
 
-		StopMovment();
+		// StopMovment(); // TO BE CHECKED
 	}
 
 	/// <summary>

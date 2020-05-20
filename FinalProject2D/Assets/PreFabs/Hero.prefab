@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6652433954963170763}
   - component: {fileID: 2499850189256178171}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DamageHitArea
   m_TagString: HeroDamageHitArea
   m_Icon: {fileID: 0}

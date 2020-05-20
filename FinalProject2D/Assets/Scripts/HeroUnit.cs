@@ -119,7 +119,7 @@ public class HeroUnit : MonoBehaviour
     public void GoTo(Vector3 desiredPos)
     {
         CancelOrders();
-        _movement.OnFinishMovment += manageHeroIdle;
+        _movement.OnFinishMovment += manageHero;
         _movement.GoTo(desiredPos);
     }
 
