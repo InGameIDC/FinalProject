@@ -14,7 +14,7 @@ public class ProjectileExplosion : Projectile
 
         Collider2D[] enemiesInSphere;
         
-        enemiesInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, 1 << LayerMask.NameToLayer("Unit"));
+        enemiesInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, 1 << TeamTool.getEnemyLayer(attacker.tag));
         foreach (Collider2D enemy in enemiesInSphere)
         {
             //Damage the enemy

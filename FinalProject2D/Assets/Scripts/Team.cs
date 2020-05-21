@@ -35,7 +35,34 @@ public static class TeamTool
                 return Team.EnemyUnit;
 
             default:
+                Debug.Log("Gave OTHER team type");
                 return Team.Other;
         }
+    }
+
+    public static LayerMask getTeamLayer(string teamName) => LayerMask.NameToLayer(teamName);
+
+    public static string getEnemyTeamName(Team myTeam)
+    {
+        return Enum.GetName(typeof(Team), (int)myTeam ^ 1);
+    }
+
+    public static int getEnemyLayer(Team myTeam)
+    {
+        return LayerMask.NameToLayer(getEnemyTeamName(myTeam));
+    }
+
+    public static int getEnemyLayer(string myTeam)
+    {
+        switch (myTeam)
+        {
+            case "HeroUnit":
+                return LayerMask.NameToLayer("EnemyUnit");
+
+            case "EnemyUnit":
+                return LayerMask.NameToLayer("HeroUnit");
+        }
+
+        return -1;
     }
 }
