@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3090831313479427977}
   - component: {fileID: 3090831313479427976}
   - component: {fileID: 8172411049794341162}
-  - component: {fileID: 8776877207359310823}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: EnemyUnit
@@ -83,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 11, y: 11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &8172411049794341162
@@ -102,19 +101,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.9}
   m_Size: {x: 1.5075581, y: 1.92}
   m_Direction: 0
---- !u!114 &8776877207359310823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3090831313479427983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 4
 --- !u!1 &4798722075789227186
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290878426603797345}
   - component: {fileID: 7593148392562796993}
+  - component: {fileID: 8254134429525832484}
   m_Layer: 0
   m_Name: DamageHitArea
   m_TagString: EnemyDamageHitArea
@@ -162,6 +149,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &8254134429525832484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798722075789227186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 4
 --- !u!1 &5665130539083145034
 GameObject:
   m_ObjectHideFlags: 0

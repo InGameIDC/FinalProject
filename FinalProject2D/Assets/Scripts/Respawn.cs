@@ -23,13 +23,15 @@ public static class Respawn
 
         yield return new WaitForSeconds(respawnTime);
 
+        
         gameObject.SetActive(true);
         gameObject.GetComponent<HeroUnit>().Start();
         gameObject.transform.position = respawnPrefabsArray.RandomItem().transform.position;
+        gameObject.GetComponentInChildren<Health>().ResetHealth();
 
     }
 
-    
+
     /// <summary>
     /// author: dor peretz
     /// respawns the unit at a selected postion in vector 3.

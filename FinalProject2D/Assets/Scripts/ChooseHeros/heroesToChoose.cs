@@ -34,11 +34,7 @@ public class heroesToChoose : MonoBehaviour
         gs = GameObject.FindGameObjectWithTag("GameStatus");
         cards = GameObject.FindGameObjectsWithTag("GeneralHeroCard");
 
-        //if the player got to this scene through clicking the collection button, the goButton needs to be inactive
-        if(gs.GetComponent<GameStatus>().isToLevel == 0)
-        {
-            goButton.SetActive(false);
-        }
+        gs.GetComponent<GameStatus>().GameStatusUpdate += GameStatusUpdate;
 
         //updates the bars of the coins and the xp at the top
         updateBars();
@@ -96,5 +92,21 @@ public class heroesToChoose : MonoBehaviour
         coinsText.GetComponent<TMPro.TextMeshProUGUI>().text = coins.ToString();
         xpText.GetComponent<TMPro.TextMeshProUGUI>().text = currXp + "/" + gs.GetComponent<GameStatus>().xpToNextLevel;
         xpLevelText.GetComponent<TMPro.TextMeshProUGUI>().text = xpLevel.ToString();
+    }
+
+    /// <summary>
+    /// Author: OrS
+    /// upon Game status finish loading
+    /// </summary>
+    /// <param name="isupdated"></param>
+    private void GameStatusUpdate(bool isupdated)
+    {
+        //if the player got to this scene through clicking the collection button, the goButton needs to be inactive
+        
+        if(gs.GetComponent<GameStatus>().isToLevel == 0)
+        {
+           goButton.SetActive(false);
+        }
+        
     }
 }

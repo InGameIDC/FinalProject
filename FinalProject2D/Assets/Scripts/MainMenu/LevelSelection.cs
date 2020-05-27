@@ -56,6 +56,7 @@ public class LevelSelection : MonoBehaviour
         if (unlocked)
         {
             gs.GetComponent<GameStatus>().lastLevelCosen = levelidx;
+            gs.GetComponent<GameStatus>().isToLevel = 1;
             SceneManager.LoadScene("ChooseHeroes");
         }
     }

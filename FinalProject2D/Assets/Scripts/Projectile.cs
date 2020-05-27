@@ -5,10 +5,14 @@ using System;
 
 public class Projectile : MonoBehaviour
 {
-    public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
+    //public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
     public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
 
+    //new
+    public float shootDamege;
+
+    
     protected virtual void OnTriggerEnter2D(Collider2D target)
     {
         //Checks that the projectile entered the hit point capsule defined to the player (I wrote it like this for readability reasons):
@@ -19,7 +23,9 @@ public class Projectile : MonoBehaviour
             //sets the target to be the hero\enemy (=parent) component, instead of HeroDamageHitArea.
             GameObject targetParentObject = targetObject.transform.parent.gameObject;
             targetObject = targetParentObject;
+            target.GetComponent<Health>().TakeDamage(shootDamege);
 
+            /*
             if (TeamTool.isEnemy(attacker, targetObject))
             {
                 //on hitting - the health is lowered
@@ -31,7 +37,9 @@ public class Projectile : MonoBehaviour
                     onHitMechs(this, targetObject);
 
             }
+            */
         }
-       
+        Destroy(this.transform.gameObject);
     }
+    
 }
