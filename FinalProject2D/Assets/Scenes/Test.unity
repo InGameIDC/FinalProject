@@ -2918,7 +2918,7 @@ MonoBehaviour:
   textDisplay: {fileID: 1394663784}
   secondsLeft: 135
   takingAway: 0
-  endPanel: {fileID: 0}
+  endPanel: {fileID: 1809527207}
 --- !u!114 &1394663787
 MonoBehaviour:
   m_ObjectHideFlags: 0
