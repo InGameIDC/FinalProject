@@ -22,7 +22,7 @@ public class Hill : MonoBehaviour
         sm = GameObject.FindGameObjectWithTag("SugarManager");
         hillRadius = GetComponent<CircleCollider2D>().radius;
         pointsCalcInterval = 0.3f;
-        Test.DrawCircle(gameObject, hillRadius, 0.2f, Color.cyan);
+        Test.DrawCircle(gameObject, hillRadius, 0.05f, Color.cyan);
         InvokeRepeating("score", 1f, pointsCalcInterval);
     }
 

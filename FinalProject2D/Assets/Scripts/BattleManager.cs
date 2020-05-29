@@ -41,7 +41,7 @@ public class BattleManager : MonoBehaviour
 
         SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
         if (currentUnitSpriteManager != null)
-            currentUnitSpriteManager.EnableOutlineCharacter();
+            currentUnitSpriteManager.isSelectedOnStart = true;
 
     }
 
