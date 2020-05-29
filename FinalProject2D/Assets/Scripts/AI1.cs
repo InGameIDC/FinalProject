@@ -37,14 +37,36 @@ public class AI1 : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         isRunning = true;
         Debug.Log("Activated");
-        foreach (GameObject target in targetsList)
+        GameObject target = null;
+        while (targetsList.Count > 0)
         {
+            target = getWeakest();
             _hero.SetTargetObj(target);
             while (target != null && target.activeSelf)
             {
                 yield return new WaitForSeconds(0.5f);
             }
         }
+    }
+
+   private GameObject getWeakest() //GetCurrentHealth
+    {
+        GameObject weakestTarget = null;
+        float weakestHealth = Mathf.Infinity;
+        foreach (GameObject target in targetsList)
+        {
+            if (target != null && target.activeSelf)
+            {
+                float health = target.GetComponentInChildren<Health>().GetCurrentHealth();
+                if (weakestHealth > health)
+                {
+                    weakestTarget = target;
+                    weakestHealth = health;
+                }
+            }
+        }
+
+        return weakestTarget;
     }
 
 }

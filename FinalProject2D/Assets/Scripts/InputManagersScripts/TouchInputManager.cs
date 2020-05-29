@@ -58,7 +58,8 @@ public class TouchInputManager : MonoBehaviour
         {
             //Standard detection of taps and their location on screen.
             Touch touch = Input.GetTouch(0);
-            _hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
+            LayerMask maskLayersToRelate = LayerMask.GetMask(GlobalCodeSettings.Layers_Mouse_RayCast_Relate);
+            _hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity, maskLayersToRelate);
 
             //If we clicked on a collider object
             if (_hit.collider != null)

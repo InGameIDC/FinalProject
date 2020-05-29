@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 891501788811483501}
   - component: {fileID: 7727134776529987282}
   - component: {fileID: 4710317976641095829}
-  m_Layer: 2
+  m_Layer: 15
   m_Name: Projectile_bomb_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,4 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacker: {fileID: 0}
+  shootDamege: 0
   _hitRadius: 3

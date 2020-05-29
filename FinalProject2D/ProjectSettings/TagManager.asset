@@ -23,6 +23,9 @@ TagManager:
   - Terrain
   - HeroDamageHitArea
   - SugarManager
+  - RespawnHeroes
+  - RespawnEnemies
+  - EnemyDamageHitArea
   layers:
   - Default
   - TransparentFX
@@ -37,9 +40,9 @@ TagManager:
   - HeroUnit
   - EnemyUnit
   - Terrain
-  - 
-  - 
-  - 
+  - DamageHitArea
+  - OverlapAvoider
+  - Projectile
   - 
   - 
   - 

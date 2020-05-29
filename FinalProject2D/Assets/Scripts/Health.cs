@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     private float _currentHeatlh = 4;   //For now to the health bar to work
     [SerializeField] public float _maxHealth = 4;       //For now to the health bar to work
-
+    public float GetCurrentHealth() => _currentHeatlh;
     private void Awake()
     {
         _currentHeatlh = _maxHealth;
