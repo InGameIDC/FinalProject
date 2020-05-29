@@ -22,6 +22,7 @@ TagManager:
   - HeroCard3
   - Terrain
   - HeroDamageHitArea
+  - SugarManager
   - RespawnHeroes
   - RespawnEnemies
   - EnemyDamageHitArea

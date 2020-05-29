@@ -14,9 +14,9 @@ public class ScoreBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject hill = GameObject.FindGameObjectWithTag("Hill");
+        GameObject sm = GameObject.FindGameObjectWithTag("SugarManager");
         //Debug.Log(hill.name);
-        hill.GetComponent<Hill>().OnScoreChange += ScoreUpdate;
+        sm.GetComponent<SugarManager>().OnScoreChange += ScoreUpdate;
 
     }
 

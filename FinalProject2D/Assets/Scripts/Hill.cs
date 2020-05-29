@@ -1,28 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Hill : MonoBehaviour
 {
-    private float gameTime = 90f; /// defult is 90 sec but will be changed according to the the batlle generator.
     public float hillRadius;
-    public float windMill;     //num between 100 to -100 .
+    //public float windMill;     //num between 100 to -100 .
     public int numOfEnterdEnemys;
     public int numOfEnterdHeros;
     public int hillBalance;
     public float pointsCalcInterval;
+    public float secondsToAppear = 15;
+    private float timer = 0.0f;
 
-    // OrS for score bar
-    public Action<float> OnScoreChange = delegate { };
+
+    public GameObject sm;
 
 
     private void Awake()
     {
+        sm = GameObject.FindGameObjectWithTag("SugarManager");
         hillRadius = GetComponent<CircleCollider2D>().radius;
         pointsCalcInterval = 0.3f;
-        //Test.DrawCircle(gameObject, hillRadius, 0.2f, Color.cyan);
+        Test.DrawCircle(gameObject, hillRadius, 0.2f, Color.cyan);
         InvokeRepeating("score", 1f, pointsCalcInterval);
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer >= secondsToAppear)
+        {
+            sm.GetComponent<SugarManager>().currSugar--;
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -86,18 +97,22 @@ public class Hill : MonoBehaviour
         hillBalance = numOfEnterdHeros - numOfEnterdEnemys;
     }
 
+    
     /// <summary>
     /// author: dor peretz 
     /// </summary>
     private void score()
     {
+        sm.GetComponent<SugarManager>().score(hillBalance);
+        /*
         if (hillBalance != 0)
         {
             windMill += hillBalance;
             OnScoreChange(windMill);
             //Debug.Log("Score: " + windMill);
         }
-
+        */
     }
+    
 
 }
