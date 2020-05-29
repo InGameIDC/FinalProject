@@ -120,7 +120,7 @@ public class BattleManager : MonoBehaviour
     /// </summary>
     private void OnFieldClicked(Vector3 targetPosition)
     {
-        StartCoroutine(Test.MarkCircleAtPos(targetPosition, 0.3f, 0.4f, 0.025f, Color.yellow));
+        StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
         //Debug.Log("target position is " + targetPosition);
         _currentUnit.GoTo(targetPosition);
     }

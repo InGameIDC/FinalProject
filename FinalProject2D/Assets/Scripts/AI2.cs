@@ -5,6 +5,7 @@ using UnityEngine;
 public class AI2 : MonoBehaviour
 {
     private HeroUnit _hero;
+    private bool _firstSpawn = true;
 
     [SerializeField] Vector2 pos; // only for testing
 
@@ -17,6 +18,13 @@ public class AI2 : MonoBehaviour
     void Start()
     {
         _hero.GoTo(pos);
+        _firstSpawn = false;
+    }
+
+    void OnEnable()
+    {
+        if(!_firstSpawn)
+            _hero.GoTo(pos);
     }
 
 }
