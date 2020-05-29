@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 /// </summary>
 public static class Respawn
 {
-    public static GameObject[] respawnPrefabsArray = GameObject.FindGameObjectsWithTag("Respawn");
+    public static GameObject[] respawnHeroesPrefabsArray = GameObject.FindGameObjectsWithTag("RespawnHeroes");
+    public static GameObject[] respawnEnemiesPrefabsArray = GameObject.FindGameObjectsWithTag("RespawnEnemies");
 
     /// <summary>
     /// author: dor peretz
@@ -25,8 +26,15 @@ public static class Respawn
 
         
         gameObject.SetActive(true);
+        HeroUnit unit = gameObject.GetComponent<HeroUnit>();
         gameObject.GetComponent<HeroUnit>().Start();
-        gameObject.transform.position = respawnPrefabsArray.RandomItem().transform.position;
+
+        if(gameObject.tag == "HeroUnit")
+            gameObject.transform.position = respawnHeroesPrefabsArray.RandomItem().transform.position;
+
+        else
+            gameObject.transform.position = respawnEnemiesPrefabsArray.RandomItem().transform.position;
+
         gameObject.GetComponentInChildren<Health>().ResetHealth();
 
     }

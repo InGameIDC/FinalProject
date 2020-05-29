@@ -23,23 +23,28 @@ public class Projectile : MonoBehaviour
             //sets the target to be the hero\enemy (=parent) component, instead of HeroDamageHitArea.
             GameObject targetParentObject = targetObject.transform.parent.gameObject;
             targetObject = targetParentObject;
-            target.GetComponent<Health>().TakeDamage(shootDamege);
 
-            /*
             if (TeamTool.isEnemy(attacker, targetObject))
             {
-                //on hitting - the health is lowered
+                targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
 
-                // To be implemented on the skill onhit
-                GetComponent<CircleCollider2D>().isTrigger = false;   // turn off the trigger (can't use the same bullet twice)
+                /*
+                if (TeamTool.isEnemy(attacker, targetObject))
+                {
+                    //on hitting - the health is lowered
 
-                if (onHitMechs != null)
-                    onHitMechs(this, targetObject);
+                    // To be implemented on the skill onhit
+                    GetComponent<CircleCollider2D>().isTrigger = false;   // turn off the trigger (can't use the same bullet twice)
 
+                    if (onHitMechs != null)
+                        onHitMechs(this, targetObject);
+
+                }
+                */
+                Destroy(this.transform.gameObject);
             }
-            */
         }
-        Destroy(this.transform.gameObject);
+        
     }
     
 }

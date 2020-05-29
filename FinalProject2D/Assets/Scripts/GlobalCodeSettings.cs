@@ -14,7 +14,8 @@ public static class GlobalCodeSettings
     public const float Minumum_Movment_To_Count = 0.2f;
     public static readonly string[] Layers_To_RayCast_Ignore = { "Terrain", "Ignore Raycast" };
     public static readonly string[] Layers_To_RayCast_Relate = { "Obstacle"};
-    public static readonly string[] Layers_Teams = { "HeroUnit", "EnemyUnit"};
+    public static readonly string[] Layers_Teams = {"HeroUnit", "EnemyUnit"};
+    public static readonly string[] Layers_Mouse_RayCast_Relate = { "Terrain", "HeroUnit", "EnemyUnit" };
 
     public static float CaclTimeRelativeToFramRate(float secs)
     {
