@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     //public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
     public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
+    public bool hitted = false;
 
     //new
     public float shootDamege;
@@ -24,8 +25,9 @@ public class Projectile : MonoBehaviour
             GameObject targetParentObject = targetObject.transform.parent.gameObject;
             targetObject = targetParentObject;
 
-            if (TeamTool.isEnemy(attacker, targetObject))
+            if (TeamTool.isEnemy(attacker, targetObject) && !hitted)
             {
+                hitted = true;
                 targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
 
                 /*
