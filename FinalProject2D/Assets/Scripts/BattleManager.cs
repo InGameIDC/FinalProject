@@ -36,8 +36,8 @@ public class BattleManager : MonoBehaviour
         initInputMouseManager();
 
         //follow the score
-        GameObject hill = GameObject.FindGameObjectWithTag("Hill");
-        hill.GetComponent<Hill>().OnScoreChange += ScoreUpdate;
+        GameObject sm = GameObject.FindGameObjectWithTag("SugarManager");
+        sm.GetComponent<SugarManager>().OnScoreChange += ScoreUpdate;
 
         SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
         if (currentUnitSpriteManager != null)
