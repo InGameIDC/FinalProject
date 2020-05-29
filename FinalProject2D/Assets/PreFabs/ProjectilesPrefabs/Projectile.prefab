@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5548761404493070932}
   - component: {fileID: 3054044306381602283}
   - component: {fileID: -2335811742903551321}
-  m_Layer: 2
+  m_Layer: 15
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacker: {fileID: 0}
+  shootDamege: 0

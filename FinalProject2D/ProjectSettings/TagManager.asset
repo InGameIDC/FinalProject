@@ -24,6 +24,7 @@ TagManager:
   - HeroDamageHitArea
   - RespawnHeroes
   - RespawnEnemies
+  - EnemyDamageHitArea
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Terrain
   - DamageHitArea
   - OverlapAvoider
-  - 
+  - Projectile
   - 
   - 
   - 
