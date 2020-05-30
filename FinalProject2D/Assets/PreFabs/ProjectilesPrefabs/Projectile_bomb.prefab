@@ -134,5 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacker: {fileID: 0}
+  hitted: 0
+  SelfDestroyAfter: 5
+  HitEffectObject: {fileID: 4018694189843614138, guid: e1b7e5c0a85fe6e45ac45dd89fad7b04,
+    type: 3}
   shootDamege: 0
   _hitRadius: 2
