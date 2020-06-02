@@ -8,6 +8,16 @@ public class Projectile : MonoBehaviour
     //public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
     public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
+    public bool hitted = false;
+    public float SelfDestroyAfter = 5f;
+    [SerializeField] private GameObject HitEffectObject; // Object that would apear on hit
+
+    private void Update()
+    {
+        SelfDestroyAfter -= Time.deltaTime;
+        if (SelfDestroyAfter < 0)
+            Destroy(this);
+    }
 
     //new
     public float shootDamege;
@@ -24,9 +34,11 @@ public class Projectile : MonoBehaviour
             GameObject targetParentObject = targetObject.transform.parent.gameObject;
             targetObject = targetParentObject;
 
-            if (TeamTool.isEnemy(attacker, targetObject))
+            if (TeamTool.isEnemy(attacker, targetObject) && !hitted)
             {
+                hitted = true;
                 targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
+                createHitEffect(transform.position); // creating hit effect
 
                 /*
                 if (TeamTool.isEnemy(attacker, targetObject))
@@ -45,6 +57,11 @@ public class Projectile : MonoBehaviour
             }
         }
         
+    }
+
+    private void createHitEffect(Vector3 pos)
+    {
+        Instantiate(HitEffectObject, pos, transform.rotation);
     }
     
 }

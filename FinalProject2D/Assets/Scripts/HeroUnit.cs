@@ -144,6 +144,7 @@ public class HeroUnit : MonoBehaviour
         CancelOrders(); // CHECK NEED TO BE CHANGED
         this._targetObj = target;
         _targetFinder.StartTrackIfTargetAlive(target);
+        manageHero();
         //GoAfter(target); // CHECK NEED TO BE CHANGED
     }
     #endregion

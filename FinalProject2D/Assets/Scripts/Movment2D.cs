@@ -58,6 +58,7 @@ public class Movment2D : MonoBehaviour
 		_AIPath.isRotateOnly = false;
 		_rb.velocity = Vector2.zero;
 		_isRotationLock = false;
+		_isRotating = false;
 		_targetLocationLock = null;
 		OnFinishMovment = delegate { };
 		OnStartMovment = delegate { };

@@ -9,7 +9,7 @@ public class SpriteManager : MonoBehaviour
     //[SerializeField] private Sprite heroSpriteRenderer;
     [SerializeField] private Shader shaderNoOutline;
     [SerializeField] private Shader shaderOutline;
-
+    [SerializeField] public bool isSelectedOnStart = false;
     [SerializeField] private SpriteRenderer heroSpriteRenderer;
 
 
@@ -18,13 +18,16 @@ public class SpriteManager : MonoBehaviour
         //heroSpriteRenderer.sprite = heroSprite;
 
         heroSpriteRenderer = GetComponent<SpriteRenderer>();
-        heroSpriteRenderer.material.shader = shaderNoOutline;
+        if (isSelectedOnStart)
+            EnableOutlineCharacter();
+        else
+            DisableOutlineCharacter();
     }
 
     public void EnableOutlineCharacter()
     {
         Shader currentShader = heroSpriteRenderer.material.shader;
-        if (currentShader != null && currentShader == shaderNoOutline)
+        if (currentShader != null && currentShader != shaderOutline)
         {
             heroSpriteRenderer.material.shader = shaderOutline;
         }
@@ -33,7 +36,7 @@ public class SpriteManager : MonoBehaviour
     public void DisableOutlineCharacter()
     {
         Shader currentShader = heroSpriteRenderer.material.shader;
-        if (currentShader != null && currentShader == shaderOutline)
+        if (currentShader != null && currentShader != shaderNoOutline)
         {
             heroSpriteRenderer.material.shader = shaderNoOutline;
         }

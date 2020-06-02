@@ -33,7 +33,7 @@ public class SugarManager : MonoBehaviour
         timer += Time.deltaTime;
         if(currSugar < minSugars)
         {
-            Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), 0), Quaternion.identity);
+            Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), -0.5f), Quaternion.identity);
             currSugar++;
         }
         else if(currSugar < maxSugars)
@@ -41,7 +41,7 @@ public class SugarManager : MonoBehaviour
             Debug.Log(timer);
             if(timer >= timeToSpawn)
             {
-                Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f),0), Quaternion.identity);
+                Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f),-0.5f), Quaternion.identity);
                 currSugar++;
                 timer = 0.0f;
             }
