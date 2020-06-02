@@ -44,7 +44,7 @@ public class AI1 : MonoBehaviour
             _hero.SetTargetObj(target);
             while (target != null && target.activeSelf)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);
             }
         }
     }

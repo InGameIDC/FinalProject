@@ -329,7 +329,7 @@ public class HeroUnit : MonoBehaviour
     public void Die(GameObject hero)
     {
         //this._status = ObjStatus.dead;   // change status to dead
-        this._targetObj = null;         // reset the target hero
+        CancelOrders();
     }
 
     /// <summary>

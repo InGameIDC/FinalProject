@@ -38,7 +38,7 @@ public class SugarManager : MonoBehaviour
         }
         else if(currSugar < maxSugars)
         {
-            Debug.Log(timer);
+            //Debug.Log(timer);
             if(timer >= timeToSpawn)
             {
                 Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f),-0.5f), Quaternion.identity);
