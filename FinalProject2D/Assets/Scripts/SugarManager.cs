@@ -10,42 +10,78 @@ public class SugarManager : MonoBehaviour
     public int minSugars = 2;
     public int maxSugars = 4;
     public float timeToSpawn = 8f;
-    public int currSugar = 0;
+    [SerializeField] int currSugar = 0;
     private float timer = 0.0f;
+    private bool checkField = false;
+    private int[] sugarIdsList = { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
 
-    public GameObject sugarPrefab;
+    private GameObject sugPreFab;
+    public GameObject sugarPrefab0;
+    public GameObject sugarPrefab1;
+    public GameObject sugarPrefab2;
 
     // OrS for score bar
     public Action<float> OnScoreChange = delegate { };
 
+    private void Update()
+    {
+        if (!checkField)
+        {
+            StartCoroutine(CheckSugarsOnField());
+        }
+    }
+
     public void score(int hillBalance)
     {
+        currSugar--;
         if (hillBalance != 0)
         {
             windMill += hillBalance;
             OnScoreChange(windMill);
-            //Debug.Log("Score: " + windMill);
+            Debug.Log("Score: " + windMill);
         }
     }
 
-    private void Update()
+    IEnumerator CheckSugarsOnField()
     {
+        checkField = true;
+
+        yield return new WaitForSeconds(0.7f);
         timer += Time.deltaTime;
-        if(currSugar < minSugars)
+        if (currSugar < minSugars)
         {
-            Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), -0.5f), Quaternion.identity);
+            sugPreFab = GetSugarPrefab();
+            Instantiate(sugPreFab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), -0.5f), Quaternion.identity);
             currSugar++;
         }
-        else if(currSugar < maxSugars)
+        else if (currSugar < maxSugars)
         {
             Debug.Log(timer);
-            if(timer >= timeToSpawn)
+            if (timer >= timeToSpawn)
             {
-                Instantiate(sugarPrefab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f),-0.5f), Quaternion.identity);
+                sugPreFab = GetSugarPrefab();
+                Instantiate(sugPreFab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), -0.5f), Quaternion.identity);
                 currSugar++;
                 timer = 0.0f;
             }
-        } 
+        }
+
+        checkField = false;
+    }
+
+    private GameObject GetSugarPrefab()
+    {
+        int sugarType = (int)Random.Range(0, sugarIdsList.Length);
+        switch(sugarType){
+            case 1:
+                return sugarPrefab1;
+
+            case 2:
+                return sugarPrefab2;
+  
+            default:
+                return sugarPrefab0;
+        }
     }
 
 }

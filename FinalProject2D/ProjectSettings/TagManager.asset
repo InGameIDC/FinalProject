@@ -26,6 +26,7 @@ TagManager:
   - RespawnHeroes
   - RespawnEnemies
   - EnemyDamageHitArea
+  - PointsAdded
   layers:
   - Default
   - TransparentFX
