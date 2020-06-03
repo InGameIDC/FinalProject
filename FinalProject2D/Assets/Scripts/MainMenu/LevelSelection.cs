@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 using System;
 
 /// <summary>
@@ -19,7 +19,12 @@ public class LevelSelection : MonoBehaviour
 
     //-------Outside GameObjects-------//
     public Image lockImage;
-    
+
+    private bool played = false;
+
+    //public Action<int> OnPressingLevel = delegate { };
+
+
 
     private void Start()
     {
@@ -39,11 +44,17 @@ public class LevelSelection : MonoBehaviour
         if (!unlocked)
         {
             lockImage.gameObject.SetActive(true);
+            gameObject.GetComponent<Image>().color = Color.gray;
         }
         else
         {
+            if(played)
+            {
+                gameObject.GetComponent<Image>().color = new Color32(221, 163, 32, 255);
+            }
             lockImage.gameObject.SetActive(false);
         }
+        
     }
 
     /// <summary>
@@ -57,7 +68,8 @@ public class LevelSelection : MonoBehaviour
         {
             gs.GetComponent<GameStatus>().lastLevelCosen = levelidx;
             gs.GetComponent<GameStatus>().isToLevel = 1;
-            SceneManager.LoadScene("ChooseHeroes");
+            //gameObject.GetComponent<Image>().color = Color.green;
+            //OnPressingLevel(levelidx);
         }
     }
 
