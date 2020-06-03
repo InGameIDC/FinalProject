@@ -9,6 +9,7 @@ public class AI1 : MonoBehaviour
 
     // testing
     [SerializeField] List<GameObject> targetsList; // only for testing
+    private ControlPointsManager _controlPointsManager;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +19,7 @@ public class AI1 : MonoBehaviour
 
     private void Start()
     {
+        _controlPointsManager = GameObject.Find("ControlPointsManager").GetComponent<ControlPointsManager>();
         StartCoroutine(attackTargets());
     }
 
@@ -41,7 +43,11 @@ public class AI1 : MonoBehaviour
         while (targetsList.Count > 0)
         {
             target = getWeakest();
-            _hero.SetTargetObj(target);
+            // if the command fails, wait enough time to have enough points
+            if(!_controlPointsManager.CommandSetTargetToAttack(_hero, target, true))
+                yield return new WaitForSeconds(_hero.GetHeroCommandCost() - _controlPointsManager.GetTeamBalance((int)_hero.heroTeam));
+
+            //_hero.SetTargetObj(target);
             while (target != null && target.activeSelf)
             {
                 yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);

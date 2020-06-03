@@ -260,6 +260,7 @@ MonoBehaviour:
   _cooldown: 2
   projectile: {fileID: 3110371163035026975, guid: d60b427aefc7c4e4295b5eb4a011c810,
     type: 3}
+  _projectileOffsetValue: 0
 --- !u!114 &1796957677248296422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRespawnable: 0
   heroTeam: 0
+  _commandCost: 2
 --- !u!114 &3765973349329325679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +630,7 @@ MonoBehaviour:
     type: 3}
   shaderOutline: {fileID: -6465566751694194690, guid: a76849a1d75fd684289677c078e1f168,
     type: 3}
+  isSelectedOnStart: 0
   heroSpriteRenderer: {fileID: 0}
 --- !u!212 &767811398395935613
 SpriteRenderer:

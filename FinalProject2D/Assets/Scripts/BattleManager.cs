@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     List<GameObject> gameObjects;
+    [SerializeField] private ControlPointsManager _ctrlPointsManager;
     [SerializeField] GameObject testHero;
     //private TouchInputManager _TouchInputManager;
     private MouseInputManager _MouseInputManager;
@@ -75,7 +76,7 @@ public class BattleManager : MonoBehaviour
     private void OnHeroClicked(GameObject clickedobject)
     {
         //If we're dealing with a HeroUnit.
-        if (clickedobject.tag.Equals("HeroUnit")) 
+        if (clickedobject.tag.Equals("HeroUnit"))
         {
             //If the unit is already selected - we don't change anything.
             if (_currentUnit.gameObject == clickedobject)
@@ -94,18 +95,21 @@ public class BattleManager : MonoBehaviour
 
         }
         //If we're dealing with an EnemyUnit.
-        else if (clickedobject.tag.Equals("EnemyUnit") && _currentUnit != null) 
+        else if (clickedobject.tag.Equals("EnemyUnit") && _currentUnit != null)
         {
 
             _currentEnemyClicked = clickedobject.GetComponent<HeroUnit>();
-            _currentUnit.SetTargetObj(clickedobject);
+            //_currentUnit.SetTargetObj(clickedobject);
+            // if had enough control points, show indication
+            if (_ctrlPointsManager.CommandSetTargetToAttack(_currentUnit, clickedobject, false))
+            {
+                SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
 
-            SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
-
-            //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
-            //Start indication on new enemy.
-            if (enemySpriteManager != null)
-                StartCoroutine(enemySpriteManager.ClickBlinkUnit());
+                //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
+                //Start indication on new enemy.
+                if (enemySpriteManager != null)
+                    StartCoroutine(enemySpriteManager.ClickBlinkUnit());
+            }
         }
 
         //This is a problem, as _currentUnit is a Unit script that has no reference
@@ -120,9 +124,13 @@ public class BattleManager : MonoBehaviour
     /// </summary>
     private void OnFieldClicked(Vector3 targetPosition)
     {
-        StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
         //Debug.Log("target position is " + targetPosition);
-        _currentUnit.GoTo(targetPosition);
+        //_currentUnit.GoTo(targetPosition);
+        // if had enough control points, show indication
+        if(_ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false))
+        {
+            StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
+        }
     }
 
     private void OnHeroDoubleClick(GameObject clickedobject)
