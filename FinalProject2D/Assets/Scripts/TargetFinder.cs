@@ -26,7 +26,8 @@ public class TargetFinder : MonoBehaviour
             return;
 
         _isTrackingIfTargetAlive = true;
-        StartCoroutine(TrackIfTargetAlive(target));
+        if(gameObject.activeSelf)
+            StartCoroutine(TrackIfTargetAlive(target));
     }
 
     private IEnumerator TrackIfTargetAlive(GameObject target)

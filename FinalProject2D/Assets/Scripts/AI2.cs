@@ -6,6 +6,7 @@ public class AI2 : MonoBehaviour
 {
     private HeroUnit _hero;
     private bool _firstSpawn = true;
+    private GameObject targetHill;
 
     [SerializeField] Vector2 pos; // only for testing
 
@@ -17,14 +18,45 @@ public class AI2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _hero.GoTo(pos);
+        StartCoroutine(hillsConquerManager());
         _firstSpawn = false;
     }
 
     void OnEnable()
     {
         if(!_firstSpawn)
-            _hero.GoTo(pos);
+            StartCoroutine(hillsConquerManager());
     }
 
+    private GameObject getClosestHill()
+    {
+        GameObject closestHill = null;
+        float ClosestHilldistancePow2 = Mathf.Infinity;
+        float distancePow2 = Mathf.Infinity;
+        foreach (GameObject hill in GameObject.FindGameObjectsWithTag("Hill"))
+        {
+            distancePow2 = SpaceCalTool.DistancePow2(transform.position, hill.transform.position);
+            if (ClosestHilldistancePow2 > distancePow2)
+            {
+                closestHill = hill;
+                ClosestHilldistancePow2 = distancePow2;
+            }
+        }
+
+        return closestHill;
+    }
+
+    private IEnumerator hillsConquerManager()
+    {
+        while (true)
+        {
+            if (targetHill == null || targetHill.activeSelf == false)
+            {
+                targetHill = getClosestHill();
+                if(targetHill != null)
+                    _hero.GoTo(targetHill.transform.position);
+            }
+            yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);
+        }
+    }
 }

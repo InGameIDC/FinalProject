@@ -14,6 +14,7 @@ public class Skill : MonoBehaviour
     private bool _canAttackOnMovment = false;
     private bool _needToBeAimed = true; // if ture, the target has to rotate toward the target
     [SerializeField] GameObject projectile;
+    [SerializeField] private float _projectileOffsetValue = 0f; // use mainly for melee, move around the rotator path
     private GameObject _firePoint; // The projectile spawn location
 
     private void Awake()
@@ -58,12 +59,15 @@ public class Skill : MonoBehaviour
         Quaternion rotation = _firePoint.transform.rotation;
         GameObject projGameObj = Instantiate(projectile, _firePoint.transform.position, rotation);
         initProj(projGameObj);
+        
     }
 
     private void initProj(GameObject projGameObj)
     {
         Rigidbody2D rb = projGameObj.GetComponent<Rigidbody2D>();
         Projectile projCtrl = projGameObj.GetComponent<Projectile>();
+
+        projGameObj.transform.RotateAround(transform.position, new Vector3(0, 0, 1), _projectileOffsetValue);
 
         rb.velocity = _firePoint.transform.up * _projSpeed;
         projCtrl.attacker = gameObject;

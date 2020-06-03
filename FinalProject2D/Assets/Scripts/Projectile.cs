@@ -9,14 +9,14 @@ public class Projectile : MonoBehaviour
     public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.
     public GameObject attacker;
     public bool hitted = false;
-    public float SelfDestroyAfter = 5f;
+    [SerializeField] public float SelfDestroyAfter = 5f;
     [SerializeField] private GameObject HitEffectObject; // Object that would apear on hit
 
     private void Update()
     {
         SelfDestroyAfter -= Time.deltaTime;
         if (SelfDestroyAfter < 0)
-            Destroy(this);
+            Destroy(gameObject);
     }
 
     //new
@@ -59,9 +59,32 @@ public class Projectile : MonoBehaviour
         
     }
 
-    private void createHitEffect(Vector3 pos)
+    protected void createHitEffect(Vector3 pos)
     {
         Instantiate(HitEffectObject, pos, transform.rotation);
+    }
+
+    /// <summary>
+    /// Calculate the position of the impact
+    /// </summary>
+    /// <param name="target">The colider of the target</param>
+    /// <returns>the target impact position, if fails return the projectile position</returns>
+    protected Vector2 getHitlocation(Collider2D targetCol)
+    {
+        //LayerMask maskLayersToRelate = ~(maskLayersToIgnore | 1 << obj1.layer); For working with objects to ignore
+
+        Vector2 rayDirection = SpaceCalTool.GetVectorDirectionTowardTarget(transform.position, targetCol.transform.position);
+        RaycastHit2D[] hittedObject = Physics2D.RaycastAll(transform.position, rayDirection, Mathf.Infinity, LayerMask.GetMask("DamageHitArea"));
+
+        foreach(RaycastHit2D hitted in hittedObject)
+        {
+            if (hitted.collider == targetCol) {
+                Vector2 offset = SpaceCalTool.GetVectorDirectionTowardTarget(transform.position, targetCol.transform.position);
+                return hitted.point + offset.normalized * offset.sqrMagnitude * 0.2f;
+            }
+        }
+
+        return transform.position;
     }
     
 }

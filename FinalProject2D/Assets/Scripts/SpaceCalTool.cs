@@ -99,6 +99,21 @@ public static class SpaceCalTool
 		return Quaternion.Angle(current, newDirection);
 	}
 
+	/// <summary>
+	/// Clculate the relative rotation part the object toward the given direction,
+	/// the amount of the rotation is determinate by the amount parameter
+	/// Author: Ilan
+	/// </summary>
+	/// <param name="curretntRotation"> The current Quaternion of the object we desire to rotate
+	/// <param name="direction">The direction that the object would rotate toward</param>
+	/// <param name="amount">The part of the rotation that the object would rotate</param>
+	public static Quaternion CalcRotationToAgivenDirection(Quaternion curretntRotation, Vector2 direction, float amount)
+	{
+		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+		Quaternion desiredDirection = Quaternion.Euler(0, 0, angle);
+		return Quaternion.RotateTowards(curretntRotation, desiredDirection, amount);
+	}
+
 
 	#endregion
 

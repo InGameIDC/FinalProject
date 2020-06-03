@@ -196,7 +196,7 @@ public class Movment2D : MonoBehaviour
 
 				direction = SpaceCalTool.GetVectorDirectionTowardTarget(objToRotate.transform.position, this._desiredRotationDirection); //.normalized; // calcs the normalized direction vector
 
-				rotateToAgivenDirection(objToRotate, direction, _rotateSpeed * Time.deltaTime * Mathf.Max(0, (1f - 0.3f) / 0.7f));// The amount size is equal to speed times frame time.
+				objToRotate.transform.rotation = SpaceCalTool.CalcRotationToAgivenDirection(objToRotate.transform.rotation, direction, _rotateSpeed * Time.deltaTime * Mathf.Max(0, (1f - 0.3f) / 0.7f));// The amount size is equal to speed times frame time.
 			}
 			else // if already looking at the target
 			{
@@ -219,23 +219,6 @@ public class Movment2D : MonoBehaviour
 
 		// StopMovment(); // TO BE CHECKED
 	}
-
-	/// <summary>
-	/// Rotate the object party toward the given direction,
-	/// the amount of the rotation is determinate by the amount parameter
-	/// Author: Ilan
-	/// </summary>
-	/// <param name="direction">The direction that the object would rotate toward</param>
-	/// <param name="amount">The part of the rotation that the object would rotate</param>
-	private void rotateToAgivenDirection(GameObject objToRotate, Vector2 direction, float amount)
-	{
-		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
-		Quaternion desiredDirection = Quaternion.Euler(0, 0, angle);
-		objToRotate.transform.rotation = Quaternion.RotateTowards(objToRotate.transform.rotation, desiredDirection, amount);
-	}
-
-
-
 
 	#endregion
 

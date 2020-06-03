@@ -7,6 +7,7 @@ public static class GlobalCodeSettings
     public const float FRAME_RATE = 0.0167f;
     // const float FRAME_RATE = 0.005f; // use for fast tasting
     public const float DESIRED_POS_MARGIN_OF_ERROR = 0.1f;
+    public const float AI_Refresh_Time = 0.5f;
     public const float RESPAWN_TIME = 10f;
     public const float Y_RELATIVE_TO_X = 0.75f;
     public const float ACCELARATION = -6f;
