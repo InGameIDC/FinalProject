@@ -55,6 +55,7 @@ public class HeroCard : MonoBehaviour
         gs = GameObject.FindGameObjectWithTag("GameStatus");
         cm = GameObject.FindGameObjectWithTag("ChosenHeroPanel").GetComponent<ChangeHero>();
         htc = GameObject.FindGameObjectWithTag("HerosToChooseScript").GetComponent<heroesToChoose>();
+        //infoP = GameObject.FindGameObjectWithTag("infoP");
 
         //connecting deligated functions
         cm.turnOffInUse += turnOffInUse;
@@ -337,6 +338,12 @@ public class HeroCard : MonoBehaviour
         upgradeB.transform.localPosition = new Vector3(0f, -82.4f, 0);
         upgradeButtonText.GetComponent<TMPro.TextMeshProUGUI>().text = upgradeCost.ToString();
         upgradeBar.SetActive(false);
+    }
+
+    public void infoPressed()
+    {
+        infoP.SetActive(true);
+        infoP.GetComponent<CardInfoDisply>().updateInfoPanel(level, 1, 4, 3, partsForNextUpgrade, upgradeCost, profileImage.GetComponent<Image>().sprite); //TODO: get info from container
     }
     #endregion
 
