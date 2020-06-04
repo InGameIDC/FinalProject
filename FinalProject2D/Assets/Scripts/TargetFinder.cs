@@ -32,13 +32,13 @@ public class TargetFinder : MonoBehaviour
 
     private IEnumerator TrackIfTargetAlive(GameObject target)
     {
-        while (_isTrackingIfTargetAlive && target.activeSelf)
+        while (target != null && _isTrackingIfTargetAlive && target.activeSelf)
         {
             yield return new WaitForSeconds(GlobalCodeSettings.FRAME_RATE);
         }
 
         _isTrackingIfTargetAlive = false;
-        if (!target.activeSelf)
+        if (target == null || !target.activeSelf)
             OnTargetDeath();
     }
     public void stopTackIfTargetAlive()

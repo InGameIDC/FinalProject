@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointsAddedText : MonoBehaviour
+public class TempActive : MonoBehaviour
 {
     [SerializeField] public float Duration = 1f;
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        StartCoroutine(FadeText());
+        StartCoroutine(Fade());
     }
 
-    IEnumerator FadeText()
+    private IEnumerator Fade()
     {
         yield return new WaitForSeconds(Duration);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

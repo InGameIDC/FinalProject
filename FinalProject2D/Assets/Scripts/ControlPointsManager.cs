@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlPointsManager : MonoBehaviour
 {
     [SerializeField] public float TeamControlPointsPool = 10f;
+    [SerializeField] public GameObject noControlPoints;
     private float[] _teamsCurrentControlPoints;
 
     public float GetTeamBalance(int teamNum) {
@@ -49,7 +50,7 @@ public class ControlPointsManager : MonoBehaviour
         else if(!isAICommand)
         {
             Debug.Log("Team " + (int)hero.heroTeam + " not enough Points: " + _teamsCurrentControlPoints[(int)hero.heroTeam] + ", cost: " + hero.GetHeroCommandCost());
-            // show message, UI interaction
+            ShowNoCtrlPointsMessage(pos);
         }
             
         return false;
@@ -67,10 +68,15 @@ public class ControlPointsManager : MonoBehaviour
         else if(!isAICommand)
         {
             Debug.Log("Team " + (int)hero.heroTeam + " not enough Points: " + _teamsCurrentControlPoints[(int)hero.heroTeam] + ", cost: " + hero.GetHeroCommandCost());
-            // show message, UI interaction
+            ShowNoCtrlPointsMessage(target.transform.position + new Vector3(0,0.3f,0));
         }
 
         return false;
     }
 
+    private void ShowNoCtrlPointsMessage(Vector2 pos)
+    {
+        noControlPoints.transform.position = pos;
+        noControlPoints.SetActive(true);
+    }
 }
