@@ -17,7 +17,7 @@ public class ProjectileExplosion : Projectile
 
             if (TeamTool.isEnemy(attacker, targetParentObject))
             {
-
+                createHitEffect(transform.position); // creating hit effect
                 Collider2D[] damageHitAreasInSphere;
 
                 damageHitAreasInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, LayerMask.GetMask("DamageHitArea"));
