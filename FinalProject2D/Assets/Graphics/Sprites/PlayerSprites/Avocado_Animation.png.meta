@@ -1,7 +1,385 @@
 fileFormatVersion: 2
 guid: 2932db115afbdef4a834dc73e66bd31d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6462014719252200060
+    second: Avocado_Animation_0
+  - first:
+      213: -3897699280037259272
+    second: Avocado_Animation_1
+  - first:
+      213: -964835524989747881
+    second: Avocado_Animation_2
+  - first:
+      213: -5906052575130089144
+    second: Avocado_Animation_3
+  - first:
+      213: 271366779326266722
+    second: Avocado_Animation_4
+  - first:
+      213: -4237014512195372979
+    second: Avocado_Animation_5
+  - first:
+      213: -6184818537432874821
+    second: Avocado_Animation_6
+  - first:
+      213: 1996712412310352211
+    second: Avocado_Animation_7
+  - first:
+      213: -5003481392389401200
+    second: Avocado_Animation_8
+  - first:
+      213: -1895634561732781393
+    second: Avocado_Animation_9
+  - first:
+      213: -8569245038493046446
+    second: Avocado_Animation_10
+  - first:
+      213: 3646551339934723417
+    second: Avocado_Animation_11
+  - first:
+      213: 8549267289676710459
+    second: Avocado_Animation_12
+  - first:
+      213: 6694200794982866534
+    second: Avocado_Animation_13
+  - first:
+      213: 8869635302736629003
+    second: Avocado_Animation_14
+  - first:
+      213: -4381682529043925983
+    second: Avocado_Animation_15
+  - first:
+      213: 2342171066110313202
+    second: Avocado_Animation_16
+  - first:
+      213: -5085171311791591460
+    second: Avocado_Animation_17
+  - first:
+      213: -6446580418617549993
+    second: Avocado_Animation_18
+  - first:
+      213: 2613652919091612616
+    second: Avocado_Animation_19
+  - first:
+      213: -4939369580919353681
+    second: Avocado_Animation_20
+  - first:
+      213: 8154441067334555054
+    second: Avocado_Animation_21
+  - first:
+      213: -3974305371120805346
+    second: Avocado_Animation_22
+  - first:
+      213: 5915465943754651791
+    second: Avocado_Animation_23
+  - first:
+      213: 3602270951035869857
+    second: Avocado_Animation_24
+  - first:
+      213: 2705695640700292532
+    second: Avocado_Animation_25
+  - first:
+      213: -6662419425424411572
+    second: Avocado_Animation_26
+  - first:
+      213: -7230918704075043150
+    second: Avocado_Animation_27
+  - first:
+      213: 9099294841310827011
+    second: Avocado_Animation_28
+  - first:
+      213: -5072427444780055829
+    second: Avocado_Animation_29
+  - first:
+      213: 293297189308041565
+    second: Avocado_Animation_30
+  - first:
+      213: -3692947783881258897
+    second: Avocado_Animation_31
+  - first:
+      213: -7850147862531337330
+    second: Avocado_Animation_32
+  - first:
+      213: 3083027815082690424
+    second: Avocado_Animation_33
+  - first:
+      213: -3868678012471425149
+    second: Avocado_Animation_34
+  - first:
+      213: 2474896788819457007
+    second: Avocado_Animation_35
+  - first:
+      213: -8750449680641095465
+    second: Avocado_Animation_36
+  - first:
+      213: 4221364921674492611
+    second: Avocado_Animation_37
+  - first:
+      213: 3573181460761548107
+    second: Avocado_Animation_38
+  - first:
+      213: -4118934548047374475
+    second: Avocado_Animation_39
+  - first:
+      213: 6705868709884109593
+    second: Avocado_Animation_40
+  - first:
+      213: 9197980927605846891
+    second: Avocado_Animation_41
+  - first:
+      213: 8537103535397404406
+    second: Avocado_Animation_42
+  - first:
+      213: -2450510434890171413
+    second: Avocado_Animation_43
+  - first:
+      213: -5012143513603823546
+    second: Avocado_Animation_44
+  - first:
+      213: 4140600055517132501
+    second: Avocado_Animation_45
+  - first:
+      213: -5212204732266334562
+    second: Avocado_Animation_46
+  - first:
+      213: 5248890380657423530
+    second: Avocado_Animation_47
+  - first:
+      213: 8343584051251162141
+    second: Avocado_Animation_48
+  - first:
+      213: -3146443647426754877
+    second: Avocado_Animation_49
+  - first:
+      213: 6389333975272883465
+    second: Avocado_Animation_50
+  - first:
+      213: -7250206507865581874
+    second: Avocado_Animation_51
+  - first:
+      213: -3154491406744008031
+    second: Avocado_Animation_52
+  - first:
+      213: -9025113705528623922
+    second: Avocado_Animation_53
+  - first:
+      213: 4924219058589970441
+    second: Avocado_Animation_54
+  - first:
+      213: 3905065634611678873
+    second: Avocado_Animation_55
+  - first:
+      213: 1891013951603928293
+    second: Avocado_Animation_56
+  - first:
+      213: -6117790013137896505
+    second: Avocado_Animation_57
+  - first:
+      213: 1554057719431582823
+    second: Avocado_Animation_58
+  - first:
+      213: -3285751903859630323
+    second: Avocado_Animation_59
+  - first:
+      213: -7613004726960598719
+    second: Avocado_Animation_60
+  - first:
+      213: -1229447172114273561
+    second: Avocado_Animation_61
+  - first:
+      213: -1019651259105232892
+    second: Avocado_Animation_62
+  - first:
+      213: -8071167319142522796
+    second: Avocado_Animation_63
+  - first:
+      213: -3967498945725212645
+    second: Avocado_Animation_64
+  - first:
+      213: -2038376655780584207
+    second: Avocado_Animation_65
+  - first:
+      213: 9073295999067800210
+    second: Avocado_Animation_66
+  - first:
+      213: -2865406293510922485
+    second: Avocado_Animation_67
+  - first:
+      213: 167783634175108608
+    second: Avocado_Animation_68
+  - first:
+      213: 3997131172029060566
+    second: Avocado_Animation_69
+  - first:
+      213: -8628316117827042508
+    second: Avocado_Animation_70
+  - first:
+      213: 5850302988615722125
+    second: Avocado_Animation_71
+  - first:
+      213: -130982229152553365
+    second: Avocado_Animation_72
+  - first:
+      213: -5297817128223857694
+    second: Avocado_Animation_73
+  - first:
+      213: 7950669497810749782
+    second: Avocado_Animation_74
+  - first:
+      213: 8403171182031724138
+    second: Avocado_Animation_75
+  - first:
+      213: 6277573433401389021
+    second: Avocado_Animation_76
+  - first:
+      213: 1682380668084954
+    second: Avocado_Animation_77
+  - first:
+      213: -7922526448593913
+    second: Avocado_Animation_78
+  - first:
+      213: -8414952305086299506
+    second: Avocado_Animation_79
+  - first:
+      213: 4495202380047970320
+    second: Avocado_Animation_80
+  - first:
+      213: -5076372898047161962
+    second: Avocado_Animation_81
+  - first:
+      213: 8211657830442890162
+    second: Avocado_Animation_82
+  - first:
+      213: -6818226300088069492
+    second: Avocado_Animation_83
+  - first:
+      213: 4308617122478571832
+    second: Avocado_Animation_84
+  - first:
+      213: -678120694052985585
+    second: Avocado_Animation_85
+  - first:
+      213: 5220510395203620724
+    second: Avocado_Animation_86
+  - first:
+      213: -7121016669790101489
+    second: Avocado_Animation_87
+  - first:
+      213: -5078758473272669648
+    second: Avocado_Animation_88
+  - first:
+      213: 4547426768733336591
+    second: Avocado_Animation_89
+  - first:
+      213: 7911555408188390118
+    second: Avocado_Animation_90
+  - first:
+      213: 4247249466284517259
+    second: Avocado_Animation_91
+  - first:
+      213: 3350506269370897922
+    second: Avocado_Animation_92
+  - first:
+      213: -5370162667116486673
+    second: Avocado_Animation_93
+  - first:
+      213: 1860705102001489981
+    second: Avocado_Animation_94
+  - first:
+      213: 517506286192295897
+    second: Avocado_Animation_95
+  - first:
+      213: 5323729460322285535
+    second: Avocado_Animation_96
+  - first:
+      213: -8792257795031867795
+    second: Avocado_Animation_97
+  - first:
+      213: -7885768993167917339
+    second: Avocado_Animation_98
+  - first:
+      213: -2956476318456728208
+    second: Avocado_Animation_99
+  - first:
+      213: -5265250915446730922
+    second: Avocado_Animation_100
+  - first:
+      213: 3108491488328910331
+    second: Avocado_Animation_101
+  - first:
+      213: -4702696507741484246
+    second: Avocado_Animation_102
+  - first:
+      213: 4915251327969889680
+    second: Avocado_Animation_103
+  - first:
+      213: 6975544451524285251
+    second: Avocado_Animation_104
+  - first:
+      213: -6961166707339310698
+    second: Avocado_Animation_105
+  - first:
+      213: 4497025698421792281
+    second: Avocado_Animation_106
+  - first:
+      213: -4841726321922456243
+    second: Avocado_Animation_107
+  - first:
+      213: -6060998368650490805
+    second: Avocado_Animation_108
+  - first:
+      213: -6466268273492364634
+    second: Avocado_Animation_109
+  - first:
+      213: -4612476315875845264
+    second: Avocado_Animation_110
+  - first:
+      213: -1391079488994311108
+    second: Avocado_Animation_111
+  - first:
+      213: 275399802099128125
+    second: Avocado_Animation_112
+  - first:
+      213: -3829183530208838232
+    second: Avocado_Animation_113
+  - first:
+      213: -7551704451231237325
+    second: Avocado_Animation_114
+  - first:
+      213: 4519552235671291674
+    second: Avocado_Animation_115
+  - first:
+      213: 3011491333979237407
+    second: Avocado_Animation_116
+  - first:
+      213: 6752462952578793074
+    second: Avocado_Animation_117
+  - first:
+      213: -4848628459984357351
+    second: Avocado_Animation_118
+  - first:
+      213: 5645308420865667052
+    second: Avocado_Animation_119
+  - first:
+      213: -408122756144527791
+    second: Avocado_Animation_120
+  - first:
+      213: -4400829627313128307
+    second: Avocado_Animation_121
+  - first:
+      213: -4480117317251885858
+    second: Avocado_Animation_122
+  - first:
+      213: -230664686311899433
+    second: Avocado_Animation_123
+  - first:
+      213: 9087713848867009078
+    second: Avocado_Animation_124
+  - first:
+      213: -6979823970459989729
+    second: Avocado_Animation_125
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -45,7 +423,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,7 +498,406 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Avocado_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 3720
+        width: 410
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a7f526620bda950800000000000000
+      internalID: 6462014719252200060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 3744
+        width: 467
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7551cd72798e9c0800000000000000
+      internalID: -3897699280037259272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 3711
+        width: 358
+        height: 668
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75dfe42b3373c92f0800000000000000
+      internalID: -964835524989747881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 3718
+        width: 336
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849079a797c790ea0800000000000000
+      internalID: -5906052575130089144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 2991
+        width: 411
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d487b64ffb91335c0800000000000000
+      internalID: -4237014512195372979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 3015
+        width: 467
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0001c0f4c1b2aa0800000000000000
+      internalID: -6184818537432874821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 2983
+        width: 358
+        height: 668
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3513f562c5fb5bb10800000000000000
+      internalID: 1996712412310352211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 2356
+        width: 448
+        height: 581
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259e75f0a0de31980800000000000000
+      internalID: -8569245038493046446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 2298
+        width: 474
+        height: 481
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95da8089f172b9230800000000000000
+      internalID: 3646551339934723417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 2239
+        width: 392
+        height: 668
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b320c03dd4915a670800000000000000
+      internalID: 8549267289676710459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_61
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1627
+        width: 410
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea25049f4020fee0800000000000000
+      internalID: -1229447172114273561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_62
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 1571
+        width: 467
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408b04a059879d1f0800000000000000
+      internalID: -1019651259105232892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_63
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1511
+        width: 358
+        height: 667
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 450a4cb06147dff80800000000000000
+      internalID: -8071167319142522796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_69
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 760
+        width: 416
+        height: 666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5de6d8f99a87730800000000000000
+      internalID: 3997131172029060566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_70
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 818
+        width: 469
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4334423a430124880800000000000000
+      internalID: -8628316117827042508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_71
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 875
+        width: 410
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84a8d86293703150800000000000000
+      internalID: 5850302988615722125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_77
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 31
+        width: 364
+        height: 666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad22916cd1af50000800000000000000
+      internalID: 1682380668084954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_78
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 90
+        width: 470
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704de41118ad3eff0800000000000000
+      internalID: -7922526448593913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_79
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 146
+        width: 448
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e820a7d7675183b80800000000000000
+      internalID: -8414952305086299506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
