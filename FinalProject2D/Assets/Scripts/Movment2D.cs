@@ -9,7 +9,9 @@ public class Movment2D : MonoBehaviour
 	public Action OnFinishRotation = delegate { };
     public Action OnFinishMovment = delegate { };     // Functions that would be preform when the hero finish to move / rotate
     public Action OnStartMovment = delegate { };     // Functions that would be preform when the hero start to move / rotate
-    [SerializeField]private float _moveSpeed;       // The obect movment speed
+	public Action OnFinishMovmentAnimation = delegate { };     // Functions that would be preform when the hero finish to move / rotate
+	public Action OnStartMovmentAnimation = delegate { };     // Functions that would be preform when the hero start to move / rotate
+	[SerializeField]private float _moveSpeed;       // The obect movment speed
 	private float _rotateSpeed;
 //    private Vector3 _desiredPos;                 // The location desired to move to.
     private bool _isMovmentFinishTracking;
@@ -73,6 +75,7 @@ public class Movment2D : MonoBehaviour
 	public void GoTo(Vector2 pos)
 	{
 		OnStartMovment();
+		OnStartMovmentAnimation();
 		_AIPath.isRotateOnly = false;
 		_AI.destination = pos;
 		_isMoving = true;
@@ -83,6 +86,7 @@ public class Movment2D : MonoBehaviour
 	public void GoAfterTarget(GameObject target)
 	{
 		OnStartMovment();
+		OnStartMovmentAnimation();
 		_desSetter.target = target.transform;
 
 		if (SpaceCalTool.IsObjectOnMovment(target)) // sets acceleraction
@@ -164,6 +168,7 @@ public class Movment2D : MonoBehaviour
 		_AI.isStopped = true;
 		_isMoving = false;
 		OnFinishMovment();
+		OnFinishMovmentAnimation();
 
 		OnFinishMovment = delegate { };
 		OnStartMovment = delegate { };

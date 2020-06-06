@@ -91,13 +91,25 @@ public class BattleManager : MonoBehaviour
     private void markChange(GameObject prevHero, GameObject newHero)
     {
         SpriteManager prevUnitSpriteManager = prevHero.GetComponentInChildren<SpriteManager>();
-
-        if (prevUnitSpriteManager != null)
-            prevUnitSpriteManager.DisableOutlineCharacter();
-
-        SpriteManager currentUnitSpriteManager = newHero.gameObject.GetComponentInChildren<SpriteManager>();
-        if (prevUnitSpriteManager != null)
-            currentUnitSpriteManager.EnableOutlineCharacter();
+        try
+        {
+            if (prevUnitSpriteManager != null)
+                prevUnitSpriteManager.DisableOutlineCharacter();
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e);
+        }
+        try
+        {
+            SpriteManager currentUnitSpriteManager = newHero.gameObject.GetComponentInChildren<SpriteManager>();
+            if (prevUnitSpriteManager != null)
+                currentUnitSpriteManager.EnableOutlineCharacter();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 
     #region InputManager manage functions
