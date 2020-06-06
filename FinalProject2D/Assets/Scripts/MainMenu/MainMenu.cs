@@ -62,4 +62,10 @@ public class MainMenu : MonoBehaviour
         xpText.GetComponent<TMPro.TextMeshProUGUI>().text = currXp + "/" + xpToNextLevel;
         xpLevelText.GetComponent<TMPro.TextMeshProUGUI>().text = xpLevel.ToString();
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
