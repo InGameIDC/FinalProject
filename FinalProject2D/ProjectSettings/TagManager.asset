@@ -27,6 +27,7 @@ TagManager:
   - RespawnEnemies
   - EnemyDamageHitArea
   - PointsAdded
+  - levelButton
   layers:
   - Default
   - TransparentFX

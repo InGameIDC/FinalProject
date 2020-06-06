@@ -14,6 +14,7 @@ public class GameStatus : MonoBehaviour
     public string lastScene;
     public int lastLevelCosen;
     public int isToLevel;
+    public int[] deckPlayers = { 1, 2, 3 };
 
     // TODO: to delete after xml and images
     public Sprite s1;
@@ -21,6 +22,10 @@ public class GameStatus : MonoBehaviour
     public Sprite s3;
     public Sprite s4;
     public Sprite s5;
+    public Sprite s6;
+    public Sprite s7;
+    public Sprite s8;
+    public Sprite s9;
 
     public Sprite f1;
     public Sprite f2;
@@ -37,6 +42,10 @@ public class GameStatus : MonoBehaviour
         lastScene = PlayerPrefs.GetString("lastScene", "HomeMenu");
         lastLevelCosen = PlayerPrefs.GetInt("lastLevelCosen", 3);
         isToLevel = PlayerPrefs.GetInt("isToLevel", 0);
+
+        deckPlayers[0] = PlayerPrefs.GetInt("player1", 1);
+        deckPlayers[1] = PlayerPrefs.GetInt("player2", 2);
+        deckPlayers[2] = PlayerPrefs.GetInt("player3", 3);
 
         xpToNextLevel = xpLevel * 1000;
 
@@ -74,7 +83,10 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetString("lastScene", lastScene);
         PlayerPrefs.SetInt("lastLevelCosen", lastLevelCosen);
         PlayerPrefs.SetInt("isToLevel", isToLevel);
-        
+        PlayerPrefs.SetInt("player1", deckPlayers[0]);
+        PlayerPrefs.SetInt("player2", deckPlayers[1]);
+        PlayerPrefs.SetInt("player3", deckPlayers[2]);
+
     }
 
 }

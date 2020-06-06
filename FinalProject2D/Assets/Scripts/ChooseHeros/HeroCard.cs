@@ -28,6 +28,8 @@ public class HeroCard : MonoBehaviour
     public cardStatus cardStat = cardStatus.opened;             
     public upgradeStatus upgradeStat = upgradeStatus.notReady;
 
+    private Vector3 originalScale;
+
     public bool cardShow = false;
 
     //-------Outside scripts and classes-------//
@@ -46,6 +48,10 @@ public class HeroCard : MonoBehaviour
     public GameObject upgradeButtonText;                //the text on the upgrade button containg the cost of the upgrade
     public GameObject imageOutline;                     //image outline
     public Image profileImage;                          //the profile image
+    public Image familyImage;                          
+    public GameObject levelText;                      
+    public GameObject damageText;                
+    public GameObject healthText;
 
 
 
@@ -80,6 +86,8 @@ public class HeroCard : MonoBehaviour
         {
             upgradeButtonUpdate();
         }
+
+        originalScale = gameObject.transform.localScale;
     }
 
     /// <summary>
@@ -90,6 +98,8 @@ public class HeroCard : MonoBehaviour
     {
         //TODO: add a function that closes all the buttons of all the cards
         closeMenu();
+
+        gameObject.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
 
         //cancel in use process if it was started and unfinished
         cm.inChangeProcess = false;
@@ -159,37 +169,47 @@ public class HeroCard : MonoBehaviour
         //need to change according to data
         level = 2;
         familyId = 1;
+        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = level.ToString();
+        healthText.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
+        damageText.GetComponent<TMPro.TextMeshProUGUI>().text = "1";
 
         switch (heroId)
         {
             case 1:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/BananaProfile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s1;
-                cardStat = cardStatus.inUse;
+                cardStat = cardStatus.opened;
                 upgradeStat = upgradeStatus.ready;
                 partsForNextUpgrade = 4;
                 partsCollected = 4;
                 upgradeCost = 200;
+                healthText.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
+                damageText.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
+                familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
 
             case 2:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Grapes_Profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s2;
-                cardStat = cardStatus.inUse;
+                cardStat = cardStatus.opened;
                 upgradeStat = upgradeStatus.ready;
                 partsForNextUpgrade = 4;
                 partsCollected = 4;
                 upgradeCost = 400;
+                healthText.GetComponent<TMPro.TextMeshProUGUI>().text = "5";
+                damageText.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
+                familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f2;
                 break;
 
             case 3:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Lemon_profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s3;
-                cardStat = cardStatus.inUse;
+                cardStat = cardStatus.opened;
                 upgradeStat = upgradeStatus.notReady;
                 partsForNextUpgrade = 4;
                 partsCollected = 2;
                 upgradeCost = 400;
+                familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
 
             case 4:
@@ -200,17 +220,39 @@ public class HeroCard : MonoBehaviour
                 partsForNextUpgrade = 4;
                 partsCollected = 3;
                 upgradeCost = 200;
+                familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
-
-            default:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/UI/PNG/Brocoli_Profile") ;
+            case 5:
+                //profileImage.GetComponent<Image>().sprite = Resources.Load("UI\\PNG\\Watermelon_Profile") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s5;
                 cardStat = cardStatus.locked;
                 upgradeStat = upgradeStatus.notReady;
                 partsForNextUpgrade = 0;
                 partsCollected = 0;
-                upgradeCost = 500;
+                upgradeCost = 200;
+                familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f2;
                 break;
+
+            default:
+                //profileImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/UI/PNG/Brocoli_Profile") ;
+                profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s6;
+                cardStat = cardStatus.locked;
+                upgradeStat = upgradeStatus.notReady;
+                partsForNextUpgrade = 0;
+                partsCollected = 0;
+                upgradeCost = 500;
+                familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
+                break;
+        }
+
+        int[] playersList = gs.GetComponent<GameStatus>().deckPlayers;
+        // marking in use cards as in use
+        for(int i = 0; i < 3; i++)
+        {
+            if (heroId == playersList[i])
+            {
+                cardStat = cardStatus.inUse;
+            }
         }
 
         GetComponentInChildren<SimpleHealthBar>().UpdateBar(partsCollected, partsForNextUpgrade);
@@ -222,6 +264,7 @@ public class HeroCard : MonoBehaviour
     /// </summary>
     public void closeMenu()
     {
+        gameObject.transform.localScale = originalScale;
         useB.SetActive(false);
         infoB.SetActive(false);
         infoP.SetActive(false);

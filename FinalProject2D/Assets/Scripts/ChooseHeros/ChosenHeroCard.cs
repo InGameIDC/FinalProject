@@ -13,8 +13,10 @@ public class ChosenHeroCard : MonoBehaviour
     public int heroId;                  //the hero Id of the hero in the card
     public int level;                   //the level of the hero
     public int familyId;                //what family the hero blongs
+    public int cardNumber;
 
     public Image profileImage;          //the profile image of the hero - connected in prefab
+    public Image familyImage;          //the profile image of the hero - connected in prefab
     public GameObject levelDisplay;     //the level text on the card - connected in prefab
     public GameObject imageOutline;     //the image imitating an outline when need to choose a hero to switch - connected in prefab
 
@@ -29,7 +31,7 @@ public class ChosenHeroCard : MonoBehaviour
         cm = GetComponentInParent<ChangeHero>();
 
         //loadin the default hero data
-        LoadChosenHeroCard(heroId);
+        LoadChosenHeroCard(gs.deckPlayers[cardNumber -1]);
         updateLevelDisplay(level);
 
         //connecting deligated functions 
@@ -56,26 +58,31 @@ public class ChosenHeroCard : MonoBehaviour
             case 1:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/BananaProfile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s1;
+                familyImage.GetComponent<Image>().sprite = gs.f1;
                 break;
 
             case 2:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Grapes_Profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s2;
+                familyImage.GetComponent<Image>().sprite = gs.f2;
                 break;
 
             case 3:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Lemon_profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s3;
+                familyImage.GetComponent<Image>().sprite = gs.f1;
                 break;
 
             case 4:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI\\PNG\\Watermelon_Profile") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s4;
+                familyImage.GetComponent<Image>().sprite = gs.f1;
                 break;
 
             default:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/UI/PNG/Brocoli_Profile") ;
                 profileImage.GetComponent<Image>().sprite = gs.s5;
+                familyImage.GetComponent<Image>().sprite = gs.f2;
                 break;
         }
     }
@@ -103,6 +110,9 @@ public class ChosenHeroCard : MonoBehaviour
             // cm deligated - notifing that the change was done and ned to turn off outlines
             cm.finishChange(heroId);
             cm.inUseOutlineOn(false);
+
+            gs.deckPlayers[cardNumber - 1] = heroId;
+            
         }
     }
 

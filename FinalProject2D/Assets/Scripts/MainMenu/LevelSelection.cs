@@ -21,6 +21,9 @@ public class LevelSelection : MonoBehaviour
 
     private bool played = false;
 
+    private Color32 originalColor;
+    public int levelId;
+
     //public Action<int> OnPressingLevel = delegate { };
 
 
@@ -29,7 +32,9 @@ public class LevelSelection : MonoBehaviour
     {
         //initiating the gameobjects for future use
         gs = GameObject.FindGameObjectWithTag("GameStatus");
-        
+
+        originalColor = GetComponent<Image>().color;
+
         //update the display of the level button
         UpdateLevelImage();
     }
@@ -67,9 +72,14 @@ public class LevelSelection : MonoBehaviour
         {
             gs.GetComponent<GameStatus>().lastLevelCosen = levelidx;
             gs.GetComponent<GameStatus>().isToLevel = 1;
-            //gameObject.GetComponent<Image>().color = Color.green;
+            gameObject.GetComponent<Image>().color = Color.green;
             //OnPressingLevel(levelidx);
         }
+    }
+
+    public void unPress()
+    {
+        gameObject.GetComponent<Image>().color = originalColor;
     }
 
 }
