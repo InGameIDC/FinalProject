@@ -9,6 +9,7 @@ public class AI2 : MonoBehaviour
     private GameObject targetHill;
 
     [SerializeField] Vector2 pos; // only for testing
+    private ControlPointsManager _controlPointsManager;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class AI2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _controlPointsManager = GameObject.Find("ControlPointsManager").GetComponent<ControlPointsManager>();
         StartCoroutine(hillsConquerManager());
         _firstSpawn = false;
     }
@@ -53,8 +55,14 @@ public class AI2 : MonoBehaviour
             if (targetHill == null || targetHill.activeSelf == false)
             {
                 targetHill = getClosestHill();
-                if(targetHill != null)
-                    _hero.GoTo(targetHill.transform.position);
+                if (targetHill != null)
+                {
+                    //_hero.GoTo(targetHill.transform.position);
+                    // if the command fails, wait enough time to have enough points
+                    if (!_controlPointsManager.CommandyGoTo(_hero, targetHill.transform.position, true))
+                        yield return new WaitForSeconds(_hero.GetHeroCommandCost() - _controlPointsManager.GetTeamBalance((int)_hero.heroTeam));
+
+                }
             }
             yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);
         }

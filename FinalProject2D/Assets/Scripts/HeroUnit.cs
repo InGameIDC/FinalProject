@@ -26,8 +26,10 @@ public class HeroUnit : MonoBehaviour
     private float _respawnTime;
     [SerializeField] private bool isRespawnable = false;
     [SerializeField] public Team heroTeam;
+    [SerializeField] private float _commandCost;
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
+    public float GetHeroCommandCost() => _commandCost; // Returns the hero command cost
 
     /// Says good morning to the script
     private void Awake()

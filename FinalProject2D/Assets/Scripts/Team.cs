@@ -19,7 +19,6 @@ public static class TeamTool
             if (attacker.tag != target.tag)
                 return true;
         }
-
         return false;
 
     }

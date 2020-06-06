@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     List<GameObject> gameObjects;
-    [SerializeField] GameObject testHero;
+    [SerializeField] private ControlPointsManager _ctrlPointsManager;
+    [SerializeField] GameObject[] Heores;
     //private TouchInputManager _TouchInputManager;
     private MouseInputManager _MouseInputManager;
     [SerializeField] GameObject _inputManager;
@@ -28,7 +29,7 @@ public class BattleManager : MonoBehaviour
     private void Awake()
     {
         gs = GameObject.FindGameObjectWithTag("GameStatus");
-        _currentUnit = testHero.GetComponent<HeroUnit>();
+        _currentUnit = Heores[0].GetComponent<HeroUnit>();
     }
     private void Start()
     {
@@ -39,10 +40,64 @@ public class BattleManager : MonoBehaviour
         GameObject sm = GameObject.FindGameObjectWithTag("SugarManager");
         sm.GetComponent<SugarManager>().OnScoreChange += ScoreUpdate;
 
-        SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
-        if (currentUnitSpriteManager != null)
-            currentUnitSpriteManager.isSelectedOnStart = true;
+        selectANewHero(_currentUnit.gameObject);
+    }
 
+    private void selectANewHero(GameObject prevHero)
+    {
+        Health prevHeroHealth = prevHero.GetComponentInChildren<Health>();
+        GameObject newHero = getRandomHero();
+
+        if (newHero != null){
+
+            Health newHeroHealth = newHero.GetComponentInChildren<Health>();
+
+            try { prevHeroHealth.OnDeath -= selectANewHero; }
+            catch (Exception ex) { Debug.Log(ex); }
+
+            _currentUnit = newHero.GetComponent<HeroUnit>();
+            newHeroHealth.OnDeath += selectANewHero;
+
+            markChange(prevHero, newHero);
+        }
+        else
+        {
+            StartCoroutine(waitForNewHeroesRespawnToBeSelected(prevHero));
+        }
+    }
+
+    private GameObject getRandomHero()
+    {
+        foreach(GameObject hero in Heores)
+        {
+            if (hero.activeSelf)
+                return hero;
+        }
+
+        return null;
+    }
+
+    private IEnumerator waitForNewHeroesRespawnToBeSelected(GameObject prevHero)
+    {
+        yield return new WaitForSeconds(0.1f);
+        selectANewHero(prevHero);
+    }
+
+    /// <summary>
+    /// change the prev unit to non-selected and the NEW current unit to selected.
+    /// </summary>
+    /// <param name="prevHero">The previous hero that was under control</param>
+    /// <param name="newHero">The new hero that was selected to be controled</param>
+    private void markChange(GameObject prevHero, GameObject newHero)
+    {
+        SpriteManager prevUnitSpriteManager = prevHero.GetComponentInChildren<SpriteManager>();
+
+        if (prevUnitSpriteManager != null)
+            prevUnitSpriteManager.DisableOutlineCharacter();
+
+        SpriteManager currentUnitSpriteManager = newHero.gameObject.GetComponentInChildren<SpriteManager>();
+        if (prevUnitSpriteManager != null)
+            currentUnitSpriteManager.EnableOutlineCharacter();
     }
 
     #region InputManager manage functions
@@ -75,37 +130,34 @@ public class BattleManager : MonoBehaviour
     private void OnHeroClicked(GameObject clickedobject)
     {
         //If we're dealing with a HeroUnit.
-        if (clickedobject.tag.Equals("HeroUnit")) 
+        if (clickedobject.tag.Equals("HeroUnit"))
         {
             //If the unit is already selected - we don't change anything.
             if (_currentUnit.gameObject == clickedobject)
                 return;
 
             //change the last unit to non-selected and the NEW current unit to selected.
-            SpriteManager prevUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
+            
+            GameObject prevHero = _currentUnit.gameObject;
             _currentUnit = clickedobject.GetComponent<HeroUnit>();
-
-            if (prevUnitSpriteManager != null)
-                prevUnitSpriteManager.DisableOutlineCharacter();
-
-            SpriteManager currentUnitSpriteManager = _currentUnit.gameObject.GetComponentInChildren<SpriteManager>();
-            if (prevUnitSpriteManager != null)
-                currentUnitSpriteManager.EnableOutlineCharacter();
-
+            markChange(prevHero, clickedobject);
         }
         //If we're dealing with an EnemyUnit.
-        else if (clickedobject.tag.Equals("EnemyUnit") && _currentUnit != null) 
+        else if (clickedobject.tag.Equals("EnemyUnit") && _currentUnit != null && _currentUnit.gameObject.activeSelf)
         {
 
             _currentEnemyClicked = clickedobject.GetComponent<HeroUnit>();
-            _currentUnit.SetTargetObj(clickedobject);
+            //_currentUnit.SetTargetObj(clickedobject);
+            // if had enough control points, show indication
+            if (_ctrlPointsManager.CommandSetTargetToAttack(_currentUnit, clickedobject, false))
+            {
+                SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
 
-            SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
-
-            //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
-            //Start indication on new enemy.
-            if (enemySpriteManager != null)
-                StartCoroutine(enemySpriteManager.ClickBlinkUnit());
+                //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
+                //Start indication on new enemy.
+                if (enemySpriteManager != null)
+                    StartCoroutine(enemySpriteManager.ClickBlinkUnit());
+            }
         }
 
         //This is a problem, as _currentUnit is a Unit script that has no reference
@@ -120,9 +172,13 @@ public class BattleManager : MonoBehaviour
     /// </summary>
     private void OnFieldClicked(Vector3 targetPosition)
     {
-        StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
         //Debug.Log("target position is " + targetPosition);
-        _currentUnit.GoTo(targetPosition);
+        //_currentUnit.GoTo(targetPosition);
+        // if had enough control points, show indication
+        if(_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false))
+        {
+            StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
+        }
     }
 
     private void OnHeroDoubleClick(GameObject clickedobject)
