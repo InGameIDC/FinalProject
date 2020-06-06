@@ -153,7 +153,7 @@ public class BattleManager : MonoBehaviour
         gameScore = newScore;
         //Debug.Log(gameScore);
 
-        if(gameScore == 100 || gameScore ==-100)
+        if(gameScore >= 100 || gameScore <=-100)
         {
             egp.SetActive(true);
             onGameScoreEnd((int)gameScore);

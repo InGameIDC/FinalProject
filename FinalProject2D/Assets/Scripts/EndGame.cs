@@ -15,12 +15,20 @@ public class EndGame : MonoBehaviour
     private GameStatus gs;
 
     public GameObject endPanel;             //the pannel to display
-    public GameObject endDisplay;           //end Text (win/lose)
+    public GameObject wonTitle;           //end Text (win/lose)
+    public GameObject lostTitle;           //end Text (win/lose)
+    public GameObject wonMes;           //end Text (win/lose)
+    public GameObject lostMes;           //end Text (win/lose)
+    public GameObject youGot;
+    public GameObject youGotCoin;
+    public GameObject youGotXp;
     public GameObject coinsDisplay;         //added coins text
     public GameObject xpDisplay;            //added xp text
-    public GameObject chest;                //chest to open 
-    public GameObject nextLevelButton;      //go to next level button
+    //public GameObject nextLevelButton;      //go to next level button
     public GameObject restartButton;        //restart the level button
+    public GameObject goldStar1;
+    public GameObject goldStar2;
+    public GameObject goldStar3;
 
 
     void Start()
@@ -53,7 +61,7 @@ public class EndGame : MonoBehaviour
     {
         if (score >= 0)
         {
-            wonMessage();
+            wonMessage(score);
         }
         else
         {
@@ -72,7 +80,7 @@ public class EndGame : MonoBehaviour
 
         if (score >= 0)
         {
-            wonMessage();
+            wonMessage(score);
         }
         else
         {
@@ -84,17 +92,33 @@ public class EndGame : MonoBehaviour
     /// Author: OrS
     /// This method is changing the end pannel according to the senario that the player won
     /// </summary>
-    private void wonMessage()
+    private void wonMessage(int score)
     {
         //TODO: update the message according to real xml data (coins, xp, chest...)
 
         endPanel.SetActive(true);
-        endDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "You Won!";
+        wonTitle.SetActive(true);
+        wonMes.SetActive(true);
         coinsDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "+400";
         xpDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "+1000";
-        chest.SetActive(true);
-        nextLevelButton.SetActive(true); 
+        //nextLevelButton.SetActive(true); 
         restartButton.SetActive(false);
+
+        if(score < 75)
+        {
+            goldStar1.SetActive(true);
+        }
+        else if(score >= 75 && score < 90)
+        {
+            goldStar1.SetActive(true);
+            goldStar2.SetActive(true);
+        }
+        else
+        {
+            goldStar1.SetActive(true);
+            goldStar2.SetActive(true);
+            goldStar3.SetActive(true);
+        }
 
         //update the game data
         gsObject.GetComponent<GameStatus>().coins += 400;
@@ -108,11 +132,14 @@ public class EndGame : MonoBehaviour
     private void lostMessage()
     {
         endPanel.SetActive(true);
-        endDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "You Lost!";
+        lostTitle.SetActive(true);
+        lostMes.SetActive(true);
         coinsDisplay.SetActive(false);
         xpDisplay.SetActive(false);
-        chest.SetActive(false);
-        nextLevelButton.SetActive(false);
+        youGotCoin.SetActive(false);
+        youGotXp.SetActive(false);
+        youGot.SetActive(false);
+        //nextLevelButton.SetActive(false);
         restartButton.SetActive(true);
     }
 }
