@@ -369,7 +369,7 @@ PrefabInstance:
         type: 3}
       propertyPath: s3
       value: 
-      objectReference: {fileID: 3022216383914744491, guid: 775e8c993d5ce1b47a7c73c14b7dd603,
+      objectReference: {fileID: 4115303021519320934, guid: 0b659d3626c659749affc8c6bced3121,
         type: 3}
     - target: {fileID: 2927454008613674077, guid: 0428a453ec762dc41b46f03c6df30802,
         type: 3}
