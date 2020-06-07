@@ -57,7 +57,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avocado_Walking
+  m_Name: Pea_Walking
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 37f4fdefd2a18084dba040ee91e7689c, type: 2}
+  m_Motion: {fileID: 7400000, guid: c7ded8e80adc2464abc30bb94525ab96, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -213,7 +213,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avocado_Idle_Right
+  m_Name: Pea_Idle_Right
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -228,7 +228,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 54428638e197a104ab521cbec964beb1, type: 2}
+  m_Motion: {fileID: 7400000, guid: e979dfe9b1341454e839d544065ddb03, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -378,7 +378,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy_Avocado
+  m_Name: Enemy_Pea
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsMoving
@@ -441,7 +441,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avocado_Idle
+  m_Name: Pea_Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -456,7 +456,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 423978464411b6e4d888576b84e41214, type: 2}
+  m_Motion: {fileID: 7400000, guid: 15d00a85db28c864aa65597bd82611ec, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -509,7 +509,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avocado_Walking_Right
+  m_Name: Pea_Walking_Right
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -524,7 +524,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 09bcde9bb77bfb74baa17076ee97997c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6831c1edd99f8ad4f9aae3c7413f3b6d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -615,7 +615,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avocado_Idle_Left
+  m_Name: Pea_Idle_Left
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -630,7 +630,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 05d282ab4f8d64b4a9e7fe365d168a64, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8238de915ce9b56468e816294894d0d7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -668,7 +668,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avocado_Walking_Left
+  m_Name: Pea_Walking_Left
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -683,7 +683,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c9358015aa612584399a981801551440, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1a67cf9a67c50c94998a47f0f695bb50, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
