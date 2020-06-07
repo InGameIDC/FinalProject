@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21e1350d5c8ed634cbfa3525a75c12ad
+guid: 23d89e45edea6c14692131e68d559852
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -7706788487438311687
     second: Apple_5
+  - first:
+      213: 8638710384840876012
+    second: Apple_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -63,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -143,12 +146,12 @@ TextureImporter:
       name: Apple_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1106
-        width: 927
-        height: 562
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 485
+        y: 930
+        width: 421
+        height: 672
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,12 +167,12 @@ TextureImporter:
       name: Apple_1
       rect:
         serializedVersion: 2
-        x: 1290
-        y: 1664
-        width: 46
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 947
+        y: 904
+        width: 591
+        height: 510
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,12 +188,12 @@ TextureImporter:
       name: Apple_2
       rect:
         serializedVersion: 2
-        x: 2203
-        y: 1659
-        width: 21
-        height: 9
+        x: 1598
+        y: 948
+        width: 500
+        height: 570
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,12 +209,12 @@ TextureImporter:
       name: Apple_3
       rect:
         serializedVersion: 2
-        x: 673
-        y: 580
-        width: 350
-        height: 341
+        x: 204
+        y: 241
+        width: 115
+        height: 467
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,12 +230,12 @@ TextureImporter:
       name: Apple_4
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 606
-        width: 306
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 473
+        y: 165
+        width: 427
+        height: 676
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,12 +251,12 @@ TextureImporter:
       name: Apple_5
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 604
-        width: 300
-        height: 301
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 993
+        y: 242
+        width: 590
+        height: 514
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,6 +264,27 @@ TextureImporter:
       bones: []
       spriteID: 9fe5b27f3bcfb0590800000000000000
       internalID: -7706788487438311687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Apple_6
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 252
+        width: 500
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef1bed335dd2e770800000000000000
+      internalID: 8638710384840876012
       vertices: []
       indices: 
       edges: []
