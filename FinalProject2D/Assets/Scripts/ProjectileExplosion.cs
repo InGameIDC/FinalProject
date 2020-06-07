@@ -33,8 +33,19 @@ public class ProjectileExplosion : Projectile
                         GetComponent<CircleCollider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
                     }
                 }
-                Destroy(this.transform.gameObject);
+                Destroy(gameObject);
             }
+        }
+        else if (target.tag.Equals("Obstacle")){
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Obstacle"))
+        {
+            Destroy(gameObject);
         }
     }
 }

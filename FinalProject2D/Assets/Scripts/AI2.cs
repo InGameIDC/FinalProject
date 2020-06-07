@@ -8,7 +8,7 @@ public class AI2 : MonoBehaviour
     private bool _firstSpawn = true;
     private GameObject targetHill;
 
-    [SerializeField] Vector2 pos; // only for testing
+    //[SerializeField] Vector2 pos; // only for testing
     private ControlPointsManager _controlPointsManager;
 
     void Awake()
