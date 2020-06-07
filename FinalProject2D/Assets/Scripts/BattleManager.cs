@@ -12,9 +12,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] GameObject[] Heores;
     //private TouchInputManager _TouchInputManager;
     private MouseInputManager _MouseInputManager;
-    [SerializeField] GameObject _inputManager;
-    [SerializeField] private GameObject _selectArrow;
-    [SerializeField] public Vector3 SelectAccrowOffset;
+    [SerializeField] private GameObject _inputManager;
+    [SerializeField] private InteractionManager _interactionManager;
     private HeroUnit _currentUnit;
     private HeroUnit _currentEnemyClicked;
 
@@ -43,6 +42,16 @@ public class BattleManager : MonoBehaviour
         sm.GetComponent<SugarManager>().OnScoreChange += ScoreUpdate;
 
         selectANewHero(_currentUnit.gameObject);
+
+        try
+        {
+            if (_interactionManager == null)
+                _interactionManager = GameObject.Find("InteractionManager").GetComponent<InteractionManager>();
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 
     private void selectANewHero(GameObject prevHero)
@@ -108,14 +117,12 @@ public class BattleManager : MonoBehaviour
             if (prevUnitSpriteManager != null)
                 currentUnitSpriteManager.EnableOutlineCharacter();
 
-            _selectArrow.SetActive(false); // turn tha arrow off
+            _interactionManager.StopSelectUnitInteraction(); // turn tha arrow off
         }
         catch (Exception e)
         {
-            Debug.LogError(e);
-            _selectArrow.SetActive(true);
-            _selectArrow.transform.position = newHero.transform.position + SelectAccrowOffset;
-            _selectArrow.transform.parent = newHero.transform;
+            Debug.Log(e); // TODO: Fix the spriteManager
+            _interactionManager.SelectUnitInteraction(newHero);
         }
     }
 
@@ -170,12 +177,21 @@ public class BattleManager : MonoBehaviour
             // if had enough control points, show indication
             if (_ctrlPointsManager.CommandSetTargetToAttack(_currentUnit, clickedobject, false))
             {
-                SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
+                try
+                {
+                    SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
 
-                //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
-                //Start indication on new enemy.
-                if (enemySpriteManager != null)
-                    StartCoroutine(enemySpriteManager.ClickBlinkUnit());
+                    //If an enemy was selected before and the indication didn't end - we don't stop it, as blink is temporary.
+                    //Start indication on new enemy.
+                    if (enemySpriteManager != null)
+                        StartCoroutine(enemySpriteManager.ClickBlinkUnit());
+                }
+                catch(Exception e)
+                {
+                    Debug.LogError(e);
+                }
+
+                _interactionManager.AttackUnitInteraction(clickedobject); // calls attack interaction (red arrows)
             }
         }
 
@@ -196,7 +212,8 @@ public class BattleManager : MonoBehaviour
         // if had enough control points, show indication
         if(_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false))
         {
-            StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
+            //StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
+            _interactionManager.WalkInteraction(targetPosition); // calls walk interaction (white arrow)
         }
     }
 

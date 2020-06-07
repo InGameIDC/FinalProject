@@ -30,10 +30,10 @@ public class ProjectileExplosion : Projectile
                         //on hitting - the health is lowered
                         unit.GetComponentInChildren<Health>().TakeDamage(shootDamege);
 
-                        GetComponent<CircleCollider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
+                        //GetComponent<Collider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
                     }
                 }
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
         else if (target.tag.Equals("Obstacle")){
