@@ -29,11 +29,11 @@ public static class Respawn
         HeroUnit unit = gameObject.GetComponent<HeroUnit>();
         gameObject.GetComponent<HeroUnit>().Start();
 
-        if(gameObject.tag == "HeroUnit")
-            gameObject.transform.position = respawnHeroesPrefabsArray.RandomItem().transform.position;
+        if (gameObject.tag == "HeroUnit")
+            gameObject.transform.position = respawnHeroesPrefabsArray.RandomItem().transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
 
         else
-            gameObject.transform.position = respawnEnemiesPrefabsArray.RandomItem().transform.position;
+            gameObject.transform.position = respawnEnemiesPrefabsArray.RandomItem().transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
 
         gameObject.GetComponentInChildren<Health>().ResetHealth();
 
@@ -51,7 +51,7 @@ public static class Respawn
     {
         gameObject.SetActive(false);
         yield return new WaitForSeconds(respawnTime);
-        gameObject.transform.position = respawnPos;
+        gameObject.transform.position = respawnPos + new Vector2(Random.Range(-0.1f,-0.1f), Random.Range(-0.1f, -0.1f));
         gameObject.SetActive(true);
     }
 
