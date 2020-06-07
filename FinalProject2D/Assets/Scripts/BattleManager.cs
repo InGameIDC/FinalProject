@@ -13,6 +13,8 @@ public class BattleManager : MonoBehaviour
     //private TouchInputManager _TouchInputManager;
     private MouseInputManager _MouseInputManager;
     [SerializeField] GameObject _inputManager;
+    [SerializeField] private GameObject _selectArrow;
+    [SerializeField] public Vector3 SelectAccrowOffset;
     private HeroUnit _currentUnit;
     private HeroUnit _currentEnemyClicked;
 
@@ -105,10 +107,15 @@ public class BattleManager : MonoBehaviour
             SpriteManager currentUnitSpriteManager = newHero.gameObject.GetComponentInChildren<SpriteManager>();
             if (prevUnitSpriteManager != null)
                 currentUnitSpriteManager.EnableOutlineCharacter();
+
+            _selectArrow.SetActive(false); // turn tha arrow off
         }
         catch (Exception e)
         {
             Debug.LogError(e);
+            _selectArrow.SetActive(true);
+            _selectArrow.transform.position = newHero.transform.position + SelectAccrowOffset;
+            _selectArrow.transform.parent = newHero.transform;
         }
     }
 

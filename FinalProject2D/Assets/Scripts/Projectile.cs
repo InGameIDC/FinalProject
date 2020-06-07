@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] public float SelfDestroyAfter = 5f;
     [SerializeField] private GameObject HitEffectObject; // Object that would apear on hit
 
-    private void Update()
+    protected virtual void Update()
     {
         SelfDestroyAfter -= Time.deltaTime;
         if (SelfDestroyAfter < 0)
