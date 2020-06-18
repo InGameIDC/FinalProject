@@ -28,6 +28,7 @@ TagManager:
   - EnemyDamageHitArea
   - PointsAdded
   - levelButton
+  - Obstacle
   layers:
   - Default
   - TransparentFX

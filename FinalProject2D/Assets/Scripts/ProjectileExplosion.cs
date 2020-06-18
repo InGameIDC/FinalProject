@@ -17,7 +17,7 @@ public class ProjectileExplosion : Projectile
 
             if (TeamTool.isEnemy(attacker, targetParentObject))
             {
-
+                createHitEffect(transform.position); // creating hit effect
                 Collider2D[] damageHitAreasInSphere;
 
                 damageHitAreasInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, LayerMask.GetMask("DamageHitArea"));
@@ -30,11 +30,22 @@ public class ProjectileExplosion : Projectile
                         //on hitting - the health is lowered
                         unit.GetComponentInChildren<Health>().TakeDamage(shootDamege);
 
-                        GetComponent<CircleCollider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
+                        //GetComponent<Collider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
                     }
                 }
-                Destroy(this.transform.gameObject);
+                //Destroy(gameObject);
             }
+        }
+        else if (target.tag.Equals("Obstacle")){
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Obstacle"))
+        {
+            Destroy(gameObject);
         }
     }
 }

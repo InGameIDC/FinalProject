@@ -863,8 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecfadca29bf3874180ef3d18356b808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementColiderSize: 0.25
-  IdleColiderSize: 0.35
+  movementColiderSize: 0.35
+  IdleColiderSize: 0.5
 --- !u!1001 &8225835985517082388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,6 +872,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975178366514269634}
     m_Modifications:
+    - target: {fileID: 2615282554933107662, guid: 4168a2b96ee7551449a11fb4ba65c547,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -178377379
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615282554933107662, guid: 4168a2b96ee7551449a11fb4ba65c547,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2684746784028567749, guid: 4168a2b96ee7551449a11fb4ba65c547,
         type: 3}
       propertyPath: m_Name

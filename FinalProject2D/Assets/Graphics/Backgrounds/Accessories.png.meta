@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: fb2d3e4d5463469469a31abd07ac1493
+guid: 871f1e81cab2e2f4290b5928bf134f3b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1225635468801588992
-    second: Grapes_0
+      213: 2532766429855629420
+    second: Accessories_0
   - first:
-      213: -111885973100229174
-    second: Grapes_1
+      213: 6978715442030580158
+    second: Accessories_1
   - first:
-      213: -4802079438333504345
-    second: Grapes_2
+      213: -4653427000475450172
+    second: Accessories_2
+  - first:
+      213: -4607735624590280163
+    second: Accessories_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -131,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grapes_0
+      name: Accessories_0
       rect:
         serializedVersion: 2
-        x: 245
-        y: 1059
-        width: 309
-        height: 275
+        x: 239
+        y: 1066
+        width: 130
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00146f9e80badfee0800000000000000
-      internalID: -1225635468801588992
+      spriteID: c60449616a1362320800000000000000
+      internalID: 2532766429855629420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapes_1
+      name: Accessories_1
       rect:
         serializedVersion: 2
-        x: 949
-        y: 535
-        width: 496
-        height: 675
+        x: 512
+        y: 986
+        width: 100
+        height: 176
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acd030edc40827ef0800000000000000
-      internalID: -111885973100229174
+      spriteID: eb114ce38b069d060800000000000000
+      internalID: 6978715442030580158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grapes_2
+      name: Accessories_2
       rect:
         serializedVersion: 2
-        x: 1583
-        y: 558
-        width: 487
-        height: 633
+        x: 189
+        y: 718
+        width: 273
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +190,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a49cee71369b5db0800000000000000
-      internalID: -4802079438333504345
+      spriteID: 4c403784cc4bb6fb0800000000000000
+      internalID: -4653427000475450172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Accessories_3
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 720
+        width: 139
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a326dbcd80e00c0800000000000000
+      internalID: -4607735624590280163
       vertices: []
       indices: 
       edges: []
