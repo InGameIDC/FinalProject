@@ -34,6 +34,10 @@ public class LevelSelection : MonoBehaviour
         gs = GameObject.FindGameObjectWithTag("GameStatus");
 
         originalColor = GetComponent<Image>().color;
+        if(gs.GetComponent<GameStatus>().levelsPlayed[levelId - 1] == 1)
+        {
+            played = true;
+        }
 
         //update the display of the level button
         UpdateLevelImage();

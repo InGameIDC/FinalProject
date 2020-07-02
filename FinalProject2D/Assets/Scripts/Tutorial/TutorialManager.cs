@@ -1,0 +1,92 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Net.Mime;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.XR.WSA.Persistence;
+
+public class TutorialManager : MonoBehaviour
+{
+    private const string k_CompletedAllTutorials = "Level complete! Proceed to next level";
+    private List<Tutorial> m_TutorialList = new List<Tutorial>();
+    
+    [TextArea]
+    private Text m_ExplanationText;
+    private static TutorialManager thisInstance;
+    private Tutorial m_CurrentTutorial;
+
+    public Tutorial CurrentTutorial { get; set; }
+    public Text ExplanationText { get; set; }
+    public List<Tutorial> TutorialList { get; set; }
+    public static TutorialManager Instance
+    {
+        get
+        {
+            if (thisInstance == null)
+            {
+                thisInstance = GameObject.FindObjectOfType<TutorialManager>();
+            }
+
+            // If it's still null - there is no tut manager.
+            if (thisInstance == null)
+            {
+                Debug.Log("There is no TutManager!");
+            }
+
+            return thisInstance;
+        }
+    }
+
+    public void SetNextTutorial(int i_CurrentOrder)
+    {
+        CurrentTutorial = GetTutorialById(i_CurrentOrder);
+        if (CurrentTutorial)
+        {
+            ExplanationText.text = CurrentTutorial.ExplanationText;
+        }
+        else
+        {
+            CompletedAllTutorials();
+        }
+    }
+
+    public void CompletedTutorial()
+    {
+        SetNextTutorial(CurrentTutorial.Id + 1);
+    }
+
+    public void CompletedAllTutorials()
+    {
+        ExplanationText.text = k_CompletedAllTutorials;
+        
+        //load next scene.
+    }
+
+    public Tutorial GetTutorialById(int i_RequestedId)
+    {
+        Tutorial result = null;
+        foreach (Tutorial tutorial in TutorialList)
+        {
+            if (tutorial.Id == i_RequestedId)
+            {
+                result = tutorial;
+            }
+        }
+
+        return result;
+    }
+
+    void Start()
+    {
+        SetNextTutorial(0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (CurrentTutorial)
+        {
+            CurrentTutorial.CheckIfHappening();
+        }
+    }
+}

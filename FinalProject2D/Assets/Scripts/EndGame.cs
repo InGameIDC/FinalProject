@@ -104,20 +104,25 @@ public class EndGame : MonoBehaviour
         //nextLevelButton.SetActive(true); 
         restartButton.SetActive(false);
 
+        gs.levelsPlayed[gs.lastLevelCosen - 2] = 1;
+
         if(score < 75)
         {
             goldStar1.SetActive(true);
+            gs.starsInLevels[gs.lastLevelCosen - 2] = 1;
         }
         else if(score >= 75 && score < 90)
         {
             goldStar1.SetActive(true);
             goldStar2.SetActive(true);
+            gs.starsInLevels[gs.lastLevelCosen - 2] = 2;
         }
         else
         {
             goldStar1.SetActive(true);
             goldStar2.SetActive(true);
             goldStar3.SetActive(true);
+            gs.starsInLevels[gs.lastLevelCosen - 2] = 3;
         }
 
         //update the game data
