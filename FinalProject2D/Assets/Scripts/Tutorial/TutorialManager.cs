@@ -9,6 +9,8 @@ public class TutorialManager : MonoBehaviour
 {
     private const string k_CompletedAllTutorials = "Level complete! Proceed to next level";
     private List<Tutorial> m_TutorialList = new List<Tutorial>();
+    
+    [TextArea]
     private Text m_ExplanationText;
     private static TutorialManager thisInstance;
     private Tutorial m_CurrentTutorial;

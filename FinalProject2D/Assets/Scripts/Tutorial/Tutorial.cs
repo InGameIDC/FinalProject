@@ -4,9 +4,12 @@ using UnityEngine;
 
 public abstract class Tutorial : MonoBehaviour
 {
+    [SerializeField]
     private int m_Id;
-    public string m_ExplanationText;
 
+    [TextArea]
+    public string m_ExplanationText;
+    
     public int Id { get; set; }
     public string ExplanationText { get; set; }
 
