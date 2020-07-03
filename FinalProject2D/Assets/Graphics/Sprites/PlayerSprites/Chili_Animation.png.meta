@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 4aa05e504dea9be4789b662aa8349fff
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1806309653489497862
+    second: Chili_Animation_0
+  - first:
+      213: -4982913771496969936
+    second: Chili_Animation_1
+  - first:
+      213: -977001752677946999
+    second: Chili_Animation_2
+  - first:
+      213: -1625827895032253948
+    second: Chili_Animation_3
+  - first:
+      213: 6412271211375844567
+    second: Chili_Animation_4
+  - first:
+      213: 6252527266656038434
+    second: Chili_Animation_5
+  - first:
+      213: 8449729081421417596
+    second: Chili_Animation_6
+  - first:
+      213: -3117221241155840209
+    second: Chili_Animation_7
+  - first:
+      213: -3935474936964457739
+    second: Chili_Animation_8
+  - first:
+      213: -8301836315873924259
+    second: Chili_Animation_9
+  - first:
+      213: 5561881623427489756
+    second: Chili_Animation_10
+  - first:
+      213: 5360251197066336679
+    second: Chili_Animation_11
+  - first:
+      213: -5963710459853237236
+    second: Chili_Animation_12
+  - first:
+      213: -3044040043154089159
+    second: Chili_Animation_13
+  - first:
+      213: -5963536314933750842
+    second: Chili_Animation_14
+  - first:
+      213: -3913725351560053778
+    second: Chili_Animation_15
+  - first:
+      213: 2357853246547080381
+    second: Chili_Animation_16
+  - first:
+      213: -3629180287834296416
+    second: Chili_Animation_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +94,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +124,435 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Chili_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 2350
+        width: 232
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607b9924f0d411910800000000000000
+      internalID: 1806309653489497862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 2348
+        width: 283
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039658f435229dab0800000000000000
+      internalID: -4982913771496969936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 2203
+        width: 199
+        height: 1034
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98962b2151ef072f0800000000000000
+      internalID: -977001752677946999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 2350
+        width: 232
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4027eaab426ef69e0800000000000000
+      internalID: -1625827895032253948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 2348
+        width: 283
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc558d61b6fcf850800000000000000
+      internalID: 6412271211375844567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 2203
+        width: 199
+        height: 1034
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e2a75fb6075c650800000000000000
+      internalID: 6252527266656038434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1257
+        width: 232
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c496ab4d7734570800000000000000
+      internalID: 8449729081421417596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1255
+        width: 282
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f279a920cc76db4d0800000000000000
+      internalID: -3117221241155840209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_8
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1110
+        width: 198
+        height: 1034
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fad7c755626269c0800000000000000
+      internalID: -3935474936964457739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_9
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1257
+        width: 232
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ba5e01bd3f9cc80800000000000000
+      internalID: -8301836315873924259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 1255
+        width: 283
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf1b2f4ed5cf2d40800000000000000
+      internalID: 5561881623427489756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1110
+        width: 198
+        height: 1034
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9500c5010736a40800000000000000
+      internalID: 5360251197066336679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 169
+        width: 232
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c049a211fe4ac3da0800000000000000
+      internalID: -5963710459853237236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 33
+        width: 195
+        height: 1029
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b5cb175b561c5d0800000000000000
+      internalID: -3044040043154089159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 301
+        width: 263
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c35b3751534d3da0800000000000000
+      internalID: -5963536314933750842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_15
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 169
+        width: 232
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb72df4787afa9c0800000000000000
+      internalID: -3913725351560053778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_16
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 33
+        width: 194
+        height: 1029
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4b0f80907c8b020800000000000000
+      internalID: 2357853246547080381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chili_Animation_17
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 301
+        width: 263
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af69c5a1cf82adc0800000000000000
+      internalID: -3629180287834296416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

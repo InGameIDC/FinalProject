@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: d49d3454a0d94e947aeb9e8245792b5f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2205461303008820001
+    second: Banan_Animation_0
+  - first:
+      213: 5355220206473943218
+    second: Banan_Animation_1
+  - first:
+      213: 5451974526735679156
+    second: Banan_Animation_2
+  - first:
+      213: -6994387867358916157
+    second: Banan_Animation_3
+  - first:
+      213: 6715882109918971494
+    second: Banan_Animation_4
+  - first:
+      213: 7626192429124244392
+    second: Banan_Animation_5
+  - first:
+      213: -4509451229538560304
+    second: Banan_Animation_6
+  - first:
+      213: -2457530114947214891
+    second: Banan_Animation_7
+  - first:
+      213: -87409346305966755
+    second: Banan_Animation_8
+  - first:
+      213: -6168222864848406585
+    second: Banan_Animation_9
+  - first:
+      213: 2847538164625226680
+    second: Banan_Animation_10
+  - first:
+      213: 3560743907762225113
+    second: Banan_Animation_11
+  - first:
+      213: -8004040916944163112
+    second: Banan_Animation_12
+  - first:
+      213: 6673583001645722196
+    second: Banan_Animation_13
+  - first:
+      213: 9008585488284265691
+    second: Banan_Animation_14
+  - first:
+      213: 6636503264194202364
+    second: Banan_Animation_15
+  - first:
+      213: 3962194362827049626
+    second: Banan_Animation_16
+  - first:
+      213: 195883459880728473
+    second: Banan_Animation_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -120,7 +174,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Banan_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 3822
+        width: 178
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd40a4441a0a461e0800000000000000
+      internalID: -2205461303008820001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 3784
+        width: 228
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b89fd49760915a40800000000000000
+      internalID: 5355220206473943218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 3767
+        width: 156
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4befe8e32fd49ab40800000000000000
+      internalID: 5451974526735679156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 3079
+        width: 178
+        height: 627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c115c0ea41feee90800000000000000
+      internalID: -6994387867358916157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 3041
+        width: 228
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6660f1b523b933d50800000000000000
+      internalID: 6715882109918971494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 3023
+        width: 159
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a359b6eb9da5d960800000000000000
+      internalID: 7626192429124244392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2302
+        width: 357
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6d763bff53b61c0800000000000000
+      internalID: -4509451229538560304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 2302
+        width: 413
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d11fb9816915edd0800000000000000
+      internalID: -2457530114947214891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_8
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 2295
+        width: 309
+        height: 668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d3263a9a579cef0800000000000000
+      internalID: -87409346305966755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1574
+        width: 357
+        height: 591
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7b44d2cf1166aa0800000000000000
+      internalID: -6168222864848406585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1574
+        width: 413
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbbad2bfdc748720800000000000000
+      internalID: 2847538164625226680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1568
+        width: 310
+        height: 667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfbd4ee7bd4a6130800000000000000
+      internalID: 3560743907762225113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 791
+        width: 312
+        height: 668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dee9d9713febe090800000000000000
+      internalID: -8004040916944163112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 798
+        width: 415
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45aad20c1645d9c50800000000000000
+      internalID: 6673583001645722196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 798
+        width: 352
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc2ce5a5cce40d70800000000000000
+      internalID: 9008585488284265691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 63
+        width: 312
+        height: 668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa040d9e88991c50800000000000000
+      internalID: 6636503264194202364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_16
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 70
+        width: 415
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a8c57c7ca8cf630800000000000000
+      internalID: 3962194362827049626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_17
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 70
+        width: 356
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997b09b08fae7b200800000000000000
+      internalID: 195883459880728473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
