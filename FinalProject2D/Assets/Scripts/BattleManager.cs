@@ -39,7 +39,13 @@ public class BattleManager : MonoBehaviour
 
         //follow the score
         GameObject sm = GameObject.FindGameObjectWithTag("SugarManager");
-        sm.GetComponent<SugarManager>().OnScoreChange += ScoreUpdate;
+        if (sm != null)
+        {
+            SugarManager smSugarManager = sm.GetComponent<SugarManager>();
+            if (smSugarManager != null)
+                smSugarManager.OnScoreChange += ScoreUpdate;
+        }
+
 
         selectANewHero(_currentUnit.gameObject);
 
