@@ -37,11 +37,11 @@ public class HeroAnimationManager : MonoBehaviour
         if (rotation % 360 >= 45 && rotation % 360 < 135) // Left
             animator.SetInteger("Direction", 3);
         else if (rotation % 360 >= 135 && rotation % 360 < 225) // Down
-            animator.SetInteger("Direction", 0); //TODO: to be change to 2
+            animator.SetInteger("Direction", 0);
         else if (rotation % 360 >= 225 && rotation % 360 < 315) // Right
             animator.SetInteger("Direction", 1);
         else // UP
-            animator.SetInteger("Direction", 0);
+            animator.SetInteger("Direction", 2);
 
         //Debug.Log("Rotation: " + rotation + " Direction: " + animator.GetInteger("Direction"));
     }

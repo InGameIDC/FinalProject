@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: f8ae6fe2080132c429eb0d7c3529027e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2758823426303340291
+    second: Pea_Animation_B_0
+  - first:
+      213: -1591821968628592745
+    second: Pea_Animation_B_1
+  - first:
+      213: 4033744068619349664
+    second: Pea_Animation_B_2
+  - first:
+      213: -4060278178486775985
+    second: Pea_Animation_B_3
+  - first:
+      213: 3033373830771003315
+    second: Pea_Animation_B_4
+  - first:
+      213: -8324313145555201928
+    second: Pea_Animation_B_5
+  - first:
+      213: -4482671156863702775
+    second: Pea_Animation_B_6
+  - first:
+      213: 3770578817602010972
+    second: Pea_Animation_B_7
+  - first:
+      213: -1432526510377755762
+    second: Pea_Animation_B_8
+  - first:
+      213: 5799496282535267057
+    second: Pea_Animation_B_9
+  - first:
+      213: 3817854597286492617
+    second: Pea_Animation_B_10
+  - first:
+      213: -5760456792592465424
+    second: Pea_Animation_B_11
+  - first:
+      213: -4283443986708884267
+    second: Pea_Animation_B_12
+  - first:
+      213: 1079674466142392560
+    second: Pea_Animation_B_13
+  - first:
+      213: 3613598117308904854
+    second: Pea_Animation_B_14
+  - first:
+      213: -3666350470176492372
+    second: Pea_Animation_B_15
+  - first:
+      213: -6492701880718652438
+    second: Pea_Animation_B_16
+  - first:
+      213: -4726078765333255052
+    second: Pea_Animation_B_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +94,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +124,435 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Pea_Animation_B_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1980
+        width: 235
+        height: 920
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f26d21a4f494620800000000000000
+      internalID: 2758823426303340291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_1
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 2157
+        width: 340
+        height: 728
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fca367a56b8e9e0800000000000000
+      internalID: -1591821968628592745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_2
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 2070
+        width: 278
+        height: 812
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae25e4dbdcbaf730800000000000000
+      internalID: 4033744068619349664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_3
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 2060
+        width: 310
+        height: 802
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f860a428ef6a7c0800000000000000
+      internalID: -4060278178486775985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_4
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 2162
+        width: 390
+        height: 720
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf42167d65b81a20800000000000000
+      internalID: 3033373830771003315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_5
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 2003
+        width: 257
+        height: 893
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87051185c491a7c80800000000000000
+      internalID: -8324313145555201928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 962
+        width: 234
+        height: 923
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909ef32455a5ac1c0800000000000000
+      internalID: -4482671156863702775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_7
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1139
+        width: 339
+        height: 729
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fb7cc0579c35430800000000000000
+      internalID: 3770578817602010972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_8
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1051
+        width: 277
+        height: 813
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b9a998ab4ae1ce0800000000000000
+      internalID: -1432526510377755762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_9
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1039
+        width: 309
+        height: 803
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa86b45423fb7050800000000000000
+      internalID: 5799496282535267057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_10
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 1137
+        width: 390
+        height: 720
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c97a53478ebbf430800000000000000
+      internalID: 3817854597286492617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_11
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 982
+        width: 259
+        height: 893
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f14a8d311fbe00b0800000000000000
+      internalID: -5760456792592465424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_12
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 4
+        width: 278
+        height: 915
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d41fe483662e84c0800000000000000
+      internalID: -4283443986708884267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_13
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 191
+        width: 339
+        height: 729
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f01a73e436cbfe00800000000000000
+      internalID: 1079674466142392560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_14
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 14
+        width: 234
+        height: 923
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695b73f8754162230800000000000000
+      internalID: 3613598117308904854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_15
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 104
+        width: 277
+        height: 811
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca43b0b2ca18e1dc0800000000000000
+      internalID: -3666350470176492372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_16
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 191
+        width: 340
+        height: 729
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb014f0a0a45e5a0800000000000000
+      internalID: -6492701880718652438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pea_Animation_B_17
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 14
+        width: 233
+        height: 923
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c6bcb1768996eb0800000000000000
+      internalID: -4726078765333255052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

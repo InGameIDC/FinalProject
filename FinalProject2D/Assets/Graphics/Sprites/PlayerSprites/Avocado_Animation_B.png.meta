@@ -1041,7 +1041,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Avocado_Animation_B_0
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 3729
+        width: 416
+        height: 581
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1d27e306e28c960800000000000000
+      internalID: 7622393360224014801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_1
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 3752
+        width: 473
+        height: 482
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f7868d33714b3c0800000000000000
+      internalID: -4344822229064188012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_2
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 3720
+        width: 364
+        height: 666
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a7d836460f83140800000000000000
+      internalID: 4699770525118724747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_25
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 3000
+        width: 413
+        height: 582
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a616837c4ef74f0800000000000000
+      internalID: -828692262117348790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_26
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 3030
+        width: 473
+        height: 483
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140aae90003def8e0800000000000000
+      internalID: -1657655615705931711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_28
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 2998
+        width: 363
+        height: 666
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1cf3572ba1c73610800000000000000
+      internalID: 1600961133396884509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_48
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 2362
+        width: 427
+        height: 583
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131ba6127da03dd00800000000000000
+      internalID: 996151861673898289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_50
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 2306
+        width: 477
+        height: 480
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b3112051f6a6260800000000000000
+      internalID: 7091602699267947415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_51
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2246
+        width: 368
+        height: 667
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5d7a4b34a02a780800000000000000
+      internalID: -8673358646452169261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_72
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1629
+        width: 469
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a782b8fcb864ce90800000000000000
+      internalID: -7006359959446059099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_74
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1573
+        width: 471
+        height: 480
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cc30195091fc1d0800000000000000
+      internalID: -3328414087905031082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_75
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 1515
+        width: 363
+        height: 665
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2173c9daef8d59e0800000000000000
+      internalID: -1630989251199667924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_98
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 766
+        width: 358
+        height: 666
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000d3f38d5def81f0800000000000000
+      internalID: -1040352002997760000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_99
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 827
+        width: 478
+        height: 480
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8539a7b96779bf0800000000000000
+      internalID: -317654838557845275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_101
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 881
+        width: 412
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863b89244e470b9c0800000000000000
+      internalID: -3913499552466291864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_119
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 43
+        width: 374
+        height: 668
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01761bd9fb2854090800000000000000
+      internalID: -8050884999358879984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_120
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 101
+        width: 477
+        height: 480
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edd914a2b536c7d0800000000000000
+      internalID: -2898570268792726046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avocado_Animation_B_122
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 159
+        width: 416
+        height: 582
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7085daa2f8c1ba0800000000000000
+      internalID: -6116856780416350268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

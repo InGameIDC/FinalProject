@@ -228,8 +228,8 @@ TextureImporter:
         y: 3720
         width: 384
         height: 1002
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,8 +249,8 @@ TextureImporter:
         y: 3659
         width: 266
         height: 1268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,8 +270,8 @@ TextureImporter:
         y: 3657
         width: 275
         height: 1268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -291,8 +291,8 @@ TextureImporter:
         y: 3886
         width: 401
         height: 1004
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -300,27 +300,6 @@ TextureImporter:
       bones: []
       spriteID: d8ec2093c0cc143b0800000000000000
       internalID: -5529914514566099315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Carrot_Animation_B_5
-      rect:
-        serializedVersion: 2
-        x: 2211
-        y: 4496
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3203055fe206f6af0800000000000000
-      internalID: -400996087012249565
       vertices: []
       indices: 
       edges: []
@@ -342,27 +321,6 @@ TextureImporter:
       bones: []
       spriteID: 578f76c5148cc0690800000000000000
       internalID: -7634507085251086219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Carrot_Animation_B_7
-      rect:
-        serializedVersion: 2
-        x: 2235
-        y: 4329
-        width: 7
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 210039f2cd91dffc0800000000000000
-      internalID: -3459580505269010414
       vertices: []
       indices: 
       edges: []
@@ -396,8 +354,8 @@ TextureImporter:
         y: 1851
         width: 383
         height: 1004
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,8 +375,8 @@ TextureImporter:
         y: 1790
         width: 269
         height: 1268
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -438,8 +396,8 @@ TextureImporter:
         y: 1787
         width: 273
         height: 1271
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -459,8 +417,8 @@ TextureImporter:
         y: 2017
         width: 399
         height: 1007
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -522,8 +480,8 @@ TextureImporter:
         y: 588
         width: 400
         height: 1006
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -543,8 +501,8 @@ TextureImporter:
         y: 422
         width: 273
         height: 1270
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -585,8 +543,8 @@ TextureImporter:
         y: 573
         width: 401
         height: 1007
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -602,12 +560,12 @@ TextureImporter:
       name: Carrot_Animation_B_22
       rect:
         serializedVersion: 2
-        x: 2103
+        x: 2110
         y: 343
         width: 274
         height: 1271
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -615,27 +573,6 @@ TextureImporter:
       bones: []
       spriteID: c255917f9064ed360800000000000000
       internalID: 7196266263198913836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Carrot_Animation_B_23
-      rect:
-        serializedVersion: 2
-        x: 1599
-        y: 1185
-        width: 4
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6535fb8ace625e50800000000000000
-      internalID: 6796616603866051947
       vertices: []
       indices: 
       edges: []
