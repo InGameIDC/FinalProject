@@ -10,7 +10,7 @@ public class Tutorial_Kills : Tutorial
     {
         foreach(Health target in TargetsToKill)
         {
-            taget.OnDeath += removeTarget;
+            target.OnDeath += removeTarget;
         }
     }
 

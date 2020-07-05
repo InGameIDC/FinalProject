@@ -43,7 +43,7 @@ public class HeroAnimationManager : MonoBehaviour
         else // UP
             animator.SetInteger("Direction", 0);
 
-        Debug.Log("Rotation: " + rotation + " Direction: " + animator.GetInteger("Direction"));
+        //Debug.Log("Rotation: " + rotation + " Direction: " + animator.GetInteger("Direction"));
     }
 
     private void Moving()

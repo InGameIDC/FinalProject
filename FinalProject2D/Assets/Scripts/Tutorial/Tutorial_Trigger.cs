@@ -1,34 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Tutorial_Trigger : Tutorial
 {
-    private bool m_IsCurrentTutorial = false;
+    [SerializeField]
+    private bool m_IsCurrentTutorial = true;
 
+    public GameObject m_HiddenObject;
     // This is the object we want the player to get to. (the area to collide)
     public Transform HitTransform;
 
-    [SerializeField]
-    public bool IsCurrentTutorial { get; set; }
+    public bool IsCurrentTutorial
+    {
+        get { return m_IsCurrentTutorial; }
+        set { m_IsCurrentTutorial = value; }
+    }
 
     public override void CheckIfHappening()
     {
+        m_HiddenObject.SetActive(true);
         IsCurrentTutorial = true;
     }
 
-    public void OnTriggerEnter(Collider i_Other)
+    public void OnTriggerEnter2D(Collider2D i_Other)
     {
-        if (!IsCurrentTutorial)
+        if (IsCurrentTutorial == false)
         {
+            Debug.Log("8====================D");
             return;
         }
         else
         {
             if (i_Other.transform == HitTransform)
             {
-                TutorialManager.Instance.CompletedTutorial();
+                Debug.Log("Trigger with " + i_Other.gameObject);
+                m_HiddenObject.SetActive(false);
                 IsCurrentTutorial = false;
+                CompleteTutorial();
+            }
+            else
+            {
+                Debug.Log("Tag Doesn't match");
             }
         }
     }
