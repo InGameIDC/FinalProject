@@ -1,61 +1,163 @@
 fileFormatVersion: 2
-guid: 4aa05e504dea9be4789b662aa8349fff
+guid: a42a8e21113768c469903ec699e552d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1806309653489497862
-    second: Chili_Animation_0
+      213: 196544161574612513
+    second: Mango_Animation_B_0
   - first:
-      213: -4982913771496969936
-    second: Chili_Animation_1
+      213: 2671623540247980798
+    second: Mango_Animation_B_1
   - first:
-      213: -977001752677946999
-    second: Chili_Animation_2
+      213: -6516550468310473820
+    second: Mango_Animation_B_2
   - first:
-      213: -1625827895032253948
-    second: Chili_Animation_3
+      213: -8010621605628682681
+    second: Mango_Animation_B_3
   - first:
-      213: 6412271211375844567
-    second: Chili_Animation_4
+      213: -8170594233348480949
+    second: Mango_Animation_B_4
   - first:
-      213: 6252527266656038434
-    second: Chili_Animation_5
+      213: 6060347133988003050
+    second: Mango_Animation_B_5
   - first:
-      213: 8449729081421417596
-    second: Chili_Animation_6
+      213: 1764738023945008892
+    second: Mango_Animation_B_6
   - first:
-      213: -3117221241155840209
-    second: Chili_Animation_7
+      213: -8931439883849281530
+    second: Mango_Animation_B_7
   - first:
-      213: -3935474936964457739
-    second: Chili_Animation_8
+      213: 4304590023922904327
+    second: Mango_Animation_B_8
   - first:
-      213: -8301836315873924259
-    second: Chili_Animation_9
+      213: -2596810189430584218
+    second: Mango_Animation_B_9
   - first:
-      213: 5561881623427489756
-    second: Chili_Animation_10
+      213: -896746875457331065
+    second: Mango_Animation_B_10
   - first:
-      213: 5360251197066336679
-    second: Chili_Animation_11
+      213: -1992763243266320640
+    second: Mango_Animation_B_11
   - first:
-      213: -5963710459853237236
-    second: Chili_Animation_12
+      213: -5772439158626320745
+    second: Mango_Animation_B_12
   - first:
-      213: -3044040043154089159
-    second: Chili_Animation_13
+      213: -41418006512597323
+    second: Mango_Animation_B_13
   - first:
-      213: -5963536314933750842
-    second: Chili_Animation_14
+      213: 7084941624882460388
+    second: Mango_Animation_B_14
   - first:
-      213: -3913725351560053778
-    second: Chili_Animation_15
+      213: 5002477755635349063
+    second: Mango_Animation_B_15
   - first:
-      213: 2357853246547080381
-    second: Chili_Animation_16
+      213: 7789683070952003717
+    second: Mango_Animation_B_16
   - first:
-      213: -3629180287834296416
-    second: Chili_Animation_17
+      213: 8044372646846056973
+    second: Mango_Animation_B_17
+  - first:
+      213: -6744277313634636369
+    second: Mango_Animation_B_18
+  - first:
+      213: -5149094033953858949
+    second: Mango_Animation_B_19
+  - first:
+      213: -3175538483560655726
+    second: Mango_Animation_B_20
+  - first:
+      213: 6089325652727247324
+    second: Mango_Animation_B_21
+  - first:
+      213: 4037632940404281899
+    second: Mango_Animation_B_22
+  - first:
+      213: 459894397268403489
+    second: Mango_Animation_B_23
+  - first:
+      213: 5538259783245288301
+    second: Mango_Animation_B_24
+  - first:
+      213: -7972454940726675199
+    second: Mango_Animation_B_25
+  - first:
+      213: 5721184049769104573
+    second: Mango_Animation_B_26
+  - first:
+      213: -3373732745757384152
+    second: Mango_Animation_B_27
+  - first:
+      213: -9008567043343695474
+    second: Mango_Animation_B_28
+  - first:
+      213: 7959224668266844039
+    second: Mango_Animation_B_29
+  - first:
+      213: 296700403961044203
+    second: Mango_Animation_B_30
+  - first:
+      213: 7479093507735009292
+    second: Mango_Animation_B_31
+  - first:
+      213: -854171553536835055
+    second: Mango_Animation_B_32
+  - first:
+      213: 3707195893202991929
+    second: Mango_Animation_B_33
+  - first:
+      213: 1783663218360792948
+    second: Mango_Animation_B_34
+  - first:
+      213: 257898171633701633
+    second: Mango_Animation_B_35
+  - first:
+      213: 322701578465852252
+    second: Mango_Animation_B_36
+  - first:
+      213: -2959559201558038300
+    second: Mango_Animation_B_37
+  - first:
+      213: -3653620037075583085
+    second: Mango_Animation_B_38
+  - first:
+      213: -376926165188556395
+    second: Mango_Animation_B_39
+  - first:
+      213: -5416790913656532776
+    second: Mango_Animation_B_40
+  - first:
+      213: 4058094948700284332
+    second: Mango_Animation_B_41
+  - first:
+      213: -4272764246021091429
+    second: Mango_Animation_B_42
+  - first:
+      213: 6689252973067720731
+    second: Mango_Animation_B_43
+  - first:
+      213: -5735036733716064081
+    second: Mango_Animation_B_44
+  - first:
+      213: 8166118823307463952
+    second: Mango_Animation_B_45
+  - first:
+      213: -5238349826243717034
+    second: Mango_Animation_B_46
+  - first:
+      213: 8581620898563895366
+    second: Mango_Animation_B_47
+  - first:
+      213: 3996717737643098798
+    second: Mango_Animation_B_48
+  - first:
+      213: 2407121722212333046
+    second: Mango_Animation_B_49
+  - first:
+      213: 2075954871661293351
+    second: Mango_Animation_B_50
+  - first:
+      213: 4006505828896338272
+    second: Mango_Animation_B_51
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -99,7 +201,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -176,379 +278,379 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chili_Animation_0
+      name: Mango_Animation_B_1
       rect:
         serializedVersion: 2
-        x: 118
-        y: 2350
-        width: 232
-        height: 889
+        x: 138
+        y: 4311
+        width: 428
+        height: 658
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 607b9924f0d411910800000000000000
-      internalID: 1806309653489497862
+      spriteID: efa6d0a7473831520800000000000000
+      internalID: 2671623540247980798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_1
+      name: Mango_Animation_B_2
       rect:
         serializedVersion: 2
-        x: 379
-        y: 2348
-        width: 283
-        height: 764
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 717
+        y: 4328
+        width: 526
+        height: 540
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 039658f435229dab0800000000000000
-      internalID: -4982913771496969936
+      spriteID: 4a3e27f00ef8095a0800000000000000
+      internalID: -6516550468310473820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_2
+      name: Mango_Animation_B_3
       rect:
         serializedVersion: 2
-        x: 714
-        y: 2203
-        width: 199
-        height: 1034
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1389
+        y: 4197
+        width: 401
+        height: 767
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98962b2151ef072f0800000000000000
-      internalID: -977001752677946999
+      spriteID: 74ede6e771e84d090800000000000000
+      internalID: -8010621605628682681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_3
+      name: Mango_Animation_B_7
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 2350
-        width: 232
-        height: 889
+        x: 138
+        y: 3468
+        width: 428
+        height: 658
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4027eaab426ef69e0800000000000000
-      internalID: -1625827895032253948
+      spriteID: 60058661fb62d0480800000000000000
+      internalID: -8931439883849281530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_4
+      name: Mango_Animation_B_8
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 2348
-        width: 283
-        height: 764
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 717
+        y: 3485
+        width: 526
+        height: 540
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dc558d61b6fcf850800000000000000
-      internalID: 6412271211375844567
+      spriteID: 70d6d9fe1d9fcbb30800000000000000
+      internalID: 4304590023922904327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_5
+      name: Mango_Animation_B_9
       rect:
         serializedVersion: 2
-        x: 1630
-        y: 2203
-        width: 199
-        height: 1034
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1389
+        y: 3354
+        width: 401
+        height: 767
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22e2a75fb6075c650800000000000000
-      internalID: 6252527266656038434
+      spriteID: 66c00e524e646fbd0800000000000000
+      internalID: -2596810189430584218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_6
+      name: Mango_Animation_B_12
       rect:
         serializedVersion: 2
-        x: 127
-        y: 1257
-        width: 232
-        height: 889
+        x: 136
+        y: 2689
+        width: 427
+        height: 657
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c496ab4d7734570800000000000000
-      internalID: 8449729081421417596
+      spriteID: 79ef58e3b2d24efa0800000000000000
+      internalID: -5772439158626320745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_7
+      name: Mango_Animation_B_13
       rect:
         serializedVersion: 2
-        x: 389
-        y: 1255
-        width: 282
-        height: 764
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 769
+        y: 2603
+        width: 391
+        height: 758
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f279a920cc76db4d0800000000000000
-      internalID: -3117221241155840209
+      spriteID: 5b60382ea8adc6ff0800000000000000
+      internalID: -41418006512597323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_8
+      name: Mango_Animation_B_15
       rect:
         serializedVersion: 2
-        x: 723
-        y: 1110
-        width: 198
-        height: 1034
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1309
+        y: 2728
+        width: 528
+        height: 533
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fad7c755626269c0800000000000000
-      internalID: -3935474936964457739
+      spriteID: 7463075b30f5c6540800000000000000
+      internalID: 5002477755635349063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_9
+      name: Mango_Animation_B_22
       rect:
         serializedVersion: 2
-        x: 1043
-        y: 1257
-        width: 232
-        height: 889
+        x: 145
+        y: 1892
+        width: 428
+        height: 658
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5ba5e01bd3f9cc80800000000000000
-      internalID: -8301836315873924259
+      spriteID: b22963a54cd880830800000000000000
+      internalID: 4037632940404281899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_10
+      name: Mango_Animation_B_23
       rect:
         serializedVersion: 2
-        x: 1304
-        y: 1255
-        width: 283
-        height: 764
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 778
+        y: 1807
+        width: 389
+        height: 757
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdf1b2f4ed5cf2d40800000000000000
-      internalID: 5561881623427489756
+      spriteID: 1252067848fd16600800000000000000
+      internalID: 459894397268403489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_11
+      name: Mango_Animation_B_25
       rect:
         serializedVersion: 2
-        x: 1640
-        y: 1110
-        width: 198
-        height: 1034
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1316
+        y: 1932
+        width: 530
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a9500c5010736a40800000000000000
-      internalID: 5360251197066336679
+      spriteID: 109bd26a8762c5190800000000000000
+      internalID: -7972454940726675199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_12
+      name: Mango_Animation_B_33
       rect:
         serializedVersion: 2
-        x: 118
-        y: 169
-        width: 232
-        height: 889
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 136
+        y: 1079
+        width: 528
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c049a211fe4ac3da0800000000000000
-      internalID: -5963710459853237236
+      spriteID: 93bb627f50b927330800000000000000
+      internalID: 3707195893202991929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_13
+      name: Mango_Animation_B_35
       rect:
         serializedVersion: 2
-        x: 412
-        y: 33
-        width: 195
-        height: 1029
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 820
+        y: 954
+        width: 391
+        height: 758
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93b5cb175b561c5d0800000000000000
-      internalID: -3044040043154089159
+      spriteID: 103137c450d349300800000000000000
+      internalID: 257898171633701633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_14
+      name: Mango_Animation_B_36
       rect:
         serializedVersion: 2
-        x: 658
-        y: 301
-        width: 263
-        height: 770
+        x: 1416
+        y: 1040
+        width: 428
+        height: 657
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c35b3751534d3da0800000000000000
-      internalID: -5963536314933750842
+      spriteID: c5b3ae830677a7400800000000000000
+      internalID: 322701578465852252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_15
+      name: Mango_Animation_B_43
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 169
-        width: 232
-        height: 889
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 133
+        y: 282
+        width: 528
+        height: 533
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeb72df4787afa9c0800000000000000
-      internalID: -3913725351560053778
+      spriteID: b185d68432005dc50800000000000000
+      internalID: 6689252973067720731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_16
+      name: Mango_Animation_B_45
       rect:
         serializedVersion: 2
-        x: 1328
-        y: 33
-        width: 194
-        height: 1029
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 810
+        y: 165
+        width: 391
+        height: 757
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db4b0f80907c8b020800000000000000
-      internalID: 2357853246547080381
+      spriteID: 01d4fd8cdc1e35170800000000000000
+      internalID: 8166118823307463952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chili_Animation_17
+      name: Mango_Animation_B_46
       rect:
         serializedVersion: 2
-        x: 1574
-        y: 301
-        width: 263
-        height: 770
+        x: 1407
+        y: 236
+        width: 427
+        height: 659
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0af69c5a1cf82adc0800000000000000
-      internalID: -3629180287834296416
+      spriteID: 65893854694ad47b0800000000000000
+      internalID: -5238349826243717034
       vertices: []
       indices: 
       edges: []

@@ -162,11 +162,10 @@ public class HeroUnit : MonoBehaviour
     {
         if (_movement.IsObjOnMovment()) // If he hero is moving, its already preforming an action
         {
-            if (_skill.CanAttackOnMovment()) // for now, only heroes with skills that does not require to aim, can use the feature
-                _skill.attack();
+            return;
         }
-        else
-            manageHeroIdle();
+
+        manageHeroIdle();
     }
 
     /// <summary>
