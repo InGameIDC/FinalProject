@@ -1,0 +1,634 @@
+fileFormatVersion: 2
+guid: 16a64aa77dbf0fa478a43ac24133b567
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1841618094111826127
+    second: Pineapple_Animation_0
+  - first:
+      213: -6158607488151970326
+    second: Pineapple_Animation_1
+  - first:
+      213: -1767518099496648033
+    second: Pineapple_Animation_2
+  - first:
+      213: -5747396002445021292
+    second: Pineapple_Animation_3
+  - first:
+      213: -7439519522508859871
+    second: Pineapple_Animation_4
+  - first:
+      213: -1092530343907041755
+    second: Pineapple_Animation_5
+  - first:
+      213: 6739657380485113119
+    second: Pineapple_Animation_6
+  - first:
+      213: 8192566127159002287
+    second: Pineapple_Animation_7
+  - first:
+      213: 2961572198349042281
+    second: Pineapple_Animation_8
+  - first:
+      213: -7382868726044194184
+    second: Pineapple_Animation_9
+  - first:
+      213: 8598971597037806271
+    second: Pineapple_Animation_10
+  - first:
+      213: 3137388168652237915
+    second: Pineapple_Animation_11
+  - first:
+      213: -6518972191032568002
+    second: Pineapple_Animation_12
+  - first:
+      213: 1584070359815997539
+    second: Pineapple_Animation_13
+  - first:
+      213: -4272408225743303764
+    second: Pineapple_Animation_14
+  - first:
+      213: -6046704862288993965
+    second: Pineapple_Animation_15
+  - first:
+      213: 2267400698397756389
+    second: Pineapple_Animation_16
+  - first:
+      213: 2029102372817636799
+    second: Pineapple_Animation_17
+  - first:
+      213: -7034757481834570740
+    second: Pineapple_Animation_18
+  - first:
+      213: -532916870992580718
+    second: Pineapple_Animation_19
+  - first:
+      213: 1525713181442079494
+    second: Pineapple_Animation_20
+  - first:
+      213: 1784220419387744969
+    second: Pineapple_Animation_21
+  - first:
+      213: 5255309750480004059
+    second: Pineapple_Animation_22
+  - first:
+      213: 2420365924718887865
+    second: Pineapple_Animation_23
+  - first:
+      213: -4578658238648621629
+    second: Pineapple_Animation_16
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pineapple_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1974
+        width: 457
+        height: 757
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0a77736edbe8910800000000000000
+      internalID: 1841618094111826127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 2202
+        width: 530
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed14a58e1b388aa0800000000000000
+      internalID: -6158607488151970326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 1968
+        width: 382
+        height: 848
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92cd6937a38877e0800000000000000
+      internalID: -1767518099496648033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 1772
+        y: 1974
+        width: 457
+        height: 757
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fa3ca69c52d30b0800000000000000
+      internalID: -5747396002445021292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 2265
+        y: 2202
+        width: 530
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1269649196481c890800000000000000
+      internalID: -7439519522508859871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 2846
+        y: 1964
+        width: 381
+        height: 848
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ed511d07d86d0f0800000000000000
+      internalID: -1092530343907041755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 3313
+        y: 2442
+        width: 107
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15a7a7eda2188d50800000000000000
+      internalID: 6739657380485113119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 2087
+        width: 123
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4c5309c77d1b170800000000000000
+      internalID: 8192566127159002287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_8
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1019
+        width: 380
+        height: 849
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962744b293e991920800000000000000
+      internalID: 2961572198349042281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_9
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1259
+        width: 531
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a8bc08208ca8990800000000000000
+      internalID: -7382868726044194184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1030
+        width: 457
+        height: 758
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2ac13bb1fa55770800000000000000
+      internalID: 8598971597037806271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1019
+        width: 381
+        height: 848
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ca703baed3a8b20800000000000000
+      internalID: 3137388168652237915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 2146
+        y: 1259
+        width: 530
+        height: 618
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e379adcc455f785a0800000000000000
+      internalID: -6518972191032568002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 1030
+        width: 457
+        height: 757
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368ce08799fbbf510800000000000000
+      internalID: 1584070359815997539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 0
+        width: 389
+        height: 932
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab0d19da5b55b4c0800000000000000
+      internalID: -4272408225743303764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_17
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 4
+        width: 391
+        height: 987
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd82b08bd1d82c10800000000000000
+      internalID: 2029102372817636799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_20
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 123
+        width: 458
+        height: 764
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b7cf01e0c6c2510800000000000000
+      internalID: 1525713181442079494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 69
+        width: 456
+        height: 764
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2ea9aa403d2c810800000000000000
+      internalID: 1784220419387744969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_22
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 115
+        width: 516
+        height: 623
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3e10ecf5c9ee840800000000000000
+      internalID: 5255309750480004059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pineapple_Animation_23
+      rect:
+        serializedVersion: 2
+        x: 2666
+        y: 169
+        width: 516
+        height: 623
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b344512cfdd69120800000000000000
+      internalID: 2420365924718887865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
