@@ -51,7 +51,8 @@ public class SugarManager : MonoBehaviour
         if (currSugar < minSugars)
         {
             sugPreFab = GetSugarPrefab();
-            Instantiate(sugPreFab, new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), -0.5f), Quaternion.identity);
+            Vector3 pos = new Vector3(Random.Range(-1.92f, 1.92f), Random.Range(-3.35f, 3.35f), -0.5f);
+            Instantiate(sugPreFab, pos, Quaternion.identity);
             currSugar++;
         }
         else if (currSugar < maxSugars)
@@ -82,6 +83,11 @@ public class SugarManager : MonoBehaviour
             default:
                 return sugarPrefab0;
         }
+    }
+
+    private Vector3 FindRandomLegalPos()
+    {
+
     }
 
 }

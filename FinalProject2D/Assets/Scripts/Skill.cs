@@ -11,7 +11,7 @@ public class Skill : MonoBehaviour
     [SerializeField] private float _projSpeed = 5f;
     [SerializeField] private float _cooldown = 2f;
     private float _cooldownStartTime = 0f;
-    private bool _canAttackOnMovment = false;
+    [SerializeField] private bool _canAttackOnMovment = false; // for now, only for heroes that thier attack does not required to be aimed
     private bool _needToBeAimed = true; // if ture, the target has to rotate toward the target
     [SerializeField] GameObject projectile;
     [SerializeField] private float _projectileOffsetValue = 0f; // use mainly for melee, move around the rotator path
