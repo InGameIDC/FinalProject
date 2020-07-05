@@ -15,6 +15,7 @@ public class Tutorial_Touch : Tutorial
 
     public override void CheckIfHappening()
     {
+        m_TextImage.SetActive(true);
         IsCurrentTutorial = true;
     }
 
@@ -29,6 +30,7 @@ public class Tutorial_Touch : Tutorial
             if (Input.touchCount == 1)
             {
                 IsCurrentTutorial = false;
+                m_TextImage.SetActive(false);
                 CompleteTutorial();
             }
         }
