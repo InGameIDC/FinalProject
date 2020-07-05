@@ -27,7 +27,7 @@ public class Tutorial_Touch : Tutorial
         }
         else
         {
-            if (Input.touchCount == 1)
+            if (Input.touchCount == 1 || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 IsCurrentTutorial = false;
                 m_TextImage.SetActive(false);
