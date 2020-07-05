@@ -9,9 +9,18 @@ public abstract class Tutorial : MonoBehaviour
 
     [TextArea]
     public string m_ExplanationText;
-    
-    public int Id { get; set; }
-    public string ExplanationText { get; set; }
+
+    public int Id
+    {
+        get { return m_Id; }
+        set { m_Id = value; }
+    }
+
+    public string ExplanationText
+    {
+        get { return m_ExplanationText;}
+        set { m_ExplanationText = value; }
+    }
 
     public virtual void CheckIfHappening()
     {
