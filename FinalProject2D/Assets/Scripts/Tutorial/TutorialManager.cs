@@ -8,16 +8,31 @@ using UnityEngine.XR.WSA.Persistence;
 public class TutorialManager : MonoBehaviour
 {
     private const string k_CompletedAllTutorials = "Level complete! Proceed to next level";
+    [SerializeField]
     private List<Tutorial> m_TutorialList = new List<Tutorial>();
     
-    [TextArea]
+    [SerializeField]
     private Text m_ExplanationText;
     private static TutorialManager thisInstance;
+    [SerializeField]
     private Tutorial m_CurrentTutorial;
 
-    public Tutorial CurrentTutorial { get; set; }
-    public Text ExplanationText { get; set; }
-    public List<Tutorial> TutorialList { get; set; }
+    public Tutorial CurrentTutorial
+    {
+        get { return m_CurrentTutorial; }
+        set { m_CurrentTutorial = value; }
+    }
+
+    public Text ExplanationText
+    {
+        get { return m_ExplanationText; }
+        set { m_ExplanationText = value; }
+    }
+
+    public List<Tutorial> TutorialList
+    {
+        get { return m_TutorialList; }
+    }
     public static TutorialManager Instance
     {
         get
