@@ -87,7 +87,12 @@ public class SugarManager : MonoBehaviour
 
     private Vector3 FindRandomLegalPos()
     {
+        float cleanRadius = 1f; // the radius around the suagar hill that shouldnt be with obsticales
+        Vector3 pos = Vector3.zero;
+        //Collider2D[] damageHitAreasInSphere = Physics2D.OverlapCircleAll(transform.position, cleanRadius, LayerMask.GetMask("Obsticale"));
+        
 
+        return pos;
     }
 
 }
