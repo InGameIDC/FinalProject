@@ -26,6 +26,14 @@ public abstract class Tutorial : MonoBehaviour
     {
     }
 
+    public void CompleteTutorial()
+    {
+        if (this == TutorialManager.Instance.CurrentTutorial)
+        {
+            TutorialManager.Instance.CompletedTutorial();
+        }
+    }
+
     void Awake()
     {
         TutorialManager.Instance.TutorialList.Add(this);

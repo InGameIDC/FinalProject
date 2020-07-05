@@ -46,7 +46,7 @@ TagManager:
   - DamageHitArea
   - OverlapAvoider
   - Projectile
-  - 
+  - InteractableObjects
   - 
   - 
   - 

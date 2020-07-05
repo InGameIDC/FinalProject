@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Tutorial_Trigger : Tutorial
 {
+    [SerializeField]
     private bool m_IsCurrentTutorial = false;
 
     // This is the object we want the player to get to. (the area to collide)
     public Transform HitTransform;
 
-    [SerializeField]
-    public bool IsCurrentTutorial { get; set; }
+    public bool IsCurrentTutorial
+    {
+        get { return m_IsCurrentTutorial; }
+        set { IsCurrentTutorial = value; }
+    }
 
     public override void CheckIfHappening()
     {
+        HitTransform.gameObject.SetActive(true);
         IsCurrentTutorial = true;
     }
 
@@ -27,8 +32,10 @@ public class Tutorial_Trigger : Tutorial
         {
             if (i_Other.transform == HitTransform)
             {
-                TutorialManager.Instance.CompletedTutorial();
+                Debug.Log("Trigger with " + i_Other.gameObject);
+                HitTransform.gameObject.SetActive(false);
                 IsCurrentTutorial = false;
+                CompleteTutorial();
             }
         }
     }
