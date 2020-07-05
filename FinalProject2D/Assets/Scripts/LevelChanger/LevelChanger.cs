@@ -3,18 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
-    public float m_Delay = 3;
+
     public Animator animator;
     public int levelToLoad;
     public string key = null;
 
     void Update()
     {
+        if (Input.GetKeyDown(key))
+        {
+            FadeToLevel(levelToLoad);       
+        }
     }
 
     public void FadeToLevel(int levelIndex)
     {
-        levelToLoad = levelIndex;
+       // levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
     }
 
