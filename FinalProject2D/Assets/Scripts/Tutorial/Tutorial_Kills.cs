@@ -8,7 +8,7 @@ public class Tutorial_Kills : Tutorial
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Health taget in TargetsToKill)
+        foreach(Health target in TargetsToKill)
         {
             taget.OnDeath += removeTarget;
         }
