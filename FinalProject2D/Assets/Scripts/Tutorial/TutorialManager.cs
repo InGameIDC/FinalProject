@@ -58,6 +58,7 @@ public class TutorialManager : MonoBehaviour
         if (CurrentTutorial)
         {
             ExplanationText.text = CurrentTutorial.ExplanationText;
+            CurrentTutorial.CheckIfHappening();
         }
         else
         {
@@ -96,12 +97,12 @@ public class TutorialManager : MonoBehaviour
         SetNextTutorial(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (CurrentTutorial)
-        {
-            CurrentTutorial.CheckIfHappening();
-        }
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    if (CurrentTutorial)
+    //    {
+    //        CurrentTutorial.CheckIfHappening();
+    //    }
+    //}
 }
