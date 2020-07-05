@@ -9,6 +9,7 @@ public class Tutorial_Trigger : Tutorial
     // This is the object we want the player to get to. (the area to collide)
     public Transform HitTransform;
 
+    [SerializeField]
     public bool IsCurrentTutorial { get; set; }
 
     public override void CheckIfHappening()
