@@ -22,8 +22,9 @@ public class Tutorial_Trigger : Tutorial
         IsCurrentTutorial = true;
     }
 
-    public void OnTriggerEnter(Collider i_Other)
+    public void OnTriggerEnter2D(Collider2D i_Other)
     {
+        Debug.Log("yay: " + i_Other);
         if (!IsCurrentTutorial)
         {
             return;

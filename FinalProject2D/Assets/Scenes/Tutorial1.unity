@@ -805,7 +805,7 @@ Transform:
   m_LocalScale: {x: 109.50007, y: 98.24609, z: 110.22703}
   m_Children: []
   m_Father: {fileID: 950744323}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &440716101
 BoxCollider2D:
@@ -1971,7 +1971,6 @@ RectTransform:
   - {fileID: 753211882}
   - {fileID: 1809527208}
   - {fileID: 438876195}
-  - {fileID: 1678293524}
   - {fileID: 440716100}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -5486,7 +5485,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1655092668}
   - component: {fileID: 1655092670}
-  - component: {fileID: 1655092669}
   m_Layer: 0
   m_Name: MovementTutorial
   m_TagString: Untagged
@@ -5508,22 +5506,6 @@ Transform:
   m_Father: {fileID: 1882469166}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1655092669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655092667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46b589cbbced7b498b11fa02b8332b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Id: 1
-  m_ExplanationText: Is that my knife  over there?
-  m_IsCurrentTutorial: 0
-  HitTransform: {fileID: 1678293524}
 --- !u!114 &1655092670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5594,7 +5576,9 @@ GameObject:
   - component: {fileID: 1678293524}
   - component: {fileID: 1678293523}
   - component: {fileID: 1678293525}
-  m_Layer: 16
+  - component: {fileID: 1678293526}
+  - component: {fileID: 1678293527}
+  m_Layer: 15
   m_Name: AppleKnife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5659,11 +5643,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678293522}
   m_LocalRotation: {x: -0, y: -0, z: 0.86153084, w: 0.50770533}
-  m_LocalPosition: {x: -216, y: 297.61264, z: 881.8162}
-  m_LocalScale: {x: 16.093147, y: 16.093147, z: 16.093145}
+  m_LocalPosition: {x: -0.20237547, y: 1.4627235, z: 422.3326}
+  m_LocalScale: {x: 0.08933572, y: 0.08933572, z: 0.08933571}
   m_Children: []
-  m_Father: {fileID: 950744323}
-  m_RootOrder: 5
+  m_Father: {fileID: 1882469166}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 118.978004}
 --- !u!58 &1678293525
 CircleCollider2D:
@@ -5681,6 +5665,43 @@ CircleCollider2D:
   m_Offset: {x: -0.12876366, y: -0.23237339}
   serializedVersion: 2
   m_Radius: 4.0174594
+--- !u!114 &1678293526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678293522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46b589cbbced7b498b11fa02b8332b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Id: 1
+  m_ExplanationText: Is that my knife  over there?
+  m_IsCurrentTutorial: 0
+  HitTransform: {fileID: 1678293524}
+--- !u!50 &1678293527
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678293522}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1687443347
 GameObject:
   m_ObjectHideFlags: 0
@@ -6330,6 +6351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1655092668}
+  - {fileID: 1678293524}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
