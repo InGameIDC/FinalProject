@@ -20,6 +20,7 @@ public class Tutorial_Trigger : Tutorial
 
     public override void CheckIfHappening()
     {
+        m_TextImage.SetActive(true);
         m_HiddenObject.SetActive(true);
         IsCurrentTutorial = true;
     }
@@ -38,6 +39,7 @@ public class Tutorial_Trigger : Tutorial
                 Debug.Log("Trigger with " + i_Other.gameObject);
                 m_HiddenObject.SetActive(false);
                 IsCurrentTutorial = false;
+                m_TextImage.SetActive(false);
                 CompleteTutorial();
             }
             else

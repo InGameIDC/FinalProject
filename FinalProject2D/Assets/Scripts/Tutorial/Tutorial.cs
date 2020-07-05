@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Tutorial : MonoBehaviour
 {
+    public GameObject m_TextImage;
+
     [SerializeField]
     private int m_Id;
 
