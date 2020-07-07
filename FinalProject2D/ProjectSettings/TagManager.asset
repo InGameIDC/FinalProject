@@ -29,6 +29,7 @@ TagManager:
   - PointsAdded
   - levelButton
   - Obstacle
+  - AreaManager
   layers:
   - Default
   - TransparentFX

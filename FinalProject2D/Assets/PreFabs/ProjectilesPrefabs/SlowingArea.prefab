@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7145008822153404488}
   - component: {fileID: 8120314626563796907}
   - component: {fileID: 6714282892955022649}
-  - component: {fileID: 1684255331904955867}
   m_Layer: 15
   m_Name: SlowingArea
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8212665950303016031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5066, y: -2.1354, z: 0}
-  m_LocalScale: {x: 9.222671, y: 8.559688, z: 1}
+  m_LocalPosition: {x: 0.142, y: -2.432, z: 0}
+  m_LocalScale: {x: 5.5704927, y: 5.589476, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,23 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561d568139085304a901c6b39276d38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1684255331904955867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8212665950303016031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec53cba8b65c4bb4a9663b2adb4b8c78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacker: {fileID: 4018694189843614138, guid: e1b7e5c0a85fe6e45ac45dd89fad7b04,
-    type: 3}
-  hitted: 0
-  SelfDestroyAfter: 5
-  HitEffectObject: {fileID: 4018694189843614138, guid: e1b7e5c0a85fe6e45ac45dd89fad7b04,
-    type: 3}
+  _hitRadius: 0.5
   shootDamege: 3
-  _hitRadius: 2
+  timeToDie: 5
