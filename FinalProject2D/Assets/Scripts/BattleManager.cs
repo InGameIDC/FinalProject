@@ -25,6 +25,11 @@ public class BattleManager : MonoBehaviour
     public Action<int> onGameScoreEnd = delegate { };
     public GameObject egp;
 
+    //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
+    public bool shootingMode = false;
+
+    //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -216,10 +221,14 @@ public class BattleManager : MonoBehaviour
         //Debug.Log("target position is " + targetPosition);
         //_currentUnit.GoTo(targetPosition);
         // if had enough control points, show indication
-        if(_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false))
+        if (_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false) && !shootingMode) //OHAD >> && !shootingMode
         {
             //StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
             _interactionManager.WalkInteraction(targetPosition); // calls walk interaction (white arrow)
+        }
+        else if (shootingMode) //OHAD >> all the else part
+        {
+            _currentUnit.GetComponent<Skill>().ShootFieldPoint(targetPosition);
         }
     }
 
@@ -296,5 +305,23 @@ public class BattleManager : MonoBehaviour
     }
 
     #endregion
+
+    //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
+    #region OHAD Boming
+
+    public void onPressShooting()
+    {
+        if (shootingMode)
+        {
+            shootingMode = false;
+        }
+        else
+        {
+            shootingMode = true;
+        }
+    }
+
+    #endregion
+    //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
 
 }

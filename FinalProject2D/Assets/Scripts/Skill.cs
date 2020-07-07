@@ -17,6 +17,10 @@ public class Skill : MonoBehaviour
     [SerializeField] private float _projectileOffsetValue = 0f; // use mainly for melee, move around the rotator path
     private GameObject _firePoint; // The projectile spawn location
 
+    //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
+    public GameObject shootingArea;
+    //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
+
     private void Awake()
     {
         initFirePoint();
@@ -74,4 +78,12 @@ public class Skill : MonoBehaviour
         projCtrl.shootDamege = _damage;
 
     }
+
+    //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
+    public void ShootFieldPoint(Vector3 fieldPoint)
+    {
+        Instantiate(shootingArea, fieldPoint, Quaternion.identity);
+    }
+    //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
+
 }
