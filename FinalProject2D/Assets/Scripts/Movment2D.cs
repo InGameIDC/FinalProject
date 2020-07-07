@@ -12,7 +12,8 @@ public class Movment2D : MonoBehaviour
 	public Action OnFinishMovmentAnimation = delegate { };     // Functions that would be preform when the hero finish to move / rotate
 	public Action OnStartMovmentAnimation = delegate { };     // Functions that would be preform when the hero start to move / rotate
 	[SerializeField]private float _moveSpeed;       // The obect movment speed
-	private float _rotateSpeed;
+
+    private float _rotateSpeed;
 //    private Vector3 _desiredPos;                 // The location desired to move to.
     private bool _isMovmentFinishTracking;
     private GameObject _targetLocationLock;      // The obj will track the location of this target 
@@ -32,8 +33,14 @@ public class Movment2D : MonoBehaviour
 	private bool _reachedEndOfPath = false;
 
 	private Seeker _seeker;
-	// Start is called before the first frame update
-	private void Awake()
+    // Start is called before the first frame update
+
+
+    //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
+    [SerializeField] private float _originalMoveSpeed;
+
+    //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
+    private void Awake()
     {
         _desSetter = GetComponent<AIDestinationSetter>();
         _AI = GetComponent<IAstarAI>();
@@ -276,6 +283,19 @@ public class Movment2D : MonoBehaviour
 		Debug.Log("Is moving: " + IsObjMoving());
 	}
 
-	#endregion
+    #endregion
+
+    //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
+    #region OHAD Boming
+
+    public void ChangeSpeed(float percentage)
+    {
+        _moveSpeed = percentage * _originalMoveSpeed;
+        _AI.maxSpeed = _moveSpeed;
+    }
+
+    #endregion
+    //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 }
