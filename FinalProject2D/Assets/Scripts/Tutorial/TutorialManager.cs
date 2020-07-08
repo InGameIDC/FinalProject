@@ -17,6 +17,8 @@ public class TutorialManager : MonoBehaviour
     [SerializeField]
     private Tutorial m_CurrentTutorial;
 
+    public LevelChanger m_LevelChanger;
+
     public Tutorial CurrentTutorial
     {
         get { return m_CurrentTutorial; }
@@ -74,7 +76,7 @@ public class TutorialManager : MonoBehaviour
     public void CompletedAllTutorials()
     {
         ExplanationText.text = k_CompletedAllTutorials;
-        
+        m_LevelChanger.FadeToNextLevel();
         //load next scene.
     }
 

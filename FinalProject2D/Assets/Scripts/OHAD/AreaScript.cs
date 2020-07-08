@@ -13,22 +13,23 @@ public class AreaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        objectsInField = new List<GameObject>();
+        List<GameObject> objectOnStart = new List<GameObject>();
         am = GameObject.FindGameObjectWithTag("AreaManager");
         am.GetComponent<AreaManager>().AddedArea();
 
-        Collider2D[] damageHitAreasInSphere;
-        damageHitAreasInSphere = Physics2D.OverlapCircleAll(transform.position, _hitRadius, LayerMask.GetMask("DamageHitArea"));
+        Collider2D[] damageHitAreasInSphere = damageHitAreasInSphere =
+            Physics2D.OverlapCircleAll(transform.position, _hitRadius, LayerMask.GetMask("DamageHitArea"));
         foreach (Collider2D damageHitArea in damageHitAreasInSphere)
         {
             GameObject unit = damageHitArea.transform.parent.gameObject;
             //Damage the enemy
-            if (unit.tag == "EnemyUnit")
+            if (!objectOnStart.Contains(unit) && unit.tag == "EnemyUnit")
             {
                 //on hitting - the health is lowered
                 unit.GetComponentInChildren<Health>().TakeDamage(shootDamege);
 
+                // After hitting the object, add it to a "damaged list" so it won't be hit again.
+                objectOnStart.Add(unit);
                 //GetComponent<Collider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
             }
         }
