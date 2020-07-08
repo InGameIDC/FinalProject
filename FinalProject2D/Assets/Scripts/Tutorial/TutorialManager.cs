@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
+//using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.Persistence;
+//using UnityEngine.XR.WSA.Persistence;
 
 public class TutorialManager : MonoBehaviour
 {

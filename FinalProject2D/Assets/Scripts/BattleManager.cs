@@ -27,7 +27,7 @@ public class BattleManager : MonoBehaviour
 
     //>>>>>>>>>>>>>>>>>>OHAD>>>>>>>>>>>>>>>>>>>>>>>>
     public bool shootingMode = false;
-
+    public GameObject shootingModeButton;
     //<<<<<<<<<<<<<<<<<<OHAD<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -133,6 +133,7 @@ public class BattleManager : MonoBehaviour
         catch (Exception e)
         {
             Debug.Log(e); // TODO: Fix the spriteManager
+            
             _interactionManager.SelectUnitInteraction(newHero);
         }
     }
@@ -221,8 +222,10 @@ public class BattleManager : MonoBehaviour
         //Debug.Log("target position is " + targetPosition);
         //_currentUnit.GoTo(targetPosition);
         // if had enough control points, show indication
-        if (_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false) && !shootingMode) //OHAD >> && !shootingMode
+        //if (_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false) && !shootingMode) //OHAD >> && !shootingMode
+        if (_currentUnit.gameObject.activeSelf && !shootingMode) //OHAD >> && !shootingMode
         {
+            _currentUnit.GoTo(targetPosition);
             //StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
             _interactionManager.WalkInteraction(targetPosition); // calls walk interaction (white arrow)
         }
@@ -314,10 +317,12 @@ public class BattleManager : MonoBehaviour
         if (shootingMode)
         {
             shootingMode = false;
+            shootingModeButton.GetComponent<ShootingModeButton>().InShootingMode(false);
         }
         else
         {
             shootingMode = true;
+            shootingModeButton.GetComponent<ShootingModeButton>().InShootingMode(true);
         }
     }
 

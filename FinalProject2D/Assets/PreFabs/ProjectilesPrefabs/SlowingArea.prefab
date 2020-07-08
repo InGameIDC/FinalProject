@@ -113,4 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitRadius: 0.5
   shootDamege: 3
-  timeToDie: 5
+  timeToDie: 3
+  am: {fileID: 0}

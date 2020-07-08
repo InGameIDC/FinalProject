@@ -69,6 +69,7 @@ public class Hill : MonoBehaviour
         {
             //pointsAddedPrefab.GetComponent<TMPro.TextMeshProUGUI>().text = "-" + sugarScores[sugarId];
             sm.GetComponent<SugarManager>().score(-sugarScores[sugarId]);  //to change according to cube type
+            unit.GetComponentInChildren<SugarCollected>().sugarCollected++;
             Destroy(gameObject);
 
         }
@@ -79,6 +80,7 @@ public class Hill : MonoBehaviour
             //pointsAddedPrefab.GetComponent<TMPro.TextMeshProUGUI>().text = "" + sugarScores[sugarId];
             Instantiate(pointsAddedPrefab, new Vector3(transform.position.x , transform.position.y, 0 ), Quaternion.identity);
             sm.GetComponent<SugarManager>().score(sugarScores[sugarId]);  //to change according to cube type
+            unit.GetComponentInChildren<SugarCollected>().sugarCollected++;
             Destroy(gameObject);
 
         }

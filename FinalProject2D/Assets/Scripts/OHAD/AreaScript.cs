@@ -62,7 +62,7 @@ public class AreaScript : MonoBehaviour
             GameObject targetParentUnit = unit.transform.parent.gameObject;
             unit = targetParentUnit;
             Debug.Log(unit.name);
-            objectsInField.Add(unit);
+            //objectsInField.Add(unit);
             unit.GetComponent<Movment2D>().ChangeSpeed(0.5f);
 
         }
@@ -76,7 +76,7 @@ public class AreaScript : MonoBehaviour
         {
             GameObject targetParentUnit = unit.transform.parent.gameObject;
             unit = targetParentUnit;
-            objectsInField.Remove(unit);
+            //objectsInField.Remove(unit);
             unit.GetComponent<Movment2D>().ChangeSpeed(1f);
         }
 

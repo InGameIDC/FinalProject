@@ -10,12 +10,18 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private Vector3 WalkArrowOffset;
     [SerializeField] private GameObject _attackArrow;
     [SerializeField] private Vector3 AttackArrowOffset;
+    [SerializeField] private bool showInteraction = true;
+
+
 
     public void SelectUnitInteraction(GameObject unit)
     {
-        _selectArrow.SetActive(true);
-        _selectArrow.transform.position = unit.transform.position + SelectArrowOffset;
-        _selectArrow.transform.parent = unit.transform;
+        if (showInteraction)
+        {
+            _selectArrow.SetActive(true);
+            _selectArrow.transform.position = unit.transform.position + SelectArrowOffset;
+            _selectArrow.transform.parent = unit.transform;
+        }
     }
 
     public void WalkInteraction(Vector3 pos)
@@ -33,7 +39,11 @@ public class InteractionManager : MonoBehaviour
 
     public void StopSelectUnitInteraction()
     {
-        _selectArrow.SetActive(true);
+        if (showInteraction)
+        {
+            _selectArrow.SetActive(true);
+        }
+        
     }
 
     public void StopWalkInteraction()
