@@ -217,7 +217,7 @@ public class BattleManager : MonoBehaviour
         //Debug.Log("target position is " + targetPosition);
         //_currentUnit.GoTo(targetPosition);
         // if had enough control points, show indication
-        if(_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandyGoTo(_currentUnit, targetPosition, false))
+        if(_currentUnit.gameObject.activeSelf && _ctrlPointsManager.CommandGoTo(_currentUnit, targetPosition, false))
         {
             //StartCoroutine(Test.MarkCircleAtPos(new Vector3(targetPosition.x, targetPosition.y, -0.1f), 0.3f, 0.3f, 0.025f, Color.white));
             _interactionManager.WalkInteraction(targetPosition); // calls walk interaction (white arrow)
