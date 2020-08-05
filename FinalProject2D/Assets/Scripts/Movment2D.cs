@@ -37,13 +37,19 @@ public class Movment2D : MonoBehaviour
     {
         _desSetter = GetComponent<AIDestinationSetter>();
         _AI = GetComponent<IAstarAI>();
-		_AI.maxSpeed = _moveSpeed;
 		_rb = GetComponent<Rigidbody2D>();
 		_AI.isStopped = true;
 		_seeker = GetComponent<Seeker>();
 		_AIPath = GetComponent<AIPath2D>();
 		_rotateSpeed = 360f;
 		_rotator = transform.Find("Rotator").gameObject;
+	}
+
+	private void Start()
+	{
+		HeroData data = GetComponentInParent<HeroDataManage>().GetData();
+		_moveSpeed = data.getMovementSpeed();
+		_AI.maxSpeed = _moveSpeed;
 	}
 
 	#region CtrlMovment

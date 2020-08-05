@@ -9,13 +9,22 @@ public class Health : MonoBehaviour
     public Action<GameObject, float> OnHit = delegate { };        // handles object hit ( health > 0)
     public Action<GameObject> OnDeath = delegate { };    // handles object death (0 >= health)
 
+
     private float _currentHeatlh = 4;   //For now to the health bar to work
     [SerializeField] public float _maxHealth = 4;       //For now to the health bar to work
     public float GetCurrentHealth() => _currentHeatlh;
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
+        HeroData data = GetComponentInParent<HeroData>();
+        _maxHealth = data.getMaxHealth();
         _currentHeatlh = _maxHealth;
     }
+   
 
 
     /// <summary>

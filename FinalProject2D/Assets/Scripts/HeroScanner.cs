@@ -8,6 +8,7 @@ public class HeroScanner : MonoBehaviour
     public Action<GameObject> OnObjEnter = delegate { };
     public Action<GameObject> OnObjExit = delegate { };
 
+
     /// <summary>
     /// When an object is entering the range, the function check if it is an enemy, and if so it tells all other classes that an 
     /// enemy entered its range

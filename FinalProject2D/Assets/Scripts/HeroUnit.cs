@@ -34,7 +34,6 @@ public class HeroUnit : MonoBehaviour
     /// Says good morning to the script
     private void Awake()
     {
-        gameObject.tag = Enum.GetName(typeof(Team), heroTeam);
         this._status = ObjStatus.idle;
         _targetToAttack = null;
         _skill = this.GetComponent<Skill>();
@@ -49,6 +48,7 @@ public class HeroUnit : MonoBehaviour
 
     public void Start()
     {
+        initData();
         Application.targetFrameRate = 300;
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
         //Test.DrawCircle(this.gameObject, 0.1f, 0.0001f);
@@ -61,6 +61,14 @@ public class HeroUnit : MonoBehaviour
     }
     */
     #region Inits
+    private void initData()
+    {
+        HeroData data = GetComponentInParent<HeroDataManage>().GetData();
+        heroTeam = data.getTeam();
+        gameObject.tag = Enum.GetName(typeof(Team), heroTeam);
+        gameObject.layer = LayerMask.NameToLayer(Enum.GetName(typeof(Team), heroTeam));
+    }
+    
     private void initTargetsBank()
     {
         _targetsBank = this.GetComponent<TargetsBank>();
