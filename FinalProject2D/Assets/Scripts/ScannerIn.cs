@@ -7,6 +7,12 @@ public class ScannerIn : MonoBehaviour
 {
     public Action<GameObject> OnObjEnter = delegate { };
 
+    private void Start()
+    {
+        HeroData data = GetComponentInParent<HeroData>();
+        GetComponent<CircleCollider2D>().radius = data.getRange() - 0.5f;
+    }
+
     /// <summary>
     /// When an object is entering the range, the function check if it is an enemy, and if so it tells all other classes that an 
     /// enemy entered its range 

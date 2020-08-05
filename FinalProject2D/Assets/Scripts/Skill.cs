@@ -25,7 +25,13 @@ public class Skill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //attack();
+        HeroData data = GetComponentInParent<HeroDataManage>().GetData();
+        _damage = data.getDamage();
+        _range = data.getRange();
+        _projSpeed = data.getProjSpeed();
+        _cooldown = data.getCooldown();
+        projectile = data.getProjectile();
+        _projectileOffsetValue = data.getProjectileOffsetValue();
     }
 
     public bool CanAttackOnMovment() => _canAttackOnMovment;
