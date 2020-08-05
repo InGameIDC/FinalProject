@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.SceneManagement;
 
 public class killdAllInTutorial : MonoBehaviour
 {
@@ -29,14 +28,7 @@ public class killdAllInTutorial : MonoBehaviour
         if(toKill == 0)
         {
             endTutorial2panel.SetActive(true);
-            StartCoroutine(nextScence());
         }
-    }
-
-    public IEnumerator nextScence()
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("HomeMenu");
     }
     void onDeath(GameObject go)
     {

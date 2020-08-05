@@ -23,10 +23,6 @@ public class AI1 : MonoBehaviour
         StartCoroutine(attackTargets());
     }
 
-    public void addTraget(GameObject target)
-    {
-        targetsList.Add(target);
-    }
     void OnEnable()
     {
         if(!isRunning)

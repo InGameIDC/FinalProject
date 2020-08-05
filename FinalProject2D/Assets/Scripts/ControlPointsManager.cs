@@ -39,7 +39,7 @@ public class ControlPointsManager : MonoBehaviour
         
     }
 
-    public bool CommandGoTo(HeroUnit hero, Vector2 pos, bool isAICommand)
+    public bool CommandyGoTo(HeroUnit hero, Vector2 pos, bool isAICommand)
     {
         if (_teamsCurrentControlPoints[(int)hero.heroTeam] - hero.GetHeroCommandCost() >= 0) {
             _teamsCurrentControlPoints[(int)hero.heroTeam] -= hero.GetHeroCommandCost();

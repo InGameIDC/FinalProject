@@ -59,7 +59,7 @@ public class AI2 : MonoBehaviour
                 {
                     //_hero.GoTo(targetHill.transform.position);
                     // if the command fails, wait enough time to have enough points
-                    if (!_controlPointsManager.CommandGoTo(_hero, targetHill.transform.position, true))
+                    if (!_controlPointsManager.CommandyGoTo(_hero, targetHill.transform.position, true))
                         yield return new WaitForSeconds(_hero.GetHeroCommandCost() - _controlPointsManager.GetTeamBalance((int)_hero.heroTeam));
 
                 }

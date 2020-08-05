@@ -14,7 +14,6 @@ public class BattleManager : MonoBehaviour
     private MouseInputManager _MouseInputManager;
     [SerializeField] private GameObject _inputManager;
     [SerializeField] private InteractionManager _interactionManager;
-    [SerializeField] private float RespawnTime = 3f;
     private HeroUnit _currentUnit;
     private HeroUnit _currentEnemyClicked;
 
@@ -250,7 +249,7 @@ public class BattleManager : MonoBehaviour
 
     public void DieAndRespawn(GameObject hero)
     {
-        StartCoroutine(Respawn.DieAndRespawn(hero, RespawnTime));
+        StartCoroutine(Respawn.DieAndRespawn(hero, 3f));
     }
     public void DieAndRespawnSpecialPosition(GameObject hero, Vector2 pos, float time) { StartCoroutine(Respawn.DieAndRespawnSpecialPosition(hero, pos, time)); }
 
