@@ -1,0 +1,631 @@
+fileFormatVersion: 2
+guid: e26a07a6e86531d468a6fce162d80b55
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4084207127479274377
+    second: Grapes_Animation_B_0
+  - first:
+      213: -8633608632725995710
+    second: Grapes_Animation_B_1
+  - first:
+      213: 6392718535093595404
+    second: Grapes_Animation_B_2
+  - first:
+      213: 3643044855449298731
+    second: Grapes_Animation_B_3
+  - first:
+      213: 763102383170986912
+    second: Grapes_Animation_B_4
+  - first:
+      213: 5304404085878008430
+    second: Grapes_Animation_B_5
+  - first:
+      213: -2809285798251612864
+    second: Grapes_Animation_B_6
+  - first:
+      213: -4938215643706298483
+    second: Grapes_Animation_B_7
+  - first:
+      213: 6063319237740187091
+    second: Grapes_Animation_B_8
+  - first:
+      213: -8903639267759288817
+    second: Grapes_Animation_B_9
+  - first:
+      213: -8838506530583100199
+    second: Grapes_Animation_B_10
+  - first:
+      213: -2957531680727371034
+    second: Grapes_Animation_B_11
+  - first:
+      213: -3874378164829156514
+    second: Grapes_Animation_B_12
+  - first:
+      213: 4579362999045003323
+    second: Grapes_Animation_B_13
+  - first:
+      213: -5101506784820109747
+    second: Grapes_Animation_B_14
+  - first:
+      213: 4338607740410234116
+    second: Grapes_Animation_B_15
+  - first:
+      213: 4511612100373584991
+    second: Grapes_Animation_B_16
+  - first:
+      213: -6917523365856099028
+    second: Grapes_Animation_B_17
+  - first:
+      213: 1742085578110555154
+    second: Grapes_Animation_B_18
+  - first:
+      213: 4604539482302163850
+    second: Grapes_Animation_B_19
+  - first:
+      213: -6943672046074352469
+    second: Grapes_Animation_B_20
+  - first:
+      213: 3634522366204998527
+    second: Grapes_Animation_B_21
+  - first:
+      213: -6691779066648952715
+    second: Grapes_Animation_B_22
+  - first:
+      213: -1447937552085558715
+    second: Grapes_Animation_B_23
+  - first:
+      213: -6819735224459881354
+    second: Grapes_Animation_B_24
+  - first:
+      213: 4407425332031734927
+    second: Grapes_Animation_B_25
+  - first:
+      213: 5615038387226666160
+    second: Grapes_Animation_B_26
+  - first:
+      213: 7815008182797694565
+    second: Grapes_Animation_B_27
+  - first:
+      213: 8812118389451545153
+    second: Grapes_Animation_B_28
+  - first:
+      213: -6149322467523387044
+    second: Grapes_Animation_B_29
+  - first:
+      213: 4338108393421757610
+    second: Grapes_Animation_B_30
+  - first:
+      213: -4781088545555228189
+    second: Grapes_Animation_B_31
+  - first:
+      213: 4253314596497631437
+    second: Grapes_Animation_B_32
+  - first:
+      213: -8052400471513797232
+    second: Grapes_Animation_B_33
+  - first:
+      213: 4081402907198402827
+    second: Grapes_Animation_B_34
+  - first:
+      213: -6326407428825050922
+    second: Grapes_Animation_B_35
+  - first:
+      213: -2470499491304391156
+    second: Grapes_Animation_B_36
+  - first:
+      213: -1929619180185582557
+    second: Grapes_Animation_B_37
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grapes_Animation_B_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 4475
+        width: 573
+        height: 729
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b458e4eb40ea830800000000000000
+      internalID: 4084207127479274377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_1
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 4385
+        width: 527
+        height: 842
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ffe9cf0b24f2880800000000000000
+      internalID: -8633608632725995710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_2
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 4576
+        width: 629
+        height: 621
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d2f4933af77b850800000000000000
+      internalID: 6392718535093595404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 3591
+        width: 575
+        height: 730
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27aedd8ef1be8230800000000000000
+      internalID: 3643044855449298731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 3503
+        width: 527
+        height: 841
+      alignment: 9
+      pivot: {x: 1, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3292c0395179a00800000000000000
+      internalID: 763102383170986912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_5
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 3694
+        width: 631
+        height: 619
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6aa3e389670d9940800000000000000
+      internalID: 5304404085878008430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2672
+        width: 572
+        height: 719
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045b9a263796309d0800000000000000
+      internalID: -2809285798251612864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_8
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 2708
+        width: 635
+        height: 608
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddcb4dc8bc352450800000000000000
+      internalID: 6063319237740187091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_10
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 2654
+        width: 535
+        height: 825
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4cf9b8321575580800000000000000
+      internalID: -8838506530583100199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1825
+        width: 575
+        height: 719
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3815a7926a2d8f30800000000000000
+      internalID: 4579362999045003323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_15
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1851
+        width: 633
+        height: 608
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40589e2c0c4d53c30800000000000000
+      internalID: 4338607740410234116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_17
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1798
+        width: 525
+        height: 825
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25ceac36250000a0800000000000000
+      internalID: -6917523365856099028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_20
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 969
+        width: 526
+        height: 825
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacade0301f13af90800000000000000
+      internalID: -6943672046074352469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_22
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1023
+        width: 634
+        height: 609
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5708ef8b4660223a0800000000000000
+      internalID: -6691779066648952715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_24
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 995
+        width: 613
+        height: 719
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67499d322fe6b51a0800000000000000
+      internalID: -6819735224459881354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_29
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 121
+        width: 525
+        height: 825
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51a0f9dbc739aaa0800000000000000
+      internalID: -6149322467523387044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_31
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 174
+        width: 634
+        height: 608
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9dd729c4926adb0800000000000000
+      internalID: -4781088545555228189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grapes_Animation_B_33
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 148
+        width: 613
+        height: 719
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d6b324f60204090800000000000000
+      internalID: -8052400471513797232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

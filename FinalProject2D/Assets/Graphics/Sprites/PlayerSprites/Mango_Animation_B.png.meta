@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: d25c055b9ef6274488bf8cbde3216276
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 196544161574612513
+    second: Mango_Animation_B_0
+  - first:
+      213: 2671623540247980798
+    second: Mango_Animation_B_1
+  - first:
+      213: -6516550468310473820
+    second: Mango_Animation_B_2
+  - first:
+      213: -8010621605628682681
+    second: Mango_Animation_B_3
+  - first:
+      213: -8170594233348480949
+    second: Mango_Animation_B_4
+  - first:
+      213: 6060347133988003050
+    second: Mango_Animation_B_5
+  - first:
+      213: 1764738023945008892
+    second: Mango_Animation_B_6
+  - first:
+      213: -8931439883849281530
+    second: Mango_Animation_B_7
+  - first:
+      213: 4304590023922904327
+    second: Mango_Animation_B_8
+  - first:
+      213: -2596810189430584218
+    second: Mango_Animation_B_9
+  - first:
+      213: -896746875457331065
+    second: Mango_Animation_B_10
+  - first:
+      213: -1992763243266320640
+    second: Mango_Animation_B_11
+  - first:
+      213: -5772439158626320745
+    second: Mango_Animation_B_12
+  - first:
+      213: -41418006512597323
+    second: Mango_Animation_B_13
+  - first:
+      213: 7084941624882460388
+    second: Mango_Animation_B_14
+  - first:
+      213: 5002477755635349063
+    second: Mango_Animation_B_15
+  - first:
+      213: 7789683070952003717
+    second: Mango_Animation_B_16
+  - first:
+      213: 8044372646846056973
+    second: Mango_Animation_B_17
+  - first:
+      213: -6744277313634636369
+    second: Mango_Animation_B_18
+  - first:
+      213: -5149094033953858949
+    second: Mango_Animation_B_19
+  - first:
+      213: -3175538483560655726
+    second: Mango_Animation_B_20
+  - first:
+      213: 6089325652727247324
+    second: Mango_Animation_B_21
+  - first:
+      213: 4037632940404281899
+    second: Mango_Animation_B_22
+  - first:
+      213: 459894397268403489
+    second: Mango_Animation_B_23
+  - first:
+      213: 5538259783245288301
+    second: Mango_Animation_B_24
+  - first:
+      213: -7972454940726675199
+    second: Mango_Animation_B_25
+  - first:
+      213: 5721184049769104573
+    second: Mango_Animation_B_26
+  - first:
+      213: -3373732745757384152
+    second: Mango_Animation_B_27
+  - first:
+      213: -9008567043343695474
+    second: Mango_Animation_B_28
+  - first:
+      213: 7959224668266844039
+    second: Mango_Animation_B_29
+  - first:
+      213: 296700403961044203
+    second: Mango_Animation_B_30
+  - first:
+      213: 7479093507735009292
+    second: Mango_Animation_B_31
+  - first:
+      213: -854171553536835055
+    second: Mango_Animation_B_32
+  - first:
+      213: 3707195893202991929
+    second: Mango_Animation_B_33
+  - first:
+      213: 1783663218360792948
+    second: Mango_Animation_B_34
+  - first:
+      213: 257898171633701633
+    second: Mango_Animation_B_35
+  - first:
+      213: 322701578465852252
+    second: Mango_Animation_B_36
+  - first:
+      213: -2959559201558038300
+    second: Mango_Animation_B_37
+  - first:
+      213: -3653620037075583085
+    second: Mango_Animation_B_38
+  - first:
+      213: -376926165188556395
+    second: Mango_Animation_B_39
+  - first:
+      213: -5416790913656532776
+    second: Mango_Animation_B_40
+  - first:
+      213: 4058094948700284332
+    second: Mango_Animation_B_41
+  - first:
+      213: -4272764246021091429
+    second: Mango_Animation_B_42
+  - first:
+      213: 6689252973067720731
+    second: Mango_Animation_B_43
+  - first:
+      213: -5735036733716064081
+    second: Mango_Animation_B_44
+  - first:
+      213: 8166118823307463952
+    second: Mango_Animation_B_45
+  - first:
+      213: -5238349826243717034
+    second: Mango_Animation_B_46
+  - first:
+      213: 8581620898563895366
+    second: Mango_Animation_B_47
+  - first:
+      213: 3996717737643098798
+    second: Mango_Animation_B_48
+  - first:
+      213: 2407121722212333046
+    second: Mango_Animation_B_49
+  - first:
+      213: 2075954871661293351
+    second: Mango_Animation_B_50
+  - first:
+      213: 4006505828896338272
+    second: Mango_Animation_B_51
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mango_Animation_B_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 4311
+        width: 428
+        height: 658
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa6d0a7473831520800000000000000
+      internalID: 2671623540247980798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_2
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 4328
+        width: 526
+        height: 540
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3e27f00ef8095a0800000000000000
+      internalID: -6516550468310473820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_3
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 4197
+        width: 401
+        height: 767
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ede6e771e84d090800000000000000
+      internalID: -8010621605628682681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_7
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 3468
+        width: 428
+        height: 658
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60058661fb62d0480800000000000000
+      internalID: -8931439883849281530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_8
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 3485
+        width: 526
+        height: 540
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d6d9fe1d9fcbb30800000000000000
+      internalID: 4304590023922904327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_9
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 3354
+        width: 401
+        height: 767
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c00e524e646fbd0800000000000000
+      internalID: -2596810189430584218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_12
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 2689
+        width: 427
+        height: 657
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ef58e3b2d24efa0800000000000000
+      internalID: -5772439158626320745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_13
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 2603
+        width: 391
+        height: 758
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b60382ea8adc6ff0800000000000000
+      internalID: -41418006512597323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_15
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 2728
+        width: 528
+        height: 533
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7463075b30f5c6540800000000000000
+      internalID: 5002477755635349063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_22
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1892
+        width: 428
+        height: 658
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22963a54cd880830800000000000000
+      internalID: 4037632940404281899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_23
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1807
+        width: 389
+        height: 757
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1252067848fd16600800000000000000
+      internalID: 459894397268403489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_25
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1932
+        width: 530
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109bd26a8762c5190800000000000000
+      internalID: -7972454940726675199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_33
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1079
+        width: 528
+        height: 532
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93bb627f50b927330800000000000000
+      internalID: 3707195893202991929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_35
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 954
+        width: 391
+        height: 758
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103137c450d349300800000000000000
+      internalID: 257898171633701633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_36
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1040
+        width: 428
+        height: 657
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b3ae830677a7400800000000000000
+      internalID: 322701578465852252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_43
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 282
+        width: 528
+        height: 533
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b185d68432005dc50800000000000000
+      internalID: 6689252973067720731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_45
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 165
+        width: 391
+        height: 757
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d4fd8cdc1e35170800000000000000
+      internalID: 8166118823307463952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mango_Animation_B_46
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 236
+        width: 427
+        height: 659
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65893854694ad47b0800000000000000
+      internalID: -5238349826243717034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

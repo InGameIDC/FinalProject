@@ -102,7 +102,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 300
@@ -227,10 +227,10 @@ TextureImporter:
       name: Pea_Animation_2
       rect:
         serializedVersion: 2
-        x: 802
-        y: 2068
-        width: 277
-        height: 811
+        x: 779
+        y: 2043
+        width: 339
+        height: 840
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

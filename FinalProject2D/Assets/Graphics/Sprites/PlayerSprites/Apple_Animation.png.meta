@@ -224,10 +224,10 @@ TextureImporter:
       name: Apple_Animation_2
       rect:
         serializedVersion: 2
-        x: 1614
-        y: 4275
-        width: 504
-        height: 574
+        x: 1611
+        y: 4271
+        width: 505
+        height: 578
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +371,10 @@ TextureImporter:
       name: Apple_Animation_9
       rect:
         serializedVersion: 2
-        x: 1614
-        y: 2755
-        width: 504
-        height: 574
+        x: 1608
+        y: 2741
+        width: 514
+        height: 593
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
