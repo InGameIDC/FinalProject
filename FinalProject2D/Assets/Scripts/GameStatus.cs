@@ -17,6 +17,7 @@ public class GameStatus : MonoBehaviour
     public int[] deckPlayers = { 1, 2, 3 };
     public int[] starsInLevels = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public int[] levelsPlayed = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] starsToUnlock = { 0, 0, 1, 2, 3, 5, 8, 11, 15, 20 };
 
     // TODO: to delete after xml and images
     public Sprite s1;

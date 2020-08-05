@@ -27,6 +27,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         gsObject.GetComponent<GameStatus>().GameStatusUpdate += UpdateBoard;
+        UpdateBoard(true);
 
     }
 

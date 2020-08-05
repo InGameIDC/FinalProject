@@ -360,6 +360,7 @@ public class HeroCard : MonoBehaviour
         gs.GetComponent<GameStatus>().coins -= upgradeCost;
 
         upgradeStat = upgradeStatus.notReady;
+        gs.GetComponent<GameStatus>().xpLevel += 1;
         onClick();                      //closes the menus
         htc.updateBars();               //updates the coins, xp, and xpLevel displays and bars
 
