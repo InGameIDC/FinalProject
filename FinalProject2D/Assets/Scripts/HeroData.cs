@@ -40,6 +40,20 @@ public class HeroData : ScriptableObject
     [SerializeField]
     private float _levelUpGain_range = 0;
 
+
+    [SerializeField]
+    private int[] upgradeCosts = {100,100,100,100 };
+    [SerializeField]
+    private int[] starsToUpgrade = { 0, 0, 0, 0 };
+    [SerializeField]
+    private int cardStatus = 0; //0 - locked, 1 - open, 2 - inuse, 3-readyToBuy
+    [SerializeField]
+    private int upgradestatus = 0; //0 - notReady, 1 - ready
+    [SerializeField]
+    private int starsToBuy = 0;
+
+
+
     public int getHeroId() => _heroId;
     public Team getTeam() => _team;
     public float getMovementSpeed() => _moveSpeed + ((PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1) - 1) * _levelUpGain_moveSpeed);
@@ -50,5 +64,20 @@ public class HeroData : ScriptableObject
     public GameObject getProjectile() => _projectile;
     public float getProjSpeed() => _projSpeed + ((PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1) - 1) * _levelUpGain_projSpeed);
     public float getProjectileOffsetValue() => _projectileOffsetValue;
+    public int getUpgradeCost() => upgradeCosts[(PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1))];
+    public int getStarsToUpgrade() => starsToUpgrade[(PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1))];
+    public int getCardStatus() => cardStatus;
+    public void setCardStatus(int cardStat)
+    {
+        cardStatus = cardStat;
+    }
+    public int getUpgradestatus() => upgradestatus;
+    public void setUpgradestatus(int upgradeStat)
+    {
+        upgradestatus = upgradeStat;
+    }
+    public int getStarsToBuy() => starsToBuy;
+
+
 
 }

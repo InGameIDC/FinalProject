@@ -18,6 +18,8 @@ public class GameStatus : MonoBehaviour
     public int[] starsInLevels = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public int[] levelsPlayed = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     public int[] starsToUnlock = { 0, 0, 1, 2, 3, 5, 8, 11, 15, 20 };
+    public int[] heroLevels = {1, 1, 1, 0, 0, 0 };
+    public int[] enemyLevels = {0, 0, 0, 0, 0, 0 };
 
     // TODO: to delete after xml and images
     public Sprite s1;
@@ -26,9 +28,7 @@ public class GameStatus : MonoBehaviour
     public Sprite s4;
     public Sprite s5;
     public Sprite s6;
-    public Sprite s7;
-    public Sprite s8;
-    public Sprite s9;
+
 
     public Sprite f1;
     public Sprite f2;
@@ -73,6 +73,20 @@ public class GameStatus : MonoBehaviour
         levelsPlayed[7] = PlayerPrefs.GetInt("playedlevel8", 0);
         levelsPlayed[8] = PlayerPrefs.GetInt("playedlevel9", 0);
         levelsPlayed[9] = PlayerPrefs.GetInt("playedlevel10", 0);
+
+        //heros level
+        heroLevels[0] = PlayerPrefs.GetInt("Hero_0_Level", 1); //apple
+        heroLevels[1] = PlayerPrefs.GetInt("Hero_1_Level", 1); //grapes
+        heroLevels[2] = PlayerPrefs.GetInt("Hero_2_Level", 1); //mango
+        heroLevels[3] = PlayerPrefs.GetInt("Hero_3_Level", 0); //banana
+        heroLevels[4] = PlayerPrefs.GetInt("Hero_4_Level", 0); //watermelon
+        heroLevels[5] = PlayerPrefs.GetInt("Hero_5_Level", 0); //pineapple
+
+        //enemy level
+        enemyLevels[0] = PlayerPrefs.GetInt("Hero_100_Level", 1); //avocado
+        enemyLevels[1] = PlayerPrefs.GetInt("Hero_101_Level", 1); //carrot
+        enemyLevels[2] = PlayerPrefs.GetInt("Hero_102_Level", 1); //pea
+
 
         xpToNextLevel = xpLevel * 1000;
 
@@ -135,6 +149,17 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("playedlevel8", levelsPlayed[7]);
         PlayerPrefs.SetInt("playedlevel9", levelsPlayed[8]);
         PlayerPrefs.SetInt("playedlevel10", levelsPlayed[9]);
+
+        PlayerPrefs.SetInt("Hero_0_Level", heroLevels[0]);
+        PlayerPrefs.SetInt("Hero_1_Level", heroLevels[1]);
+        PlayerPrefs.SetInt("Hero_2_Level", heroLevels[2]);
+        PlayerPrefs.SetInt("Hero_3_Level", heroLevels[3]);
+        PlayerPrefs.SetInt("Hero_4_Level", heroLevels[4]);
+        PlayerPrefs.SetInt("Hero_5_Level", heroLevels[5]);
+
+        PlayerPrefs.SetInt("Hero_100_Level", enemyLevels[0]);
+        PlayerPrefs.SetInt("Hero_101_Level", enemyLevels[1]);
+        PlayerPrefs.SetInt("Hero_102_Level", enemyLevels[2]);
 
     }
 

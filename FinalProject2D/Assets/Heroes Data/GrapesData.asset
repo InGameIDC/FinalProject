@@ -22,3 +22,14 @@ MonoBehaviour:
   _projectile: {fileID: 0}
   _projSpeed: 0
   _projectileOffsetValue: 0
+  _levelUpGain_moveSpeed: 0
+  _levelUpGain_maxHealth: 0
+  _levelUpGain_damage: 0
+  _levelUpGain_cooldown: 0
+  _levelUpGain_projSpeed: 0
+  _levelUpGain_range: 0
+  upgradeCosts: 00000000c80000005802000078050000
+  starsToUpgrade: 00000000000000000200000004000000
+  cardStatus: 2
+  upgradestatus: 1
+  starsToBuy: 0

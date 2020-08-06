@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
-  m_Name: AppleData
+  m_Name: WatermelonData
   m_EditorClassIdentifier: 
   _heroId: 0
   _team: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
   upgradeCosts: 00000000c8000000f4010000e8030000
-  starsToUpgrade: 00000000000000000200000004000000
-  cardStatus: 2
-  upgradestatus: 1
-  starsToBuy: 0
+  starsToUpgrade: 0400000004000000060000000c000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 4
