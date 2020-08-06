@@ -12,13 +12,13 @@ using System;
 public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;                          //the timer text display
-    public int secondsLeft = 180;                           //seconds left to the battle
+    public int secondsLeft = 135;                           //seconds left to the battle
     public bool takingAway = false;                         //need to reduce time from timer
     public GameObject endPanel;
 
     private void Start()
     {
-        textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "03:00";
+        textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "2:15";
     }
 
     private void Update()
@@ -48,15 +48,15 @@ public class TimerCountdown : MonoBehaviour
 
         if(secondsLeft >= 120)
         {
-            textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "02:" + CheckSeconds(secondsLeft - 120);
+            textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "2:" + CheckSeconds(secondsLeft - 120);
         }
         else if(secondsLeft < 120 && secondsLeft >= 60)
         {
-            textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "01:" + CheckSeconds(secondsLeft - 60);
+            textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "1:" + CheckSeconds(secondsLeft - 60);
         }
         else if(secondsLeft < 60)
         {
-            textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "00:" + CheckSeconds(secondsLeft);
+            textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "0:" + CheckSeconds(secondsLeft);
         }
         
         takingAway = false;

@@ -4145,7 +4145,7 @@ PrefabInstance:
     - target: {fileID: 11456562, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300002, guid: 99302d0e5d121674897d77a16da5f04c,
+      objectReference: {fileID: 1085880888020134689, guid: eaa7de33e54371546ba90c114d3473da,
         type: 3}
     - target: {fileID: 11456562, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
       propertyPath: m_Color.r
@@ -4175,6 +4175,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11474322, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7681285629777024190, guid: eaa7de33e54371546ba90c114d3473da,
+        type: 3}
     - target: {fileID: 11487436, guid: 60da1df1f7edb3747bea8f735b2768d1, type: 3}
       propertyPath: barColor.r
       value: 0.28235295
@@ -16547,7 +16552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2286592108961985471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17192,6 +17197,12 @@ PrefabInstance:
       propertyPath: gsObject
       value: 
       objectReference: {fileID: 1989840399}
+    - target: {fileID: 8654626683437263128, guid: 630928c550f5a594dafa8feaa5d9be85,
+        type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2885cea975ae35b4cbeb795b7b849db3,
+        type: 2}
     - target: {fileID: 8654626683437263129, guid: 630928c550f5a594dafa8feaa5d9be85,
         type: 3}
       propertyPath: m_LocalPosition.x

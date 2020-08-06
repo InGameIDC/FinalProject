@@ -29,8 +29,8 @@ MonoBehaviour:
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
-  upgradeCosts: 00000000c8000000f4010000e8030000
-  starsToUpgrade: 02000000020000000400000008000000
+  upgradeCosts: 90010000bc020000400600003a070000
+  starsToUpgrade: 06000000060000000800000009000000
   cardStatus: 2
   upgradestatus: 0
   starsToBuy: 2

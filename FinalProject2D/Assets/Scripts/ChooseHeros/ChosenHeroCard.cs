@@ -31,7 +31,7 @@ public class ChosenHeroCard : MonoBehaviour
         cm = GetComponentInParent<ChangeHero>();
 
         //loadin the default hero data
-        LoadChosenHeroCard(gs.deckPlayers[cardNumber -1]);
+        LoadChosenHeroCard(gs.deckPlayers[cardNumber - 1]);
         updateLevelDisplay(level);
 
         //connecting deligated functions 
@@ -55,33 +55,37 @@ public class ChosenHeroCard : MonoBehaviour
         familyId = 1;
         switch (heroId)
         {
-            case 1:
+            case 0:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/BananaProfile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s1;
                 familyImage.GetComponent<Image>().sprite = gs.f1;
                 break;
 
-            case 2:
+            case 1:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Grapes_Profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s2;
                 familyImage.GetComponent<Image>().sprite = gs.f2;
                 break;
 
-            case 3:
+            case 2:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Lemon_profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s3;
                 familyImage.GetComponent<Image>().sprite = gs.f1;
                 break;
 
-            case 4:
+            case 3:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load("UI\\PNG\\Watermelon_Profile") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.s4;
+                familyImage.GetComponent<Image>().sprite = gs.f1;
+                break;
+            case 4:
+                profileImage.GetComponent<Image>().sprite = gs.s5;
                 familyImage.GetComponent<Image>().sprite = gs.f1;
                 break;
 
             default:
                 //profileImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/UI/PNG/Brocoli_Profile") ;
-                profileImage.GetComponent<Image>().sprite = gs.s5;
+                profileImage.GetComponent<Image>().sprite = gs.s6;
                 familyImage.GetComponent<Image>().sprite = gs.f2;
                 break;
         }
@@ -111,7 +115,7 @@ public class ChosenHeroCard : MonoBehaviour
             cm.finishChange(heroId);
             cm.inUseOutlineOn(false);
 
-            gs.deckPlayers[cardNumber - 1] = heroId;
+            gs.deckPlayers[cardNumber] = heroId;
             
         }
     }
