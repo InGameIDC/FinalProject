@@ -61,6 +61,7 @@ public class Projectile : MonoBehaviour
 
     protected void createHitEffect(Vector3 pos)
     {
+        pos.z -= 1;
         Instantiate(HitEffectObject, pos, transform.rotation);
     }
 
