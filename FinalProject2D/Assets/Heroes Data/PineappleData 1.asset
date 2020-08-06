@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
   m_Name: PineappleData 1
   m_EditorClassIdentifier: 
-  _heroId: 0
+  _heroId: 5
   _team: 0
   _moveSpeed: 3.5
   _maxHealth: 3
@@ -29,7 +29,7 @@ MonoBehaviour:
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
-  upgradeCosts: 00000000c8000000f4010000e8030000
+  upgradeCosts: 20030000840300006c070000c4090000
   starsToUpgrade: 06000000060000000a0000000f000000
   cardStatus: 0
   upgradestatus: 0

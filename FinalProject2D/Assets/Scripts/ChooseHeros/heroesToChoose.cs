@@ -96,6 +96,14 @@ public class heroesToChoose : MonoBehaviour
         xpText.GetComponent<TMPro.TextMeshProUGUI>().text = currXp + "/" + gs.GetComponent<GameStatus>().xpToNextLevel;
         xpLevelText.GetComponent<TMPro.TextMeshProUGUI>().text = xpLevel.ToString();
     }
+
+    public void updateCardsdisplay()
+    {
+        for (int i = 0; i < cards.Length; i++)
+        {
+            cards[i].GetComponent<HeroCard>().updateDisplay();
+        }
+    }
     
     public void closeAllMenus(int heroId)
     {

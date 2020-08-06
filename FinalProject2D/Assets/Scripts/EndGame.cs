@@ -14,6 +14,7 @@ public class EndGame : MonoBehaviour
     public GameObject gsObject;             //gamestatus object
     private GameStatus gs;
 
+    public int levelId;
     public GameObject endPanel;             //the pannel to display
     public GameObject wonTitle;           //end Text (win/lose)
     public GameObject lostTitle;           //end Text (win/lose)
@@ -127,7 +128,7 @@ public class EndGame : MonoBehaviour
 
         //update the game data
         gsObject.GetComponent<GameStatus>().coins += 400;
-        gsObject.GetComponent<GameStatus>().currentXP += 1000;
+        //gsObject.GetComponent<GameStatus>().currentXP += 1000;
     }
 
     /// <summary>

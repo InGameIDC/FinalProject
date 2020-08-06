@@ -73,6 +73,12 @@ public class HeroCard : MonoBehaviour
         cm.finishChange += completeInUse;
         cm.inUseOutlineOn += turnOfOutline;
 
+
+        updateDisplay();
+    }
+
+    public void updateDisplay()
+    {
         //get information from XML
         loadHeroData(heroId);
 
@@ -83,11 +89,17 @@ public class HeroCard : MonoBehaviour
         //changing the image of locked cards to be darker
         if (cardStat == cardStatus.locked)
         {
-            profileImage.GetComponent<Image>().color = new Color32(120, 120, 120, 105); 
+            profileImage.GetComponent<Image>().color = new Color32(120, 120, 120, 105);
+        }
+        else if (cardStat == cardStatus.readyToBuy)
+        {
+            profileImage.GetComponent<Image>().color = new Color32(120, 120, 120, 105);
+            buyB.SetActive(true);
+            buyButtonText.GetComponent<TMPro.TextMeshProUGUI>().text = heroData.getUpgradeCost().ToString();
         }
 
         //if already ready to upgrade changing the upgrade button
-        if(upgradeStat == upgradeStatus.ready)
+        if (upgradeStat == upgradeStatus.ready)
         {
             upgradeButtonUpdate();
         }
@@ -116,7 +128,7 @@ public class HeroCard : MonoBehaviour
         {
             upgradeBar.SetActive(false);
 
-            if (cardStat == cardStatus.locked)              //locked status
+            if (cardStat == cardStatus.locked || cardStat == cardStatus.readyToBuy)              //locked status
             {
                 //infoP.SetActive(true);
                 infoB.SetActive(true);
@@ -141,6 +153,7 @@ public class HeroCard : MonoBehaviour
                 }
                 else
                 {
+                    infoB.transform.localPosition = new Vector3(0f, -206, 0);        //moving the upgrade button so it is shown properly
                     infoB.SetActive(true);
                     useB.SetActive(true);
                 }
@@ -183,9 +196,6 @@ public class HeroCard : MonoBehaviour
         level = gs.GetComponent<GameStatus>().heroLevels[heroId - 1];
         familyId = 1;
         levelText.GetComponent<TMPro.TextMeshProUGUI>().text = level.ToString();
-        //starsForUpgrade = heroData.getStarsToUpgrade();
-        //healthText.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-        //damageText.GetComponent<TMPro.TextMeshProUGUI>().text = "1";
 
         heroData = GetComponent<HeroDataManage>().GetData();
         healthText.GetComponent<TMPro.TextMeshProUGUI>().text = heroData.getMaxHealth().ToString();
@@ -209,7 +219,6 @@ public class HeroCard : MonoBehaviour
 
         }
 
-
         switch (heroData.getUpgradestatus())
         {
             case 1:
@@ -222,7 +231,7 @@ public class HeroCard : MonoBehaviour
 
         }
 
-        if(cardStat == cardStatus.locked && heroData.getStarsToBuy()<= level)  //check if ready to buy
+        if(cardStat == cardStatus.locked && heroData.getStarsToBuy()<= gs.GetComponent<GameStatus>().xpLevel)  //check if ready to buy
         {
             cardStat = cardStatus.readyToBuy;
             heroData.setCardStatus(3);
@@ -230,7 +239,7 @@ public class HeroCard : MonoBehaviour
             buyButtonText.GetComponent<TMPro.TextMeshProUGUI>().text = heroData.getUpgradeCost().ToString();
         }
 
-        if(upgradeStat == upgradeStatus.notReady && heroData.getStarsToUpgrade() <= level)
+        if(upgradeStat == upgradeStatus.notReady && heroData.getStarsToUpgrade() <= gs.GetComponent<GameStatus>().xpLevel) //check if ready to upgrade
         {
             upgradeStat = upgradeStatus.ready;
             heroData.setUpgradestatus(1);
@@ -240,71 +249,31 @@ public class HeroCard : MonoBehaviour
         switch (heroId)
         {
             case 1:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/BananaProfile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s1;
-                //cardStat = cardStatus.opened;
-                //upgradeStat = upgradeStatus.ready;
-                //partsForNextUpgrade = 4;
-                //partsCollected = 4;
-                //upgradeCost = 200;
-                //healthText.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-                //damageText.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
 
             case 2:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Grapes_Profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s2;
-                //cardStat = cardStatus.opened;
-                //upgradeStat = upgradeStatus.ready;
-                //partsForNextUpgrade = 4;
-                //partsCollected = 4;
-                //upgradeCost = 400;
-                //healthText.GetComponent<TMPro.TextMeshProUGUI>().text = "5";
-                //damageText.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f2;
                 break;
 
             case 3:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load("UI/PNG/Lemon_profile.jpg") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s3;
-                //cardStat = cardStatus.opened;
-                //upgradeStat = upgradeStatus.notReady;
-                //partsForNextUpgrade = 4;
-                //partsCollected = 2;
-                //upgradeCost = 400;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
 
             case 4:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load("UI\\PNG\\Watermelon_Profile") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s4;
-                //cardStat = cardStatus.opened;
-                //upgradeStat = upgradeStatus.notReady;
-                //partsForNextUpgrade = 4;
-                //partsCollected = 3;
-                //upgradeCost = 200;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
             case 5:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load("UI\\PNG\\Watermelon_Profile") as Sprite;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s5;
-                //cardStat = cardStatus.locked;
-                //upgradeStat = upgradeStatus.notReady;
-                //partsForNextUpgrade = 0;
-                //partsCollected = 0;
-                //upgradeCost = 200;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f2;
                 break;
 
             default:
-                //profileImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Assets/UI/PNG/Brocoli_Profile") ;
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s6;
-                //cardStat = cardStatus.locked;
-                //upgradeStat = upgradeStatus.notReady;
-                //partsForNextUpgrade = 0;
-                //partsCollected = 0;
-                //upgradeCost = 500;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
         }
@@ -320,7 +289,6 @@ public class HeroCard : MonoBehaviour
             }
         }
 
-        //GetComponentInChildren<SimpleHealthBar>().UpdateBar(partsCollected, partsForNextUpgrade);
     }
 
     /// <summary>
@@ -429,8 +397,9 @@ public class HeroCard : MonoBehaviour
         //starsForUpgrade = heroData.getStarsToUpgrade();
         //upgradeText.GetComponent<TMPro.TextMeshProUGUI>().text = partsCollected + "/" + partsForNextUpgrade;
         gs.GetComponent<GameStatus>().coins -= upgradeCost;
+        gs.GetComponent<GameStatus>().xpLevel += 1;
 
-        if (heroData.getStarsToUpgrade() <= level)
+        if (heroData.getStarsToUpgrade() <= gs.GetComponent<GameStatus>().xpLevel)
         {
             upgradeStat = upgradeStatus.ready;
             heroData.setUpgradestatus(1);
@@ -442,7 +411,6 @@ public class HeroCard : MonoBehaviour
             heroData.setUpgradestatus(0);
         }
 
-        gs.GetComponent<GameStatus>().xpLevel += 1;
         onClick();                      //closes the menus
         htc.updateBars();               //updates the coins, xp, and xpLevel displays and bars
 
@@ -451,6 +419,8 @@ public class HeroCard : MonoBehaviour
         {
             cm.cardUpgrade(heroId, level);
         }
+
+        htc.updateCardsdisplay();
 
     }
 
@@ -481,6 +451,9 @@ public class HeroCard : MonoBehaviour
             return;
         }
 
+        profileImage.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        buyB.SetActive(false);
+
         cardStat = cardStatus.opened;
         heroData.setCardStatus(1);
 
@@ -491,8 +464,9 @@ public class HeroCard : MonoBehaviour
         levelDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Level " + level;
 
         gs.GetComponent<GameStatus>().coins -= upgradeCost;
+        gs.GetComponent<GameStatus>().xpLevel += 1;
 
-        if(heroData.getStarsToUpgrade() <= level)
+        if (heroData.getStarsToUpgrade() <= gs.GetComponent<GameStatus>().xpLevel)
         {
             upgradeStat = upgradeStatus.ready;
             heroData.setUpgradestatus(1);
@@ -504,10 +478,9 @@ public class HeroCard : MonoBehaviour
             heroData.setUpgradestatus(0);
         }
         
-
-        gs.GetComponent<GameStatus>().xpLevel += 1;
         onClick();                      //closes the menus
         htc.updateBars();
+        htc.updateCardsdisplay();
 
     }
 

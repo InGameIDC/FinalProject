@@ -1487,7 +1487,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9093204600303121833}
-        m_MethodName: onUpgrade
+        m_MethodName: BuyPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3474,6 +3474,7 @@ MonoBehaviour:
   upgradeStat: 0
   cardShow: 0
   upgradeB: {fileID: 9093204599166461496}
+  buyB: {fileID: 6810462898115514161}
   useB: {fileID: 9093204599067240656}
   infoB: {fileID: 9093204599362079259}
   infoP: {fileID: 0}
@@ -3481,6 +3482,7 @@ MonoBehaviour:
   levelDisplay: {fileID: 9093204599538804897}
   upgradeText: {fileID: 5071479444041313313}
   upgradeButtonText: {fileID: 2192257776228688657}
+  buyButtonText: {fileID: 4732688574166187769}
   imageOutline: {fileID: 2740006689459297677}
   profileImage: {fileID: 9093204599570352960}
   familyImage: {fileID: 8048571606051335631}
