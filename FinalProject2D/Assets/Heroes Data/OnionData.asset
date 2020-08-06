@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
-  m_Name: WatermelonData
+  m_Name: OnionData
   m_EditorClassIdentifier: 
-  _heroId: 5
+  _heroId: 104
   _team: 0
-  _moveSpeed: 3.5
+  _moveSpeed: 0.5
   _maxHealth: 3
-  _damage: 3
+  _damage: 0.75
   _range: 3
-  _cooldown: 0.5
-  _projectile: {fileID: 6623445060515452541, guid: c2fa9be80a57db9419d8c1a3eee0f9bd,
+  _cooldown: 2.5
+  _projectile: {fileID: 2937300749382650177, guid: e7972a1768ae2c64da647ba860747461,
     type: 3}
   _projSpeed: 0
-  _projectileOffsetValue: -60
+  _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0
   _levelUpGain_maxHealth: 0
   _levelUpGain_damage: 0
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
-  upgradeCosts: 8a020000ee020000d6060000d0070000
-  starsToUpgrade: 0400000004000000060000000c000000
-  cardStatus: 3
-  upgradestatus: 1
-  starsToBuy: 4
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 0
