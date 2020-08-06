@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
   m_Name: BananaData
   m_EditorClassIdentifier: 
-  _heroId: 0
+  _heroId: 3
   _team: 0
   _moveSpeed: 3.5
   _maxHealth: 3

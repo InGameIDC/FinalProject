@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
-  m_Name: WatermelonData
+  m_Name: ChilliData
   m_EditorClassIdentifier: 
-  _heroId: 5
-  _team: 0
-  _moveSpeed: 3.5
-  _maxHealth: 3
-  _damage: 3
+  _heroId: 103
+  _team: 1
+  _moveSpeed: 0.75
+  _maxHealth: 4
+  _damage: 0.75
   _range: 3
-  _cooldown: 0.5
-  _projectile: {fileID: 6623445060515452541, guid: c2fa9be80a57db9419d8c1a3eee0f9bd,
+  _cooldown: 2
+  _projectile: {fileID: 2860001273027194038, guid: c1f539e3e1381ac48aa45f54ac002dd8,
     type: 3}
   _projSpeed: 0
-  _projectileOffsetValue: -60
+  _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0
   _levelUpGain_maxHealth: 0
   _levelUpGain_damage: 0
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
-  upgradeCosts: 00000000c8000000f4010000e8030000
-  starsToUpgrade: 0400000004000000060000000c000000
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
   cardStatus: 0
   upgradestatus: 0
-  starsToBuy: 4
+  starsToBuy: 0

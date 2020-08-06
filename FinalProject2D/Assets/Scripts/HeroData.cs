@@ -78,6 +78,9 @@ public class HeroData : ScriptableObject
     }
     public int getStarsToBuy() => starsToBuy;
 
+    public int getHeroLevel() => PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", -1);
+    public void setHeroLevel(int level) => PlayerPrefs.SetInt("Hero_" + _heroId + "_Level", level);
+
 
 
 }
