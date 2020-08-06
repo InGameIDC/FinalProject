@@ -29,6 +29,8 @@ TagManager:
   - PointsAdded
   - levelButton
   - Obstacle
+  - StartPosHeroes
+  - StartPosEnemies
   layers:
   - Default
   - TransparentFX

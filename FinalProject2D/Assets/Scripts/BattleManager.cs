@@ -9,7 +9,7 @@ public class BattleManager : MonoBehaviour
 {
     List<GameObject> gameObjects;
     [SerializeField] private ControlPointsManager _ctrlPointsManager;
-    [SerializeField] GameObject[] Heores;
+    [SerializeField] private GameObject[] Heores;
     //private TouchInputManager _TouchInputManager;
     private MouseInputManager _MouseInputManager;
     [SerializeField] private GameObject _inputManager;
@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private float RespawnTime = 3f;
     private HeroUnit _currentUnit;
     private HeroUnit _currentEnemyClicked;
+    public static BattleManager Instance = null;
 
     // for loading next level and some data
     GameObject gs;
@@ -26,12 +27,12 @@ public class BattleManager : MonoBehaviour
     public Action<int> onGameScoreEnd = delegate { };
     public GameObject egp;
 
-
     // Start is called before the first frame update
     private void Awake()
     {
         gs = GameObject.FindGameObjectWithTag("GameStatus");
         _currentUnit = Heores[0].GetComponent<HeroUnit>();
+        Instance = this;
     }
     private void Start()
     {
@@ -59,6 +60,18 @@ public class BattleManager : MonoBehaviour
         {
             Debug.LogError(e);
         }
+    }
+
+    public void setHeroes(GameObject[] heroes)
+    {
+        Heores = heroes;
+        _currentUnit = Heores[0].GetComponent<HeroUnit>();
+        selectANewHero(_currentUnit.gameObject);
+    }
+
+    public GameObject[] getHeroes()
+    {
+        return Heores;
     }
 
     private void selectANewHero(GameObject prevHero)
@@ -116,7 +129,7 @@ public class BattleManager : MonoBehaviour
         }
         catch(Exception e)
         {
-            Debug.LogError(e);
+            Debug.Log("No sprite renderrer error:" + e);
         }
         try
         {

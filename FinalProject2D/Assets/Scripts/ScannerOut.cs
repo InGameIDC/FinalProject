@@ -9,7 +9,7 @@ public class ScannerOut : MonoBehaviour
 
     private void Start()
     {
-        HeroData data = GetComponentInParent<HeroData>();
+        HeroData data = GetComponentInParent<HeroDataManage>().GetData();
         GetComponent<CircleCollider2D>().radius = data.getRange();
     }
     /// <summary>

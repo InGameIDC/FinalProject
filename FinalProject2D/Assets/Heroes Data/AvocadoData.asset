@@ -14,11 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroId: 100
   _team: 1
-  _moveSpeed: 0
-  _maxHealth: 0
-  _damage: 0
-  _range: 0
-  _cooldown: 0
-  _projectile: {fileID: 0}
-  _projSpeed: 0
+  _moveSpeed: 0.75
+  _maxHealth: 4
+  _damage: 0.75
+  _range: 5
+  _cooldown: 3
+  _projectile: {fileID: 1258025947294799454, guid: 0febbeb927e9e014c9e744c8cb4a1402,
+    type: 3}
+  _projSpeed: 3
   _projectileOffsetValue: 0
+  _levelUpGain_moveSpeed: 0
+  _levelUpGain_maxHealth: 0
+  _levelUpGain_damage: 0
+  _levelUpGain_cooldown: 0
+  _levelUpGain_projSpeed: 0
+  _levelUpGain_range: 0
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 0

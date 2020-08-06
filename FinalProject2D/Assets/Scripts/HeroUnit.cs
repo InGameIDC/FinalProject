@@ -11,7 +11,7 @@ public class HeroUnit : MonoBehaviour
 {
     public Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
 
-    private int _id;
+    private int _id = -1;
     private Skill _skill;
     private GameObject _targetToAttack;             // This is the target to be attacked by the hero.
     private GameObject _targetObj;                 // The selected enemy to be attacked.
@@ -54,6 +54,16 @@ public class HeroUnit : MonoBehaviour
         //Test.DrawCircle(this.gameObject, 0.1f, 0.0001f);
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
     }
+
+    public int getId()
+    {
+        if(_id == -1)
+        {
+            HeroData data = GetComponent<HeroDataManage>().GetData();
+            _id = data.getHeroId();
+        }
+        return _id;
+    }
     /*
     private void Update()
     {
@@ -63,7 +73,7 @@ public class HeroUnit : MonoBehaviour
     #region Inits
     private void initData()
     {
-        HeroData data = GetComponentInParent<HeroDataManage>().GetData();
+        HeroData data = GetComponent<HeroDataManage>().GetData();
         heroTeam = data.getTeam();
         gameObject.tag = Enum.GetName(typeof(Team), heroTeam);
         gameObject.layer = LayerMask.NameToLayer(Enum.GetName(typeof(Team), heroTeam));
