@@ -31,6 +31,6 @@ MonoBehaviour:
   _levelUpGain_range: 0
   upgradeCosts: 00000000900100008a020000dc050000
   starsToUpgrade: 00000000060000000800000008000000
-  cardStatus: 2
+  cardStatus: 1
   upgradestatus: 0
   starsToBuy: 0

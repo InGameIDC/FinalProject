@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d955109342e1747978dee1b8ebfb6f, type: 3}
   m_Name: Level1Data
   m_EditorClassIdentifier: 
-  _levelId: 0
+  _levelId: 1
   coinsReward: 900100005802000020030000

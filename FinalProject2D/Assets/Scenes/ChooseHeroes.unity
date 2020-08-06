@@ -992,12 +992,12 @@ PrefabInstance:
     - target: {fileID: 9093204600303121832, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: heroId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -1419,12 +1419,12 @@ PrefabInstance:
     - target: {fileID: 9093204600303121832, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: heroId
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -1635,7 +1635,7 @@ PrefabInstance:
         type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 5d26d10aaacbb92429a091b83c790115,
+      objectReference: {fileID: 11400000, guid: 09c9cf90a579bef448aec14af211df61,
         type: 2}
     - target: {fileID: 2440035072307883734, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -2020,12 +2020,12 @@ PrefabInstance:
     - target: {fileID: 9093204600303121832, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: heroId
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -3400,12 +3400,12 @@ PrefabInstance:
     - target: {fileID: 9093204600303121832, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: heroId
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -4369,12 +4369,12 @@ PrefabInstance:
     - target: {fileID: 9093204600303121832, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: heroId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -4471,7 +4471,7 @@ PrefabInstance:
         type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: 09c9cf90a579bef448aec14af211df61,
+      objectReference: {fileID: 11400000, guid: 5d26d10aaacbb92429a091b83c790115,
         type: 2}
     - target: {fileID: 2440035072307883734, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
@@ -4856,12 +4856,12 @@ PrefabInstance:
     - target: {fileID: 9093204600303121832, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}
       propertyPath: heroId
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9093204600303121833, guid: 11fa7af683a5dd844b963aa87bc6ea25,
         type: 3}

@@ -14,6 +14,8 @@ public class EndGame : MonoBehaviour
     public GameObject gsObject;             //gamestatus object
     private GameStatus gs;
 
+
+    public LevelData levelData;
     public int levelId;
     public GameObject endPanel;             //the pannel to display
     public GameObject wonTitle;           //end Text (win/lose)
@@ -100,34 +102,37 @@ public class EndGame : MonoBehaviour
         endPanel.SetActive(true);
         wonTitle.SetActive(true);
         wonMes.SetActive(true);
-        coinsDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "+400";
-        xpDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "+1000";
+        
+        //xpDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "+1000";
         //nextLevelButton.SetActive(true); 
         restartButton.SetActive(false);
 
         gs.levelsPlayed[gs.lastLevelCosen - 2] = 1;
-
+        int starsNum = 0;
         if(score < 75)
         {
             goldStar1.SetActive(true);
-            gs.starsInLevels[gs.lastLevelCosen - 2] = 1;
+            starsNum = 1;
         }
         else if(score >= 75 && score < 90)
         {
             goldStar1.SetActive(true);
             goldStar2.SetActive(true);
-            gs.starsInLevels[gs.lastLevelCosen - 2] = 2;
+            starsNum = 2;
         }
         else
         {
             goldStar1.SetActive(true);
             goldStar2.SetActive(true);
             goldStar3.SetActive(true);
-            gs.starsInLevels[gs.lastLevelCosen - 2] = 3;
+            starsNum = 3;
         }
 
         //update the game data
-        gsObject.GetComponent<GameStatus>().coins += 400;
+        gs.starsInLevels[gs.lastLevelCosen - 2] = starsNum;
+        gsObject.GetComponent<GameStatus>().coins += levelData.getCoinsReward(starsNum);
+
+        coinsDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = levelData.getCoinsReward(starsNum).ToString();
         //gsObject.GetComponent<GameStatus>().currentXP += 1000;
     }
 

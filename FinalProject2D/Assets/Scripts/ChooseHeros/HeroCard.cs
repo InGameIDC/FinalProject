@@ -116,7 +116,9 @@ public class HeroCard : MonoBehaviour
         //TODO: add a function that closes all the buttons of all the cards
         closeMenu();
 
-        //gameObject.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+        //returning buttons to their place
+        infoB.transform.localPosition = new Vector3(0f, -115, 0);        //moving the upgrade button so it is shown properly
+        upgradeB.transform.localPosition = new Vector3(0f, -115, 0);
 
         //cancel in use process if it was started and unfinished
         cm.inChangeProcess = false;
@@ -193,7 +195,7 @@ public class HeroCard : MonoBehaviour
         //TODO: will load all the data of the hero from the XMLs
         //need to change according to data
         
-        level = gs.GetComponent<GameStatus>().heroLevels[heroId - 1];
+        level = gs.GetComponent<GameStatus>().heroLevels[heroId];
         familyId = 1;
         levelText.GetComponent<TMPro.TextMeshProUGUI>().text = level.ToString();
 
@@ -248,26 +250,26 @@ public class HeroCard : MonoBehaviour
 
         switch (heroId)
         {
-            case 1:
+            case 0:
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s1;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
 
-            case 2:
+            case 1:
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s2;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f2;
                 break;
 
-            case 3:
+            case 2:
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s3;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
 
-            case 4:
+            case 3:
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s4;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f1;
                 break;
-            case 5:
+            case 4:
                 profileImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().s5;
                 familyImage.GetComponent<Image>().sprite = gs.GetComponent<GameStatus>().f2;
                 break;
@@ -388,8 +390,8 @@ public class HeroCard : MonoBehaviour
 
         //update the data in the card and in the game status
         //TODO: update data in xml and reload the card
-        gs.GetComponent<GameStatus>().heroLevels[heroId - 1] += 1;
-        level = gs.GetComponent<GameStatus>().heroLevels[heroId - 1];
+        gs.GetComponent<GameStatus>().heroLevels[heroId] += 1;
+        level = gs.GetComponent<GameStatus>().heroLevels[heroId];
         levelText.GetComponent<TMPro.TextMeshProUGUI>().text = level.ToString();
         //partsCollected = 0;
         
@@ -457,8 +459,8 @@ public class HeroCard : MonoBehaviour
         cardStat = cardStatus.opened;
         heroData.setCardStatus(1);
 
-        gs.GetComponent<GameStatus>().heroLevels[heroId - 1] += 1;
-        level = gs.GetComponent<GameStatus>().heroLevels[heroId - 1];
+        gs.GetComponent<GameStatus>().heroLevels[heroId] += 1;
+        level = gs.GetComponent<GameStatus>().heroLevels[heroId];
         levelText.GetComponent<TMPro.TextMeshProUGUI>().text = level.ToString();
 
         levelDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "Level " + level;
