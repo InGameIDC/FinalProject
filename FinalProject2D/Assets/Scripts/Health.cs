@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        HeroData data = GetComponentInParent<HeroData>();
+        HeroData data = GetComponentInParent<HeroDataManage>().GetData();
         _maxHealth = data.getMaxHealth();
         _currentHeatlh = _maxHealth;
     }

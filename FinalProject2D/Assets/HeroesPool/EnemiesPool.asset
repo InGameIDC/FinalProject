@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85074982be53e64bac45dbeb52c5cd2, type: 3}
+  m_Name: EnemiesPool
+  m_EditorClassIdentifier: 
+  heroesPool:
+  - {fileID: 8173591341274215059, guid: cafeb921193e1e84eb55a2217c5d7a61, type: 3}
+  - {fileID: 5108313514700221565, guid: 37e70d0d09159344db9d93050792a3af, type: 3}
+  - {fileID: 3085127606605651816, guid: e36428b47bfad4c4eaf3bedc3bc0a658, type: 3}
+  - {fileID: 8361949528859763521, guid: 0d8a9cc4388451a48b2e5293bce9358e, type: 3}
+  - {fileID: 114683608700830917, guid: 7b5d21b09483e934cb3053133d916ece, type: 3}

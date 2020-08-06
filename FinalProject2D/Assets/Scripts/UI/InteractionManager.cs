@@ -13,9 +13,13 @@ public class InteractionManager : MonoBehaviour
 
     public void SelectUnitInteraction(GameObject unit)
     {
-        _selectArrow.SetActive(true);
-        _selectArrow.transform.position = unit.transform.position + SelectArrowOffset;
-        _selectArrow.transform.parent = unit.transform;
+        if (unit.activeSelf)
+        {
+            Debug.Log("Unit to select: " + unit.name);
+            _selectArrow.SetActive(true);
+            _selectArrow.transform.position = unit.transform.position + SelectArrowOffset;
+            _selectArrow.transform.parent = unit.transform;
+        }
     }
 
     public void WalkInteraction(Vector3 pos)
