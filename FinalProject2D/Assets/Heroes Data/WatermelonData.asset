@@ -30,7 +30,7 @@ MonoBehaviour:
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
   upgradeCosts: 8a020000ee020000d6060000d0070000
-  starsToUpgrade: 0400000004000000060000000c000000
-  cardStatus: 3
-  upgradestatus: 1
-  starsToBuy: 4
+  starsToUpgrade: 080000000a0000000b0000000c000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 8
