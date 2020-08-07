@@ -11,7 +11,7 @@ public class HeroIcon : MonoBehaviour
 
     public void OnHeroIconClick()
     {
-        if (_hero != null)
+        if (_hero != null && _hero.activeSelf)
             ActiveOnClick(_hero);
     }
 
