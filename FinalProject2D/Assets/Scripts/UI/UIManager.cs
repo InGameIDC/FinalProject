@@ -14,21 +14,27 @@ public class UIManager : MonoBehaviour
     }
     
 
-    public void SetHeroesIcons(GameObject[] heroes, Action<GameObject> onIconClick)
+    public void SetHeroesIcons(GameObject[] heroes, Action<GameObject> onIconClick, GameObject selectedHero)
     {
-        Debug.Log("BB");
         for (int i = 0; i < heoresIcons.Length; i++)
         {
             HeroIcon heroIcon = heoresIcons[i].GetComponent<HeroIcon>();
-            Debug.Log("I: " + i + ", Heores.Length: " + heroes.Length);
             if (heroes.Length > i && heroes[i] != null)
             {
                 heoresIcons[i].SetActive(true);
                 HeroUnit hero = heroes[i].GetComponent<HeroUnit>();
                 Sprite heroImage = hero.getImage();
                 heroIcon.setIconSprite(heroImage);
-                heroIcon.hero = heroes[i];
-                heroIcon.ActiveOnClick += onIconClick;
+                heroIcon.setHero(heroes[i]);
+                heroes[i].GetComponent<HeroUnit>().OnUnitSelect += SetSelectColor; // Assigns the icon colors manage
+                heroIcon.ActiveOnClick += onIconClick; // Add functionallity, used by BattleManager to select the hero according to the icon that was clicked
+                heroIcon.ActiveOnClick += SetSelectColor;
+                
+                // sets icon colors
+                if(selectedHero != null && selectedHero == heroes[i])
+                    heroIcon.setIconToSelectedColor();
+                else
+                    heroIcon.setIconToRegularColor();
             }
             else
             {
@@ -36,4 +42,19 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
+    public void SetSelectColor(GameObject selectedHero)
+    {
+        foreach(GameObject icon in heoresIcons)
+        {
+            HeroIcon heroIcon = icon.GetComponent<HeroIcon>();
+            if (heroIcon.getHero() == selectedHero)
+                heroIcon.setIconToSelectedColor();
+            else if (heroIcon.getHero().activeSelf)
+                heroIcon.setIconToRegularColor();
+            else
+                heroIcon.setIconToUnavailableColor();
+        }
+    }
+
 }

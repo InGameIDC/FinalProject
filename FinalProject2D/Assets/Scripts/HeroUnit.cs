@@ -10,6 +10,7 @@ public enum ObjStatus { dead, siege, moving, idle, attacking, moveAndAttack, rot
 public class HeroUnit : MonoBehaviour 
 {
     public Action<GameObject> OnRespawn = delegate { };                       // Notify that the hero has respawn
+    public Action<GameObject> OnUnitSelect = delegate { };
 
     private int _id = -1;
     private Skill _skill;

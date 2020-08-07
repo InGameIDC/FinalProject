@@ -66,20 +66,16 @@ public class BattleManager : MonoBehaviour
             Debug.LogError(e);
         }
 
-        _uiManager.SetHeroesIcons(Heores, OnHeroClicked);
+        if(Heores.Length > 0)
+            _uiManager.SetHeroesIcons(Heores, OnHeroClicked, _currentUnit.gameObject);
     }
 
     public void setHeroes(GameObject[] heroes)
     {
-        Debug.Log("A");
         Heores = heroes;
-        Debug.Log("Heores.len:" + Heores.Length);
-        Debug.Log("setHeroes: " + heroes);
         _currentUnit = Heores[0].GetComponent<HeroUnit>();
         selectANewHero(_currentUnit.gameObject);
-        Debug.Log("AA");
-        Debug.Log("Heores.len:" + Heores.Length);
-        _uiManager.SetHeroesIcons(Heores, OnHeroClicked);
+        _uiManager.SetHeroesIcons(Heores, OnHeroClicked, _currentUnit.gameObject);
     }
 
     public GameObject[] getHeroes()
@@ -157,6 +153,7 @@ public class BattleManager : MonoBehaviour
             Debug.Log(e); // TODO: Fix the spriteManager
             _interactionManager.SelectUnitInteraction(newHero);
         }
+        _currentUnit.OnUnitSelect(_currentUnit.gameObject);
     }
 
     #region InputManager manage functions
