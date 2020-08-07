@@ -14,6 +14,7 @@ public class BattleManager : MonoBehaviour
     private MouseInputManager _MouseInputManager;
     [SerializeField] private GameObject _inputManager;
     [SerializeField] private InteractionManager _interactionManager;
+    [SerializeField] private UIManager _uiManager;
     [SerializeField] private float RespawnTime = 3f;
     private HeroUnit _currentUnit;
     private HeroUnit _currentEnemyClicked;
@@ -30,9 +31,13 @@ public class BattleManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        gs = GameObject.FindGameObjectWithTag("GameStatus");
-        _currentUnit = Heores[0].GetComponent<HeroUnit>();
         Instance = this;
+        gs = GameObject.FindGameObjectWithTag("GameStatus");
+        if(Heores.Length >=1)
+            _currentUnit = Heores[0].GetComponent<HeroUnit>();
+
+        if (_uiManager == null)
+            _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
     private void Start()
     {
@@ -48,8 +53,8 @@ public class BattleManager : MonoBehaviour
                 smSugarManager.OnScoreChange += ScoreUpdate;
         }
 
-
-        selectANewHero(_currentUnit.gameObject);
+        if (Heores.Length >= 1)
+            selectANewHero(_currentUnit.gameObject);
 
         try
         {
@@ -60,13 +65,21 @@ public class BattleManager : MonoBehaviour
         {
             Debug.LogError(e);
         }
+
+        _uiManager.SetHeroesIcons(Heores, OnHeroClicked);
     }
 
     public void setHeroes(GameObject[] heroes)
     {
+        Debug.Log("A");
         Heores = heroes;
+        Debug.Log("Heores.len:" + Heores.Length);
+        Debug.Log("setHeroes: " + heroes);
         _currentUnit = Heores[0].GetComponent<HeroUnit>();
         selectANewHero(_currentUnit.gameObject);
+        Debug.Log("AA");
+        Debug.Log("Heores.len:" + Heores.Length);
+        _uiManager.SetHeroesIcons(Heores, OnHeroClicked);
     }
 
     public GameObject[] getHeroes()

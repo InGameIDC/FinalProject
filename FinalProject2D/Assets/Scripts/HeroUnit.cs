@@ -64,6 +64,20 @@ public class HeroUnit : MonoBehaviour
         }
         return _id;
     }
+
+    public Sprite getImage()
+    {
+        Sprite image = null; ;
+        HeroData data = GetComponent<HeroDataManage>().GetData();
+        if(data != null)
+            image = data.getHeroImage();
+
+        else
+        {
+            Debug.LogError("Could not find the unit data: " + gameObject.name);
+        }
+        return image;
+    }
     /*
     private void Update()
     {

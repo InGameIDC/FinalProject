@@ -23,3 +23,16 @@ MonoBehaviour:
     type: 3}
   _projSpeed: 3
   _projectileOffsetValue: 0
+  _levelUpGain_moveSpeed: 0
+  _levelUpGain_maxHealth: 0
+  _levelUpGain_damage: 0
+  _levelUpGain_cooldown: 0
+  _levelUpGain_projSpeed: 0
+  _levelUpGain_range: 0
+  _heroImage: {fileID: 4099771568367847091, guid: 3d930da0094b2344c910aaaf78ccf180,
+    type: 3}
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 0

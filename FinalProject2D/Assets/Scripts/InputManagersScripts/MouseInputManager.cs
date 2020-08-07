@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 /*  The class's purpose is detection of taps happening during battle
@@ -58,6 +59,8 @@ public class MouseInputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             //Standard detection of taps and their location on screen.
             Vector3 position = Input.mousePosition;
             LayerMask maskLayersToRelate = LayerMask.GetMask(GlobalCodeSettings.Layers_Mouse_RayCast_Relate);

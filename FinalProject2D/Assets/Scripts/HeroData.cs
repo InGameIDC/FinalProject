@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Hero Data", menuName = "Hero Data", order = 51)]
 public class HeroData : ScriptableObject
 {
+    // Unit main stats
     [SerializeField]
     private int _heroId;
     [SerializeField]
@@ -40,6 +41,9 @@ public class HeroData : ScriptableObject
     [SerializeField]
     private float _levelUpGain_range = 0;
 
+    // Unit Image
+    [SerializeField]
+    private Sprite _heroImage = null;
 
     [SerializeField]
     private int[] upgradeCosts = {100,100,100,100 };
@@ -64,6 +68,7 @@ public class HeroData : ScriptableObject
     public GameObject getProjectile() => _projectile;
     public float getProjSpeed() => _projSpeed + ((PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1) - 1) * _levelUpGain_projSpeed);
     public float getProjectileOffsetValue() => _projectileOffsetValue;
+    public Sprite getHeroImage() => _heroImage;
     public int getUpgradeCost() => upgradeCosts[(PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1))];
     public int getStarsToUpgrade() => starsToUpgrade[(PlayerPrefs.GetInt("Hero_" + _heroId + "_Level", 1))];
     public int getCardStatus() => cardStatus;

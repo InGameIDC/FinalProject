@@ -29,6 +29,8 @@ MonoBehaviour:
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
+  _heroImage: {fileID: 3506341770517109845, guid: dff7ef3ac748e3f4998939a8d900d751,
+    type: 3}
   upgradeCosts: 00000000c8000000f4010000e8030000
   starsToUpgrade: 00000000000000000200000004000000
   cardStatus: 2
