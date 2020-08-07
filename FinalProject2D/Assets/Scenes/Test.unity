@@ -17101,6 +17101,7 @@ MonoBehaviour:
   - {fileID: 1428346876}
   - {fileID: 659767257}
   - {fileID: 1375605408}
+  uiData: {fileID: 11400000, guid: 89c26549fc35f994b8a176d64abe15a0, type: 2}
 --- !u!4 &2126495727
 Transform:
   m_ObjectHideFlags: 0
