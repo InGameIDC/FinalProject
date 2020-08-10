@@ -15,7 +15,7 @@ public class InteractionManager : MonoBehaviour
     {
         if (unit.activeSelf)
         {
-            Debug.Log("Unit to select: " + unit.name);
+            //Debug.Log("Unit to select: " + unit.name);
             _selectArrow.SetActive(true);
             _selectArrow.transform.position = unit.transform.position + SelectArrowOffset;
             _selectArrow.transform.parent = unit.transform;
