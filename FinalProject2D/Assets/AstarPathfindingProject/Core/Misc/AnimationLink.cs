@@ -12,6 +12,9 @@ namespace Pathfinding {
 		public LinkClip[] sequence;
 		public string boneRoot = "bn_COG_Root";
 
+		//Used for death animation:
+        public LinkClip deathAnimationClip;
+
 		[System.Serializable]
 		public class LinkClip {
 			public AnimationClip clip;
@@ -118,5 +121,10 @@ namespace Pathfinding {
 				Gizmos.DrawLine(buffer[i], buffer[i+1]);
 			}
 		}
+
+        public void onDeathAnimation()
+        {
+
+        }
 	}
 }
