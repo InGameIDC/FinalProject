@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AI2 : MonoBehaviour
 {
+    public Action OnNoHill = delegate { };
+
     private HeroUnit _hero;
     private bool _firstSpawn = true;
     private GameObject targetHill;
@@ -61,7 +64,10 @@ public class AI2 : MonoBehaviour
                     // if the command fails, wait enough time to have enough points
                     if (!_controlPointsManager.CommandGoTo(_hero, targetHill.transform.position, true))
                         yield return new WaitForSeconds(_hero.GetHeroCommandCost() - _controlPointsManager.GetTeamBalance((int)_hero.heroTeam));
-
+                }
+                else
+                {
+                    OnNoHill();
                 }
             }
             yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);

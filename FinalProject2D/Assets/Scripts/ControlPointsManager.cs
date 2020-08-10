@@ -44,12 +44,12 @@ public class ControlPointsManager : MonoBehaviour
         if (_teamsCurrentControlPoints[(int)hero.heroTeam] - hero.GetHeroCommandCost() >= 0) {
             _teamsCurrentControlPoints[(int)hero.heroTeam] -= hero.GetHeroCommandCost();
             hero.GoTo(pos);
-            Debug.Log("CommandyGoTo, Team: " + (int)hero.heroTeam + ", Remaining: " + _teamsCurrentControlPoints[(int)hero.heroTeam] + ", cost: " + hero.GetHeroCommandCost());
+            //Debug.Log("CommandyGoTo, Team: " + (int)hero.heroTeam + ", Remaining: " + _teamsCurrentControlPoints[(int)hero.heroTeam] + ", cost: " + hero.GetHeroCommandCost());
             return true;
         }
         else if(!isAICommand)
         {
-            Debug.Log("Team " + (int)hero.heroTeam + " not enough Points: " + _teamsCurrentControlPoints[(int)hero.heroTeam] + ", cost: " + hero.GetHeroCommandCost());
+            //Debug.Log("Team " + (int)hero.heroTeam + " not enough Points: " + _teamsCurrentControlPoints[(int)hero.heroTeam] + ", cost: " + hero.GetHeroCommandCost());
             ShowNoCtrlPointsMessage(pos);
         }
             

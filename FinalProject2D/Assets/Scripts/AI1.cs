@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AI1 : MonoBehaviour
 {
+    public Action OnNoTarget = delegate { };
+
     private HeroUnit _hero;
     private bool isRunning = true;
 
@@ -15,6 +18,10 @@ public class AI1 : MonoBehaviour
     void Awake()
     {
         _hero = transform.GetComponent<HeroUnit>();
+        if (targetsList == null)
+            targetsList = new List<GameObject>();
+        else if(targetsList.Count > 0)
+            Debug.Log("We already have:" + targetsList[0]);
     }
 
     private void Start()
@@ -25,6 +32,7 @@ public class AI1 : MonoBehaviour
 
     public void addTraget(GameObject target)
     {
+        Debug.Log("Added target: " + target + " num of targets: " + targetsList.Count);
         targetsList.Add(target);
     }
     void OnEnable()
@@ -42,20 +50,28 @@ public class AI1 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         isRunning = true;
-        Debug.Log("Activated");
         GameObject target = null;
         while (targetsList.Count > 0)
         {
             target = getWeakest();
-            // if the command fails, wait enough time to have enough points
-            if(!_controlPointsManager.CommandSetTargetToAttack(_hero, target, true))
-                yield return new WaitForSeconds(_hero.GetHeroCommandCost() - _controlPointsManager.GetTeamBalance((int)_hero.heroTeam));
-
-            //_hero.SetTargetObj(target);
-            while (target != null && target.activeSelf)
+            if (target != null)
             {
-                yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);
+                // if the command fails, wait enough time to have enough points
+                if (!_controlPointsManager.CommandSetTargetToAttack(_hero, target, true))
+                    yield return new WaitForSeconds(_hero.GetHeroCommandCost() - _controlPointsManager.GetTeamBalance((int)_hero.heroTeam));
+
+                //_hero.SetTargetObj(target);
+                while (target != null && target.activeSelf)
+                {
+                    yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);
+                }
             }
+            else
+            { // Case there is no target alive
+                yield return new WaitForSeconds(10 * GlobalCodeSettings.AI_Refresh_Time);
+                OnNoTarget();
+            }
+
         }
     }
 
