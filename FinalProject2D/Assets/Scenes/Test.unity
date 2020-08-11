@@ -2301,6 +2301,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2463015737408966220, guid: 837135b88bf96f14697a1d146788bc25,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     - target: {fileID: 3700128608833131777, guid: 837135b88bf96f14697a1d146788bc25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3362,6 +3367,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2089559245682742927, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     - target: {fileID: 2199943269524307526, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: _maxHealth
@@ -4393,6 +4403,54 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &745704405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745704406}
+  - component: {fileID: 745704407}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745704406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745704405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.26345402, y: 0.64361584, z: -31.728516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 57
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &745704407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745704405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b3e0e72ad7b2d499368911259ca1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioClips:
+  - sound: 0
+    audioClip: {fileID: 0}
+  - sound: 0
+    audioClip: {fileID: 0}
 --- !u!1 &745916499
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,6 +5680,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6310524450018146098, guid: 37e70d0d09159344db9d93050792a3af,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37e70d0d09159344db9d93050792a3af, type: 3}
 --- !u!1 &893677138
@@ -6028,6 +6091,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2089559245682742927, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 1545806602296978, guid: 9e4577abe56a95f4a91d29a0473cd30c,
+        type: 3}
     - target: {fileID: 2199943269524307526, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: _maxHealth
@@ -6230,6 +6299,11 @@ MonoBehaviour:
     type: 3}
   sugarPrefab2: {fileID: 2381604248534684621, guid: c1803e37d1b10744d8b096b496053638,
     type: 3}
+  target: {fileID: 753211882}
+  minAnimDuration: 0.7
+  maxAnimDuration: 0.9
+  easeType: 5
+  spread: 0
 --- !u!1 &1041860750
 GameObject:
   m_ObjectHideFlags: 0
@@ -15067,6 +15141,11 @@ PrefabInstance:
       propertyPath: _maxHealth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2089559245682742927, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     - target: {fileID: 2199943269524307526, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: _maxHealth
@@ -17101,6 +17180,7 @@ MonoBehaviour:
   - {fileID: 1428346876}
   - {fileID: 659767257}
   - {fileID: 1375605408}
+  uiData: {fileID: 11400000, guid: 89c26549fc35f994b8a176d64abe15a0, type: 2}
 --- !u!4 &2126495727
 Transform:
   m_ObjectHideFlags: 0
@@ -17231,6 +17311,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1634340032739466125, guid: ced25294d40ff9943897f908fa3a56d8,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ced25294d40ff9943897f908fa3a56d8, type: 3}
 --- !u!222 &2286592108961985466
@@ -17863,6 +17948,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4298562323327222823, guid: e36428b47bfad4c4eaf3bedc3bc0a658,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e36428b47bfad4c4eaf3bedc3bc0a658, type: 3}
 --- !u!1001 &5561766464801129513
@@ -17937,6 +18027,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5895429829226062119, guid: c15c3f636fed9fd46ab6703b9b7ff048,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c15c3f636fed9fd46ab6703b9b7ff048, type: 3}
 --- !u!1001 &7993304584823328989
@@ -18259,6 +18354,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6924691908135266780, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 100018, guid: a40b64bf23366dc42a892af2c6ff6140, type: 3}
     - target: {fileID: 8173591341274215057, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Skill : MonoBehaviour
 {
+    public Action<GameObject> OnAttack = delegate { }; // calls on attack
+
     private float _id;
     private float _damageMultiplier;
     [SerializeField]  private float _damage = 1f;
@@ -65,7 +68,7 @@ public class Skill : MonoBehaviour
         Quaternion rotation = _firePoint.transform.rotation;
         GameObject projGameObj = Instantiate(projectile, _firePoint.transform.position, rotation);
         initProj(projGameObj);
-        
+        OnAttack(gameObject);
     }
 
     private void initProj(GameObject projGameObj)

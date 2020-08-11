@@ -6,11 +6,15 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject[] heoresIcons;
+    [SerializeField] UIData uiData;
 
     private void Awake()
     {
         if(heoresIcons == null)
             heoresIcons = GameObject.FindGameObjectsWithTag("HeroIcon");
+
+        if (UIData.instance == null && uiData != null) // setting the data
+            UIData.instance = uiData;
     }
     
 

@@ -28,6 +28,7 @@ public class SplitOverTime : MonoBehaviour
 
             GameObject minion = Instantiate(minions, pos, transform.rotation);
             minion.GetComponent<AI1>().addTraget(target);
+            Debug.Log("Target: " + target);
         }
 
         

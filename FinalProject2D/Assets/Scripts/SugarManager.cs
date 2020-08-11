@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 using Random = UnityEngine.Random;
 
 public class SugarManager : MonoBehaviour
@@ -20,8 +21,39 @@ public class SugarManager : MonoBehaviour
     public GameObject sugarPrefab1;
     public GameObject sugarPrefab2;
 
+    //This section is used for sugar floating to windmill
+    [Header("Coin Animation")]
+    [SerializeField] Transform target;
+    [Header("Animation Speed")]
+    [SerializeField] [Range(0.5f, 0.9f)] float minAnimDuration;
+    [SerializeField] [Range(0.9f, 2f)] float maxAnimDuration;
+    [SerializeField] Ease easeType;
+    [SerializeField] float spread;
+    private Vector3 targetPosition;
+
     // OrS for score bar
     public Action<float> OnScoreChange = delegate { };
+
+    void Awake()
+    {
+        targetPosition = target.position;
+    }
+
+    public void Animate(GameObject collectedSugarCube)
+    {
+        //move coin to the collected coin pos
+        //collectedSugarCube.transform.position += new Vector3(Random.Range(-spread, spread), 0f, 0f);
+        //animate coin to target position
+        float duration = Random.Range(minAnimDuration, maxAnimDuration);
+        // Change the z position of the coin in order to prevent double-touching it
+        collectedSugarCube.transform.position += new Vector3(0,0,10);
+        collectedSugarCube.transform.DOMove(targetPosition, duration)
+            .SetEase(easeType)
+            .OnComplete(() => {
+                //executes whenever coin reach target position
+                Destroy(collectedSugarCube);
+            });
+    }
 
     private void Update()
     {

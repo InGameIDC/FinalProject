@@ -20,6 +20,7 @@ public class HeroAnimationManager : MonoBehaviour
 
         _rotator = transform.Find("Rotator").gameObject;
         state = 0;
+        GetComponent<Skill>().OnAttack += Attacking;
     }
 
     // Update is called once per frame
@@ -53,5 +54,10 @@ public class HeroAnimationManager : MonoBehaviour
     private void FinishedMoving()
     {
         animator.SetBool("IsMoving", false);
+    }
+
+    private void Attacking(GameObject unit)
+    {
+        //animator.SetTrigger("Attack");
     }
 }

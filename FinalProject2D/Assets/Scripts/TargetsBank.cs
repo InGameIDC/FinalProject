@@ -31,7 +31,7 @@ public class TargetsBank : MonoBehaviour
     /// <returns></returns>
     public void AddTargetToBank(GameObject target)
     {
-        Debug.Log("add to bank " + target.GetType());
+        //Debug.Log("add to bank " + target.GetType());
         if (_targetsToAttackBank.Contains(target))   // check if the enemy is already in my bank (suppose to be always true)
             return;
         _targetsToAttackBank.Add(target);           // if not, add the enemy to the bank
@@ -62,7 +62,7 @@ public class TargetsBank : MonoBehaviour
 
         if (target == null)
             Debug.Log("Bug, null target");
-        Debug.Log("manageTargetRemove: " + target.name);
+        //Debug.Log("manageTargetRemove: " + target.name);
 
 
         if (OnRemoveTargetFromBank != null)
