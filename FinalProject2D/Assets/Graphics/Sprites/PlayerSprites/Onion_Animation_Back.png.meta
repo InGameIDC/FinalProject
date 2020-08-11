@@ -1,7 +1,133 @@
 fileFormatVersion: 2
 guid: 67606eb818cc0904d9b9e8596d348d25
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4251077014387724075
+    second: Onion_Animation_Back_0
+  - first:
+      213: 6737734497665184461
+    second: Onion_Animation_Back_1
+  - first:
+      213: 2583262111741692188
+    second: Onion_Animation_Back_2
+  - first:
+      213: -162734756731041216
+    second: Onion_Animation_Back_3
+  - first:
+      213: -4360779734337487358
+    second: Onion_Animation_Back_4
+  - first:
+      213: -3678012239449191249
+    second: Onion_Animation_Back_5
+  - first:
+      213: 6245300779442531459
+    second: Onion_Animation_Back_6
+  - first:
+      213: 1697293141389820685
+    second: Onion_Animation_Back_7
+  - first:
+      213: 6124807978800822455
+    second: Onion_Animation_Back_8
+  - first:
+      213: -178535643476417402
+    second: Onion_Animation_Back_9
+  - first:
+      213: -4324163735077832588
+    second: Onion_Animation_Back_10
+  - first:
+      213: -8095101404261083808
+    second: Onion_Animation_Back_11
+  - first:
+      213: 7730366436628298187
+    second: Onion_Animation_Back_12
+  - first:
+      213: -8202933434724505376
+    second: Onion_Animation_Back_13
+  - first:
+      213: 191307422704347629
+    second: Onion_Animation_Back_14
+  - first:
+      213: -496806819229911571
+    second: Onion_Animation_Back_15
+  - first:
+      213: 7065078734604831764
+    second: Onion_Animation_Back_16
+  - first:
+      213: 7107896207378591877
+    second: Onion_Animation_Back_17
+  - first:
+      213: 8620466257519735627
+    second: Onion_Animation_Back_18
+  - first:
+      213: 983612527294039702
+    second: Onion_Animation_Back_19
+  - first:
+      213: 1896049162753519778
+    second: Onion_Animation_Back_20
+  - first:
+      213: -4251658282376903442
+    second: Onion_Animation_Back_21
+  - first:
+      213: -9022804770795911015
+    second: Onion_Animation_Back_22
+  - first:
+      213: 8802622065401159041
+    second: Onion_Animation_Back_23
+  - first:
+      213: -3372074186320070461
+    second: Onion_Animation_Back_24
+  - first:
+      213: 7162013617904617145
+    second: Onion_Animation_Back_25
+  - first:
+      213: 6496076364285901276
+    second: Onion_Animation_Back_26
+  - first:
+      213: -4005554292888817104
+    second: Onion_Animation_Back_27
+  - first:
+      213: -7238997326906149146
+    second: Onion_Animation_Back_28
+  - first:
+      213: 9175342141270588970
+    second: Onion_Animation_Back_29
+  - first:
+      213: -4892562709310986521
+    second: Onion_Animation_Back_30
+  - first:
+      213: 1568173231213320334
+    second: Onion_Animation_Back_31
+  - first:
+      213: -9222756172021196591
+    second: Onion_Animation_Back_32
+  - first:
+      213: -5422758019901129623
+    second: Onion_Animation_Back_33
+  - first:
+      213: 2032541596346035271
+    second: Onion_Animation_Back_34
+  - first:
+      213: 5548742694985870855
+    second: Onion_Animation_Back_35
+  - first:
+      213: 5094451322872423098
+    second: Onion_Animation_Back_36
+  - first:
+      213: 3686641102993218008
+    second: Onion_Animation_Back_37
+  - first:
+      213: -5685018527629582236
+    second: Onion_Animation_Back_38
+  - first:
+      213: 7031385171278593380
+    second: Onion_Animation_Back_39
+  - first:
+      213: 4623659543920713292
+    second: Onion_Animation_Back_40
+  - first:
+      213: 5556522787576420606
+    second: Onion_Animation_Back_41
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +166,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 320
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +196,927 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Onion_Animation_Back_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 2984
+        width: 544
+        height: 1055
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f886b750cdefa30800000000000000
+      internalID: 4251077014387724075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 3256
+        width: 27
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc27a3cd3dd318d50800000000000000
+      internalID: 6737734497665184461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_2
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 2971
+        width: 593
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19c614343799d320800000000000000
+      internalID: 2583262111741692188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_3
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 2963
+        width: 461
+        height: 1265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04acf68d999ddbdf0800000000000000
+      internalID: -162734756731041216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_4
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 2988
+        width: 544
+        height: 1055
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e771f9fe56b73c0800000000000000
+      internalID: -4360779734337487358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_5
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 3258
+        width: 28
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac871cea5315fcc0800000000000000
+      internalID: -3678012239449191249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_6
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 2976
+        width: 591
+        height: 870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c642a48f3cba650800000000000000
+      internalID: 6245300779442531459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_7
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 2967
+        width: 461
+        height: 1265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d034f349e1ffd8710800000000000000
+      internalID: 1697293141389820685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_8
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 3180
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8b6e5f760bff450800000000000000
+      internalID: 6124807978800822455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_9
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 3189
+        width: 23
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684a7d637c6b58df0800000000000000
+      internalID: -178535643476417402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_10
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 2983
+        width: 123
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4783f0c4efb7df3c0800000000000000
+      internalID: -4324163735077832588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_11
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1554
+        width: 518
+        height: 1052
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065904a992c68af80800000000000000
+      internalID: -8095101404261083808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_12
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1599
+        width: 648
+        height: 879
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9f4de1157c74b60800000000000000
+      internalID: 7730366436628298187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_13
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 1901
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8221b8083592e80800000000000000
+      internalID: -8202933434724505376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_14
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 1547
+        width: 466
+        height: 1271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9203d5619a7a200800000000000000
+      internalID: 191307422704347629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_15
+      rect:
+        serializedVersion: 2
+        x: 2114
+        y: 1606
+        width: 518
+        height: 1053
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de53fc184dcfa19f0800000000000000
+      internalID: -496806819229911571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_16
+      rect:
+        serializedVersion: 2
+        x: 2660
+        y: 1650
+        width: 648
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c894e3da33c0260800000000000000
+      internalID: 7065078734604831764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_17
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 1952
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580b52df0f154a260800000000000000
+      internalID: 7107896207378591877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_18
+      rect:
+        serializedVersion: 2
+        x: 3347
+        y: 1599
+        width: 466
+        height: 1271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4374b5536c02a770800000000000000
+      internalID: 8620466257519735627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1794
+        width: 15
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6964cf5d16e76ad00800000000000000
+      internalID: 983612527294039702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_20
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 1844
+        width: 15
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0b996faae105a10800000000000000
+      internalID: 1896049162753519778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_21
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 1693
+        width: 19
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4c39481531ff4c0800000000000000
+      internalID: -4251658282376903442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_22
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 1739
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9988207adde88c280800000000000000
+      internalID: -9022804770795911015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_23
+      rect:
+        serializedVersion: 2
+        x: 3818
+        y: 1766
+        width: 7
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d50445122392a70800000000000000
+      internalID: 8802622065401159041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_24
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 1746
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8b020c46cf331d0800000000000000
+      internalID: -3372074186320070461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_25
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1689
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b607b38075946360800000000000000
+      internalID: 7162013617904617145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_26
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 83
+        width: 516
+        height: 1051
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9721f1903b62a50800000000000000
+      internalID: 6496076364285901276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_27
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 425
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03232dbc7996968c0800000000000000
+      internalID: -4005554292888817104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_28
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 123
+        width: 615
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6b1c7f84ae98b90800000000000000
+      internalID: -7238997326906149146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_29
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 74
+        width: 466
+        height: 1272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2efa1f701d555f70800000000000000
+      internalID: 9175342141270588970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_30
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 133
+        width: 516
+        height: 1053
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6223643202a1cb0800000000000000
+      internalID: -4892562709310986521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_31
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 474
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e881fb8ce3543c510800000000000000
+      internalID: 1568173231213320334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_32
+      rect:
+        serializedVersion: 2
+        x: 2704
+        y: 171
+        width: 616
+        height: 883
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d892a43020320080800000000000000
+      internalID: -9222756172021196591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_33
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 125
+        width: 466
+        height: 1271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c74e8df4e7eb4b0800000000000000
+      internalID: -5422758019901129623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_34
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 302
+        width: 36
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c296120d9053c10800000000000000
+      internalID: 2032541596346035271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_35
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 321
+        width: 13
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e2da42518110d40800000000000000
+      internalID: 5548742694985870855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_36
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 353
+        width: 36
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab264519c7023b640800000000000000
+      internalID: 5094451322872423098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_37
+      rect:
+        serializedVersion: 2
+        x: 2687
+        y: 372
+        width: 13
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9d34eec84992330800000000000000
+      internalID: 3686641102993218008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_38
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 221
+        width: 19
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460ef1705c1ca11b0800000000000000
+      internalID: -5685018527629582236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_39
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 269
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d72053f8f749160800000000000000
+      internalID: 7031385171278593380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_40
+      rect:
+        serializedVersion: 2
+        x: 3367
+        y: 271
+        width: 19
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e1db5abd98a2040800000000000000
+      internalID: 4623659543920713292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_Animation_Back_41
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 216
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef81bdb190cbc1d40800000000000000
+      internalID: 5556522787576420606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
