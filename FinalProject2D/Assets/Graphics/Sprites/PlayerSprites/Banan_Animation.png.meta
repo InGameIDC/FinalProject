@@ -56,6 +56,60 @@ TextureImporter:
   - first:
       213: 195883459880728473
     second: Banan_Animation_17
+  - first:
+      213: -2884202746733989013
+    second: Banan_Animation_0
+  - first:
+      213: 5794284217553532944
+    second: Banan_Animation_1
+  - first:
+      213: 8720047290718009555
+    second: Banan_Animation_2
+  - first:
+      213: 6733336738002559624
+    second: Banan_Animation_3
+  - first:
+      213: -7669211224756337775
+    second: Banan_Animation_4
+  - first:
+      213: -3696540634559320340
+    second: Banan_Animation_5
+  - first:
+      213: -6321405753375132284
+    second: Banan_Animation_6
+  - first:
+      213: 4634858361722593939
+    second: Banan_Animation_7
+  - first:
+      213: 92961105343705085
+    second: Banan_Animation_8
+  - first:
+      213: -8377366007859675502
+    second: Banan_Animation_9
+  - first:
+      213: 1828474750797602757
+    second: Banan_Animation_10
+  - first:
+      213: 6029028573685533733
+    second: Banan_Animation_11
+  - first:
+      213: -6027883750494884700
+    second: Banan_Animation_12
+  - first:
+      213: -5005625950331719886
+    second: Banan_Animation_13
+  - first:
+      213: -4592517313307523680
+    second: Banan_Animation_14
+  - first:
+      213: 3297086170545429945
+    second: Banan_Animation_15
+  - first:
+      213: -1697422970541626458
+    second: Banan_Animation_16
+  - first:
+      213: 2989040212957600786
+    second: Banan_Animation_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -179,10 +233,10 @@ TextureImporter:
       name: Banan_Animation_0
       rect:
         serializedVersion: 2
-        x: 103
-        y: 3822
-        width: 178
-        height: 628
+        x: 92
+        y: 3811
+        width: 200
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +244,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd40a4441a0a461e0800000000000000
-      internalID: -2205461303008820001
+      spriteID: b63f6bc02e049f7d0800000000000000
+      internalID: -2884202746733989013
       vertices: []
       indices: 
       edges: []
@@ -200,10 +254,10 @@ TextureImporter:
       name: Banan_Animation_1
       rect:
         serializedVersion: 2
-        x: 478
-        y: 3784
-        width: 228
-        height: 552
+        x: 467
+        y: 3773
+        width: 251
+        height: 572
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +265,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b89fd49760915a40800000000000000
-      internalID: 5355220206473943218
+      spriteID: 0183ee2ebce696050800000000000000
+      internalID: 5794284217553532944
       vertices: []
       indices: 
       edges: []
@@ -221,10 +275,10 @@ TextureImporter:
       name: Banan_Animation_2
       rect:
         serializedVersion: 2
-        x: 914
-        y: 3767
-        width: 156
-        height: 712
+        x: 904
+        y: 3757
+        width: 176
+        height: 733
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,8 +286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4befe8e32fd49ab40800000000000000
-      internalID: 5451974526735679156
+      spriteID: 3d8bad36fc4d30970800000000000000
+      internalID: 8720047290718009555
       vertices: []
       indices: 
       edges: []
@@ -242,10 +296,10 @@ TextureImporter:
       name: Banan_Animation_3
       rect:
         serializedVersion: 2
-        x: 103
-        y: 3079
-        width: 178
-        height: 627
+        x: 92
+        y: 3067
+        width: 200
+        height: 648
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +307,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c115c0ea41feee90800000000000000
-      internalID: -6994387867358916157
+      spriteID: 882eab5a61e917d50800000000000000
+      internalID: 6733336738002559624
       vertices: []
       indices: 
       edges: []
@@ -263,10 +317,10 @@ TextureImporter:
       name: Banan_Animation_4
       rect:
         serializedVersion: 2
-        x: 478
-        y: 3041
-        width: 228
-        height: 550
+        x: 462
+        y: 3030
+        width: 256
+        height: 573
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,8 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6660f1b523b933d50800000000000000
-      internalID: 6715882109918971494
+      spriteID: 193c5f8360d719590800000000000000
+      internalID: -7669211224756337775
       vertices: []
       indices: 
       edges: []
@@ -284,10 +338,10 @@ TextureImporter:
       name: Banan_Animation_5
       rect:
         serializedVersion: 2
-        x: 915
-        y: 3023
-        width: 159
-        height: 712
+        x: 904
+        y: 3014
+        width: 176
+        height: 732
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,8 +349,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a359b6eb9da5d960800000000000000
-      internalID: 7626192429124244392
+      spriteID: cee6b43c0ef33bcc0800000000000000
+      internalID: -3696540634559320340
       vertices: []
       indices: 
       edges: []
@@ -305,10 +359,10 @@ TextureImporter:
       name: Banan_Animation_6
       rect:
         serializedVersion: 2
-        x: 14
-        y: 2302
-        width: 357
-        height: 590
+        x: 6
+        y: 2291
+        width: 379
+        height: 612
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,8 +370,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d6d763bff53b61c0800000000000000
-      internalID: -4509451229538560304
+      spriteID: 485f6f4a5fad548a0800000000000000
+      internalID: -6321405753375132284
       vertices: []
       indices: 
       edges: []
@@ -326,10 +380,10 @@ TextureImporter:
       name: Banan_Animation_7
       rect:
         serializedVersion: 2
-        x: 414
-        y: 2302
-        width: 413
-        height: 504
+        x: 403
+        y: 2291
+        width: 441
+        height: 526
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d11fb9816915edd0800000000000000
-      internalID: -2457530114947214891
+      spriteID: 39269ba9f13525040800000000000000
+      internalID: 4634858361722593939
       vertices: []
       indices: 
       edges: []
@@ -347,10 +401,10 @@ TextureImporter:
       name: Banan_Animation_8
       rect:
         serializedVersion: 2
-        x: 844
-        y: 2295
-        width: 309
-        height: 668
+        x: 833
+        y: 2284
+        width: 335
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,8 +412,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5d3263a9a579cef0800000000000000
-      internalID: -87409346305966755
+      spriteID: dff60fdf1a34a4100800000000000000
+      internalID: 92961105343705085
       vertices: []
       indices: 
       edges: []
@@ -368,10 +422,10 @@ TextureImporter:
       name: Banan_Animation_9
       rect:
         serializedVersion: 2
-        x: 14
-        y: 1574
-        width: 357
-        height: 591
+        x: 6
+        y: 1563
+        width: 379
+        height: 612
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,8 +433,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c7b44d2cf1166aa0800000000000000
-      internalID: -6168222864848406585
+      spriteID: 29e7714400e9dbb80800000000000000
+      internalID: -8377366007859675502
       vertices: []
       indices: 
       edges: []
@@ -389,10 +443,10 @@ TextureImporter:
       name: Banan_Animation_10
       rect:
         serializedVersion: 2
-        x: 414
-        y: 1574
-        width: 413
-        height: 504
+        x: 403
+        y: 1563
+        width: 441
+        height: 526
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,8 +454,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bbbad2bfdc748720800000000000000
-      internalID: 2847538164625226680
+      spriteID: 5cfdf02291c006910800000000000000
+      internalID: 1828474750797602757
       vertices: []
       indices: 
       edges: []
@@ -410,10 +464,10 @@ TextureImporter:
       name: Banan_Animation_11
       rect:
         serializedVersion: 2
-        x: 844
-        y: 1568
-        width: 310
-        height: 667
+        x: 833
+        y: 1556
+        width: 335
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,8 +475,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dfbd4ee7bd4a6130800000000000000
-      internalID: 3560743907762225113
+      spriteID: 52cc43b6b896ba350800000000000000
+      internalID: 6029028573685533733
       vertices: []
       indices: 
       edges: []
@@ -431,10 +485,10 @@ TextureImporter:
       name: Banan_Animation_12
       rect:
         serializedVersion: 2
-        x: 40
-        y: 791
-        width: 312
-        height: 668
+        x: 28
+        y: 780
+        width: 335
+        height: 690
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,8 +496,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dee9d9713febe090800000000000000
-      internalID: -8004040916944163112
+      spriteID: 4ac27608aa7a85ca0800000000000000
+      internalID: -6027883750494884700
       vertices: []
       indices: 
       edges: []
@@ -452,10 +506,10 @@ TextureImporter:
       name: Banan_Animation_13
       rect:
         serializedVersion: 2
-        x: 367
-        y: 798
-        width: 415
-        height: 503
+        x: 350
+        y: 787
+        width: 441
+        height: 527
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,8 +517,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45aad20c1645d9c50800000000000000
-      internalID: 6673583001645722196
+      spriteID: 23f200818b1788ab0800000000000000
+      internalID: -5005625950331719886
       vertices: []
       indices: 
       edges: []
@@ -473,10 +527,10 @@ TextureImporter:
       name: Banan_Animation_14
       rect:
         serializedVersion: 2
-        x: 827
-        y: 798
-        width: 352
-        height: 590
+        x: 811
+        y: 787
+        width: 379
+        height: 612
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,8 +538,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc2ce5a5cce40d70800000000000000
-      internalID: 9008585488284265691
+      spriteID: 0a54973f5d91440c0800000000000000
+      internalID: -4592517313307523680
       vertices: []
       indices: 
       edges: []
@@ -494,10 +548,10 @@ TextureImporter:
       name: Banan_Animation_15
       rect:
         serializedVersion: 2
-        x: 40
-        y: 63
-        width: 312
-        height: 668
+        x: 28
+        y: 52
+        width: 335
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,8 +559,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa040d9e88991c50800000000000000
-      internalID: 6636503264194202364
+      spriteID: 9bd9635476a91cd20800000000000000
+      internalID: 3297086170545429945
       vertices: []
       indices: 
       edges: []
@@ -515,10 +569,10 @@ TextureImporter:
       name: Banan_Animation_16
       rect:
         serializedVersion: 2
-        x: 367
-        y: 70
-        width: 415
-        height: 504
+        x: 350
+        y: 59
+        width: 441
+        height: 526
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -526,8 +580,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9a8c57c7ca8cf630800000000000000
-      internalID: 3962194362827049626
+      spriteID: 6ab27473dca8178e0800000000000000
+      internalID: -1697422970541626458
       vertices: []
       indices: 
       edges: []
@@ -536,10 +590,10 @@ TextureImporter:
       name: Banan_Animation_17
       rect:
         serializedVersion: 2
-        x: 825
-        y: 70
-        width: 356
-        height: 590
+        x: 811
+        y: 59
+        width: 379
+        height: 612
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -547,8 +601,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 997b09b08fae7b200800000000000000
-      internalID: 195883459880728473
+      spriteID: 21c12b0bc343b7920800000000000000
+      internalID: 2989040212957600786
       vertices: []
       indices: 
       edges: []

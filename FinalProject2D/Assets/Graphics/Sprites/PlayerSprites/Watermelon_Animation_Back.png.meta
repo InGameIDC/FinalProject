@@ -110,12 +110,6 @@ TextureImporter:
   - first:
       213: -6898828771482172540
     second: Watermelon_Animation_Back_35
-  - first:
-      213: -7013354806727202710
-    second: Watermelon_Animation_Back_36
-  - first:
-      213: -4173963472747514015
-    second: Watermelon_Animation_Back_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -159,7 +153,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -220,18 +214,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -244,7 +226,7 @@ TextureImporter:
         width: 539
         height: 679
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,8 +246,8 @@ TextureImporter:
         y: 1854
         width: 496
         height: 817
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,6 +260,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Watermelon_Animation_Back_2
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 2411
+        width: 7
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d06861154b24dd0800000000000000
+      internalID: -2503240182501339830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Watermelon_Animation_Back_3
       rect:
         serializedVersion: 2
@@ -285,8 +288,8 @@ TextureImporter:
         y: 2064
         width: 659
         height: 495
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,7 +310,7 @@ TextureImporter:
         width: 539
         height: 679
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -327,8 +330,8 @@ TextureImporter:
         y: 1854
         width: 496
         height: 817
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,6 +344,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Watermelon_Animation_Back_6
+      rect:
+        serializedVersion: 2
+        x: 3340
+        y: 2411
+        width: 7
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e029b35fb79bd10800000000000000
+      internalID: 2141879390988013073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Watermelon_Animation_Back_7
       rect:
         serializedVersion: 2
@@ -348,8 +372,8 @@ TextureImporter:
         y: 2064
         width: 659
         height: 495
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,6 +386,153 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Watermelon_Animation_Back_8
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 2393
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d764aa332e80c3b60800000000000000
+      internalID: 7727060828283356797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_9
+      rect:
+        serializedVersion: 2
+        x: 3340
+        y: 2393
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210cfa635ad209c80800000000000000
+      internalID: -8318098324142964718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_10
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 2208
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4753f99bfda564bf0800000000000000
+      internalID: -340484804881468044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_11
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 2133
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2ff44cadc98fa70800000000000000
+      internalID: 8861004730261828345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_12
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 2133
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39780aa90e4eae220800000000000000
+      internalID: 2516074995157862291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_13
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 2120
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a31f602e0991040800000000000000
+      internalID: 4618882193298635321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_14
+      rect:
+        serializedVersion: 2
+        x: 3322
+        y: 2120
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229b09d44b847bc00800000000000000
+      internalID: 916280988425828642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Watermelon_Animation_Back_15
       rect:
         serializedVersion: 2
@@ -369,8 +540,8 @@ TextureImporter:
         y: 1198
         width: 659
         height: 495
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,6 +554,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Watermelon_Animation_Back_16
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1545
+        width: 7
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c73a169fc2eb650800000000000000
+      internalID: 6250482782433410155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Watermelon_Animation_Back_17
       rect:
         serializedVersion: 2
@@ -390,8 +582,8 @@ TextureImporter:
         y: 988
         width: 496
         height: 817
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,7 +604,7 @@ TextureImporter:
         width: 539
         height: 678
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -432,8 +624,8 @@ TextureImporter:
         y: 1198
         width: 659
         height: 495
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,6 +638,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Watermelon_Animation_Back_20
+      rect:
+        serializedVersion: 2
+        x: 2795
+        y: 1545
+        width: 7
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d9a0a7cbc260a30800000000000000
+      internalID: 4181078492073074078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Watermelon_Animation_Back_21
       rect:
         serializedVersion: 2
@@ -453,8 +666,8 @@ TextureImporter:
         y: 988
         width: 496
         height: 817
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,7 +688,7 @@ TextureImporter:
         width: 539
         height: 678
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,6 +696,153 @@ TextureImporter:
       bones: []
       spriteID: 9561f03b5d2694930800000000000000
       internalID: 4127939203433436761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_23
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1527
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e0d117762170f00800000000000000
+      internalID: 1082854470894554780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_24
+      rect:
+        serializedVersion: 2
+        x: 2797
+        y: 1527
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e70d95b96609230800000000000000
+      internalID: 3643524915955531418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_25
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 1343
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755579a7ef30f9300800000000000000
+      internalID: 260931694924092759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_26
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1267
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940223aef6178ca40800000000000000
+      internalID: 5388681679633260617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_27
+      rect:
+        serializedVersion: 2
+        x: 2790
+        y: 1267
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ccfa9c2c817a4340800000000000000
+      internalID: 4848812795675475142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_28
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1254
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb725bbf6ceb350f0800000000000000
+      internalID: -1129349319704107073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_29
+      rect:
+        serializedVersion: 2
+        x: 2810
+        y: 1254
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7e51c8c0ec7c110800000000000000
+      internalID: 1281219172295370715
       vertices: []
       indices: 
       edges: []
@@ -496,7 +856,7 @@ TextureImporter:
         width: 537
         height: 679
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -512,12 +872,12 @@ TextureImporter:
       name: Watermelon_Animation_Back_31
       rect:
         serializedVersion: 2
-        x: 694
+        x: 690
         y: 56
         width: 636
         height: 500
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -537,8 +897,8 @@ TextureImporter:
         y: 42
         width: 493
         height: 819
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -559,7 +919,7 @@ TextureImporter:
         width: 539
         height: 679
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -575,12 +935,12 @@ TextureImporter:
       name: Watermelon_Animation_Back_34
       rect:
         serializedVersion: 2
-        x: 2803
+        x: 2799
         y: 56
         width: 637
         height: 500
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -600,8 +960,8 @@ TextureImporter:
         y: 42
         width: 493
         height: 819
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

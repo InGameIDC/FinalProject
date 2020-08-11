@@ -9,13 +9,15 @@ public class Health : MonoBehaviour
     public Action<GameObject, float> OnHit = delegate { };        // handles object hit ( health > 0)
     public Action<GameObject> OnDeath = delegate { };    // handles object death (0 >= health)
 
+    // Used for death animation.
+    [SerializeField] private GameObject deathAnimation;
 
     private float _currentHeatlh = 4;   //For now to the health bar to work
     [SerializeField] public float _maxHealth = 4;       //For now to the health bar to work
     public float GetCurrentHealth() => _currentHeatlh;
     private void Awake()
     {
-        
+
     }
 
     private void Start()
@@ -49,15 +51,20 @@ public class Health : MonoBehaviour
         transform.parent.gameObject.GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);    //updae the life Bar
 
         OnHit(transform.parent.gameObject, _currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
+        // Play hit sound
+        SoundManager.Instance.PlaySound(Sound.HeroHit);
 
         if (_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
         {
-            
+
 
             //Destroy(gameObject);    //For Testing
-            
+
             //ResetHealth();
+            playDeathAnimation();
             OnDeath(transform.parent.gameObject);        // tells all classes that it is dead
+            // Play death sound
+            SoundManager.Instance.PlaySound(Sound.HeroDie);
             transform.parent.gameObject.SetActive(false);
 
 
@@ -86,4 +93,9 @@ public class Health : MonoBehaviour
         transform.parent.gameObject.GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);
     }
 
+    public void playDeathAnimation()
+    {
+        Vector3 heroPosition = this.transform.parent.position;
+        Instantiate(deathAnimation, heroPosition, Quaternion.identity);
+    }
 }

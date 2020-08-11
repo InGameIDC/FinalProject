@@ -27,6 +27,11 @@ public class TimerCountdown : MonoBehaviour
         {
             StartCoroutine(TimerTake());
         }
+        else if (secondsLeft == 30) // used to play the RUSH sound
+        {
+            // Play rush sound
+            SoundManager.Instance.PlaySound(Sound.RushTime);
+        } 
         else if(secondsLeft == 0)
         {
             endPanel.SetActive(true);

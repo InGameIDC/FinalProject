@@ -17,15 +17,17 @@ public class Hill : MonoBehaviour
     public int sugarId;
 
 
-    public GameObject sm;
+    public GameObject sugarManagerObject;
+    private SugarManager sugarManager;
 
 
     private void Awake()
     {
-        sm = GameObject.FindGameObjectWithTag("SugarManager");
+        sugarManagerObject = GameObject.FindGameObjectWithTag("SugarManager");
+        sugarManager = sugarManagerObject.GetComponent<SugarManager>();
         hillRadius = GetComponent<CircleCollider2D>().radius;
         pointsCalcInterval = 0.3f;
-        Test.DrawCircle(gameObject, hillRadius, 0.05f, Color.cyan);
+        //Test.DrawCircle(gameObject, hillRadius, 0.05f, Color.cyan);
         //InvokeRepeating("score", 1f, pointsCalcInterval);
     }
 
@@ -68,7 +70,7 @@ public class Hill : MonoBehaviour
         if(unit.tag == "EnemyUnit")
         {
             //pointsAddedPrefab.GetComponent<TMPro.TextMeshProUGUI>().text = "-" + sugarScores[sugarId];
-            sm.GetComponent<SugarManager>().score(-sugarScores[sugarId]);  //to change according to cube type
+            sugarManager.score(-sugarScores[sugarId]);  //to change according to cube type
             Destroy(gameObject);
 
         }
@@ -78,9 +80,9 @@ public class Hill : MonoBehaviour
             //pointsAddedPrefab.SetActive(true);
             //pointsAddedPrefab.GetComponent<TMPro.TextMeshProUGUI>().text = "" + sugarScores[sugarId];
             Instantiate(pointsAddedPrefab, new Vector3(transform.position.x , transform.position.y, 0 ), Quaternion.identity);
-            sm.GetComponent<SugarManager>().score(sugarScores[sugarId]);  //to change according to cube type
-            Destroy(gameObject);
-
+            //Destroy(gameObject);
+            sugarManager.Animate(gameObject);
+            sugarManager.score(sugarScores[sugarId]);  //to change according to cube type
         }
 
         
