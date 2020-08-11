@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: a3df96513a996a14da32c412db97f3bd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3939468971540065966
+    second: Banan_Animation_Back_0
+  - first:
+      213: 4338750868452103822
+    second: Banan_Animation_Back_1
+  - first:
+      213: -5207629395581546772
+    second: Banan_Animation_Back_2
+  - first:
+      213: -6268704302201644634
+    second: Banan_Animation_Back_3
+  - first:
+      213: -6828605785123382327
+    second: Banan_Animation_Back_4
+  - first:
+      213: -1983174363109376048
+    second: Banan_Animation_Back_5
+  - first:
+      213: 5641775010407767304
+    second: Banan_Animation_Back_6
+  - first:
+      213: 3652472481951144599
+    second: Banan_Animation_Back_7
+  - first:
+      213: 1044164221691965497
+    second: Banan_Animation_Back_8
+  - first:
+      213: 8438653178083777753
+    second: Banan_Animation_Back_9
+  - first:
+      213: 987823532636962578
+    second: Banan_Animation_Back_10
+  - first:
+      213: -6087423339404157707
+    second: Banan_Animation_Back_11
+  - first:
+      213: -1947458254324312427
+    second: Banan_Animation_Back_12
+  - first:
+      213: 468871875324566345
+    second: Banan_Animation_Back_13
+  - first:
+      213: -5323624216639744970
+    second: Banan_Animation_Back_14
+  - first:
+      213: -827801679297292581
+    second: Banan_Animation_Back_15
+  - first:
+      213: -6179116253687357298
+    second: Banan_Animation_Back_16
+  - first:
+      213: 5792203565334277871
+    second: Banan_Animation_Back_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +94,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +124,423 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Banan_Animation_Back_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 3809
+        width: 203
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaea15c482ecba630800000000000000
+      internalID: 3939468971540065966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_1
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 3771
+        width: 257
+        height: 577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86510b5de6563c30800000000000000
+      internalID: 4338750868452103822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_2
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 3757
+        width: 173
+        height: 735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceeca7ae7a8cab7b0800000000000000
+      internalID: -5207629395581546772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 3065
+        width: 203
+        height: 653
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9de4176a61109a0800000000000000
+      internalID: -6268704302201644634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_4
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 3025
+        width: 254
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb1b8ac73beb31a0800000000000000
+      internalID: -6828605785123382327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_5
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 3010
+        width: 173
+        height: 739
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df343f8c695a74e0800000000000000
+      internalID: -1983174363109376048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2289
+        width: 377
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80dd7060b7c9b4e40800000000000000
+      internalID: 5641775010407767304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 2289
+        width: 441
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a5696ee5030b230800000000000000
+      internalID: 3652472481951144599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_8
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 2284
+        width: 333
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9303f11d3dd9d7e00800000000000000
+      internalID: 1044164221691965497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1563
+        width: 377
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc97660b5e1c1570800000000000000
+      internalID: 8438653178083777753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_10
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1563
+        width: 440
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ff89be44475bd00800000000000000
+      internalID: 987823532636962578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_11
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 1556
+        width: 331
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fc9461b9b0258ba0800000000000000
+      internalID: -6087423339404157707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_12
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 780
+        width: 333
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596d818290d39f4e0800000000000000
+      internalID: -1947458254324312427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_13
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 787
+        width: 437
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b54e58c74c18600800000000000000
+      internalID: 468871875324566345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_14
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 787
+        width: 379
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63455811bffae16b0800000000000000
+      internalID: -5323624216639744970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 50
+        width: 334
+        height: 694
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6530132ce0384f0800000000000000
+      internalID: -827801679297292581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_16
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 57
+        width: 441
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e806f11718e5f3aa0800000000000000
+      internalID: -6179116253687357298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Banan_Animation_Back_17
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 57
+        width: 382
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee208a447a026050800000000000000
+      internalID: 5792203565334277871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
