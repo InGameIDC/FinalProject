@@ -62,6 +62,66 @@ TextureImporter:
   - first:
       213: -644881860562202480
     second: Pea_Animation_19
+  - first:
+      213: 5876617525450908165
+    second: Pea_Animation_0
+  - first:
+      213: 3693952629939734942
+    second: Pea_Animation_1
+  - first:
+      213: 1045589786151581720
+    second: Pea_Animation_2
+  - first:
+      213: -6541133628077598559
+    second: Pea_Animation_3
+  - first:
+      213: -9137576929926543320
+    second: Pea_Animation_4
+  - first:
+      213: -920547964410110184
+    second: Pea_Animation_5
+  - first:
+      213: -4608045750645137078
+    second: Pea_Animation_6
+  - first:
+      213: 2427421226110248649
+    second: Pea_Animation_7
+  - first:
+      213: 530461258786414487
+    second: Pea_Animation_8
+  - first:
+      213: 7914985199146025934
+    second: Pea_Animation_9
+  - first:
+      213: 6921399726854282179
+    second: Pea_Animation_10
+  - first:
+      213: 1959365179614097041
+    second: Pea_Animation_11
+  - first:
+      213: 579086424056349551
+    second: Pea_Animation_12
+  - first:
+      213: -7724634400642642390
+    second: Pea_Animation_13
+  - first:
+      213: -9149648281675883280
+    second: Pea_Animation_14
+  - first:
+      213: 7234233840842477161
+    second: Pea_Animation_15
+  - first:
+      213: -5546776947416485557
+    second: Pea_Animation_16
+  - first:
+      213: -6289788874370243587
+    second: Pea_Animation_17
+  - first:
+      213: -3894778373234086443
+    second: Pea_Animation_18
+  - first:
+      213: 395782268753046424
+    second: Pea_Animation_19
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -185,19 +245,19 @@ TextureImporter:
       name: Pea_Animation_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 1978
-        width: 234
-        height: 922
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 36
+        y: 1966
+        width: 258
+        height: 934
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86c0886938be4a680800000000000000
-      internalID: -8744605626047919000
+      spriteID: 5022655f080fd8150800000000000000
+      internalID: 5876617525450908165
       vertices: []
       indices: 
       edges: []
@@ -206,19 +266,19 @@ TextureImporter:
       name: Pea_Animation_1
       rect:
         serializedVersion: 2
-        x: 380
-        y: 2155
-        width: 340
-        height: 729
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 368
+        y: 2143
+        width: 363
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f917c4e059a4ad800800000000000000
-      internalID: 637904301276819871
+      spriteID: e998da4785e834330800000000000000
+      internalID: 3693952629939734942
       vertices: []
       indices: 
       edges: []
@@ -227,19 +287,19 @@ TextureImporter:
       name: Pea_Animation_2
       rect:
         serializedVersion: 2
-        x: 779
-        y: 2043
-        width: 339
-        height: 840
+        x: 790
+        y: 2055
+        width: 301
+        height: 837
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ead73b7c8bbf624f0800000000000000
-      internalID: -853718308297146962
+      spriteID: 8187758ee5ea28e00800000000000000
+      internalID: 1045589786151581720
       vertices: []
       indices: 
       edges: []
@@ -248,19 +308,19 @@ TextureImporter:
       name: Pea_Animation_3
       rect:
         serializedVersion: 2
-        x: 1159
-        y: 2051
-        width: 290
-        height: 811
+        x: 1147
+        y: 2038
+        width: 315
+        height: 837
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b6cfc8158055e830800000000000000
-      internalID: 4099771568367847091
+      spriteID: 1a892162f993935a0800000000000000
+      internalID: -6541133628077598559
       vertices: []
       indices: 
       edges: []
@@ -269,19 +329,19 @@ TextureImporter:
       name: Pea_Animation_4
       rect:
         serializedVersion: 2
-        x: 1497
-        y: 2146
-        width: 340
-        height: 731
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 1484
+        y: 2135
+        width: 364
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6c7f07f90e8c84a0800000000000000
-      internalID: -6589735981299041173
+      spriteID: 8288ce7f13ec03180800000000000000
+      internalID: -9137576929926543320
       vertices: []
       indices: 
       edges: []
@@ -290,19 +350,19 @@ TextureImporter:
       name: Pea_Animation_5
       rect:
         serializedVersion: 2
-        x: 1902
-        y: 1980
-        width: 239
-        height: 916
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 1891
+        y: 1969
+        width: 263
+        height: 931
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68c9d31c29ea41cf0800000000000000
-      internalID: -282408931286999930
+      spriteID: 81f50aee08e8933f0800000000000000
+      internalID: -920547964410110184
       vertices: []
       indices: 
       edges: []
@@ -311,19 +371,19 @@ TextureImporter:
       name: Pea_Animation_6
       rect:
         serializedVersion: 2
-        x: 442
-        y: 1879
-        width: 136
-        height: 222
+        x: 430
+        y: 1867
+        width: 161
+        height: 246
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d28b2499e1ae97f0800000000000000
-      internalID: -603867275435736368
+      spriteID: a416c04edceec00c0800000000000000
+      internalID: -4608045750645137078
       vertices: []
       indices: 
       edges: []
@@ -332,19 +392,19 @@ TextureImporter:
       name: Pea_Animation_7
       rect:
         serializedVersion: 2
-        x: 625
-        y: 1983
-        width: 126
-        height: 130
+        x: 614
+        y: 1972
+        width: 148
+        height: 154
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc03588991ea47260800000000000000
-      internalID: 7094486737971654860
+      spriteID: 9c66b8e7ebeefa120800000000000000
+      internalID: 2427421226110248649
       vertices: []
       indices: 
       edges: []
@@ -353,19 +413,19 @@ TextureImporter:
       name: Pea_Animation_8
       rect:
         serializedVersion: 2
-        x: 58
-        y: 967
-        width: 234
-        height: 923
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 36
+        y: 950
+        width: 258
+        height: 947
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c97151ee81ae0eb10800000000000000
-      internalID: 2008862826601715612
+      spriteID: 79f121154b39c5700800000000000000
+      internalID: 530461258786414487
       vertices: []
       indices: 
       edges: []
@@ -374,19 +434,19 @@ TextureImporter:
       name: Pea_Animation_9
       rect:
         serializedVersion: 2
-        x: 380
-        y: 1139
-        width: 340
-        height: 729
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 368
+        y: 1127
+        width: 363
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6c5adf0af1c45db0800000000000000
-      internalID: -4804001622745523090
+      spriteID: ec3c29d6a1da7dd60800000000000000
+      internalID: 7914985199146025934
       vertices: []
       indices: 
       edges: []
@@ -395,19 +455,19 @@ TextureImporter:
       name: Pea_Animation_10
       rect:
         serializedVersion: 2
-        x: 802
-        y: 1051
-        width: 277
-        height: 813
+        x: 790
+        y: 1040
+        width: 301
+        height: 836
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 769c4a53fea0c6e90800000000000000
-      internalID: -7031232895718733465
+      spriteID: 3cb92a36160cd0060800000000000000
+      internalID: 6921399726854282179
       vertices: []
       indices: 
       edges: []
@@ -416,19 +476,19 @@ TextureImporter:
       name: Pea_Animation_11
       rect:
         serializedVersion: 2
-        x: 1159
-        y: 1034
-        width: 290
-        height: 813
+        x: 1147
+        y: 1023
+        width: 315
+        height: 836
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24b63dff6a9b027f0800000000000000
-      internalID: -639307020178855102
+      spriteID: 19eea2cef30113b10800000000000000
+      internalID: 1959365179614097041
       vertices: []
       indices: 
       edges: []
@@ -437,19 +497,19 @@ TextureImporter:
       name: Pea_Animation_12
       rect:
         serializedVersion: 2
-        x: 1497
-        y: 1131
-        width: 340
-        height: 729
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 1484
+        y: 1118
+        width: 364
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33dd3e462ee6514a0800000000000000
-      internalID: -6623265758344127181
+      spriteID: f634128d804590800800000000000000
+      internalID: 579086424056349551
       vertices: []
       indices: 
       edges: []
@@ -458,19 +518,19 @@ TextureImporter:
       name: Pea_Animation_13
       rect:
         serializedVersion: 2
-        x: 1902
-        y: 965
-        width: 239
-        height: 916
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 1891
+        y: 953
+        width: 263
+        height: 939
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4400a50a73578c480800000000000000
-      internalID: -8878717783587028924
+      spriteID: a2ecee180f59cc490800000000000000
+      internalID: -7724634400642642390
       vertices: []
       indices: 
       edges: []
@@ -479,19 +539,19 @@ TextureImporter:
       name: Pea_Animation_14
       rect:
         serializedVersion: 2
-        x: 47
-        y: 99
-        width: 278
-        height: 815
+        x: 36
+        y: 0
+        width: 302
+        height: 925
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b90ed0fc66e171c0800000000000000
-      internalID: -4507568396449216074
+      spriteID: 0fc12fe5d5be50180800000000000000
+      internalID: -9149648281675883280
       vertices: []
       indices: 
       edges: []
@@ -500,19 +560,19 @@ TextureImporter:
       name: Pea_Animation_15
       rect:
         serializedVersion: 2
-        x: 407
-        y: 189
-        width: 340
-        height: 729
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 396
+        y: 177
+        width: 363
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e85c86d8d08d4960800000000000000
-      internalID: 7587862615989967076
+      spriteID: 96e86818959256460800000000000000
+      internalID: 7234233840842477161
       vertices: []
       indices: 
       edges: []
@@ -521,19 +581,19 @@ TextureImporter:
       name: Pea_Animation_16
       rect:
         serializedVersion: 2
-        x: 845
-        y: 12
-        width: 234
-        height: 923
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 833
+        y: 1
+        width: 258
+        height: 946
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1bd1d8eeda1f800800000000000000
-      internalID: 644487461772046847
+      spriteID: b413ae021c3e503b0800000000000000
+      internalID: -5546776947416485557
       vertices: []
       indices: 
       edges: []
@@ -542,19 +602,19 @@ TextureImporter:
       name: Pea_Animation_17
       rect:
         serializedVersion: 2
-        x: 1170
-        y: 101
-        width: 277
-        height: 813
+        x: 1157
+        y: 90
+        width: 302
+        height: 835
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96d22e1205e51c560800000000000000
-      internalID: 7332245366594743657
+      spriteID: df325fee75e26b8a0800000000000000
+      internalID: -6289788874370243587
       vertices: []
       indices: 
       edges: []
@@ -563,19 +623,19 @@ TextureImporter:
       name: Pea_Animation_18
       rect:
         serializedVersion: 2
-        x: 1530
-        y: 189
-        width: 339
-        height: 729
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 1517
+        y: 178
+        width: 364
+        height: 752
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0311d6f7d51051130800000000000000
-      internalID: 3536734583450833200
+      spriteID: 5dd228874b7f2f9c0800000000000000
+      internalID: -3894778373234086443
       vertices: []
       indices: 
       edges: []
@@ -584,19 +644,19 @@ TextureImporter:
       name: Pea_Animation_19
       rect:
         serializedVersion: 2
-        x: 1967
-        y: 12
-        width: 234
-        height: 923
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 1954
+        y: 0
+        width: 259
+        height: 947
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 090d8135d5bec07f0800000000000000
-      internalID: -644881860562202480
+      spriteID: 89b6c6160e91e7500800000000000000
+      internalID: 395782268753046424
       vertices: []
       indices: 
       edges: []
