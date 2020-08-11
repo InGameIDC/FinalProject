@@ -2067,7 +2067,7 @@ PrefabInstance:
     - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
         type: 3}
@@ -2117,6 +2117,36 @@ PrefabInstance:
     - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 745704407}
+    - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2286592110697304737, guid: 959be5b8edee25a4da395703b0f1e2f6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2286592110697304738, guid: 959be5b8edee25a4da395703b0f1e2f6,
@@ -4448,9 +4478,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundAudioClips:
   - sound: 0
-    audioClip: {fileID: 0}
-  - sound: 0
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 9669960e415ea604d81fb0784634df79, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: bf85a9fae91354d48b69a70c182370db, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: a9be227d4e84909449808d64a201467b, type: 3}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: e11a5a019377fbd4c81caa0adcb4c236, type: 3}
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: c5e2a73ad4706440f93bf05df0b465fe, type: 3}
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: 134c83d6b10fe6945bba6b0cc14be6c1, type: 3}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: dbe60ddfb76cce24e99f5e95473c6d8a, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  - sound: 8
+    audioClip: {fileID: 8300000, guid: 5fdb13d3756c84fecac96f5a2d124370, type: 3}
+  - sound: 14
+    audioClip: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
 --- !u!1 &745916499
 GameObject:
   m_ObjectHideFlags: 0
@@ -17639,6 +17689,17 @@ MonoBehaviour:
       - m_Target: {fileID: 555123065}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 745704407}
+        m_MethodName: ResumeGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

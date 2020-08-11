@@ -45,8 +45,10 @@ public class SugarManager : MonoBehaviour
         //collectedSugarCube.transform.position += new Vector3(Random.Range(-spread, spread), 0f, 0f);
         //animate coin to target position
         float duration = Random.Range(minAnimDuration, maxAnimDuration);
-        // Change the z position of the coin in order to prevent double-touching it
-        collectedSugarCube.transform.position += new Vector3(0,0,10);
+        // disable collider to prevent double-touching it
+        collectedSugarCube.GetComponent<CircleCollider2D>().enabled = false;
+        // Play sugar collection sound
+        SoundManager.Instance.PlaySound(Sound.SugarCollection);
         collectedSugarCube.transform.DOMove(targetPosition, duration)
             .SetEase(easeType)
             .OnComplete(() => {

@@ -1,7 +1,112 @@
 fileFormatVersion: 2
 guid: 57cf248a34d711d4cac7ceb779f72025
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 24497037803359711
+    second: broccoli_Animation_0
+  - first:
+      213: -6634238300368538434
+    second: broccoli_Animation_1
+  - first:
+      213: -831156789186663411
+    second: broccoli_Animation_2
+  - first:
+      213: 3413537620757819278
+    second: broccoli_Animation_3
+  - first:
+      213: -7564760247665245177
+    second: broccoli_Animation_4
+  - first:
+      213: 4367061289759870494
+    second: broccoli_Animation_5
+  - first:
+      213: -4647988594942625308
+    second: broccoli_Animation_6
+  - first:
+      213: 7333296704748366031
+    second: broccoli_Animation_7
+  - first:
+      213: -1511774636108570023
+    second: broccoli_Animation_8
+  - first:
+      213: 8651304176950115874
+    second: broccoli_Animation_9
+  - first:
+      213: -1535080620495271841
+    second: broccoli_Animation_10
+  - first:
+      213: 6229638192599921085
+    second: broccoli_Animation_11
+  - first:
+      213: 8889512290411922047
+    second: broccoli_Animation_12
+  - first:
+      213: 1547606553776826200
+    second: broccoli_Animation_13
+  - first:
+      213: 8188946239463772720
+    second: broccoli_Animation_14
+  - first:
+      213: -3266095607597121321
+    second: broccoli_Animation_15
+  - first:
+      213: -9149943842310747490
+    second: broccoli_Animation_16
+  - first:
+      213: -5003875792255102556
+    second: broccoli_Animation_17
+  - first:
+      213: 7511371721584287866
+    second: broccoli_Animation_0
+  - first:
+      213: 228305865376475990
+    second: broccoli_Animation_1
+  - first:
+      213: -8809540252884353634
+    second: broccoli_Animation_2
+  - first:
+      213: -2894531225625195605
+    second: broccoli_Animation_3
+  - first:
+      213: -7820964151811379884
+    second: broccoli_Animation_4
+  - first:
+      213: 8632275687260308515
+    second: broccoli_Animation_5
+  - first:
+      213: 6763358532199668076
+    second: broccoli_Animation_6
+  - first:
+      213: 830204355271207585
+    second: broccoli_Animation_7
+  - first:
+      213: 1218754976280209058
+    second: broccoli_Animation_8
+  - first:
+      213: -4590586341924074749
+    second: broccoli_Animation_9
+  - first:
+      213: -5725544414037045623
+    second: broccoli_Animation_10
+  - first:
+      213: 9153040187669650997
+    second: broccoli_Animation_11
+  - first:
+      213: -8594372752013414476
+    second: broccoli_Animation_12
+  - first:
+      213: 596945027202181044
+    second: broccoli_Animation_13
+  - first:
+      213: -2194029225519586571
+    second: broccoli_Animation_14
+  - first:
+      213: -2831145828908941194
+    second: broccoli_Animation_15
+  - first:
+      213: 3228025761705015227
+    second: broccoli_Animation_16
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +145,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +175,402 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: broccoli_Animation_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 4615
+        width: 709
+        height: 765
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7022f8a8c0cd3860800000000000000
+      internalID: 7511371721584287866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_1
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 3595
+        width: 610
+        height: 1746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b27e599fa1b2300800000000000000
+      internalID: 228305865376475990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_2
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 4627
+        width: 780
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9db250a0d93eb580800000000000000
+      internalID: -8809540252884353634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 3747
+        width: 710
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab8559af2f84d7d0800000000000000
+      internalID: -2894531225625195605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_4
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 3758
+        width: 780
+        height: 656
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45de73a8a8a567390800000000000000
+      internalID: -7820964151811379884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 2854
+        width: 779
+        height: 657
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324446670010cc770800000000000000
+      internalID: 8632275687260308515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_6
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 2691
+        width: 599
+        height: 878
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c695e5050c64cdd50800000000000000
+      internalID: 6763358532199668076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_7
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 2844
+        width: 709
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa2ce6667a758b00800000000000000
+      internalID: 830204355271207585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1951
+        width: 780
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6eb659133e9e010800000000000000
+      internalID: 1218754976280209058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_9
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1788
+        width: 598
+        height: 877
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b0bd24b06fa40c0800000000000000
+      internalID: -4590586341924074749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_10
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1940
+        width: 709
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e899fc0b7ca80b0800000000000000
+      internalID: -5725544414037045623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1055
+        width: 709
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e9ce84e81260f70800000000000000
+      internalID: 9153040187669650997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_12
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 947
+        width: 782
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfa1f85487aab880800000000000000
+      internalID: -8594372752013414476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_13
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 908
+        width: 609
+        height: 869
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b762d8e656c84800800000000000000
+      internalID: 596945027202181044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_14
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 709
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2641a3b0e3d81e0800000000000000
+      internalID: -2194029225519586571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_15
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 49
+        width: 783
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670cd806edfb5b8d0800000000000000
+      internalID: -2831145828908941194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broccoli_Animation_16
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 11
+        width: 609
+        height: 868
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7bc34d3504ccc20800000000000000
+      internalID: 3228025761705015227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

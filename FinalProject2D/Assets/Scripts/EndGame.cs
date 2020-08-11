@@ -102,7 +102,10 @@ public class EndGame : MonoBehaviour
         endPanel.SetActive(true);
         wonTitle.SetActive(true);
         wonMes.SetActive(true);
-        
+
+        // Play Win sound
+        SoundManager.Instance.PlaySound(Sound.Win);
+
         //xpDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "+1000";
         //nextLevelButton.SetActive(true); 
         restartButton.SetActive(false);
@@ -142,6 +145,9 @@ public class EndGame : MonoBehaviour
     /// </summary>
     private void lostMessage()
     {
+        // Play Lose sound
+        SoundManager.Instance.PlaySound(Sound.Lose);
+
         endPanel.SetActive(true);
         lostTitle.SetActive(true);
         lostMes.SetActive(true);

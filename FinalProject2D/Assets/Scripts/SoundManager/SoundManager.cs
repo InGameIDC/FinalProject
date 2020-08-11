@@ -8,8 +8,13 @@ using Random = System.Random;
 
 public class SoundManager : MonoBehaviour
 {
+    const float k_BgVolume = 0.5f;
+    private const float k_SoundsVolume = 0.5f;
     [SerializeField] public SoundAudioClip[] soundAudioClips;
     private static SoundManager thisInstance;
+    private GameObject soundGameObject;
+    private AudioSource soundAudioSource;
+    private AudioSource bgAudioAudioSource;
 
     public static SoundManager Instance
     {
@@ -32,24 +37,42 @@ public class SoundManager : MonoBehaviour
 
     public void Awake()
     {
+        if (soundGameObject == null)
+        {
+            GameObject soundGameObject = new GameObject("Sound Game Object");
+            soundAudioSource = soundGameObject.AddComponent<AudioSource>();
+            soundAudioSource.volume = k_SoundsVolume;
+        }
         // Play bgMusic on loop if it exists.
         AudioClip bgMusic = GetAudioClip(Sound.BgMusic);
         if (bgMusic != null)
         {
-            AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
-            audioSource.loop = true;
-            audioSource.PlayOneShot(bgMusic);
+            bgAudioAudioSource = this.gameObject.AddComponent<AudioSource>();
+            bgAudioAudioSource.loop = true;
+            bgAudioAudioSource.volume = k_BgVolume;
+            bgAudioAudioSource.PlayOneShot(bgMusic);
         }
+    }
+    public void PauseGame()
+    {
+        bgAudioAudioSource.volume = 0.1f;
+        // Play Pause sound
+        PlaySound(Sound.PauseClick);
+    }
+
+    public void ResumeGame()
+    {
+        // Play Pause sound
+        PlaySound(Sound.ResumeClick);
+        bgAudioAudioSource.volume = k_BgVolume;
     }
 
     public void PlaySound(Sound soundToPlay)
     {
-        GameObject soundGameObject = new GameObject("Sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         AudioClip clipToPlay = GetAudioClip(soundToPlay);
         if (clipToPlay != null)
         {
-            audioSource.PlayOneShot(clipToPlay);
+            soundAudioSource.PlayOneShot(clipToPlay);
         }
         else
         {
@@ -88,15 +111,22 @@ public class SoundAudioClip
 }
 public enum Sound
 {
-    BgMusic,
-    HeroHit,
-    HeroDie,
-    EnemyHit,
-    EnemyDie,
-    SugarCollection,
-    RushTime,
-    PauseClick,
-    ResumeClick,
-    Win,
-    Lose
+    BgMusic, // soundmanager
+    HeroHit, // health
+    HeroDie, // health
+    //EnemyHit, // health
+    //EnemyDie, // health
+    SugarCollection, // sugar manager
+    RushTime, // TimerCountdown, seconds left.
+    PauseClick, // Button
+    ResumeClick, // Button
+    Win, // EndGame
+    Lose, // EndGame
+    BuyHero,
+    UpgradeHero,
+    StartBattle,
+    PickCard,
+    DefaultButtonClick,
+    SelectHero,
+    MoveHero
 }

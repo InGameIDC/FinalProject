@@ -233,12 +233,12 @@ TextureImporter:
       name: Chili_Animation_0
       rect:
         serializedVersion: 2
-        x: 118
-        y: 2350
-        width: 232
-        height: 889
+        x: 99
+        y: 2329
+        width: 272
+        height: 930
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,12 +254,12 @@ TextureImporter:
       name: Chili_Animation_1
       rect:
         serializedVersion: 2
-        x: 379
-        y: 2348
-        width: 283
-        height: 764
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 359
+        y: 2327
+        width: 324
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,12 +275,12 @@ TextureImporter:
       name: Chili_Animation_2
       rect:
         serializedVersion: 2
-        x: 714
-        y: 2203
-        width: 199
-        height: 1034
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 693
+        y: 2184
+        width: 240
+        height: 1073
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: Chili_Animation_3
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 2355
-        width: 232
-        height: 889
+        x: 1014
+        y: 2329
+        width: 272
+        height: 930
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -317,12 +317,12 @@ TextureImporter:
       name: Chili_Animation_4
       rect:
         serializedVersion: 2
-        x: 1295
-        y: 2343
-        width: 283
-        height: 764
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 1275
+        y: 2327
+        width: 324
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,12 +338,12 @@ TextureImporter:
       name: Chili_Animation_5
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 2203
-        width: 199
-        height: 1034
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 1610
+        y: 2187
+        width: 240
+        height: 1073
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -359,12 +359,12 @@ TextureImporter:
       name: Chili_Animation_6
       rect:
         serializedVersion: 2
-        x: 128
-        y: 1110
-        width: 197
-        height: 1034
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 94
+        y: 1335
+        width: 239
+        height: 1073
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -380,12 +380,12 @@ TextureImporter:
       name: Chili_Animation_7
       rect:
         serializedVersion: 2
-        x: 378
-        y: 1255
-        width: 283
-        height: 764
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 358
+        y: 1234
+        width: 324
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,12 +401,12 @@ TextureImporter:
       name: Chili_Animation_8
       rect:
         serializedVersion: 2
-        x: 690
-        y: 1257
-        width: 231
-        height: 889
+        x: 670
+        y: 1236
+        width: 272
+        height: 930
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,12 +422,12 @@ TextureImporter:
       name: Chili_Animation_9
       rect:
         serializedVersion: 2
-        x: 1043
-        y: 1110
-        width: 199
-        height: 1034
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 1022
+        y: 1091
+        width: 240
+        height: 1073
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -443,12 +443,12 @@ TextureImporter:
       name: Chili_Animation_10
       rect:
         serializedVersion: 2
-        x: 1294
-        y: 1255
-        width: 283
-        height: 764
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 1273
+        y: 1234
+        width: 317
+        height: 805
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,12 +464,12 @@ TextureImporter:
       name: Chili_Animation_11
       rect:
         serializedVersion: 2
-        x: 1606
-        y: 1257
-        width: 232
-        height: 889
+        x: 1586
+        y: 1236
+        width: 272
+        height: 930
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -485,12 +485,12 @@ TextureImporter:
       name: Chili_Animation_12
       rect:
         serializedVersion: 2
-        x: 118
-        y: 169
-        width: 232
-        height: 889
+        x: 99
+        y: 148
+        width: 272
+        height: 931
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -506,12 +506,12 @@ TextureImporter:
       name: Chili_Animation_13
       rect:
         serializedVersion: 2
-        x: 412
-        y: 33
-        width: 195
-        height: 1029
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 392
+        y: 12
+        width: 234
+        height: 1070
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -527,12 +527,12 @@ TextureImporter:
       name: Chili_Animation_14
       rect:
         serializedVersion: 2
-        x: 658
-        y: 301
-        width: 263
-        height: 770
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 641
+        y: 281
+        width: 303
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -548,12 +548,12 @@ TextureImporter:
       name: Chili_Animation_15
       rect:
         serializedVersion: 2
-        x: 1034
-        y: 169
-        width: 232
-        height: 889
+        x: 1014
+        y: 148
+        width: 272
+        height: 931
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -569,12 +569,12 @@ TextureImporter:
       name: Chili_Animation_16
       rect:
         serializedVersion: 2
-        x: 1328
-        y: 33
-        width: 194
-        height: 1029
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 1310
+        y: 12
+        width: 236
+        height: 1070
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -590,12 +590,12 @@ TextureImporter:
       name: Chili_Animation_17
       rect:
         serializedVersion: 2
-        x: 1574
-        y: 301
-        width: 263
-        height: 770
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 1553
+        y: 281
+        width: 305
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

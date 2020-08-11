@@ -182,10 +182,10 @@ TextureImporter:
       name: Carrot_Animation_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 3671
-        width: 332
-        height: 1141
+        x: 14
+        y: 3607
+        width: 412
+        height: 1244
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: Carrot_Animation_1
       rect:
         serializedVersion: 2
-        x: 556
-        y: 3720
-        width: 384
-        height: 1002
+        x: 510
+        y: 3681
+        width: 468
+        height: 1067
       alignment: 9
       pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,10 +224,10 @@ TextureImporter:
       name: Carrot_Animation_2
       rect:
         serializedVersion: 2
-        x: 1018
-        y: 3659
-        width: 269
-        height: 1268
+        x: 969
+        y: 3622
+        width: 356
+        height: 1342
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: Carrot_Animation_3
       rect:
         serializedVersion: 2
-        x: 1441
-        y: 3657
-        width: 273
-        height: 1270
+        x: 1381
+        y: 3629
+        width: 374
+        height: 1316
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: Carrot_Animation_4
       rect:
         serializedVersion: 2
-        x: 1807
-        y: 3879
-        width: 401
-        height: 1006
+        x: 1764
+        y: 3831
+        width: 459
+        height: 1077
       alignment: 9
       pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +287,10 @@ TextureImporter:
       name: Carrot_Animation_5
       rect:
         serializedVersion: 2
-        x: 2250
-        y: 3788
-        width: 332
-        height: 1133
+        x: 2232
+        y: 3747
+        width: 375
+        height: 1189
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1799
-        y: 3183
+        y: 3129
         width: 397
-        height: 561
+        height: 627
       alignment: 9
       pivot: {x: 0.5, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: Carrot_Animation_7
       rect:
         serializedVersion: 2
-        x: 18
-        y: 1808
-        width: 333
-        height: 1142
+        x: 0
+        y: 1772
+        width: 379
+        height: 1198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,10 +350,10 @@ TextureImporter:
       name: Carrot_Animation_8
       rect:
         serializedVersion: 2
-        x: 524
-        y: 1856
-        width: 386
-        height: 1004
+        x: 500
+        y: 1819
+        width: 447
+        height: 1058
       alignment: 9
       pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +371,10 @@ TextureImporter:
       name: Carrot_Animation_9
       rect:
         serializedVersion: 2
-        x: 986
+        x: 949
         y: 1797
-        width: 271
-        height: 1267
+        width: 339
+        height: 1276
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,10 +392,10 @@ TextureImporter:
       name: Carrot_Animation_10
       rect:
         serializedVersion: 2
-        x: 1409
-        y: 1795
-        width: 275
-        height: 1270
+        x: 1371
+        y: 1725
+        width: 346
+        height: 1348
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,10 +413,10 @@ TextureImporter:
       name: Carrot_Animation_11
       rect:
         serializedVersion: 2
-        x: 1776
-        y: 2015
-        width: 400
-        height: 1006
+        x: 1748
+        y: 1988
+        width: 455
+        height: 1071
       alignment: 9
       pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,10 +434,10 @@ TextureImporter:
       name: Carrot_Animation_12
       rect:
         serializedVersion: 2
-        x: 2218
-        y: 1924
-        width: 335
-        height: 1134
+        x: 2199
+        y: 1890
+        width: 385
+        height: 1193
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,10 +455,10 @@ TextureImporter:
       name: Carrot_Animation_13
       rect:
         serializedVersion: 2
-        x: 45
-        y: 492
-        width: 333
-        height: 1134
+        x: 20
+        y: 462
+        width: 376
+        height: 1188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,10 +476,10 @@ TextureImporter:
       name: Carrot_Animation_14
       rect:
         serializedVersion: 2
-        x: 422
-        y: 583
-        width: 398
-        height: 1006
+        x: 400
+        y: 546
+        width: 450
+        height: 1068
       alignment: 9
       pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,10 +497,10 @@ TextureImporter:
       name: Carrot_Animation_15
       rect:
         serializedVersion: 2
-        x: 881
-        y: 419
-        width: 274
-        height: 1269
+        x: 837
+        y: 397
+        width: 353
+        height: 1315
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -518,10 +518,10 @@ TextureImporter:
       name: Carrot_Animation_16
       rect:
         serializedVersion: 2
-        x: 1228
-        y: 475
-        width: 335
-        height: 1134
+        x: 1199
+        y: 444
+        width: 376
+        height: 1202
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,10 +539,10 @@ TextureImporter:
       name: Carrot_Animation_17
       rect:
         serializedVersion: 2
-        x: 1605
-        y: 566
-        width: 400
-        height: 1006
+        x: 1584
+        y: 537
+        width: 446
+        height: 1056
       alignment: 9
       pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,10 +560,10 @@ TextureImporter:
       name: Carrot_Animation_18
       rect:
         serializedVersion: 2
-        x: 2098
-        y: 346
-        width: 274
-        height: 1270
+        x: 2065
+        y: 322
+        width: 333
+        height: 1306
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
