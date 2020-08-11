@@ -51,6 +51,8 @@ public class Health : MonoBehaviour
         transform.parent.gameObject.GetComponentInChildren<SimpleHealthBar>().UpdateBar(_currentHeatlh, _maxHealth);    //updae the life Bar
 
         OnHit(transform.parent.gameObject, _currentHeatlh); // tells all classes that it is bieng hit and how much (for display?)
+        // Play hit sound
+        SoundManager.Instance.PlaySound(Sound.HeroHit);
 
         if (_currentHeatlh <= 0)      // if the XP is 0 or less the hero is dead
         {
@@ -61,6 +63,8 @@ public class Health : MonoBehaviour
             //ResetHealth();
             playDeathAnimation();
             OnDeath(transform.parent.gameObject);        // tells all classes that it is dead
+            // Play death sound
+            SoundManager.Instance.PlaySound(Sound.HeroDie);
             transform.parent.gameObject.SetActive(false);
 
 

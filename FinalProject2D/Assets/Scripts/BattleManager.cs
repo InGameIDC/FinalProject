@@ -153,6 +153,8 @@ public class BattleManager : MonoBehaviour
             Debug.Log(e); // TODO: Fix the spriteManager
             _interactionManager.SelectUnitInteraction(newHero);
         }
+        // Play hero select sound
+        SoundManager.Instance.PlaySound(Sound.SelectHero);
         _currentUnit.OnUnitSelect(_currentUnit.gameObject);
     }
 
