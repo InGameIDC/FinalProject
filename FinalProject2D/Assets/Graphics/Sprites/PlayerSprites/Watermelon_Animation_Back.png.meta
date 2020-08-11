@@ -1,7 +1,121 @@
 fileFormatVersion: 2
 guid: c53f09a533569cf44ab242c0f77b918b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 618626708863698214
+    second: Watermelon_Animation_Back_0
+  - first:
+      213: -27949416336298298
+    second: Watermelon_Animation_Back_1
+  - first:
+      213: -2503240182501339830
+    second: Watermelon_Animation_Back_2
+  - first:
+      213: -6724843880474489680
+    second: Watermelon_Animation_Back_3
+  - first:
+      213: 5777403580704958326
+    second: Watermelon_Animation_Back_4
+  - first:
+      213: -1932961076272396335
+    second: Watermelon_Animation_Back_5
+  - first:
+      213: 2141879390988013073
+    second: Watermelon_Animation_Back_6
+  - first:
+      213: 1142786294563343791
+    second: Watermelon_Animation_Back_7
+  - first:
+      213: 7727060828283356797
+    second: Watermelon_Animation_Back_8
+  - first:
+      213: -8318098324142964718
+    second: Watermelon_Animation_Back_9
+  - first:
+      213: -340484804881468044
+    second: Watermelon_Animation_Back_10
+  - first:
+      213: 8861004730261828345
+    second: Watermelon_Animation_Back_11
+  - first:
+      213: 2516074995157862291
+    second: Watermelon_Animation_Back_12
+  - first:
+      213: 4618882193298635321
+    second: Watermelon_Animation_Back_13
+  - first:
+      213: 916280988425828642
+    second: Watermelon_Animation_Back_14
+  - first:
+      213: 4721091661134966324
+    second: Watermelon_Animation_Back_15
+  - first:
+      213: 6250482782433410155
+    second: Watermelon_Animation_Back_16
+  - first:
+      213: -2927842996382953570
+    second: Watermelon_Animation_Back_17
+  - first:
+      213: -982749483417836948
+    second: Watermelon_Animation_Back_18
+  - first:
+      213: 3500374993629385852
+    second: Watermelon_Animation_Back_19
+  - first:
+      213: 4181078492073074078
+    second: Watermelon_Animation_Back_20
+  - first:
+      213: -8731463539148269698
+    second: Watermelon_Animation_Back_21
+  - first:
+      213: 4127939203433436761
+    second: Watermelon_Animation_Back_22
+  - first:
+      213: 1082854470894554780
+    second: Watermelon_Animation_Back_23
+  - first:
+      213: 3643524915955531418
+    second: Watermelon_Animation_Back_24
+  - first:
+      213: 260931694924092759
+    second: Watermelon_Animation_Back_25
+  - first:
+      213: 5388681679633260617
+    second: Watermelon_Animation_Back_26
+  - first:
+      213: 4848812795675475142
+    second: Watermelon_Animation_Back_27
+  - first:
+      213: -1129349319704107073
+    second: Watermelon_Animation_Back_28
+  - first:
+      213: 1281219172295370715
+    second: Watermelon_Animation_Back_29
+  - first:
+      213: 8054615015539298270
+    second: Watermelon_Animation_Back_30
+  - first:
+      213: -8128056956109882122
+    second: Watermelon_Animation_Back_31
+  - first:
+      213: 5236157085281079254
+    second: Watermelon_Animation_Back_32
+  - first:
+      213: -7655375874580566482
+    second: Watermelon_Animation_Back_33
+  - first:
+      213: -1196945321023871393
+    second: Watermelon_Animation_Back_34
+  - first:
+      213: -6898828771482172540
+    second: Watermelon_Animation_Back_35
+  - first:
+      213: -7013354806727202710
+    second: Watermelon_Animation_Back_36
+  - first:
+      213: -4173963472747514015
+    second: Watermelon_Animation_Back_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +154,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +184,435 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1944
+        width: 539
+        height: 679
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625c36ec6bdc59800800000000000000
+      internalID: 618626708863698214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_1
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1854
+        width: 496
+        height: 817
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce68976724bc9ff0800000000000000
+      internalID: -27949416336298298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_3
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 2064
+        width: 659
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bccb56de1e8ca2a0800000000000000
+      internalID: -6724843880474489680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_4
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 1944
+        width: 539
+        height: 679
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6772df752f57d2050800000000000000
+      internalID: 5777403580704958326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_5
+      rect:
+        serializedVersion: 2
+        x: 2823
+        y: 1854
+        width: 496
+        height: 817
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d78024742ebc25e0800000000000000
+      internalID: -1932961076272396335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_7
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 2064
+        width: 659
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad02a5841efbdf00800000000000000
+      internalID: 1142786294563343791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_15
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1198
+        width: 659
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e22063adfa48140800000000000000
+      internalID: 4721091661134966324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_17
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 988
+        width: 496
+        height: 817
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f8a72ae463e57d0800000000000000
+      internalID: -2927842996382953570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_18
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 1079
+        width: 539
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c626ea93d829c52f0800000000000000
+      internalID: -982749483417836948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_19
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 1198
+        width: 659
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7490fbc284d39030800000000000000
+      internalID: 3500374993629385852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_21
+      rect:
+        serializedVersion: 2
+        x: 2823
+        y: 988
+        width: 496
+        height: 817
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77dac32c2c93d680800000000000000
+      internalID: -8731463539148269698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_22
+      rect:
+        serializedVersion: 2
+        x: 3522
+        y: 1079
+        width: 539
+        height: 678
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9561f03b5d2694930800000000000000
+      internalID: 4127939203433436761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_30
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 50
+        width: 537
+        height: 679
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf4fb37eadb7cf60800000000000000
+      internalID: 8054615015539298270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_31
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 56
+        width: 636
+        height: 500
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc7de04347533f80800000000000000
+      internalID: -8128056956109882122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_32
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 42
+        width: 493
+        height: 819
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfc25070219aa840800000000000000
+      internalID: 5236157085281079254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_33
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 50
+        width: 539
+        height: 679
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ea785b334a2c590800000000000000
+      internalID: -7655375874580566482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_34
+      rect:
+        serializedVersion: 2
+        x: 2803
+        y: 56
+        width: 637
+        height: 500
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f566ecc7298936fe0800000000000000
+      internalID: -1196945321023871393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Watermelon_Animation_Back_35
+      rect:
+        serializedVersion: 2
+        x: 3512
+        y: 42
+        width: 493
+        height: 819
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4838f8da8cf6240a0800000000000000
+      internalID: -6898828771482172540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

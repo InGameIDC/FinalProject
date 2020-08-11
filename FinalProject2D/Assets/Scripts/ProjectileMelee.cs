@@ -17,7 +17,9 @@ public class ProjectileMelee : Projectile
 
             if (TeamTool.isEnemy(attacker, targetObject) && !hitted)
             {
-                hitted = true;
+                if (!isPiercing)
+                    hitted = true;
+
                 targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
                 createHitEffect(getHitlocation(target)); // creating hit effect
 

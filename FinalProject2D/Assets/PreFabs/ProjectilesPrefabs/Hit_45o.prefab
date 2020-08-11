@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3111817310861698075}
   - component: {fileID: 8396059048902827782}
   m_Layer: 0
-  m_Name: Hit_45o_rotate 1
+  m_Name: Hit_45o
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6358933165726883143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -3.677, z: -0.5}
+  m_LocalPosition: {x: -0.03, y: -3.677, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   SelfDestroyAfter: 0.15
   HitEffectObject: {fileID: 3328894972008588711, guid: 1a3512324fc57954ba203835b6257d41,
     type: 3}
+  isPiercing: 0
   shootDamege: 0
 --- !u!60 &3111817310861698075
 PolygonCollider2D:

@@ -8,6 +8,7 @@ public class HeroAnimationManager : MonoBehaviour
     private GameObject _rotator;
     private Movment2D _movment2d;
     private int state;
+    [SerializeField] private bool _isSupportAttackAnimation = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +57,9 @@ public class HeroAnimationManager : MonoBehaviour
         animator.SetBool("IsMoving", false);
     }
 
-    private void Attacking(GameObject unit)
+    private void Attacking(GameObject unit, Vector3 direction)
     {
-        //animator.SetTrigger("Attack");
+        if(_isSupportAttackAnimation)
+            animator.SetTrigger("Attack");
     }
 }

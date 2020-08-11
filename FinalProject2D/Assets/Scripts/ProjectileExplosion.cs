@@ -15,7 +15,7 @@ public class ProjectileExplosion : Projectile
             //sets the target to be the hero\enemy (=parent) component, instead of HeroDamageHitArea.
             GameObject targetParentObject = targetObject.transform.parent.gameObject;
 
-            if (TeamTool.isEnemy(attacker, targetParentObject))
+            if (TeamTool.isEnemy(attacker, targetParentObject) && !hitted)
             {
                 createHitEffect(transform.position); // creating hit effect
                 Collider2D[] damageHitAreasInSphere;
@@ -33,6 +33,8 @@ public class ProjectileExplosion : Projectile
                         //GetComponent<Collider2D>().isTrigger = false; // turn off the trigger (can't use the same bullet twice)
                     }
                 }
+                if (!isPiercing)
+                    hitted = true;
                 //Destroy(gameObject);
             }
         }

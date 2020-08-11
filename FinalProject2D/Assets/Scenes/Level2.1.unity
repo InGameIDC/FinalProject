@@ -6263,8 +6263,6 @@ MonoBehaviour:
   _ctrlPointsManager: {fileID: 1676783156}
   Heores:
   - {fileID: 433901971}
-  - {fileID: 0}
-  - {fileID: 0}
   _inputManager: {fileID: 998707026}
   _interactionManager: {fileID: 1929251389}
   _uiManager: {fileID: 0}
@@ -7612,7 +7610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432888241
 GameObject:
@@ -10360,7 +10358,7 @@ PrefabInstance:
     - target: {fileID: 2927454008613674078, guid: 0428a453ec762dc41b46f03c6df30802,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2927454008613674078, guid: 0428a453ec762dc41b46f03c6df30802,
         type: 3}
@@ -11494,12 +11492,12 @@ PrefabInstance:
     - target: {fileID: 3700128608833131777, guid: 837135b88bf96f14697a1d146788bc25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.99
+      value: -0.58
       objectReference: {fileID: 0}
     - target: {fileID: 3700128608833131777, guid: 837135b88bf96f14697a1d146788bc25,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: 3700128608833131777, guid: 837135b88bf96f14697a1d146788bc25,
         type: 3}
@@ -11584,12 +11582,12 @@ PrefabInstance:
     - target: {fileID: 5108313514700221567, guid: 37e70d0d09159344db9d93050792a3af,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.97
+      value: -0.49
       objectReference: {fileID: 0}
     - target: {fileID: 5108313514700221567, guid: 37e70d0d09159344db9d93050792a3af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.64
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 5108313514700221567, guid: 37e70d0d09159344db9d93050792a3af,
         type: 3}
