@@ -59,6 +59,63 @@ TextureImporter:
   - first:
       213: -6611959355229952663
     second: Apple_Animation_18
+  - first:
+      213: -6505759213322425459
+    second: Apple_Animation_0
+  - first:
+      213: -2597598122906184045
+    second: Apple_Animation_1
+  - first:
+      213: 3187748132899131244
+    second: Apple_Animation_2
+  - first:
+      213: -3929074522029272958
+    second: Apple_Animation_3
+  - first:
+      213: -4916294053179721851
+    second: Apple_Animation_4
+  - first:
+      213: -7221023503509069047
+    second: Apple_Animation_5
+  - first:
+      213: -1977256871567398478
+    second: Apple_Animation_6
+  - first:
+      213: 3895410500676535534
+    second: Apple_Animation_7
+  - first:
+      213: -4444507489973546691
+    second: Apple_Animation_8
+  - first:
+      213: 6501588841574277261
+    second: Apple_Animation_9
+  - first:
+      213: -4572278999114380724
+    second: Apple_Animation_10
+  - first:
+      213: -938507348371922549
+    second: Apple_Animation_11
+  - first:
+      213: 5129969225545924675
+    second: Apple_Animation_12
+  - first:
+      213: -4434315144701890617
+    second: Apple_Animation_13
+  - first:
+      213: -4183590773455993370
+    second: Apple_Animation_14
+  - first:
+      213: 2687481000270402238
+    second: Apple_Animation_15
+  - first:
+      213: -8243716878246007322
+    second: Apple_Animation_16
+  - first:
+      213: 1176759993298524790
+    second: Apple_Animation_17
+  - first:
+      213: 2198279826324187494
+    second: Apple_Animation_18
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -182,19 +239,19 @@ TextureImporter:
       name: Apple_Animation_0
       rect:
         serializedVersion: 2
-        x: 494
-        y: 4266
-        width: 423
-        height: 676
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 488
+        y: 4243
+        width: 452
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3a6f1ba74c117f0800000000000000
-      internalID: -643517240486485005
+      spriteID: d8b21b7e676e6b5a0800000000000000
+      internalID: -6505759213322425459
       vertices: []
       indices: 
       edges: []
@@ -203,19 +260,19 @@ TextureImporter:
       name: Apple_Animation_1
       rect:
         serializedVersion: 2
-        x: 964
-        y: 4231
-        width: 590
-        height: 513
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 951
+        y: 4216
+        width: 617
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71412d0d8bca988d0800000000000000
-      internalID: -2843551779930369001
+      spriteID: 39694f6154a73fbd0800000000000000
+      internalID: -2597598122906184045
       vertices: []
       indices: 
       edges: []
@@ -224,19 +281,19 @@ TextureImporter:
       name: Apple_Animation_2
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 4271
-        width: 505
-        height: 578
+        x: 1600
+        y: 4262
+        width: 530
+        height: 601
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55c59cc434709a030800000000000000
-      internalID: 3506341770517109845
+      spriteID: c6f0ed699082d3c20800000000000000
+      internalID: 3187748132899131244
       vertices: []
       indices: 
       edges: []
@@ -245,19 +302,19 @@ TextureImporter:
       name: Apple_Animation_3
       rect:
         serializedVersion: 2
-        x: 221
-        y: 3569
-        width: 117
-        height: 469
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
+        x: 207
+        y: 3554
+        width: 146
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1059fbe0cf5902f60800000000000000
-      internalID: 8007565047276475649
+      spriteID: 28058621a8f1979c0800000000000000
+      internalID: -3929074522029272958
       vertices: []
       indices: 
       edges: []
@@ -266,19 +323,19 @@ TextureImporter:
       name: Apple_Animation_4
       rect:
         serializedVersion: 2
-        x: 490
-        y: 3493
-        width: 430
-        height: 679
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 477
+        y: 3481
+        width: 457
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09c0e3281b60f6110800000000000000
-      internalID: 1256230180523740304
+      spriteID: 5877bd43b90d5cbb0800000000000000
+      internalID: -4916294053179721851
       vertices: []
       indices: 
       edges: []
@@ -287,19 +344,19 @@ TextureImporter:
       name: Apple_Animation_5
       rect:
         serializedVersion: 2
-        x: 1011
-        y: 3566
-        width: 591
-        height: 516
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 996
+        y: 3551
+        width: 621
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f68abbba9cd777590800000000000000
-      internalID: -7676528734706620305
+      spriteID: 9036896d165c9cb90800000000000000
+      internalID: -7221023503509069047
       vertices: []
       indices: 
       edges: []
@@ -308,19 +365,19 @@ TextureImporter:
       name: Apple_Animation_6
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 3580
-        width: 501
-        height: 572
+        x: 1653
+        y: 3566
+        width: 531
+        height: 601
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cce65595c067cca90800000000000000
-      internalID: -7292323901209219380
+      spriteID: 2b9668ce95f5f84e0800000000000000
+      internalID: -1977256871567398478
       vertices: []
       indices: 
       edges: []
@@ -329,19 +386,19 @@ TextureImporter:
       name: Apple_Animation_7
       rect:
         serializedVersion: 2
-        x: 502
-        y: 2738
-        width: 423
-        height: 674
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 488
+        y: 2723
+        width: 452
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad9fb25b6ff06d00800000000000000
-      internalID: 964051156672159142
+      spriteID: ee4c62b26374f0630800000000000000
+      internalID: 3895410500676535534
       vertices: []
       indices: 
       edges: []
@@ -350,19 +407,19 @@ TextureImporter:
       name: Apple_Animation_8
       rect:
         serializedVersion: 2
-        x: 964
-        y: 2711
-        width: 590
-        height: 513
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 951
+        y: 2696
+        width: 617
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af34dba9a73aac390800000000000000
-      internalID: -7797240057861159942
+      spriteID: d3150926cffe152c0800000000000000
+      internalID: -4444507489973546691
       vertices: []
       indices: 
       edges: []
@@ -371,19 +428,19 @@ TextureImporter:
       name: Apple_Animation_9
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 2741
-        width: 514
-        height: 593
+        x: 1600
+        y: 2743
+        width: 530
+        height: 598
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ce748a206c74a6d0800000000000000
-      internalID: -2980120300940394808
+      spriteID: d80ada1ca984a3a50800000000000000
+      internalID: 6501588841574277261
       vertices: []
       indices: 
       edges: []
@@ -392,19 +449,19 @@ TextureImporter:
       name: Apple_Animation_10
       rect:
         serializedVersion: 2
-        x: 490
-        y: 1973
-        width: 430
-        height: 679
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 477
+        y: 1960
+        width: 457
+        height: 707
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 851dcf3c8a482afe0800000000000000
-      internalID: -1179234292040150696
+      spriteID: c4a0fcba9700c80c0800000000000000
+      internalID: -4572278999114380724
       vertices: []
       indices: 
       edges: []
@@ -413,19 +470,19 @@ TextureImporter:
       name: Apple_Animation_11
       rect:
         serializedVersion: 2
-        x: 1011
-        y: 2046
-        width: 591
-        height: 516
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 996
+        y: 2032
+        width: 621
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da721489218d71e20800000000000000
-      internalID: 3321360824584447917
+      spriteID: b81a2310a80c9f2f0800000000000000
+      internalID: -938507348371922549
       vertices: []
       indices: 
       edges: []
@@ -434,19 +491,19 @@ TextureImporter:
       name: Apple_Animation_12
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 2059
-        width: 501
-        height: 574
+        x: 1653
+        y: 2046
+        width: 531
+        height: 601
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b23152bc8e7bdb90800000000000000
-      internalID: -7216034835178900809
+      spriteID: 340c955b4df413740800000000000000
+      internalID: 5129969225545924675
       vertices: []
       indices: 
       edges: []
@@ -455,19 +512,19 @@ TextureImporter:
       name: Apple_Animation_13
       rect:
         serializedVersion: 2
-        x: 436
-        y: 1282
-        width: 504
-        height: 571
+        x: 424
+        y: 1267
+        width: 530
+        height: 601
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55430bb66c35cf950800000000000000
-      internalID: 6484149675182011477
+      spriteID: 7cfa8e1bed52672c0800000000000000
+      internalID: -4434315144701890617
       vertices: []
       indices: 
       edges: []
@@ -476,19 +533,19 @@ TextureImporter:
       name: Apple_Animation_14
       rect:
         serializedVersion: 2
-        x: 996
-        y: 1277
-        width: 593
-        height: 516
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 991
+        y: 1255
+        width: 621
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eb1fb0d3dbc7f860800000000000000
-      internalID: 7563738209792760808
+      spriteID: 6e5cd8e6b56e0f5c0800000000000000
+      internalID: -4183590773455993370
       vertices: []
       indices: 
       edges: []
@@ -497,19 +554,19 @@ TextureImporter:
       name: Apple_Animation_15
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 1196
-        width: 427
-        height: 679
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        x: 1673
+        y: 1181
+        width: 457
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5e8a590ccd939550800000000000000
-      internalID: 6166445814456159836
+      spriteID: eb29ab91bb9db4520800000000000000
+      internalID: 2687481000270402238
       vertices: []
       indices: 
       edges: []
@@ -518,19 +575,19 @@ TextureImporter:
       name: Apple_Animation_16
       rect:
         serializedVersion: 2
-        x: 436
-        y: 546
-        width: 504
-        height: 572
+        x: 424
+        y: 531
+        width: 530
+        height: 601
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4b530f39536b6b90800000000000000
-      internalID: -7247589940362257587
+      spriteID: 6ed21432d2f689d80800000000000000
+      internalID: -8243716878246007322
       vertices: []
       indices: 
       edges: []
@@ -539,19 +596,19 @@ TextureImporter:
       name: Apple_Animation_17
       rect:
         serializedVersion: 2
-        x: 1004
-        y: 532
-        width: 593
-        height: 516
-      alignment: 9
-      pivot: {x: 0.5, y: 0.6}
+        x: 991
+        y: 517
+        width: 621
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1df49767dcacf5870800000000000000
-      internalID: 8673874391143632849
+      spriteID: 67a137aaaf0b45010800000000000000
+      internalID: 1176759993298524790
       vertices: []
       indices: 
       edges: []
@@ -560,19 +617,19 @@ TextureImporter:
       name: Apple_Animation_18
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 461
-        width: 427
-        height: 676
-      alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+        x: 1673
+        y: 446
+        width: 457
+        height: 706
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 965a2328ff99d34a0800000000000000
-      internalID: -6611959355229952663
+      spriteID: 669e5f4eadbd18e10800000000000000
+      internalID: 2198279826324187494
       vertices: []
       indices: 
       edges: []
