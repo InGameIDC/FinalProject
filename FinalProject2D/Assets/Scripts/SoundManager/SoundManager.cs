@@ -50,7 +50,8 @@ public class SoundManager : MonoBehaviour
             bgAudioAudioSource = this.gameObject.AddComponent<AudioSource>();
             bgAudioAudioSource.loop = true;
             bgAudioAudioSource.volume = k_BgVolume;
-            bgAudioAudioSource.PlayOneShot(bgMusic);
+            bgAudioAudioSource.clip = bgMusic;
+            bgAudioAudioSource.Play();
         }
     }
     public void PauseGame()
@@ -65,6 +66,11 @@ public class SoundManager : MonoBehaviour
         // Play Pause sound
         PlaySound(Sound.ResumeClick);
         bgAudioAudioSource.volume = k_BgVolume;
+    }
+
+    public void DefaultButton()
+    {
+        PlaySound(Sound.DefaultButtonClick);
     }
 
     public void PlaySound(Sound soundToPlay)
