@@ -51,6 +51,8 @@ public class heroesToChoose : MonoBehaviour
     public void GoToLevel()
     {
         SceneManager.LoadScene(gs.GetComponent<GameStatus>().lastLevelCosen);
+        // Destroy the fucking bg music when entering level
+        Destroy(GameObject.Find("SoundManager"));
     }
 
     /// <summary>
