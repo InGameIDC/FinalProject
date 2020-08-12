@@ -105,6 +105,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5857351937700740196, guid: 42535ac811db02349bc6a6e5666ccb38,
         type: 3}
+    - target: {fileID: 4679200837002507534, guid: 837135b88bf96f14697a1d146788bc25,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4918909949912960429, guid: 837135b88bf96f14697a1d146788bc25,
         type: 3}
       propertyPath: data

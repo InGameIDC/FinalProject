@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Tutorial : MonoBehaviour
 {
+    public GameObject m_TextImage;
+
     [SerializeField]
     private int m_Id;
 
@@ -18,7 +20,7 @@ public abstract class Tutorial : MonoBehaviour
 
     public string ExplanationText
     {
-        get { return m_ExplanationText;}
+        get { return m_ExplanationText; }
         set { m_ExplanationText = value; }
     }
 

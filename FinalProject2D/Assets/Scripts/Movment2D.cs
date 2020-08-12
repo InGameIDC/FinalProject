@@ -32,6 +32,9 @@ public class Movment2D : MonoBehaviour
 	private bool _reachedEndOfPath = false;
 
 	private Seeker _seeker;
+
+	private List<float> _currentSpeedsChangesPrecents = new List<float>(); // used to mange multiplie buffs/debuffs of speed
+	private float minSpeed = Mathf.Infinity;
 	// Start is called before the first frame update
 	private void Awake()
     {
@@ -51,6 +54,40 @@ public class Movment2D : MonoBehaviour
 		_moveSpeed = data.getMovementSpeed();
 		_AI.maxSpeed = _moveSpeed;
 	}
+
+	public Dictionary<GameObject, Vector3> heroesDirections = new Dictionary<GameObject, Vector3>();
+	public float GetSpeed() => _AI.maxSpeed;
+	public Vector3 GetHeroRotation() => _rotator != null ? _rotator.transform.rotation.eulerAngles : transform.rotation.eulerAngles;
+	public Vector3 GetHeroDirection() => _rotator != null ? _rotator.transform.forward : transform.forward;
+
+	/// <summary>
+	/// Change the movement speed by the given precent
+	/// </summary>
+	/// <param name="precentOfCurrentSpeed">The relative change in the speed</param>
+	/// <param name="duration">At the end of this duration, the speed would set to be normal, or to the next change that current present</param>
+	public void SetSpeedByPrecentForDuration(float precentOfCurrentSpeed, float duration) {
+		_currentSpeedsChangesPrecents.Add(precentOfCurrentSpeed);
+		_currentSpeedsChangesPrecents.Sort();
+		StartCoroutine(setSpeedForDurationCur(precentOfCurrentSpeed, duration));
+	}
+
+	private IEnumerator setSpeedForDurationCur(float precentOfCurrentSpeed, float duration)
+	{
+		_AI.maxSpeed = _moveSpeed * _currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] > _moveSpeed ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0]) / 2f : _currentSpeedsChangesPrecents[0];
+		yield return new WaitForSeconds(duration);
+		if (_currentSpeedsChangesPrecents.Exists(precentOfSpeed => precentOfSpeed == precentOfCurrentSpeed)) // if the speed is in the speeds list
+		{
+			_currentSpeedsChangesPrecents.Remove(precentOfCurrentSpeed);
+		}
+
+		if(_currentSpeedsChangesPrecents.Count > 0)
+			// If there is also a buff, then the speed would set to be avg of the buff and the duebuff, othersize it would be set by the debuff
+			_AI.maxSpeed = _moveSpeed * _currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count -1] > _moveSpeed ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0])/2f : _currentSpeedsChangesPrecents[0];
+		else
+			_AI.maxSpeed = _moveSpeed;
+
+	}
+
 
 	#region CtrlMovment
 	/// <summary>

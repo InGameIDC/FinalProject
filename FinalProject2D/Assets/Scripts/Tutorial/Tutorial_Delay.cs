@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tutorial_Touch : Tutorial
+public class Tutorial_Delay : Tutorial
 {
-    private bool m_IsCurrentTutorial = false;
-
     [SerializeField]
+    private bool m_IsCurrentTutorial = true;
+
+    public float m_DelayTime = 1f;
     public bool IsCurrentTutorial
     {
         get { return m_IsCurrentTutorial; }
@@ -16,23 +17,20 @@ public class Tutorial_Touch : Tutorial
     public override void CheckIfHappening()
     {
         m_TextImage.SetActive(true);
+        //StartCoroutine("WaitForSecondsRealtime", m_DelayTime);
         IsCurrentTutorial = true;
     }
 
     public void Update()
     {
-        if (!IsCurrentTutorial)
+        if (IsCurrentTutorial == false)
         {
             return;
         }
         else
         {
-            if (Input.touchCount == 1 || Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                IsCurrentTutorial = false;
-                m_TextImage.SetActive(false);
-                CompleteTutorial();
-            }
+            IsCurrentTutorial = false;
+            CompleteTutorial();
         }
     }
 }

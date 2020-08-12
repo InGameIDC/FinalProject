@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3441688588745305907, guid: 272385047a5cdc3478ebbc9e6c89575d,
+        type: 3}
+      propertyPath: HitEffectObject
+      value: 
+      objectReference: {fileID: 100004, guid: fb7b0526ade434043b350a180d741cf3, type: 3}
     - target: {fileID: 6358933165726883143, guid: 272385047a5cdc3478ebbc9e6c89575d,
         type: 3}
       propertyPath: m_Name
-      value: Hit_45o_Long
+      value: Hit_45o_Long Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7578838871980193723, guid: 272385047a5cdc3478ebbc9e6c89575d,
         type: 3}

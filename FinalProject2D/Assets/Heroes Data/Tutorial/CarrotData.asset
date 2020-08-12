@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
-  m_Name: AppleData
+  m_Name: CarrotData
   m_EditorClassIdentifier: 
-  _heroId: 0
-  _team: 0
-  _moveSpeed: 3.5
+  _heroId: 101
+  _team: 1
+  _moveSpeed: 0.5
   _maxHealth: 3
-  _damage: 1
-  _range: 3
-  _cooldown: 0.5
-  _projectile: {fileID: 6623445060515452541, guid: c2fa9be80a57db9419d8c1a3eee0f9bd,
+  _damage: 0.1
+  _range: 3.5
+  _cooldown: 2.5
+  _projectile: {fileID: 3712054432027369900, guid: bbfdf277d0bddcd429faa5af0240f9ba,
     type: 3}
   _projSpeed: 0
   _projectileOffsetValue: -60
@@ -29,10 +29,10 @@ MonoBehaviour:
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
-  _heroImage: {fileID: 3506341770517109845, guid: dff7ef3ac748e3f4998939a8d900d751,
+  _heroImage: {fileID: 123791106130311442, guid: d5fcfbf95abc2524daf11889d36a126d,
     type: 3}
-  upgradeCosts: 00000000c8000000f4010000e8030000
-  starsToUpgrade: 00000000000000000200000004000000
-  cardStatus: 2
-  upgradestatus: 1
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
+  cardStatus: 0
+  upgradestatus: 0
   starsToBuy: 0

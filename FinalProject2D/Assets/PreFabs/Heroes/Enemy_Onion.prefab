@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 873689174836007936}
   - component: {fileID: -846973612847377767}
   m_Layer: 11
-  m_Name: Hero_Onion
+  m_Name: Enemy_Onion
   m_TagString: EnemyUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,8 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2554b841e1fd644ac9c9d66dc5ec80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetsList:
-  - {fileID: 0}
 --- !u!114 &4759583908994958170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  _isSupportAttackAnimation: 0
 --- !u!114 &-846973612847377767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathAnimation: {fileID: 0}
   _maxHealth: 3
 --- !u!60 &873689172994835925
 PolygonCollider2D:
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 8002267045522943268}
   m_Layer: 14
   m_Name: OverlapAvoider
-  m_TagString: HeroUnit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

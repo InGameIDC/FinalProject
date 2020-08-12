@@ -31,7 +31,12 @@ PrefabInstance:
     - target: {fileID: 104868037613777065, guid: 6f1aba8c41eea914aae19fc6ca47d3be,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Pea Variant
+      value: Enemy_Pea
+      objectReference: {fileID: 0}
+    - target: {fileID: 104868037613777065, guid: 6f1aba8c41eea914aae19fc6ca47d3be,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyUnit
       objectReference: {fileID: 0}
     - target: {fileID: 104868037613777067, guid: 6f1aba8c41eea914aae19fc6ca47d3be,
         type: 3}

@@ -1,21 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
+//using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.Persistence;
+//using UnityEngine.XR.WSA.Persistence;
 
 public class TutorialManager : MonoBehaviour
 {
     private const string k_CompletedAllTutorials = "Level complete! Proceed to next level";
     [SerializeField]
     private List<Tutorial> m_TutorialList = new List<Tutorial>();
-    
+
     [SerializeField]
     private Text m_ExplanationText;
     private static TutorialManager thisInstance;
     [SerializeField]
     private Tutorial m_CurrentTutorial;
+
+    public LevelChanger m_LevelChanger;
 
     public Tutorial CurrentTutorial
     {
@@ -74,7 +76,7 @@ public class TutorialManager : MonoBehaviour
     public void CompletedAllTutorials()
     {
         ExplanationText.text = k_CompletedAllTutorials;
-        
+        m_LevelChanger.FadeToNextLevel();
         //load next scene.
     }
 
