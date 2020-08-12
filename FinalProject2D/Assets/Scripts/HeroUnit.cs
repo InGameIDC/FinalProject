@@ -29,6 +29,9 @@ public class HeroUnit : MonoBehaviour
     [SerializeField] private bool isRespawnable = false;
     [SerializeField] public Team heroTeam;
     [SerializeField] private float _commandCost;
+    bool isUnderDebuff = false;
+    float timeDebuffStarted = 0f;
+    float deBuffDuration = 0f;
 
     public GameObject GetHeroTargetObj() => _targetObj; // Returns the hero target object
     public float GetHeroCommandCost() => _commandCost; // Returns the hero command cost
@@ -55,6 +58,22 @@ public class HeroUnit : MonoBehaviour
         StartCoroutine(Test.ActiveOnIntervals(manageHero, 0.05f));
         //Test.DrawCircle(this.gameObject, 0.1f, 0.0001f);
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
+    }
+
+    private void Update()
+    {
+        if(isUnderDebuff && Time.time - timeDebuffStarted > deBuffDuration) {
+            isUnderDebuff = false;
+            transform.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    public void setDebuffColor(Color debuffColor, float duration)
+    {
+        isUnderDebuff = true;
+        this.timeDebuffStarted = Time.time;
+        this.deBuffDuration = duration;
+        transform.GetComponentInChildren<SpriteRenderer>().color = debuffColor;
     }
 
     public int getId()

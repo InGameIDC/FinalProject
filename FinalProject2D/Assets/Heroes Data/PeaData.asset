@@ -18,7 +18,7 @@ MonoBehaviour:
   _maxHealth: 4
   _damage: 0.5
   _range: 3
-  _cooldown: 2
+  _cooldown: 0.25
   _projectile: {fileID: 4912242714784741176, guid: 409f4f20569b13c42a1e266764bb43fe,
     type: 3}
   _projSpeed: 3

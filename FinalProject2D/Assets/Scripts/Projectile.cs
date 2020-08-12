@@ -12,6 +12,13 @@ public class Projectile : MonoBehaviour
     [SerializeField] public float SelfDestroyAfter = 5f;
     [SerializeField] private GameObject HitEffectObject; // Object that would apear on hit
     [SerializeField] protected bool isPiercing = false;
+    [SerializeField] List<DeBuff> debuffs;
+
+    private void Awake()
+    {
+        if (debuffs == null)
+            debuffs = new List<DeBuff>();
+    }
 
     protected virtual void Update()
     {
@@ -20,6 +27,10 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public void addDebuff(DeBuff debuff)
+    {
+        debuffs.Add(debuff);
+    }
     //new
     public float shootDamege;
 
@@ -40,6 +51,10 @@ public class Projectile : MonoBehaviour
                 if(!isPiercing)
                     hitted = true;
                 targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
+                foreach (DeBuff debuff in debuffs)
+                {
+                    debuff.activeDebuff(target.transform.parent.gameObject);
+                }
                 createHitEffect(transform.position); // creating hit effect
 
                 /*
