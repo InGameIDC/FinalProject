@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +11,15 @@ using UnityEngine.UI;
 
 public class ScoreBar : MonoBehaviour
 {
+    
     public float maxScore = 200;
+    public Animator m_Animator;
+ 
     // Start is called before the first frame update
     void Start()
     {
+     
+        m_Animator = gameObject.GetComponent<Animator>();
         GameObject sm = GameObject.FindGameObjectWithTag("SugarManager");
         //Debug.Log(hill.name);
         sm.GetComponent<SugarManager>().OnScoreChange += ScoreUpdate;
@@ -161,6 +167,18 @@ public class ScoreBar : MonoBehaviour
 
         // Call the functions for the options.
         UpdateOptions();
+        targetFill = _currentFraction;
+        //activates the score bar animation.
+        Debug.Log(_currentFraction);
+        if (_currentFraction > 0.5)
+        {
+            m_Animator.SetBool("loosing", false);
+            
+            
+        }else {
+            m_Animator.SetBool("loosing", true);
+            
+        }
     }
 
     /// <summary>
