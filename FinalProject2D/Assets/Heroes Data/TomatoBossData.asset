@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
   m_Name: TomatoBossData
   m_EditorClassIdentifier: 
-  _heroId: 105
+  _heroId: 106
   _team: 1
   _moveSpeed: 0
   _maxHealth: 1000
