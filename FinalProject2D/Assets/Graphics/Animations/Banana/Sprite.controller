@@ -1,8 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
---- !u!1107 &-5878637841496323446
-=======
 --- !u!1102 &-8210913425602008558
 AnimatorState:
   serializedVersion: 5
@@ -82,7 +79,6 @@ AnimatorState:
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1107 &-5243977395338114894
->>>>>>> Dev_Branch_Funcs
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -92,13 +88,6 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-<<<<<<< HEAD
-    m_State: {fileID: 6123493123280159653}
-    m_Position: {x: 200, y: 0, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -4413050235670003229}
-    m_Position: {x: 235, y: 65, z: 0}
-=======
     m_State: {fileID: 8000873628714332477}
     m_Position: {x: 200, y: 0, z: 0}
   - serializedVersion: 1
@@ -125,7 +114,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -3367228453147977900}
     m_Position: {x: 480, y: 520, z: 0}
->>>>>>> Dev_Branch_Funcs
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -135,10 +123,6 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-<<<<<<< HEAD
-  m_DefaultState: {fileID: 6123493123280159653}
---- !u!1102 &-4413050235670003229
-=======
   m_DefaultState: {fileID: 8000873628714332477}
 --- !u!1102 &-3367228453147977900
 AnimatorState:
@@ -193,18 +177,13 @@ AnimatorState:
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &-762197615267714226
->>>>>>> Dev_Branch_Funcs
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: Banana_Idle
-=======
   m_Name: Banana_walk_back
->>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -217,11 +196,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-<<<<<<< HEAD
-  m_Motion: {fileID: 7400000, guid: a0b7da73325f4ac4d962b81adf3c840d, type: 2}
-=======
   m_Motion: {fileID: 7400000, guid: 8304d807397d92548a24e846d0b1fa8a, type: 2}
->>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -239,11 +214,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-<<<<<<< HEAD
-    m_StateMachine: {fileID: -5878637841496323446}
-=======
     m_StateMachine: {fileID: -5243977395338114894}
->>>>>>> Dev_Branch_Funcs
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -253,9 +224,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
-<<<<<<< HEAD
---- !u!1102 &6123493123280159653
-=======
 --- !u!1102 &2110422525261163326
 AnimatorState:
   serializedVersion: 5
@@ -309,18 +277,13 @@ AnimatorState:
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &8000873628714332477
->>>>>>> Dev_Branch_Funcs
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: Banana_Walk
-=======
   m_Name: Banana_walk_right
->>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -333,11 +296,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-<<<<<<< HEAD
-  m_Motion: {fileID: 7400000, guid: 084b6caf2f7f31541924be56ff596dda, type: 2}
-=======
   m_Motion: {fileID: 7400000, guid: e570a0712ae0b9e4286f1350442fc515, type: 2}
->>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
