@@ -10,13 +10,12 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if(heoresIcons == null)
+        if (heoresIcons == null || (heoresIcons.Length > 0 && heoresIcons[0] == null))
             heoresIcons = GameObject.FindGameObjectsWithTag("HeroIcon");
 
         if (UIData.instance == null && uiData != null) // setting the data
             UIData.instance = uiData;
     }
-    
 
     public void SetHeroesIcons(GameObject[] heroes, Action<GameObject> onIconClick, GameObject selectedHero)
     {

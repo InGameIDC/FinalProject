@@ -19,7 +19,7 @@ MonoBehaviour:
   _damage: 3
   _range: 3
   _cooldown: 0.5
-  _projectile: {fileID: 6623445060515452541, guid: c2fa9be80a57db9419d8c1a3eee0f9bd,
+  _projectile: {fileID: 7908977082641710945, guid: 6bcf1cb05a4f2884fb8d8907f427067c,
     type: 3}
   _projSpeed: 0
   _projectileOffsetValue: -60

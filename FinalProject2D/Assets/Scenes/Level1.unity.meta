@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FinalProject2D/Assets/Graphics/Animations/Watermelon.meta
+guid: 7b87c132e419a8747a5a56e9ff60451d
+folderAsset: yes
+=======
 guid: 5e4cf6ee6308e684caca612b6d04966a
+>>>>>>> Dev_Branch_Funcs:FinalProject2D/Assets/Scenes/Level1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

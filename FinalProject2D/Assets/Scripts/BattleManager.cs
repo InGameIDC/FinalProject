@@ -154,7 +154,10 @@ public class BattleManager : MonoBehaviour
             _interactionManager.SelectUnitInteraction(newHero);
         }
         // Play hero select sound
-        SoundManager.Instance.PlaySound(Sound.SelectHero);
+        try {
+            SoundManager.Instance.PlaySound(Sound.SelectHero);
+        }
+        catch { Debug.Log("No sound was found");}
         _currentUnit.OnUnitSelect(_currentUnit.gameObject);
     }
 

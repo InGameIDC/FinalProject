@@ -20,23 +20,23 @@ public class SoundManager : MonoBehaviour
     {
         get
         {
-            if (thisInstance == null)
-            {
-                thisInstance = GameObject.FindObjectOfType<SoundManager>();
-            }
-
-            // If it's still null - there is no sound manager.
-            if (thisInstance == null)
-            {
-                Debug.Log("There is no sound manager!");
-            }
-
             return thisInstance;
         }
+        set { thisInstance = value; }
     }
 
     public void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
+
         if (soundGameObject == null)
         {
             GameObject soundGameObject = new GameObject("Sound Game Object");
@@ -53,6 +53,11 @@ public class SoundManager : MonoBehaviour
             bgAudioAudioSource.clip = bgMusic;
             bgAudioAudioSource.Play();
         }
+    }
+
+    public void KeepPlayingBgMusic()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
     public void PauseGame()
     {

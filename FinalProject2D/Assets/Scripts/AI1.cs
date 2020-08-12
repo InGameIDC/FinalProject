@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class AI1 : MonoBehaviour
 {
@@ -11,22 +12,19 @@ public class AI1 : MonoBehaviour
     private bool isRunning = true;
 
     // testing
-    [SerializeField] List<GameObject> targetsList; // only for testing
+    private List<GameObject> targetsList; // only for testing
     private ControlPointsManager _controlPointsManager;
 
     // Start is called before the first frame update
     void Awake()
     {
         _hero = transform.GetComponent<HeroUnit>();
-        if (targetsList == null)
-            targetsList = new List<GameObject>();
-        else if(targetsList.Count > 0)
-            Debug.Log("We already have:" + targetsList[0]);
     }
 
     private void Start()
     {
         _controlPointsManager = GameObject.Find("ControlPointsManager").GetComponent<ControlPointsManager>();
+        getTargets();
         StartCoroutine(attackTargets());
     }
 
@@ -44,6 +42,21 @@ public class AI1 : MonoBehaviour
     void OnDisable()
     {
         isRunning = false;
+    }
+
+    private void getTargets()
+    {
+        if (targetsList == null)
+        {
+            GameObject[] heroes = GameObject.FindGameObjectsWithTag("HeroUnit");
+            if (heroes != null && heroes.Length > 0)
+                targetsList = GameObject.FindGameObjectsWithTag("HeroUnit").ToList();
+            else
+                targetsList = new List<GameObject>();
+        }
+        else if (targetsList.Count > 0)
+            Debug.Log("We already have:" + targetsList[0]);
+
     }
 
     private IEnumerator attackTargets()
@@ -66,6 +79,8 @@ public class AI1 : MonoBehaviour
                     yield return new WaitForSeconds(GlobalCodeSettings.AI_Refresh_Time);
                 }
             }
+            else if (targetsList == null || targetsList.Count == 0)
+                getTargets();
             else
             { // Case there is no target alive
                 yield return new WaitForSeconds(10 * GlobalCodeSettings.AI_Refresh_Time);
@@ -83,7 +98,12 @@ public class AI1 : MonoBehaviour
         {
             if (target != null && target.activeSelf)
             {
-                float health = target.GetComponentInChildren<Health>().GetCurrentHealth();
+                Debug.Log("Target: " + target);
+                Health healthObj = target.GetComponentInChildren<Health>();
+                if (healthObj == null)
+                    break;
+
+                float health = healthObj.GetCurrentHealth();
                 if (weakestHealth > health)
                 {
                     weakestTarget = target;

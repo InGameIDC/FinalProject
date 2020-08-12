@@ -1,10 +1,18 @@
 fileFormatVersion: 2
 <<<<<<< HEAD:FinalProject2D/Assets/Graphics/Animations/Banana.meta
+<<<<<<< HEAD
+guid: 479392a0aa905934ea9a65f395902ea9
+=======
+guid: 4609ee7aa6be61a489b1070f7d5c4236
+>>>>>>> Dev_Branch_Funcs:FinalProject2D/Assets/PreFabs/Obsticles.meta
+folderAsset: yes
+=======
 guid: e28380fa603351846a67d7e2d2b6ef5e
 folderAsset: yes
 =======
 guid: 67cb436a4e4607c4186c5ea1c9042fab
 >>>>>>> Dev_Branch_Funcs:FinalProject2D/Assets/Scenes/Tutorial - ChooseHeroes.unity.meta
+>>>>>>> Dev_Branch_Funcs
 DefaultImporter:
   externalObjects: {}
   userData: 

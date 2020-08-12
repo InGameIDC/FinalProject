@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial_Trigger : Tutorial
 {
@@ -20,6 +21,7 @@ public class Tutorial_Trigger : Tutorial
 
     public override void CheckIfHappening()
     {
+        m_TextImage.SetActive(true);
         m_HiddenObject.SetActive(true);
         IsCurrentTutorial = true;
     }
@@ -29,6 +31,9 @@ public class Tutorial_Trigger : Tutorial
         if (IsCurrentTutorial == false)
         {
             Debug.Log("8====================D");
+            StartCoroutine(nextLevelCoroutine());
+
+
             return;
         }
         else
@@ -38,6 +43,7 @@ public class Tutorial_Trigger : Tutorial
                 Debug.Log("Trigger with " + i_Other.gameObject);
                 m_HiddenObject.SetActive(false);
                 IsCurrentTutorial = false;
+                m_TextImage.SetActive(false);
                 CompleteTutorial();
             }
             else
@@ -46,4 +52,15 @@ public class Tutorial_Trigger : Tutorial
             }
         }
     }
+
+    IEnumerator nextLevelCoroutine()
+    {
+        Debug.Log("YAY");
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Tutorial2");
+
+    }
+
+
 }

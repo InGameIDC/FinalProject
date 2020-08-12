@@ -24,13 +24,14 @@ public static class Respawn
 
         yield return new WaitForSeconds(respawnTime);
 
-        
         gameObject.SetActive(true);
         HeroUnit unit = gameObject.GetComponent<HeroUnit>();
         gameObject.GetComponent<HeroUnit>().Start();
 
         if (gameObject.tag == "HeroUnit")
+        {
             gameObject.transform.position = respawnHeroesPrefabsArray.RandomItem().transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+        }
 
         else
             gameObject.transform.position = respawnEnemiesPrefabsArray.RandomItem().transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));

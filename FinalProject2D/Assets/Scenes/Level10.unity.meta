@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FinalProject2D/Assets/Heroes Data/Tutorial.meta
+guid: b2600c6c7bd04e046bb33ad31919b3e8
+folderAsset: yes
+=======
 guid: 6109afe1094bd7148bd61559e0de1e13
+>>>>>>> Dev_Branch_Funcs:FinalProject2D/Assets/Scenes/Level10.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

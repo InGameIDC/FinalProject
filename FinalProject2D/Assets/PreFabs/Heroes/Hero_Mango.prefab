@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  _isSupportAttackAnimation: 0
 --- !u!95 &996782981
 Animator:
   serializedVersion: 3
@@ -295,6 +296,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ab81e814e885204449cf4b7faabb0883,
         type: 2}
+    - target: {fileID: 9096748489408671181, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4946b508d8a1cba48b0e0c80fe431f6a, type: 3}
 --- !u!1 &4658932785261967976 stripped

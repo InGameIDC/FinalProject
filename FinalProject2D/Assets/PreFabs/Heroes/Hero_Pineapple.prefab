@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 587947510949979712}
   m_Layer: 14
   m_Name: OverlapAvoider
-  m_TagString: HeroUnit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,6 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ae78dcb45de0e4aba71d65e1b8024b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathAnimation: {fileID: 0}
   _maxHealth: 3
 --- !u!1 &4077389251065134509
 GameObject:
@@ -764,7 +765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2554b841e1fd644ac9c9d66dc5ec80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetsList: []
 --- !u!114 &2677526345843820606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  _isSupportAttackAnimation: 0
 --- !u!114 &3789535644305285780
 MonoBehaviour:
   m_ObjectHideFlags: 0

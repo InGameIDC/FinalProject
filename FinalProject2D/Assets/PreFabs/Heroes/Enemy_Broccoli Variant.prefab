@@ -11,6 +11,12 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1737fed05654c19488cebab11797b500, type: 2}
+    - target: {fileID: 465115206342388285, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: a22c9b6bf1dc33c42bc3bc597aac1648,
+        type: 2}
     - target: {fileID: 8173591341274215057, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 8173591341274215059, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Broccoli
+      value: Enemy_Broccoli Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8521155656349353006, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}

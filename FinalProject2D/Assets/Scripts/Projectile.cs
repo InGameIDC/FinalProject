@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public bool hitted = false;
     [SerializeField] public float SelfDestroyAfter = 5f;
     [SerializeField] private GameObject HitEffectObject; // Object that would apear on hit
+    [SerializeField] protected bool isPiercing = false;
 
     protected virtual void Update()
     {
@@ -36,7 +37,8 @@ public class Projectile : MonoBehaviour
 
             if (TeamTool.isEnemy(attacker, targetObject) && !hitted)
             {
-                hitted = true;
+                if(!isPiercing)
+                    hitted = true;
                 targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
                 createHitEffect(transform.position); // creating hit effect
 

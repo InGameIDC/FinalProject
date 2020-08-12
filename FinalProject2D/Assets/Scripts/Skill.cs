@@ -5,7 +5,7 @@ using System;
 
 public class Skill : MonoBehaviour
 {
-    public Action<GameObject> OnAttack = delegate { }; // calls on attack
+    public Action<GameObject, Vector3> OnAttack = delegate { }; // calls on attack
 
     private float _id;
     private float _damageMultiplier;
@@ -42,6 +42,8 @@ public class Skill : MonoBehaviour
     public float GetRange() => _range;
     public bool IsOnCooldown() => Time.time - _cooldownStartTime < _cooldown;
 
+    public float GetSkillCooldown() => _cooldown;
+
     private void initFirePoint()
     {
         _firePoint = transform.Find("Rotator").Find("FirePoint").gameObject;
@@ -68,7 +70,7 @@ public class Skill : MonoBehaviour
         Quaternion rotation = _firePoint.transform.rotation;
         GameObject projGameObj = Instantiate(projectile, _firePoint.transform.position, rotation);
         initProj(projGameObj);
-        OnAttack(gameObject);
+        OnAttack(gameObject, SpaceCalTool.GetVectorDirectionTowardTarget(transform.position, _firePoint.transform.position));
     }
 
     private void initProj(GameObject projGameObj)

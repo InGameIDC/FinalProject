@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -413.99997}
+  m_AnchoredPosition: {x: 0, y: -414}
   m_SizeDelta: {x: 900, y: 1384.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12276567
@@ -2446,6 +2446,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1096250879}
         m_MethodName: backToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: KeepPlayingBgMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
