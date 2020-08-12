@@ -23,7 +23,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: a0b7da73325f4ac4d962b81adf3c840d, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 4194ae3b6ac4c1d43872415484fe1b7d, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -89,7 +93,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Attack
+=======
+  m_Name: Banana_Attack
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -104,7 +112,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 6f782968f58ba114db6e31be945529c9, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: f8a257d6e5e7fcc45b0664a3b691b62e, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -192,7 +204,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Walk_Up
+=======
+  m_Name: Banana_Walk_Up
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -207,7 +223,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 638108338dc70d04189950d4b9b2eacb, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 8304d807397d92548a24e846d0b1fa8a, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -220,7 +240,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Idle_Right
+=======
+  m_Name: Banana_Idle_Right
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -235,7 +259,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 4aa7d118738d9f54cb63a2fc0a03360f, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 9db37b4e04f90ec4c817e218fcde04d3, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -614,7 +642,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Walk_Right
+=======
+  m_Name: Banana_Walk_Right
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -629,7 +661,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 26f70c47244eb404cba13d71f85d80cb, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: e570a0712ae0b9e4286f1350442fc515, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -770,7 +806,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Idle_Up
+=======
+  m_Name: Banana_Idle_Up
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -785,7 +825,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: f52d189aa63acd6489b9ce292103bb44, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 182b0f0af9be0994982916d85806dad9, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1090,7 +1134,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Idle_Left
+=======
+  m_Name: Banana_Idle_Left
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1105,7 +1153,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: f87d94a0161bc604f977b0bd3c9c8eea, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 1a279349fd89f504f8c43ba8995460f5, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1165,7 +1217,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: Apple_Walk_Left
+=======
+  m_Name: Banana_Walk_Left
+>>>>>>> Dev_Branch_Funcs
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1180,7 +1236,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: d1ec27024b1c45b49a2f72d8ee0f59bf, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: e35b02bf1628265478118f6ab6ff445a, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1209,7 +1269,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 084b6caf2f7f31541924be56ff596dda, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 9b4316c830125bd4392731ee5685da5b, type: 2}
+>>>>>>> Dev_Branch_Funcs
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -15,9 +15,9 @@ public class GameStatus : MonoBehaviour
     public int lastLevelCosen;
     public int isToLevel;
     public int[] deckPlayers = { 0, 1, 2 };
-    public int[] starsInLevels = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    public int[] levelsPlayed = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-    public int[] starsToUnlock = { 0, 0, 1, 2, 3, 5, 8, 11, 15, 20 };
+    public int[] starsInLevels = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] levelsPlayed = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
+    public int[] starsToUnlock = { 0, 0, 1, 2, 3, 5, 8, 11, 15, 20, 0 };
     public int[] heroLevels = {1, 1, 1, 0, 0, 0 };
     public int[] enemyLevels = {0, 0, 0, 0, 0, 0 };
 

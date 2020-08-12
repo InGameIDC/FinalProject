@@ -255,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 467
-        y: 3773
+        y: 3781
         width: 251
         height: 572
       alignment: 9
@@ -339,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 904
-        y: 3014
+        y: 3030
         width: 176
         height: 732
       alignment: 9
@@ -464,7 +464,7 @@ TextureImporter:
       name: Banan_Animation_11
       rect:
         serializedVersion: 2
-        x: 833
+        x: 841
         y: 1556
         width: 335
         height: 688
@@ -486,7 +486,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 28
-        y: 780
+        y: 788
         width: 335
         height: 690
       alignment: 9
@@ -507,7 +507,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 350
-        y: 787
+        y: 795
         width: 441
         height: 527
       alignment: 9
