@@ -115,7 +115,7 @@ public class ChosenHeroCard : MonoBehaviour
             cm.finishChange(heroId);
             cm.inUseOutlineOn(false);
 
-            gs.deckPlayers[cardNumber] = heroId;
+            gs.deckPlayers[cardNumber - 1] = heroId;
             
         }
     }
