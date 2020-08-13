@@ -16,13 +16,13 @@ MonoBehaviour:
   _team: 0
   _moveSpeed: 3.5
   _maxHealth: 3
-  _damage: 3
-  _range: 3
-  _cooldown: 0.5
-  _projectile: {fileID: 7908977082641710945, guid: 6bcf1cb05a4f2884fb8d8907f427067c,
+  _damage: 0.5
+  _range: 5
+  _cooldown: 0.25
+  _projectile: {fileID: 1866814955367978911, guid: 48ef9c663de49c84b97c7f73732d11b1,
     type: 3}
-  _projSpeed: 0
-  _projectileOffsetValue: -60
+  _projSpeed: 3
+  _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0
   _levelUpGain_maxHealth: 0
   _levelUpGain_damage: 0

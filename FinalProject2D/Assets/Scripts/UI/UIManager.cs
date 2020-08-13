@@ -51,12 +51,15 @@ public class UIManager : MonoBehaviour
         foreach(GameObject icon in heoresIcons)
         {
             HeroIcon heroIcon = icon.GetComponent<HeroIcon>();
-            if (heroIcon.getHero() == selectedHero)
-                heroIcon.setIconToSelectedColor();
-            else if (heroIcon.getHero().activeSelf)
-                heroIcon.setIconToRegularColor();
-            else
-                heroIcon.setIconToUnavailableColor();
+            if (heroIcon.enabled)
+            {
+                if (heroIcon.getHero() == selectedHero)
+                    heroIcon.setIconToSelectedColor();
+                else if (heroIcon.getHero() != null && heroIcon.getHero().activeSelf)
+                    heroIcon.setIconToRegularColor();
+                else
+                    heroIcon.setIconToUnavailableColor();
+            }
         }
     }
 

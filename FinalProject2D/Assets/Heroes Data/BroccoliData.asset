@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
   m_Name: BroccoliData
   m_EditorClassIdentifier: 
-  _heroId: 0
-  _team: 0
-  _moveSpeed: 0
-  _maxHealth: 0
-  _damage: 0
-  _range: 0
-  _cooldown: 0
-  _projectile: {fileID: 0}
+  _heroId: 105
+  _team: 1
+  _moveSpeed: 1.2
+  _maxHealth: 6
+  _damage: 0.25
+  _range: 2.5
+  _cooldown: 0.75
+  _projectile: {fileID: 4049427146070417015, guid: b66361e5e77239743b488d89dc200d31,
+    type: 3}
   _projSpeed: 0
   _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0

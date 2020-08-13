@@ -55,6 +55,11 @@ public class Movment2D : MonoBehaviour
 		_AI.maxSpeed = _moveSpeed;
 	}
 
+	private void OnEnable()
+	{
+		_AI.maxSpeed = _moveSpeed;
+	}
+
 	public Dictionary<GameObject, Vector3> heroesDirections = new Dictionary<GameObject, Vector3>();
 	public float GetSpeed() => _AI.maxSpeed;
 	public Vector3 GetHeroRotation() => _rotator != null ? _rotator.transform.rotation.eulerAngles : transform.rotation.eulerAngles;
@@ -73,7 +78,8 @@ public class Movment2D : MonoBehaviour
 
 	private IEnumerator setSpeedForDurationCur(float precentOfCurrentSpeed, float duration)
 	{
-		_AI.maxSpeed = _moveSpeed * _currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] > _moveSpeed ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0]) / 2f : _currentSpeedsChangesPrecents[0];
+		//Debug.Log("Got speed: " + _moveSpeed * ((_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] > _moveSpeed) ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0]) / 2f : _currentSpeedsChangesPrecents[0]));
+		_AI.maxSpeed = _moveSpeed * (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] > _moveSpeed ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0]) / 2f : _currentSpeedsChangesPrecents[0]);
 		yield return new WaitForSeconds(duration);
 		if (_currentSpeedsChangesPrecents.Exists(precentOfSpeed => precentOfSpeed == precentOfCurrentSpeed)) // if the speed is in the speeds list
 		{
@@ -82,7 +88,7 @@ public class Movment2D : MonoBehaviour
 
 		if(_currentSpeedsChangesPrecents.Count > 0)
 			// If there is also a buff, then the speed would set to be avg of the buff and the duebuff, othersize it would be set by the debuff
-			_AI.maxSpeed = _moveSpeed * _currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count -1] > _moveSpeed ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0])/2f : _currentSpeedsChangesPrecents[0];
+			_AI.maxSpeed = _moveSpeed * (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] > _moveSpeed ? (_currentSpeedsChangesPrecents[_currentSpeedsChangesPrecents.Count - 1] + _currentSpeedsChangesPrecents[0]) / 2f : _currentSpeedsChangesPrecents[0]);
 		else
 			_AI.maxSpeed = _moveSpeed;
 
@@ -239,6 +245,7 @@ public class Movment2D : MonoBehaviour
 
 			if (!SpaceCalTool.IsLookingTowardsTheTarget(objToRotate.transform.gameObject, _desiredRotationDirection))
 			{
+				Debug.Log("Not Looking");
 				_isRotating = true;
 				//this._desiredRotationDirection = GetXZposRelativeVector(this._targetRotationLock.transform.position);
 

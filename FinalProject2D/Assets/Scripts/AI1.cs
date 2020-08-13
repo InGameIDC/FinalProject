@@ -46,16 +46,16 @@ public class AI1 : MonoBehaviour
 
     private void getTargets()
     {
-        if (targetsList == null)
-        {
-            GameObject[] heroes = GameObject.FindGameObjectsWithTag("HeroUnit");
-            if (heroes != null && heroes.Length > 0)
-                targetsList = GameObject.FindGameObjectsWithTag("HeroUnit").ToList();
-            else
-                targetsList = new List<GameObject>();
-        }
+
+        GameObject[] heroes = GameObject.FindGameObjectsWithTag("HeroUnit");
+        if (heroes != null && heroes.Length > 0)
+            targetsList = GameObject.FindGameObjectsWithTag("HeroUnit").ToList();
+        else
+            targetsList = new List<GameObject>();
+        /*
         else if (targetsList.Count > 0)
             Debug.Log("We already have:" + targetsList[0]);
+            */
 
     }
 
@@ -64,9 +64,10 @@ public class AI1 : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         isRunning = true;
         GameObject target = null;
-        while (targetsList.Count > 0)
+        while (true)
         {
             target = getWeakest();
+            Debug.Log("GOT TARGET: " + target + " Amount: " + targetsList.Count);
             if (target != null)
             {
                 // if the command fails, wait enough time to have enough points
@@ -80,13 +81,15 @@ public class AI1 : MonoBehaviour
                 }
             }
             else if (targetsList == null || targetsList.Count == 0)
+            {
                 getTargets();
+            }
             else
             { // Case there is no target alive
                 yield return new WaitForSeconds(10 * GlobalCodeSettings.AI_Refresh_Time);
                 OnNoTarget();
             }
-
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -98,7 +101,6 @@ public class AI1 : MonoBehaviour
         {
             if (target != null && target.activeSelf)
             {
-                Debug.Log("Target: " + target);
                 Health healthObj = target.GetComponentInChildren<Health>();
                 if (healthObj == null)
                     break;
