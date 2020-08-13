@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
+  m_Name: AvocadoData
+  m_EditorClassIdentifier: 
+  _heroId: 100
+  _team: 1
+  _moveSpeed: 0.7
+  _maxHealth: 6
+  _damage: 1
+  _range: 5
+  _cooldown: 1
+  _projectile: {fileID: 1258025947294799454, guid: 0febbeb927e9e014c9e744c8cb4a1402,
+    type: 3}
+  _projSpeed: 3
+  _projectileOffsetValue: 0
+  _levelUpGain_moveSpeed: 0
+  _levelUpGain_maxHealth: 0
+  _levelUpGain_damage: 0
+  _levelUpGain_cooldown: 0
+  _levelUpGain_projSpeed: 0
+  _levelUpGain_range: 0
+  _heroImage: {fileID: 6462014719252200060, guid: 2932db115afbdef4a834dc73e66bd31d,
+    type: 3}
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 0

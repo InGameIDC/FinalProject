@@ -40,15 +40,15 @@ public class GameStatus : MonoBehaviour
         //Load Data from playerprefs
         currentXP = PlayerPrefs.GetFloat("currentXP", 0);
         xpToNextLevel = PlayerPrefs.GetFloat("xpToNextLevel", 1000);
-        xpLevel = PlayerPrefs.GetInt("xpLevel", 1);
+        xpLevel = PlayerPrefs.GetInt("xpLevel", 3);
         coins = PlayerPrefs.GetInt("coins", 0);
         lastScene = PlayerPrefs.GetString("lastScene", "HomeMenu");
         lastLevelCosen = PlayerPrefs.GetInt("lastLevelCosen", 3);
         isToLevel = PlayerPrefs.GetInt("isToLevel", 0);
 
-        deckPlayers[0] = PlayerPrefs.GetInt("player1", 1);
-        deckPlayers[1] = PlayerPrefs.GetInt("player2", 2);
-        deckPlayers[2] = PlayerPrefs.GetInt("player3", 3);
+        deckPlayers[0] = PlayerPrefs.GetInt("player1", 0);
+        deckPlayers[1] = PlayerPrefs.GetInt("player2", 1);
+        deckPlayers[2] = PlayerPrefs.GetInt("player3", 2);
 
         //stars ernd in level
         starsInLevels[0] = PlayerPrefs.GetInt("starslevel1", 0);
