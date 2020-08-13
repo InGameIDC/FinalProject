@@ -8129,7 +8129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1394663784}
-  secondsLeft: 135
+  secondsLeft: 105
   takingAway: 0
   endPanel: {fileID: 1809527207}
 --- !u!114 &1394663787

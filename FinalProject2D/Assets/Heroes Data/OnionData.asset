@@ -15,7 +15,7 @@ MonoBehaviour:
   _heroId: 104
   _team: 1
   _moveSpeed: 1
-  _maxHealth: 3
+  _maxHealth: 7
   _damage: 1.5
   _range: 3
   _cooldown: 2.5
