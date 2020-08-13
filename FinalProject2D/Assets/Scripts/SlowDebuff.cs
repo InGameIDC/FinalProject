@@ -10,7 +10,12 @@ public class SlowDebuff : MonoBehaviour , DeBuff
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Projectile>().addDebuff(this);
+        debuffActivator proj = GetComponent<Projectile>();
+        
+        if(proj == null)
+            proj = GetComponent<ActiveDebuffOnEnter>();
+
+        proj.addDebuff(this);
     }
 
     public void activeDebuff(GameObject target)
