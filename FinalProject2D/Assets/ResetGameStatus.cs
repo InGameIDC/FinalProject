@@ -14,7 +14,7 @@ public class ResetGameStatus : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void ResetGameStatusData()
+    public void ResetGameStatusData(bool button)
     {
         gs.currentXP = 3;
         gs.xpToNextLevel = 0;
@@ -53,7 +53,16 @@ public class ResetGameStatus : MonoBehaviour
         gs.heroLevels[4] = 0;
         gs.heroLevels[5] = 0;
 
+        gs.tutorialPlayed = 0;
 
-        SceneManager.LoadScene("HomeMenu");
+        if (button)
+        {
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("HomeMenu");
+        }
+        
     }
 }
