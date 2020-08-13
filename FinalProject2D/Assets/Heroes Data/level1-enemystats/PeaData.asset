@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
+  m_Name: PeaData
+  m_EditorClassIdentifier: 
+  _heroId: 102
+  _team: 1
+  _moveSpeed: 1
+  _maxHealth: 2
+  _damage: 0.5
+  _range: 3
+  _cooldown: 0.25
+  _projectile: {fileID: 4912242714784741176, guid: 409f4f20569b13c42a1e266764bb43fe,
+    type: 3}
+  _projSpeed: 3
+  _projectileOffsetValue: 0
+  _levelUpGain_moveSpeed: 0
+  _levelUpGain_maxHealth: 0
+  _levelUpGain_damage: 0
+  _levelUpGain_cooldown: 0
+  _levelUpGain_projSpeed: 0
+  _levelUpGain_range: 0
+  _heroImage: {fileID: 4099771568367847091, guid: 3d930da0094b2344c910aaaf78ccf180,
+    type: 3}
+  upgradeCosts: 64000000640000006400000064000000
+  starsToUpgrade: 00000000000000000000000000000000
+  cardStatus: 0
+  upgradestatus: 0
+  starsToBuy: 0
