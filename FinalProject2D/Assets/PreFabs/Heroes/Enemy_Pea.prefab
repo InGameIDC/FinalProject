@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 1.5
   minions: {fileID: 104868037613777065, guid: 6f1aba8c41eea914aae19fc6ca47d3be, type: 3}
-  target: {fileID: 0}
 --- !u!1001 &5156886552139947220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112,6 +111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893777044031275054, guid: 6f1aba8c41eea914aae19fc6ca47d3be,
+        type: 3}
+      propertyPath: pickNextWaypointDist
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1aba8c41eea914aae19fc6ca47d3be, type: 3}

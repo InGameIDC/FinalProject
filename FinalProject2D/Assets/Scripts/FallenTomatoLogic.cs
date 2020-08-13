@@ -22,7 +22,7 @@ public class FallenTomatoLogic : MonoBehaviour
 
             Instantiate(explotionEffect, transform.position /*+ new Vector3(0, distanceToDestory * 2, 0)*/, transform.rotation);
 
-            Instantiate(explotionEffect, objectThatTouchWouldDestory.transform.position, transform.rotation);
+            Instantiate(objectToSpawn, objectThatTouchWouldDestory.transform.position, transform.rotation);
 
             Destroy(objectThatTouchWouldDestory);
             Destroy(transform.parent.gameObject);

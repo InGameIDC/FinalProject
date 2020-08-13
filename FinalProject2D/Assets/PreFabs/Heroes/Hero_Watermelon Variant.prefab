@@ -116,6 +116,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5d26d10aaacbb92429a091b83c790115,
         type: 2}
+    - target: {fileID: 7892120756182230404, guid: 837135b88bf96f14697a1d146788bc25,
+        type: 3}
+      propertyPath: pickNextWaypointDist
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837135b88bf96f14697a1d146788bc25, type: 3}
 --- !u!1 &3238316062856677393 stripped
