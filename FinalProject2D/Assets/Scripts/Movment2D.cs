@@ -245,7 +245,7 @@ public class Movment2D : MonoBehaviour
 
 			if (!SpaceCalTool.IsLookingTowardsTheTarget(objToRotate.transform.gameObject, _desiredRotationDirection))
 			{
-				Debug.Log("Not Looking");
+				//Debug.Log("Not Looking");
 				_isRotating = true;
 				//this._desiredRotationDirection = GetXZposRelativeVector(this._targetRotationLock.transform.position);
 

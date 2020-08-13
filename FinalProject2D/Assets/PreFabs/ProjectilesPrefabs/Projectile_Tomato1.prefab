@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1866814955367978911, guid: 48ef9c663de49c84b97c7f73732d11b1,
         type: 3}
       propertyPath: m_Name
-      value: Projectile_Banana
+      value: Projectile_Tomato1
       objectReference: {fileID: 0}
     - target: {fileID: 4629355001737587993, guid: 48ef9c663de49c84b97c7f73732d11b1,
         type: 3}
@@ -26,6 +26,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6033731
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750610223637549027, guid: 48ef9c663de49c84b97c7f73732d11b1,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750610223637549027, guid: 48ef9c663de49c84b97c7f73732d11b1,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.115
       objectReference: {fileID: 0}
     - target: {fileID: 7999348097131757448, guid: 48ef9c663de49c84b97c7f73732d11b1,
         type: 3}
