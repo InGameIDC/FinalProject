@@ -38,6 +38,7 @@ public class EndGame : MonoBehaviour
     {
         //initiating the gameobjects for future use
         gs = gsObject.GetComponent<GameStatus>();
+        levelId = levelData.getlevelId();
 
 
         Time.timeScale = 0f;                //stopping the game
@@ -110,7 +111,7 @@ public class EndGame : MonoBehaviour
         //nextLevelButton.SetActive(true); 
         restartButton.SetActive(false);
 
-        gs.levelsPlayed[gs.lastLevelCosen - 2] = 1;
+        gs.levelsPlayed[gs.lastLevelCosen - 1] = 1;
         int starsNum = 0;
         if(score < 75)
         {
@@ -132,7 +133,7 @@ public class EndGame : MonoBehaviour
         }
 
         //update the game data
-        gs.starsInLevels[gs.lastLevelCosen - 2] = starsNum;
+        gs.starsInLevels[gs.lastLevelCosen - 1] = starsNum;
         gsObject.GetComponent<GameStatus>().coins += levelData.getCoinsReward(starsNum);
 
         coinsDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = levelData.getCoinsReward(starsNum).ToString();
@@ -145,6 +146,8 @@ public class EndGame : MonoBehaviour
     /// </summary>
     private void lostMessage()
     {
+        gs.levelsPlayed[gs.lastLevelCosen - 1] = 1;
+
         // Play Lose sound
         SoundManager.Instance.PlaySound(Sound.Lose);
 
@@ -157,6 +160,6 @@ public class EndGame : MonoBehaviour
         youGotXp.SetActive(false);
         youGot.SetActive(false);
         //nextLevelButton.SetActive(false);
-        restartButton.SetActive(true);
+        //restartButton.SetActive(true);
     }
 }

@@ -12,13 +12,13 @@ using System;
 public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;                          //the timer text display
-    public int secondsLeft = 135;                           //seconds left to the battle
+    public int secondsLeft = 105;                           //seconds left to the battle
     public bool takingAway = false;                         //need to reduce time from timer
     public GameObject endPanel;
 
     private void Start()
     {
-        textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "2:15";
+        textDisplay.GetComponent<TMPro.TextMeshProUGUI>().text = "1:45";
     }
 
     private void Update()

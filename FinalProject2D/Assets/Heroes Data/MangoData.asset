@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroId: 2
   _team: 0
-  _moveSpeed: 0.75
+  _moveSpeed: 1.7
   _maxHealth: 4
   _damage: 0.15
-  _range: 5
+  _range: 2
   _cooldown: 0.25
   _projectile: {fileID: 2695447022465198110, guid: bed1f6b38b0f69c4682bc0c097e7c901,
     type: 3}
   _projSpeed: 3
   _projectileOffsetValue: 0
-  _levelUpGain_moveSpeed: 0
-  _levelUpGain_maxHealth: 0
-  _levelUpGain_damage: 0
+  _levelUpGain_moveSpeed: 0.2
+  _levelUpGain_maxHealth: 0.5
+  _levelUpGain_damage: 0.3
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0

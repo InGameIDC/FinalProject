@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroId: 3
   _team: 0
-  _moveSpeed: 3.5
+  _moveSpeed: 2
   _maxHealth: 3
   _damage: 0.5
   _range: 5
@@ -24,11 +24,11 @@ MonoBehaviour:
   _projSpeed: 3
   _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0
-  _levelUpGain_maxHealth: 0
-  _levelUpGain_damage: 0
+  _levelUpGain_maxHealth: 0.2
+  _levelUpGain_damage: 0.1
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
-  _levelUpGain_range: 0
+  _levelUpGain_range: 0.2
   _heroImage: {fileID: -6994387867358916157, guid: d49d3454a0d94e947aeb9e8245792b5f,
     type: 3}
   upgradeCosts: 90010000bc020000400600003a070000
