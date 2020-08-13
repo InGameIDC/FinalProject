@@ -12,9 +12,8 @@ public class ActiveDebuffOnEnter : MonoBehaviour, debuffActivator
             debuffsToActive = new List<DeBuff>();
     }
 
-    private void OnTriggerEnter(Collider unit)
+    private void OnTriggerEnter2D(Collider2D unit)
     {
-        Debug.Log("Got: " + unit.gameObject.name);
         foreach (DeBuff debuff in debuffsToActive)
         {
             debuff.activeDebuff(unit.transform.parent.gameObject);

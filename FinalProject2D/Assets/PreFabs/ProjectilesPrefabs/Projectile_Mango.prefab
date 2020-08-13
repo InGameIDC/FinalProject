@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1027494572271664557}
   - component: {fileID: 3919425276999187815}
   m_Layer: 15
-  m_Name: Mango_Projectile
+  m_Name: Projectile_Mango
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,12 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec53cba8b65c4bb4a9663b2adb4b8c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacker: {fileID: 4018694189843614138, guid: e1b7e5c0a85fe6e45ac45dd89fad7b04,
-    type: 3}
+  attacker: {fileID: 0}
   hitted: 0
   SelfDestroyAfter: 5
-  HitEffectObject: {fileID: 4018694189843614138, guid: e1b7e5c0a85fe6e45ac45dd89fad7b04,
-    type: 3}
+  HitEffectObject: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  isPiercing: 0
   shootDamege: 0
   _hitRadius: 2
 --- !u!60 &3919425276999187815

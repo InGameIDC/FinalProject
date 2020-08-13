@@ -7,16 +7,25 @@ public class ProjectileExplosion : Projectile
 {
     [SerializeField] private float _hitRadius = 2f;
 
+    public void ManualActiveExplotion(Collider2D target)
+    {
+        OnTriggerEnter2D(target);
+    }
+
+    public float getRadius() => _hitRadius;
     protected override void OnTriggerEnter2D(Collider2D target)
     {
+        Debug.Log("OO");
         if (target.tag.Equals("HeroDamageHitArea"))
         {
             GameObject targetObject = target.gameObject;
             //sets the target to be the hero\enemy (=parent) component, instead of HeroDamageHitArea.
             GameObject targetParentObject = targetObject.transform.parent.gameObject;
 
+            Debug.Log("AA");
             if (TeamTool.isEnemy(attacker, targetParentObject) && !hitted)
             {
+                Debug.Log("BB");
                 createHitEffect(transform.position); // creating hit effect
                 Collider2D[] damageHitAreasInSphere;
 

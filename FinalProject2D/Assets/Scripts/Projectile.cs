@@ -78,8 +78,11 @@ public class Projectile : MonoBehaviour, debuffActivator
 
     protected void createHitEffect(Vector3 pos)
     {
-        pos.z -= 1;
-        Instantiate(HitEffectObject, pos, transform.rotation);
+        if (HitEffectObject != null)
+        {
+            pos.z -= 1;
+            Instantiate(HitEffectObject, pos, transform.rotation);
+        }
     }
 
     /// <summary>

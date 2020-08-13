@@ -101,8 +101,8 @@ MonoBehaviour:
   attacker: {fileID: 0}
   hitted: 0
   SelfDestroyAfter: 0.3
-  HitEffectObject: {fileID: 3328894972008588711, guid: 1a3512324fc57954ba203835b6257d41,
-    type: 3}
+  HitEffectObject: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  isPiercing: 0
   shootDamege: 0
 --- !u!114 &7003004976280677584
 MonoBehaviour:
@@ -155,8 +155,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.35}
-    oldSize: {x: 0.39000002, y: 1.5637151}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48666668, y: 1.6604055}
     newSize: {x: 1.24, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
