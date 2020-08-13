@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
-  m_Name: PeaData
+  m_Name: AvocadoData
   m_EditorClassIdentifier: 
-  _heroId: 102
+  _heroId: 100
   _team: 1
-  _moveSpeed: 1
+  _moveSpeed: 0.2
   _maxHealth: 1
-  _damage: 0.5
+  _damage: 1
   _range: 3
-  _cooldown: 0.25
-  _projectile: {fileID: 4912242714784741176, guid: 409f4f20569b13c42a1e266764bb43fe,
+  _cooldown: 2
+  _projectile: {fileID: 1258025947294799454, guid: 0febbeb927e9e014c9e744c8cb4a1402,
     type: 3}
   _projSpeed: 3
   _projectileOffsetValue: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0
-  _heroImage: {fileID: 4099771568367847091, guid: 3d930da0094b2344c910aaaf78ccf180,
+  _heroImage: {fileID: 6462014719252200060, guid: 2932db115afbdef4a834dc73e66bd31d,
     type: 3}
   upgradeCosts: 64000000640000006400000064000000
   starsToUpgrade: 00000000000000000000000000000000

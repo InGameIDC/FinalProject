@@ -20,6 +20,7 @@ public class GameStatus : MonoBehaviour
     public int[] starsToUnlock = { 0, 0, 1, 2, 3, 5, 8, 11, 15, 20, 0 };
     public int[] heroLevels = {1, 1, 1, 0, 0, 0 };
     public int[] enemyLevels = {0, 0, 0, 0, 0, 0 };
+    public int tutorialPlayed = 0;
 
     // TODO: to delete after xml and images
     public Sprite s1;
@@ -46,9 +47,9 @@ public class GameStatus : MonoBehaviour
         lastLevelCosen = PlayerPrefs.GetInt("lastLevelCosen", 3);
         isToLevel = PlayerPrefs.GetInt("isToLevel", 0);
 
-        deckPlayers[0] = PlayerPrefs.GetInt("player1", 0);
-        deckPlayers[1] = PlayerPrefs.GetInt("player2", 1);
-        deckPlayers[2] = PlayerPrefs.GetInt("player3", 2);
+        deckPlayers[0] = PlayerPrefs.GetInt("player1", 1);
+        deckPlayers[1] = PlayerPrefs.GetInt("player2", 2);
+        deckPlayers[2] = PlayerPrefs.GetInt("player3", 3);
 
         //stars ernd in level
         starsInLevels[0] = PlayerPrefs.GetInt("starslevel1", 0);
@@ -86,6 +87,8 @@ public class GameStatus : MonoBehaviour
         enemyLevels[0] = PlayerPrefs.GetInt("Hero_100_Level", 1); //avocado
         enemyLevels[1] = PlayerPrefs.GetInt("Hero_101_Level", 1); //carrot
         enemyLevels[2] = PlayerPrefs.GetInt("Hero_102_Level", 1); //pea
+
+        tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed");
 
 
         xpToNextLevel = xpLevel * 1000;
@@ -160,6 +163,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Hero_100_Level", enemyLevels[0]);
         PlayerPrefs.SetInt("Hero_101_Level", enemyLevels[1]);
         PlayerPrefs.SetInt("Hero_102_Level", enemyLevels[2]);
+
+        PlayerPrefs.SetInt("tutorialPlayed", tutorialPlayed);
 
     }
 

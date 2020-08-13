@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class SugarManager : MonoBehaviour
 {
+    [SerializeField]
     public float windMill = 0;     //num between 100 to -100.
     public int minSugars = 2;
     public int maxSugars = 4;
