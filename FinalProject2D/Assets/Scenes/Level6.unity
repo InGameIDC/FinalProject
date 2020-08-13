@@ -8323,7 +8323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1394663784}
-  secondsLeft: 135
+  secondsLeft: 105
   takingAway: 0
   endPanel: {fileID: 1809527207}
 --- !u!114 &1394663787
@@ -15492,7 +15492,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelData
       value: 
-      objectReference: {fileID: 11400000, guid: 2885cea975ae35b4cbeb795b7b849db3,
+      objectReference: {fileID: 11400000, guid: 090fa93772d781b438e83255cca4fab0,
         type: 2}
     - target: {fileID: 8654626683437263129, guid: 630928c550f5a594dafa8feaa5d9be85,
         type: 3}

@@ -7824,7 +7824,12 @@ PrefabInstance:
     - target: {fileID: 6771465913799464635, guid: 0b29c13a247d6804d97b2dd6cfeccaa2,
         type: 3}
       propertyPath: direction.y
-      value: 1
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771465913799464635, guid: 0b29c13a247d6804d97b2dd6cfeccaa2,
+        type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9209191613367444139, guid: 0b29c13a247d6804d97b2dd6cfeccaa2,
         type: 3}
@@ -8178,7 +8183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1394663784}
-  secondsLeft: 135
+  secondsLeft: 105
   takingAway: 0
   endPanel: {fileID: 1809527207}
 --- !u!114 &1394663787
@@ -13604,6 +13609,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8755872086662436288, guid: 0d8a9cc4388451a48b2e5293bce9358e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044797777427417919, guid: 0d8a9cc4388451a48b2e5293bce9358e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d8a9cc4388451a48b2e5293bce9358e, type: 3}
 --- !u!4 &2101688621 stripped
@@ -15195,7 +15210,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelData
       value: 
-      objectReference: {fileID: 11400000, guid: 2885cea975ae35b4cbeb795b7b849db3,
+      objectReference: {fileID: 11400000, guid: dd7325947e98710478deabd5b34a5109,
         type: 2}
     - target: {fileID: 8654626683437263129, guid: 630928c550f5a594dafa8feaa5d9be85,
         type: 3}

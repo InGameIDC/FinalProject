@@ -3503,6 +3503,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Pea
       objectReference: {fileID: 0}
+    - target: {fileID: 5108313514700221565, guid: 37e70d0d09159344db9d93050792a3af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5108313514700221567, guid: 37e70d0d09159344db9d93050792a3af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3816,7 +3821,7 @@ PrefabInstance:
     - target: {fileID: 333932335155216265, guid: 67d4caa41941bcd45858e05391787375,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 333932335155216265, guid: 67d4caa41941bcd45858e05391787375,
         type: 3}
@@ -3872,6 +3877,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_Tomato_Boss Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 333932335155216267, guid: 67d4caa41941bcd45858e05391787375,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67d4caa41941bcd45858e05391787375, type: 3}
@@ -7629,7 +7639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1394663784}
-  secondsLeft: 135
+  secondsLeft: 105
   takingAway: 0
   endPanel: {fileID: 1809527207}
 --- !u!114 &1394663787
