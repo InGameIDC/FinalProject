@@ -88,7 +88,7 @@ public class GameStatus : MonoBehaviour
         enemyLevels[1] = PlayerPrefs.GetInt("Hero_101_Level", 1); //carrot
         enemyLevels[2] = PlayerPrefs.GetInt("Hero_102_Level", 1); //pea
 
-        tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed", 0);
+        tutorialPlayed = PlayerPrefs.GetInt("tutorialPlayed");
 
 
         xpToNextLevel = xpLevel * 1000;

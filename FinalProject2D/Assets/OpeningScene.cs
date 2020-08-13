@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class OpeningScene : MonoBehaviour
 {
-    public GameObject gas;
-    private GameStatus gs;
+    public GameObject gs;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        gs = gas.GetComponent<GameStatus>();
         StartCoroutine("StartDelay");
 
     }
@@ -22,11 +20,6 @@ public class OpeningScene : MonoBehaviour
         
     }
 
-    private void StartCor(bool s)
-    {
-        StartCoroutine("StartDelay");
-    }
-
     IEnumerator StartDelay()
     {
         float pauseTime = Time.realtimeSinceStartup + 3f;
@@ -35,14 +28,17 @@ public class OpeningScene : MonoBehaviour
             yield return 0;
         }
 
-        if (gas.GetComponent<GameStatus>().tutorialPlayed == 1)
+        if (PlayerPrefs.GetInt("tutorialPlayed") == 1)
         {
             SceneManager.LoadScene("HomeMenu");
         }
-
-        PlayerPrefs.SetInt("tutorialPlayed", 1);
-        gas.GetComponent<GameStatus>().tutorialPlayed = 1;
-        SceneManager.LoadScene("Tutorial1.1");
+        else
+        {
+            GetComponent<ResetGameStatus>().ResetGameStatusDataOpenScene();
+            PlayerPrefs.SetInt("tutorialPlayed", 1);
+            gs.GetComponent<GameStatus>().tutorialPlayed = 1;
+            SceneManager.LoadScene("Tutorial1.1");
+        }
 
     }
 }
