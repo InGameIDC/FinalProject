@@ -11,7 +11,6 @@ using UnityEngine.UI;
 
 public class ScoreBar : MonoBehaviour
 {
-    
     public float maxScore = 200;
     public Animator m_Animator;
  

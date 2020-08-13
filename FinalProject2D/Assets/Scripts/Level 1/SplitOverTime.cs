@@ -6,7 +6,7 @@ public class SplitOverTime : MonoBehaviour
 {
     [SerializeField] float cooldown = 5f;
     [SerializeField] GameObject minions;
-    [SerializeField] GameObject target;
+    //[SerializeField] GameObject target;
     private float lastSplitTime;
 
     // Start is called before the first frame update
@@ -27,8 +27,12 @@ public class SplitOverTime : MonoBehaviour
             Vector3 pos = respawns[Random.Range(0, respawns.Length)].transform.position;
 
             GameObject minion = Instantiate(minions, pos, transform.rotation);
-            minion.GetComponent<AI1>().addTraget(target);
-            Debug.Log("Target: " + target);
+            GameObject[] targets = GameObject.FindGameObjectsWithTag("HeroUnit");
+            foreach (GameObject target in targets)
+            {
+                minion.GetComponent<AI1>().addTraget(target);
+            }
+            //Debug.Log("Target: " + target);
         }
 
         

@@ -8,8 +8,8 @@ using Random = System.Random;
 
 public class SoundManager : MonoBehaviour
 {
-    const float k_BgVolume = 0.5f;
-    private const float k_SoundsVolume = 0.5f;
+    public float k_BgVolume = 0.5f;
+    public float k_SoundsVolume = 0.5f;
     [SerializeField] public SoundAudioClip[] soundAudioClips;
     private static SoundManager thisInstance;
     private GameObject soundGameObject;

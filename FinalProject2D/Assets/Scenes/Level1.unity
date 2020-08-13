@@ -3643,15 +3643,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b3e0e72ad7b2d499368911259ca1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  k_BgVolume: 0.3
+  k_SoundsVolume: 0.5
   soundAudioClips:
   - sound: 0
     audioClip: {fileID: 8300000, guid: 9669960e415ea604d81fb0784634df79, type: 3}
   - sound: 1
     audioClip: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   - sound: 1
-    audioClip: {fileID: 8300000, guid: bf85a9fae91354d48b69a70c182370db, type: 3}
+    audioClip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
   - sound: 1
-    audioClip: {fileID: 8300000, guid: a9be227d4e84909449808d64a201467b, type: 3}
+    audioClip: {fileID: 8300000, guid: 7928c6c0032468442a158c702df5e2f6, type: 3}
   - sound: 2
     audioClip: {fileID: 8300000, guid: e11a5a019377fbd4c81caa0adcb4c236, type: 3}
   - sound: 3
