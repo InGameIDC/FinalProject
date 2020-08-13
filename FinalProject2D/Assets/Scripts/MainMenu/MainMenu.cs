@@ -43,6 +43,8 @@ public class MainMenu : MonoBehaviour
         currXp = gsObject.GetComponent<GameStatus>().currentXP;
         xpToNextLevel = gsObject.GetComponent<GameStatus>().xpToNextLevel;
 
+        gsObject.GetComponent<GameStatus>().tutorialPlayed = 1;
+
         // if the xp has reached the goal, the level changes
         if (currXp >= xpToNextLevel)
         {
