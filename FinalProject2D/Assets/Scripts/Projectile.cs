@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, debuffActivator
 {
     //public Action<Projectile, GameObject> onHitMechs; // function to be atctivated on the target
     public Action<Projectile> onHitDisplayers; // for feedbakcs: visual and audio displays.

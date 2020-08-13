@@ -67,7 +67,7 @@ public class AI1 : MonoBehaviour
         while (true)
         {
             target = getWeakest();
-            Debug.Log("GOT TARGET: " + target + " Amount: " + targetsList.Count);
+            //Debug.Log("GOT TARGET: " + target + " Amount: " + targetsList.Count);
             if (target != null)
             {
                 // if the command fails, wait enough time to have enough points
