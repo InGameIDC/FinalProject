@@ -55,6 +55,11 @@ public class Movment2D : MonoBehaviour
 		_AI.maxSpeed = _moveSpeed;
 	}
 
+	private void OnEnable()
+	{
+		_AI.maxSpeed = _moveSpeed;
+	}
+
 	public Dictionary<GameObject, Vector3> heroesDirections = new Dictionary<GameObject, Vector3>();
 	public float GetSpeed() => _AI.maxSpeed;
 	public Vector3 GetHeroRotation() => _rotator != null ? _rotator.transform.rotation.eulerAngles : transform.rotation.eulerAngles;
