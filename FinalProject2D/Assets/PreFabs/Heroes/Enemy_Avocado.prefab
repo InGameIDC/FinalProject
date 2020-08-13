@@ -264,6 +264,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6005421254830619975, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: pickNextWaypointDist
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6115755343183367062, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}
       propertyPath: _moveSpeed

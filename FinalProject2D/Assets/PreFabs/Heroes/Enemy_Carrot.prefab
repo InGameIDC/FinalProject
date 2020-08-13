@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &80848490
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255276145053463998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62989480921a65a4cb2fd391b8b47a2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &350212300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,25 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb74c1dd2a5a5c4292187319e81af2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &80848490
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255276145053463998}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 62989480921a65a4cb2fd391b8b47a2c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &9000137685123284819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,6 +295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005421254830619975, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
+        type: 3}
+      propertyPath: pickNextWaypointDist
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6115755343183367062, guid: 4946b508d8a1cba48b0e0c80fe431f6a,
         type: 3}

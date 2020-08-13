@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &996782980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4658932785261967976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62464bead259b1408d137eaa07b7392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  _isSupportAttackAnimation: 0
 --- !u!95 &996782981
 Animator:
   serializedVersion: 3
@@ -33,6 +19,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &996782980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658932785261967976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62464bead259b1408d137eaa07b7392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  _isSupportAttackAnimation: 0
 --- !u!1001 &5561766464921237416
 PrefabInstance:
   m_ObjectHideFlags: 0
