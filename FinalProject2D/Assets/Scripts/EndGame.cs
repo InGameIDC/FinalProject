@@ -38,6 +38,7 @@ public class EndGame : MonoBehaviour
     {
         //initiating the gameobjects for future use
         gs = gsObject.GetComponent<GameStatus>();
+        levelId = levelData.getlevelId();
 
 
         Time.timeScale = 0f;                //stopping the game
@@ -145,6 +146,8 @@ public class EndGame : MonoBehaviour
     /// </summary>
     private void lostMessage()
     {
+        gs.levelsPlayed[gs.lastLevelCosen - 2] = 1;
+
         // Play Lose sound
         SoundManager.Instance.PlaySound(Sound.Lose);
 
@@ -157,6 +160,6 @@ public class EndGame : MonoBehaviour
         youGotXp.SetActive(false);
         youGot.SetActive(false);
         //nextLevelButton.SetActive(false);
-        restartButton.SetActive(true);
+        //restartButton.SetActive(true);
     }
 }

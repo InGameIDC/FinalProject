@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: OnionData
   m_EditorClassIdentifier: 
   _heroId: 104
-  _team: 0
-  _moveSpeed: 0.5
+  _team: 1
+  _moveSpeed: 1
   _maxHealth: 3
-  _damage: 0.75
+  _damage: 1.5
   _range: 3
   _cooldown: 2.5
   _projectile: {fileID: 2937300749382650177, guid: e7972a1768ae2c64da647ba860747461,

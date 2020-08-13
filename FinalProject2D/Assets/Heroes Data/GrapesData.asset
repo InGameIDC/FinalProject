@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _heroId: 1
   _team: 0
-  _moveSpeed: 0.75
+  _moveSpeed: 2
   _maxHealth: 3
   _damage: 0.75
   _range: 4

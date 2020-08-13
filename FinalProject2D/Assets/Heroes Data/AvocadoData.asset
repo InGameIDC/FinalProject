@@ -16,7 +16,7 @@ MonoBehaviour:
   _team: 1
   _moveSpeed: 1
   _maxHealth: 4
-  _damage: 0.25
+  _damage: 0.75
   _range: 5
   _cooldown: 1
   _projectile: {fileID: 1258025947294799454, guid: 0febbeb927e9e014c9e744c8cb4a1402,
