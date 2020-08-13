@@ -423,7 +423,7 @@ public class HeroCard : MonoBehaviour
         }
 
         htc.updateCardsdisplay();
-
+        SoundManager.Instance.PlaySound(Sound.UpgradeHero);
     }
 
     /// <summary>
