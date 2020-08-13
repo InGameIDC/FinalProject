@@ -25,18 +25,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -19.13289, y: 13.497693}
-      - {x: -18.595833, y: 2.6982782}
-      - {x: -12.840009, y: -9.667778}
-      - {x: -6.2157235, y: -16.551079}
-      - {x: 0.21040964, y: -19.276278}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.045206916, y: -19.45722}
-      - {x: 6.965417, y: -19.739355}
-      - {x: 13.366383, y: -15.993537}
-      - {x: 19.72615, y: -8.798645}
-      - {x: 24.58847, y: 2.4737792}
-      - {x: 24.654581, y: 13.725664}
+    - - {x: -21.60199, y: 13.613076}
+      - {x: -21.465326, y: 1.7751924}
+      - {x: -14.84198, y: -10.70624}
+      - {x: -6.9497795, y: -18.281857}
+      - {x: -1.0549126, y: -19.386013}
+      - {x: 3.495333, y: -19.277813}
+      - {x: 10.029761, y: -15.416611}
+      - {x: 16.18933, y: -9.144801}
+      - {x: 17.123587, y: -7.6447964}
+      - {x: 21.518778, y: 2.4737792}
+      - {x: 21.518158, y: 13.725664}
+      - {x: 21.317963, y: 13.725664}
 --- !u!1001 &8488216247822634264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,6 +47,21 @@ PrefabInstance:
     - target: {fileID: 80848490, guid: cafeb921193e1e84eb55a2217c5d7a61, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306625997854180945, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 306625997854180945, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_Radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 306625997854180945, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 465115206342388285, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
@@ -59,10 +74,95 @@ PrefabInstance:
       propertyPath: _damage
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1255276145053463998, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865369284137954668, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 2898469463441896645, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: _moveSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138095576556167298, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326692264252026713, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961826132756892609, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051473442410981595, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051473442411071167, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7150397905601838346, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
@@ -82,12 +182,12 @@ PrefabInstance:
     - target: {fileID: 7150397905601838346, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8173591341274215057, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.34972662
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8173591341274215057, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
@@ -142,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 8173591341274215059, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Tomato_Boss
+      value: Enemy_Tomato_Boss Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8521155656349353006, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}

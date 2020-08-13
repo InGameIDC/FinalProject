@@ -11,6 +11,7 @@ public class ProjectileMulti : Projectile
     [SerializeField] float delayBetweenProjSpawn = 0f;
     [SerializeField] float _projSpeed;
     [SerializeField] bool lockRotation = true;
+
     private void Awake()
     {
         if (posOffsets == null)
