@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: 8271294469035868794
     second: tomato_boss_1_2
+  - first:
+      213: 7580273561400502515
+    second: tomato_boss_1_0
+  - first:
+      213: -8223787085323403999
+    second: tomato_boss_1_1
+  - first:
+      213: -4047030351423903613
+    second: tomato_boss_1_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -133,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e00369de1d948b60800000000000000
-      internalID: 7747490014805819622
+      spriteID: 3f8ef8f54aa823960800000000000000
+      internalID: 7580273561400502515
       vertices: []
       indices: 
       edges: []
@@ -154,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ec8d01f54a355e10800000000000000
-      internalID: 2185717266229595366
+      spriteID: 12d7ad6a73d3fdd80800000000000000
+      internalID: -8223787085323403999
       vertices: []
       indices: 
       edges: []
@@ -175,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7249831f7a89c270800000000000000
-      internalID: 8271294469035868794
+      spriteID: 3886724665f06d7c0800000000000000
+      internalID: -4047030351423903613
       vertices: []
       indices: 
       edges: []
