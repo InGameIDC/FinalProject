@@ -46,9 +46,9 @@ public class GameStatus : MonoBehaviour
         lastLevelCosen = PlayerPrefs.GetInt("lastLevelCosen", 3);
         isToLevel = PlayerPrefs.GetInt("isToLevel", 0);
 
-        deckPlayers[0] = PlayerPrefs.GetInt("player1", 0);
-        deckPlayers[1] = PlayerPrefs.GetInt("player2", 1);
-        deckPlayers[2] = PlayerPrefs.GetInt("player3", 2);
+        deckPlayers[0] = PlayerPrefs.GetInt("player1", 1);
+        deckPlayers[1] = PlayerPrefs.GetInt("player2", 2);
+        deckPlayers[2] = PlayerPrefs.GetInt("player3", 3);
 
         //stars ernd in level
         starsInLevels[0] = PlayerPrefs.GetInt("starslevel1", 0);
