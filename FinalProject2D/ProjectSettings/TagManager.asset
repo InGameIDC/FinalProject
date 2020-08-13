@@ -32,6 +32,8 @@ TagManager:
   - StartPosHeroes
   - StartPosEnemies
   - HeroIcon
+  - FxTemporaire
+  - ObjectSpawnPos
   layers:
   - Default
   - TransparentFX

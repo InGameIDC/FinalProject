@@ -121,7 +121,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09}
+  m_Offset: {x: 0, y: 0.02}
   serializedVersion: 2
   m_Radius: 0.115
 --- !u!114 &6673941996857322285
@@ -139,7 +139,7 @@ MonoBehaviour:
   attacker: {fileID: 0}
   hitted: 0
   SelfDestroyAfter: 5
-  HitEffectObject: {fileID: 3328894972008588711, guid: 1a3512324fc57954ba203835b6257d41,
+  HitEffectObject: {fileID: 9215627001315474550, guid: 72c7bc4cc43ec044dae99d5f71d3f5cd,
     type: 3}
   isPiercing: 0
   shootDamege: 0
