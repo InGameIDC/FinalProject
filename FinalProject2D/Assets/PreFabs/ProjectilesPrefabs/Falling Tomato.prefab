@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 275070800559451568}
   - component: {fileID: 275070800559451571}
   - component: {fileID: 275070800559451569}
-  - component: {fileID: 275070800559451570}
   m_Layer: 0
   m_Name: preFall_Shadow
   m_TagString: Untagged
@@ -97,20 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeRate: 0.1
---- !u!114 &275070800559451570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275070800559451575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec5b7d0d66bca544b2c91bfb69ec9a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3005473345064667658, guid: b34647ac28044604c92b288908c8d974,
-    type: 3}
 --- !u!1 &275070801309304583
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +205,8 @@ MonoBehaviour:
   objectThatTouchWouldDestory: {fileID: 275070800559451575}
   distanceToDestory: 0.2
   explotionEffect: {fileID: 100000, guid: f2dba9e16cd347f44a395b8204544ee5, type: 3}
+  objectToSpawn: {fileID: 3005473345064667658, guid: b34647ac28044604c92b288908c8d974,
+    type: 3}
 --- !u!1001 &275070801674119565
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class FallenTomatoLogic : MonoBehaviour
     [SerializeField] GameObject objectThatTouchWouldDestory;
     [SerializeField] float distanceToDestory;
     [SerializeField] GameObject explotionEffect;
+    [SerializeField] GameObject objectToSpawn;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,8 @@ public class FallenTomatoLogic : MonoBehaviour
                 proj.ManualActiveExplotion(damageHitAreasInSphere[0]);
 
             Instantiate(explotionEffect, transform.position /*+ new Vector3(0, distanceToDestory * 2, 0)*/, transform.rotation);
+
+            Instantiate(explotionEffect, objectThatTouchWouldDestory.transform.position, transform.rotation);
 
             Destroy(objectThatTouchWouldDestory);
             Destroy(transform.parent.gameObject);
