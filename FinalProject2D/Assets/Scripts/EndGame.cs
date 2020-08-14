@@ -146,7 +146,6 @@ public class EndGame : MonoBehaviour
     /// </summary>
     private void lostMessage()
     {
-        gs.levelsPlayed[gs.lastLevelCosen - 1] = 1;
 
         // Play Lose sound
         SoundManager.Instance.PlaySound(Sound.Lose);
