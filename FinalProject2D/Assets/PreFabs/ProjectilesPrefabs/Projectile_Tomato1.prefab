@@ -43,6 +43,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4133925832258909879, guid: 7246c70c16c2b554f9a0e735c66cbed6,
         type: 3}
+    - target: {fileID: 6673941996857322285, guid: 48ef9c663de49c84b97c7f73732d11b1,
+        type: 3}
+      propertyPath: shootDamege
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7999348097131757448, guid: 48ef9c663de49c84b97c7f73732d11b1,
         type: 3}
       propertyPath: m_LocalPosition.x

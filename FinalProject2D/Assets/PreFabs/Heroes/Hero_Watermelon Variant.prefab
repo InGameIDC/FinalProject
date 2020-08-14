@@ -119,7 +119,12 @@ PrefabInstance:
     - target: {fileID: 7892120756182230404, guid: 837135b88bf96f14697a1d146788bc25,
         type: 3}
       propertyPath: pickNextWaypointDist
-      value: 0.1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892120756182230404, guid: 837135b88bf96f14697a1d146788bc25,
+        type: 3}
+      propertyPath: maxAcceleration
+      value: -6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837135b88bf96f14697a1d146788bc25, type: 3}

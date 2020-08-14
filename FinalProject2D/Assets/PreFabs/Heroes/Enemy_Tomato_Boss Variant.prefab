@@ -144,6 +144,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3436637229389398548, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: maxAcceleration
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436637229389398548, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: pickNextWaypointDist
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4326692264252026713, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_IsActive
