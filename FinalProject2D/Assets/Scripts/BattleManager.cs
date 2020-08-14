@@ -296,6 +296,7 @@ public class BattleManager : MonoBehaviour
     /// </summary>
     public void goToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("HomeMenu");
     }
 
@@ -312,6 +313,7 @@ public class BattleManager : MonoBehaviour
             idx = 5;
         }
         gs.GetComponent<GameStatus>().lastLevelCosen = idx;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("ChooseHeroes");
     }
 
@@ -321,6 +323,7 @@ public class BattleManager : MonoBehaviour
     /// </summary>
     public void restartLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("ChooseHeroes");
     }
 
