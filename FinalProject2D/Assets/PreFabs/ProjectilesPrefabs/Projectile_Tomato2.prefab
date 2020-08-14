@@ -92,6 +92,11 @@ PrefabInstance:
       propertyPath: attacker
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7117407787471523844, guid: c1f539e3e1381ac48aa45f54ac002dd8,
+        type: 3}
+      propertyPath: shootDamege
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9202270873362003146, guid: c1f539e3e1381ac48aa45f54ac002dd8,
         type: 3}
       propertyPath: m_Offset.y
