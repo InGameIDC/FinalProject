@@ -17,7 +17,7 @@ MonoBehaviour:
   _moveSpeed: 1.7
   _maxHealth: 4
   _damage: 0.15
-  _range: 2
+  _range: 3
   _cooldown: 0.25
   _projectile: {fileID: 2695447022465198110, guid: bed1f6b38b0f69c4682bc0c097e7c901,
     type: 3}
@@ -33,6 +33,6 @@ MonoBehaviour:
     type: 3}
   upgradeCosts: 00000000900100008a020000dc050000
   starsToUpgrade: 00000000060000000800000008000000
-  cardStatus: 1
+  cardStatus: 2
   upgradestatus: 0
   starsToBuy: 0

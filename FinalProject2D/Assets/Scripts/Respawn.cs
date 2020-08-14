@@ -28,15 +28,16 @@ public static class Respawn
         HeroUnit unit = gameObject.GetComponent<HeroUnit>();
         gameObject.GetComponent<HeroUnit>().Start();
 
+        gameObject.GetComponentInChildren<Health>().ResetHealth();
         if (gameObject.tag == "HeroUnit")
         {
-            gameObject.transform.position = respawnHeroesPrefabsArray.RandomItem().transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+            gameObject.transform.position = respawnHeroesPrefabsArray[Random.Range(0, respawnHeroesPrefabsArray.Length)].transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
         }
 
         else
-            gameObject.transform.position = respawnEnemiesPrefabsArray.RandomItem().transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+            gameObject.transform.position = respawnEnemiesPrefabsArray[Random.Range(0, respawnHeroesPrefabsArray.Length)].transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
 
-        gameObject.GetComponentInChildren<Health>().ResetHealth();
+        
 
     }
 

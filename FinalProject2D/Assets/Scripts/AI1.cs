@@ -67,8 +67,17 @@ public class AI1 : MonoBehaviour
         while (true)
         {
             target = getWeakest();
-            //Debug.Log("GOT TARGET: " + target + " Amount: " + targetsList.Count);
-            if (target != null)
+            /*
+            Debug.Log("GOT TARGET: " + target + " Amount: " + targetsList.Count);
+            foreach (var t in targetsList)
+            {
+                if(t == null)
+                    Debug.Log("There is: NULL");
+                else
+                    Debug.Log("There is: " + t.name);
+            }
+            */
+            if (target != null && target.GetComponent<HeroUnit>() != null)
             {
                 // if the command fails, wait enough time to have enough points
                 if (!_controlPointsManager.CommandSetTargetToAttack(_hero, target, true))
@@ -99,7 +108,7 @@ public class AI1 : MonoBehaviour
         float weakestHealth = Mathf.Infinity;
         foreach (GameObject target in targetsList)
         {
-            if (target != null && target.activeSelf)
+            if (target != null && target.activeSelf && target.GetComponent<HeroUnit>() != null)
             {
                 Health healthObj = target.GetComponentInChildren<Health>();
                 if (healthObj == null)

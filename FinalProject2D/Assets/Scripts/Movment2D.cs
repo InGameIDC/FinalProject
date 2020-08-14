@@ -57,7 +57,8 @@ public class Movment2D : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_AI.maxSpeed = _moveSpeed;
+		if (_AI != null)
+			_AI.maxSpeed = _moveSpeed;
 	}
 
 	public Dictionary<GameObject, Vector3> heroesDirections = new Dictionary<GameObject, Vector3>();
