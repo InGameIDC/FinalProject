@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
+  m_Name: BananaTestData
+  m_EditorClassIdentifier: 
+  _heroId: 3
+  _team: 0
+  _moveSpeed: 2
+  _maxHealth: 3
+  _damage: 0.5
+  _range: 5
+  _cooldown: 0.25
+  _projectile: {fileID: 1866814955367978911, guid: 48ef9c663de49c84b97c7f73732d11b1,
+    type: 3}
+  _projSpeed: 3
+  _projectileOffsetValue: 0
+  _levelUpGain_moveSpeed: 0
+  _levelUpGain_maxHealth: 0.2
+  _levelUpGain_damage: 0.1
+  _levelUpGain_cooldown: 0
+  _levelUpGain_projSpeed: 0
+  _levelUpGain_range: 0.2
+  _heroImage: {fileID: -6994387867358916157, guid: d49d3454a0d94e947aeb9e8245792b5f,
+    type: 3}
+  upgradeCosts: 90010000bc020000400600003a070000
+  starsToUpgrade: 06000000060000000800000009000000
+  cardStatus: 3
+  upgradestatus: 0
+  starsToBuy: 2

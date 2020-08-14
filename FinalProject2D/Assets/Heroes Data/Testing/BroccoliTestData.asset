@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c57fe562cefd676479228a0fe0c36e5f, type: 3}
-  m_Name: BroccoliData
+  m_Name: BroccoliTestData
   m_EditorClassIdentifier: 
   _heroId: 105
   _team: 1

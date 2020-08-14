@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileMulti : Projectile
 {
-    [SerializeField] GameObject projToMult;
+    [SerializeField] GameObject[] projToMult;
     [SerializeField] float amount;
     [SerializeField] List<float> posOffsets; // init position relative to the unit current pos
     [SerializeField] List<Vector3> relativeDirections; // new direction changes relative to the forward direction
@@ -36,7 +36,7 @@ public class ProjectileMulti : Projectile
         for (int i = 0; i < amount; i++)
         {
             Quaternion rotation = transform.rotation;
-            GameObject projGameObj = Instantiate(projToMult, transform.position, rotation);
+            GameObject projGameObj = Instantiate(projToMult[i % projToMult.Length], transform.position, rotation);
             Debug.Log("AA: " + posOffsets[i % posOffsets.Count]);
             Debug.Log("BB: " + relativeDirections[i % relativeDirections.Count]);
             initProj(projGameObj, posOffsets[i % posOffsets.Count], relativeDirections[i % relativeDirections.Count]);

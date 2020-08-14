@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4868053684483665768}
   - component: {fileID: 6771465913799464635}
   - component: {fileID: 8005079474173819661}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tredmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930723472050878534}
   m_LocalRotation: {x: -0, y: -0, z: 0.009322001, w: 0.99995655}
-  m_LocalPosition: {x: -0.67, y: 0.12, z: 0}
+  m_LocalPosition: {x: -0.67, y: 0.12, z: -1}
   m_LocalScale: {x: 1.1229701, y: 2.3317769, z: 1.1243881}
   m_Children: []
   m_Father: {fileID: 9209191613367444139}
@@ -214,9 +214,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -178377379
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2111699775762293631, guid: 6659a92d89526e4448755b214f5bed96,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -296,9 +296,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -178377379
-  m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2111699775762293631, guid: 6659a92d89526e4448755b214f5bed96,
     type: 3}
   m_Color: {r: 1, g: 0, b: 0.039904118, a: 1}
