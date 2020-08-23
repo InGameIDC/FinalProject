@@ -24,8 +24,8 @@ MonoBehaviour:
   _projSpeed: 3
   _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0
-  _levelUpGain_maxHealth: 0.2
-  _levelUpGain_damage: 0.1
+  _levelUpGain_maxHealth: 0.3
+  _levelUpGain_damage: 0.3
   _levelUpGain_cooldown: 0
   _levelUpGain_projSpeed: 0
   _levelUpGain_range: 0.2

@@ -54,7 +54,7 @@ public class ProjectileMulti : Projectile
         if(lockRotation)
             projGameObj.transform.rotation = transform.rotation; // set the rotation same as the attack
 
-        rb.velocity = (transform.up + relativeDirection).normalized * _projSpeed;
+        rb.velocity = (projGameObj.transform.up + relativeDirection).normalized * _projSpeed;
         projCtrl.attacker = attacker;
         projCtrl.shootDamege = shootDamege;
 

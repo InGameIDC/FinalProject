@@ -6,12 +6,12 @@ public class ProjectilePool : Projectile
 {
     [SerializeField] GameObject[] _projPool;
     [SerializeField] int[] _priorityListOfProjectileType;
-    [SerializeField] int[] _speeds;
+    [SerializeField] float[] _speeds;
 
     private void Awake()
     {
         if (_speeds == null)
-            _speeds = new int[1];
+            _speeds = new float[1];
     }
 
     // Start is called before the first frame update

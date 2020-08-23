@@ -36,7 +36,7 @@ public class Tutorial_Kills : Tutorial
         Debug.Log("YAY");
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("HomeMenu");
+        SceneManager.LoadScene("Tutorial3.1");
 
     }
 }

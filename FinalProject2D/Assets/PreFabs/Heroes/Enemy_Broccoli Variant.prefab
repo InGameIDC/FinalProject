@@ -27,6 +27,11 @@ PrefabInstance:
       propertyPath: maxAcceleration
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 3436637229389398548, guid: cafeb921193e1e84eb55a2217c5d7a61,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 8173591341274215057, guid: cafeb921193e1e84eb55a2217c5d7a61,
         type: 3}
       propertyPath: m_LocalPosition.x

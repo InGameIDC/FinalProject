@@ -21,7 +21,7 @@ MonoBehaviour:
   _cooldown: 2
   _projectile: {fileID: 2860001273027194038, guid: c1f539e3e1381ac48aa45f54ac002dd8,
     type: 3}
-  _projSpeed: 0
+  _projSpeed: 3
   _projectileOffsetValue: 0
   _levelUpGain_moveSpeed: 0
   _levelUpGain_maxHealth: 0

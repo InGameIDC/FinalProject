@@ -137,7 +137,6 @@ MonoBehaviour:
   attacker: {fileID: 0}
   hitted: 0
   SelfDestroyAfter: 5
-  HitEffectObject: {fileID: 3328894972008588711, guid: 1a3512324fc57954ba203835b6257d41,
-    type: 3}
+  HitEffectObject: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   isPiercing: 0
   shootDamege: 0

@@ -16,7 +16,7 @@ public static class GlobalCodeSettings
     public static readonly string[] Layers_To_RayCast_Ignore = { "Terrain", "Ignore Raycast" };
     public static readonly string[] Layers_To_RayCast_Relate = { "Obstacle"};
     public static readonly string[] Layers_Teams = {"HeroUnit", "EnemyUnit"};
-    public static readonly string[] Layers_Mouse_RayCast_Relate = { "Terrain", "HeroUnit", "EnemyUnit" };
+    public static readonly string[] Layers_Mouse_RayCast_Relate = { "Terrain", "HeroUnit", "EnemyUnit", "UI"};
 
     public static float CaclTimeRelativeToFramRate(float secs)
     {

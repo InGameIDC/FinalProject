@@ -51,9 +51,12 @@ public class Projectile : MonoBehaviour, debuffActivator
                 if(!isPiercing)
                     hitted = true;
                 targetParentObject.GetComponentInChildren<Health>().TakeDamage(shootDamege);
-                foreach (DeBuff debuff in debuffs)
+                if (debuffs != null)
                 {
-                    debuff.activeDebuff(target.transform.parent.gameObject);
+                    foreach (DeBuff debuff in debuffs)
+                    {
+                        debuff.activeDebuff(target.transform.parent.gameObject);
+                    }
                 }
                 createHitEffect(transform.position); // creating hit effect
 

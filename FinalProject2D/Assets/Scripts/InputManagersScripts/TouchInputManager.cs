@@ -57,7 +57,7 @@ public class TouchInputManager : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) || IsPointerOverUIObject())
                 return;
             //Standard detection of taps and their location on screen.
             Touch touch = Input.GetTouch(0);
@@ -152,6 +152,15 @@ public class TouchInputManager : MonoBehaviour
         {
             OnUnitDoubleClick(collider);
         }
+    }
+
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }
 

@@ -126,7 +126,7 @@ public class SugarManager : MonoBehaviour
         float cleanRadius = 0.1f; // the radius around the suagar hill that shouldnt be with obsticales
         Vector3 pos = Vector3.zero;
         Collider2D[] damageHitAreasInSphere;
-        LayerMask maskObstacles = LayerMask.GetMask("Obstacle");
+        LayerMask maskObstacles = LayerMask.GetMask("Obstacle") + LayerMask.GetMask("EnemiesOnlyArea");
 
         for (int i = 0; i < 50; i++) // generate until max 100 iteration, positions, until finds a one that doesnot overlap with obsticale 
         {

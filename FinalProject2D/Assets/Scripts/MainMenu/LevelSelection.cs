@@ -119,6 +119,19 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
+    public void ToturialPressSelection(int levelidx)
+    {
+        if (unlocked)
+        {
+            gs.GetComponent<GameStatus>().lastLevelCosen = levelidx;
+            gs.GetComponent<GameStatus>().isToLevel = 1;
+            //gameObject.GetComponent<Image>().color = Color.green;
+            //OnPressingLevel(levelidx);
+            SceneManager.LoadScene("TutorialChooseHeroes");
+
+        }
+    }
+
     public void unPress()
     {
         //gameObject.GetComponent<Image>().color = originalColor;

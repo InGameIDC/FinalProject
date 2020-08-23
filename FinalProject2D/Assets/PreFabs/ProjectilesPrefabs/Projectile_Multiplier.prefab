@@ -139,8 +139,7 @@ MonoBehaviour:
   HitEffectObject: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   isPiercing: 0
   shootDamege: 0
-  projToMult: {fileID: 4912242714784741176, guid: 409f4f20569b13c42a1e266764bb43fe,
-    type: 3}
+  projToMult: []
   amount: 6
   posOffsets:
   - 0
@@ -158,3 +157,4 @@ MonoBehaviour:
   - {x: 0, y: 0.2, z: 0}
   delayBetweenProjSpawn: 0
   _projSpeed: 3
+  lockRotation: 1

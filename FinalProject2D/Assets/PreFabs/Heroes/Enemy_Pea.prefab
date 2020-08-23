@@ -122,6 +122,11 @@ PrefabInstance:
       propertyPath: maxAcceleration
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 6893777044031275054, guid: 6f1aba8c41eea914aae19fc6ca47d3be,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 720
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f1aba8c41eea914aae19fc6ca47d3be, type: 3}
 --- !u!1 &5108313514700221565 stripped

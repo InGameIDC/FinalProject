@@ -13,13 +13,15 @@ public class ResetGameStatus : MonoBehaviour
         gs = gas.GetComponent<GameStatus>();
     }
 
-    // Update is called once per frame
     public void ResetGameStatusData(bool button)
     {
+        PlayerPrefs.SetInt("FinishedMenuTutorial", 0);
+        PlayerPrefs.SetInt("FinishedTutorial", 0);
+
         gs.currentXP = 3;
         gs.xpToNextLevel = 0;
         gs.xpLevel = 3;
-        gs.coins = 200;
+        gs.coins = 400;
         gs.lastScene = "HomeMenu";
         gs.lastLevelCosen = 1;
         gs.isToLevel = 0;
@@ -68,6 +70,9 @@ public class ResetGameStatus : MonoBehaviour
 
     public void ResetGameStatusDataOpenScene()
     {
+        PlayerPrefs.SetInt("FinishedMenuTutorial", 0);
+        PlayerPrefs.SetInt("FinishedTutorial", 0);
+
         gs.currentXP = 3;
         gs.xpToNextLevel = 0;
         gs.xpLevel = 3;

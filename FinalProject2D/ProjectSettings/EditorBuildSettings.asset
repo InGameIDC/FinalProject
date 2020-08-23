@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial2.unity
     guid: bd2d544d4b42d494eb472e04ce4b5838
   - enabled: 1
+    path: Assets/Scenes/Tutorial3.1.unity
+    guid: c95196b58f9fa4e4db396baae494c309
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/TutorialHomeMenu.unity
+    guid: 3812193948facaa43adbe73ee6fbe4c6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/TutorialChooseHeroes.unity
+    guid: daa75d6f74cce184996fd35d0aeee089
+  - enabled: 1
     path: Assets/Scenes/HomeMenu.unity
     guid: 249f911aa45569f45a4fc66aecce2a66
   - enabled: 1

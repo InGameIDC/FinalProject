@@ -130,6 +130,7 @@ public class BattleManager : MonoBehaviour
     /// <param name="newHero">The new hero that was selected to be controled</param>
     private void markChange(GameObject prevHero, GameObject newHero)
     {
+        /*
         SpriteManager prevUnitSpriteManager = prevHero.GetComponentInChildren<SpriteManager>();
         try
         {
@@ -153,6 +154,8 @@ public class BattleManager : MonoBehaviour
             Debug.Log(e); // TODO: Fix the spriteManager
             _interactionManager.SelectUnitInteraction(newHero);
         }
+        */
+        _interactionManager.SelectUnitInteraction(newHero);
         // Play hero select sound
         try {
             SoundManager.Instance.PlaySound(Sound.SelectHero);
@@ -212,6 +215,7 @@ public class BattleManager : MonoBehaviour
             // if had enough control points, show indication
             if (_ctrlPointsManager.CommandSetTargetToAttack(_currentUnit, clickedobject, false))
             {
+                /*
                 try
                 {
                     SpriteManager enemySpriteManager = clickedobject.GetComponentInChildren<SpriteManager>();
@@ -223,9 +227,9 @@ public class BattleManager : MonoBehaviour
                 }
                 catch(Exception e)
                 {
-                    Debug.LogError(e);
+                    Debug.Log("Error, not found SpriteManager: " + e);
                 }
-
+                */
                 _interactionManager.AttackUnitInteraction(clickedobject); // calls attack interaction (red arrows)
             }
         }
@@ -298,6 +302,12 @@ public class BattleManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("HomeMenu");
+    }
+
+    public void goToToturialMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("TutorialHomeMenu");
     }
 
     /// <summary>

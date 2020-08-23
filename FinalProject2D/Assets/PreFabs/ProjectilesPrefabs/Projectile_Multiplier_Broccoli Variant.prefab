@@ -150,6 +150,12 @@ PrefabInstance:
       propertyPath: amount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7696906173730161067, guid: 0cf85a044cdb3ef48bf955abc514d16e,
+        type: 3}
+      propertyPath: attacker
+      value: 
+      objectReference: {fileID: 1571963867786745445, guid: 987929888458a034fbf738887c82f73d,
+        type: 3}
     - target: {fileID: 8590264119787415567, guid: 0cf85a044cdb3ef48bf955abc514d16e,
         type: 3}
       propertyPath: m_Color.r

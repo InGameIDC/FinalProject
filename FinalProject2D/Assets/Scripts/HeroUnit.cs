@@ -60,6 +60,11 @@ public class HeroUnit : MonoBehaviour
         //StartCoroutine(testSelfDestroyAfterDelay(60f));
     }
 
+    public void OnEnable()
+    {
+        OnRespawn(gameObject);
+    }
+
     private void Update()
     {
         if(isUnderDebuff && Time.time - timeDebuffStarted > deBuffDuration) {

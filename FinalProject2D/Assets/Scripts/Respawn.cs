@@ -6,10 +6,25 @@ using Random = UnityEngine.Random;
 /// <summary>
 /// author : dor peretz
 /// </summary>
-public static class Respawn
+public class Respawn : MonoBehaviour
 {
-    public static GameObject[] respawnHeroesPrefabsArray = GameObject.FindGameObjectsWithTag("RespawnHeroes");
-    public static GameObject[] respawnEnemiesPrefabsArray = GameObject.FindGameObjectsWithTag("RespawnEnemies");
+    public static GameObject[] respawnHeroesPrefabsArray;
+    public static GameObject[] respawnEnemiesPrefabsArray;
+    public static Respawn Instance;
+    private static int heroesLastPosIndex = 0;
+    private static int enemiesLastPosIndex = 0;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        respawnHeroesPrefabsArray = GameObject.FindGameObjectsWithTag("RespawnHeroes");
+        respawnEnemiesPrefabsArray = GameObject.FindGameObjectsWithTag("RespawnEnemies");
+    }
+
 
     /// <summary>
     /// author: dor peretz
@@ -19,7 +34,7 @@ public static class Respawn
     /// <param name="respawnTime"></param>
     public static IEnumerator DieAndRespawn(GameObject gameObject, float respawnTime)
     {
-        gameObject.transform.position =new Vector2(0.5f, 4.5f);
+        gameObject.transform.position = new Vector2(0.5f, 4.5f);
         gameObject.SetActive(false);
 
         yield return new WaitForSeconds(respawnTime);
@@ -28,19 +43,27 @@ public static class Respawn
         HeroUnit unit = gameObject.GetComponent<HeroUnit>();
         gameObject.GetComponent<HeroUnit>().Start();
 
+
         gameObject.GetComponentInChildren<Health>().ResetHealth();
         if (gameObject.tag == "HeroUnit")
         {
-            gameObject.transform.position = respawnHeroesPrefabsArray[Random.Range(0, respawnHeroesPrefabsArray.Length)].transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+            int posIndex = Random.Range(0, respawnHeroesPrefabsArray.Length);
+            if (posIndex == heroesLastPosIndex)  // not to get the same location twice in a row
+                posIndex = (posIndex + 1) % respawnHeroesPrefabsArray.Length;
+            gameObject.transform.position = respawnHeroesPrefabsArray[posIndex].transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+            heroesLastPosIndex = posIndex;
         }
 
         else
-            gameObject.transform.position = respawnEnemiesPrefabsArray[Random.Range(0, respawnHeroesPrefabsArray.Length)].transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+        {
+            int posIndex = Random.Range(0, respawnEnemiesPrefabsArray.Length);
+            if (posIndex == enemiesLastPosIndex)  // not to get the same location twice in a row
+                posIndex = (posIndex + 1) % respawnEnemiesPrefabsArray.Length;
 
-        
-
+            gameObject.transform.position = respawnEnemiesPrefabsArray[posIndex].transform.position + new Vector3(Random.Range(-0.1f, -0.1f), Random.Range(-0.1f, -0.1f));
+            enemiesLastPosIndex = posIndex;
+        }
     }
-
 
     /// <summary>
     /// author: dor peretz
